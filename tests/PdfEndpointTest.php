@@ -17,8 +17,8 @@ class PdfEndpointTest extends TestCase
     public static function initPdf()
     {
         self::$ResourcesPath = __DIR__ . DIRECTORY_SEPARATOR;
-        Pdf::$ApiKey = "DP.Ax4pDLHEVHGq5eJKD3rilQ3TFrgh2ayGQ5jdu3v7QlJ2QKsOtTje7Mhg";
-        Pdf::$BaseUrl = 'https://localhost:44397/v1.0/pdf/';
+        Pdf::$ApiKey = "[YOUR API KEY GOES HERE]";
+        Pdf::$BaseUrl = 'https://api.dynamicpdf.com/v1.0/pdf/';
         echo("Initialized\n");
     }
 
