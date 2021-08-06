@@ -1,0 +1,26 @@
+{
+    "name": "dynamicpdf/client-api",
+    "description": "Description goes here",
+    "type": "library",
+    "require": {
+        "php": ">=7.3, <8.0",
+        "ext-curl": "*",
+        "ext-fileinfo": "*"
+    },
+    "license": "License type goes here",
+    "autoload": {
+        "psr-4": {
+            "Dynamicpdf\\ClientApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "DynamicPDF",
+            "email": "author@dynamicpdf.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

@@ -1,0 +1,16 @@
+phpunit DlexInputSamples.php
+phpunit FontSamples.php
+phpunit FormFillingSamples.php
+phpunit FormFlattenAndRemoveSamples.php
+phpunit LineSample.php
+phpunit PageInputSamples.php
+phpunit RectangleSamples.php
+phpunit TemplateSamples.php
+phpunit ColorPatternSamples.php
+phpunit ImageElementSamples.php
+phpunit ImageInputSamples.php
+phpunit OutlineSamples.php
+phpunit PdfInputSamples.php
+phpunit SecuritySamples.php
+phpunit TemplatePagenumberingSamples.php
+phpunit TemplateBarcodeSamples.php
