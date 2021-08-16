@@ -5,14 +5,14 @@ class VAlign
       /// <summary>
       /// Align top.
       /// </summary>
-      public const Top = "Top";
+      public const Top = "top";
       /// <summary>
       /// Align center. This is default.
       /// </summary>
-      public const Center = "Center";
+      public const Center = "center";
       /// <summary>
       /// Align bottom.
       /// </summary>
-      public const Bottom = "Bottom";
+      public const Bottom = "bottom";
 } 
 ?>

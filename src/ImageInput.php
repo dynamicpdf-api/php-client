@@ -11,17 +11,88 @@ include_once('VAlign.php');
      class ImageInput extends Input
     {
 
-        public function __construct(ImageResource $resource) 
+        public function __construct(?ImageResource $resource) 
         { 
+            if($resource != null)
             parent::__construct($resource);
         }
-      /*  public function ImageInput2(string $cloudResourcePath)  
+       public static function CreateImageInput(string $cloudResourcePath)  
         { 
-            parent::__construct($cloudResourcePath);
-        }*/
+            $imageInput =new ImageInput(null);
+            $imageInput->ResourceName = $cloudResourcePath;
+            return $imageInput;
+        }
 
             
- 
+       /// <summary>
+        /// Gets or sets the scaleX of the image.
+        /// </summary>
+        public  $ScaleX;
+
+        /// <summary>
+        /// Gets or sets the scaleY of the image.
+        /// </summary>
+        public  $ScaleY;
+
+        /// <summary>
+        /// Gets or sets the top margin.
+        /// </summary>
+        public  $TopMargin;
+
+        /// <summary>
+        /// Gets or sets the left margin.
+        /// </summary>
+        public  $LeftMargin;
+
+        /// <summary>
+        /// Gets or sets the bottom margin.
+        /// </summary>
+        public  $BottomMargin;
+
+        /// <summary>
+        /// Gets or sets the right margin.
+        /// </summary>
+        public  $RightMargin;
+
+        /// <summary>
+        /// Gets or sets the page width.
+        /// </summary>
+        public  $PageWidth;
+
+        /// <summary>
+        /// Gets or sets the page height.
+        /// </summary>
+        public  $PageHeight;
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to expand the image.
+        /// </summary>
+        public  $ExpandToFit;
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to shrink the image.
+        /// </summary>
+        public  $ShrinkToFit;
+
+        /// <summary>
+        /// Gets or sets the horizontal alignment of the image.
+        /// </summary>
+        public $Align = Align::Center;
+
+        /// <summary>
+        /// Gets or sets the vertical alignment of the image.
+        /// </summary>
+        public $VAlign = VAlign::Center;
+
+        /// <summary>
+        /// Gets or sets the start page.
+        /// </summary>
+        public  $StartPage;
+
+        /// <summary>
+        /// Gets or sets the page count.
+        /// </summary>
+        public  $PageCount;
 
         public function GetjsonSerializeString()
         {
@@ -60,7 +131,7 @@ include_once('VAlign.php');
             $jsonArray['shrinkToFit'] = $this->ShrinkToFit;
            
            if($this->Align != null)
-            $jsonArray['align'] = $this->Align;
+            $jsonArray['align'] = $this->Align;;
            
            if($this->VAlign != null)
             $jsonArray['vAlign'] = $this->VAlign;
@@ -70,6 +141,8 @@ include_once('VAlign.php');
            
            if($this->PageCount != null)
             $jsonArray['pageCount'] = $this->PageCount;
+           
+           
            
            
             //---------------------------------------------------
@@ -88,20 +161,7 @@ include_once('VAlign.php');
 
         public   $Type =InputType::Image;
         // internal override InputResourceType InputResourceType { get; } = InputResourceType.Upload;
-        public  $ScaleX;
-        public  $ScaleY;
-        public  $TopMargin;
-        public  $LeftMargin;
-        public  $BottomMargin;
-        public  $RightMargin;
-        public  $PageWidth;
-        public  $PageHeight;
-        public  $ExpandToFit;
-        public  $ShrinkToFit;
-        public  $Align = Align::Center;
-        public  $VAlign = VAlign::Center;
-        public  $StartPage;
-        public  $PageCount;
+
    
 
     }

@@ -6,71 +6,71 @@
         {
 
         }
-        public  $documentInfo=null; 
-        public  $documentJavaScript=null; 
-        public  $documentProperties=null; 
-        public  $embeddedFiles=null; 
-        public  $formFields=null; 
-        public  $formsXfaData=null; 
-        public  $logicalStructure=null; 
-        public  $openAction=null; 
-        public  $optionalContentInfo=null; 
-        public  $outlines=null; 
-        public  $outputIntent=null; 
-        public  $pageAnnotations=null; 
-        public  $pageLabelsAndSections=null; 
-        public  $rootFormField  = null;
-        public  $xmpMetadata=null; 
+        public  $DocumentInfo="null"; 
+        public  $DocumentJavaScript="null"; 
+        public  $DocumentProperties="null"; 
+        public  $EmbeddedFiles="null"; 
+        public  $FormFields="null";
+        public  $FormsXfaData="null"; 
+        public  $LogicalStructure="null";
+        public  $OpenAction="null";
+        public  $OptionalContentInfo="null";
+        public  $Outlines="null"; 
+        public  $OutputIntent="null"; 
+        public  $PageAnnotations="null"; 
+        public  $PageLabelsAndSections="null";
+        public  $RootFormField  = "null";
+        public  $XmpMetadata="null"; 
 
         public function GetjsonSerializeString()
        {
         
         $jsonArray= array();
         
-        if($this->documentInfo != null)
-        $jsonArray['documentInfo'] = $this->documentInfo;
+        if($this->DocumentInfo != "null")
+        $jsonArray['documentInfo'] = $this->DocumentInfo;
        
-       if($this->documentJavaScript != null)
-        $jsonArray['documentJavaScript'] = $this->documentJavaScript;
+       if($this->DocumentJavaScript !=  "null")
+        $jsonArray['documentJavaScript'] = $this->DocumentJavaScript;
        
-       if($this->documentProperties != null)
-        $jsonArray['documentProperties'] = $this->documentProperties;
+       if($this->DocumentProperties !=  "null")
+        $jsonArray['documentProperties'] = $this->DocumentProperties;
        
-       if($this->embeddedFiles != null)
-        $jsonArray['embeddedFiles'] = $this->embeddedFiles;
+       if($this->EmbeddedFiles !=  "null")
+        $jsonArray['embeddedFiles'] = $this->EmbeddedFiles;
        
-       if($this->formFields != null)
-        $jsonArray['formFields'] = $this->formFields;
+       if($this->FormFields !=  "null")
+        $jsonArray['formFields'] = $this->FormFields;
        
-       if($this->formsXfaData != null)
-        $jsonArray['formsXfaData'] = $this->formsXfaData;
+       if($this->FormsXfaData !=  "null")
+        $jsonArray['formsXfaData'] = $this->FormsXfaData;
        
-       if($this->logicalStructure != null)
-        $jsonArray['logicalStructure'] = $this->logicalStructure;
+       if($this->LogicalStructure !=  "null")
+        $jsonArray['logicalStructure'] = $this->LogicalStructure;
        
-       if($this->openAction != null)
-        $jsonArray['openAction'] = $this->openAction;
+       if($this->OpenAction !=  "null")
+        $jsonArray['openAction'] = $this->OpenAction;
        
-       if($this->optionalContentInfo != null)
-        $jsonArray['optionalContentInfo'] = $this->optionalContentInfo;
+       if($this->OptionalContentInfo !=  "null")
+        $jsonArray['optionalContentInfo'] = $this->OptionalContentInfo;
        
-       if($this->outlines != null)
-        $jsonArray['outlines'] = $this->outlines;
+       if($this->Outlines !=  "null")
+        $jsonArray['outlines'] = $this->Outlines;
        
-       if($this->outputIntent != null)
-        $jsonArray['outputIntent'] = $this->outputIntent;
+       if($this->OutputIntent !=  "null")
+        $jsonArray['outputIntent'] = $this->OutputIntent;
        
-       if($this->pageAnnotations != null)
-        $jsonArray['pageAnnotations'] = $this->pageAnnotations;
+       if($this->PageAnnotations !=  "null")
+        $jsonArray['pageAnnotations'] = $this->PageAnnotations;
        
-       if($this->pageLabelsAndSections != null)
-        $jsonArray['pageLabelsAndSections'] = $this->pageLabelsAndSections;
+       if($this->PageLabelsAndSections !=  "null")
+        $jsonArray['pageLabelsAndSections'] = $this->PageLabelsAndSections;
        
-       if($this->rootFormField != null)
-        $jsonArray['rootFormField'] = $this->rootFormField;
+       if($this->RootFormField !=  "null")
+        $jsonArray['rootFormField'] = $this->RootFormField;
        
-       if($this->xmpMetadata != null)
-        $jsonArray['xmpMetadata'] = $this->xmpMetadata;
+       if($this->XmpMetadata !=  "null")
+        $jsonArray['xmpMetadata'] = $this->XmpMetadata;
        
         return $jsonArray;
        

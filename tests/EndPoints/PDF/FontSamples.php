@@ -1,10 +1,10 @@
-<?php
+﻿<?php
+
 
 require_once('../../../src/Pdf.php');
 require_once('../../../src/PageInput.php');
-require_once('../../../src/TextElement.php');
-require_once('../../../src/ElementPlacement.php');
-require_once('../../../src/PdfResponse.php');
+require_once('../../../src/Elements/TextElement.php');
+require_once('../../../src/Elements/ElementPlacement.php');
 require_once('../../../src/Font.php');
 require_once('../../../src/PdfResource.php');
 require_once('../../../src/PdfInput.php');
@@ -13,549 +13,690 @@ require_once('../../../src/Template.php');
 
 use PHPUnit\Framework\TestCase;
 
- class FontSamples extends TestCase
+class FontSamples extends TestCase
+ {
+    private $inputpath =  "./../../Resources/";
+    private $outPutPath =  "./Output/";
+    private $key="DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
+    private $url = "https://localhost:44397/v1.0"; 
+    private $Author= "test";
+    private $Title ="test";
 
+
+/** @test */
+public function PageInput_CoreFont_Pdfoutput()
 {
+    $Name = "CoreFont";
 
-	static $resoursePath =  "./../../Resources/";
-	static $outPutPath =  "./Output/";
-	static $key="DP.DU6aY7uJUb2tcwcgQEOfZAj/7lkIindXp8i7UMhzKaOcQq1ia9Ys87A9";
-	static $url = "https://localhost:44397/v1.0"; 
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultApiKey = "DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
+    Pdf::$DefaultBaseUrl = $this->url;
 
-	static $Author= "test";
-	static $Title ="";
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
 
-		
-	/** @test */
-	public function PageInput_CoreFont_Pdfoutput()
-	{
+    $pageInput = new PageInput();
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font(Font::TimesBoldItalic());
+    array_push($pageInput->Elements,$element);
 
-        echo("FontSamples1");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"CoreFont";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ( Font::TimesBoldItalic());
-		array_push($pageInput->Elements,$element);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples1.pdf",$response->PdfContent);
-		}
-		if(isset($pdf->jsonData))
-		file_put_contents(FontSamples::$outPutPath."FontSamples1.json",$pdf->jsonData);
+    array_push($pdf->Inputs,$pageInput);
+    $response = $pdf->Process();
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_CoreFonts_Pdfoutput()
-	{
 
-        echo("FontSamples2");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"CoreFonts";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World (HelveticaBold)",ElementPlacement::TopCenter);
-		$element->Font (Font::HelveticaBold());
-		array_push($pageInput->Elements,$element);
-		$element1 = new TextElement("Hello World (CourierBoldOblique)",ElementPlacement::TopCenter,0,100);
-		$element1->Font ( Font::CourierBoldOblique());
-		array_push($pageInput->Elements,$element1);
-		$element2 = new TextElement("#&%() +0123",ElementPlacement::TopCenter,0,200);
-		$element2->Font ( Font::Symbol());
-		array_push($pageInput->Elements,$element2);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples2.pdf",$response->PdfContent);
-		}
-		if(isset($pdf->jsonData))
-		file_put_contents(FontSamples::$outPutPath."FontSamples2.json",$pdf->jsonData);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_TtfFont_Pdfoutput()
-	{
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples1.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples1.json",$pdf->jsonData);
 
-        echo("FontSamples3");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"TtfFont";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = Font::FromFile(FontSamples::$resoursePath."arialbi.ttf");
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font( $font);
-		array_push($pageInput->Elements,$element);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples3.pdf",$response->PdfContent);
-		}
-		if(isset($pdf->jsonData))
-		file_put_contents(FontSamples::$outPutPath."FontSamples3.json",$pdf->jsonData);
+    $this->assertEquals($response->IsSuccessful,true);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_OtfFont_Pdfoutput()
-	{
+}
 
-        echo("FontSamples4");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"OtfFont";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = Font::FromFile(FontSamples::$resoursePath."Calibri.otf");
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ( $font);
-		array_push($pageInput->Elements,$element);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples4.pdf",$response->PdfContent);
-		}
-		if(isset($pdf->jsonData))
-		file_put_contents(FontSamples::$outPutPath."FontSamples4.json",$pdf->jsonData);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_MultipleFonts_Pdfoutput()
-	{
+/** @test */
+public function PageInput_CoreFonts_Pdfoutput()
+{
+    $Name = "CoreFonts";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
 
-        echo("FontSamples5");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"MultipleFonts";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$pageInput = new PageInput();
-		$font = Font::FromFile(FontSamples::$resoursePath."arialbi.ttf");
-		$element = new TextElement("Hello World (arialbi)",ElementPlacement::TopCenter);
-		$element->Font($font);
-		array_push($pageInput->Elements,$element);
-		$font1 = Font::FromFile(FontSamples::$resoursePath."Calibri.otf");
-		$element1 = new TextElement("Hello World (Calibri)",ElementPlacement::TopCenter,0,100);
-		$element1->Font( $font1);
-		array_push($pageInput->Elements,$element1);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples5.pdf",$response->PdfContent);
-		}
-		if(isset($pdf->jsonData))
-		file_put_contents(FontSamples::$outPutPath."FontSamples5.json",$pdf->jsonData);
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_Embed_Pdfoutput()
-	{
+    $pageInput = new PageInput();
 
-        echo("FontSamples6");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"Embed";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = Font::FromFile(FontSamples::$resoursePath."verdanab.ttf");
-		$font->Embed = false;
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font( $font);
-		array_push($pageInput->Elements,$element);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples6.pdf",$response->PdfContent);
-		}
-		if(isset($pdf->jsonData))
-		file_put_contents(FontSamples::$outPutPath."FontSamples6.json",$pdf->jsonData);
+    $element = new TextElement("Hello World (HelveticaBold)",ElementPlacement::TopCenter);
+    $element->Font(Font::HelveticaBold());
+    array_push($pageInput->Elements,$element);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_Subset_Pdfoutput()
-	{
+    $element1 = new TextElement("Hello World (CourierBoldOblique)",ElementPlacement::TopCenter,0,100);
+    $element1->Font(Font::CourierBoldOblique());
+    array_push($pageInput->Elements,$element1);
 
-        echo("FontSamples7");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"Subset";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = Font::FromFile(FontSamples::$resoursePath."verdanab.ttf");
-		$font->Subset = false;
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ($font);
-		array_push($pageInput->Elements,$element);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples7.pdf",$response->PdfContent);
-		}
-		if(isset($pdf->jsonData))
-		file_put_contents(FontSamples::$outPutPath."FontSamples7.json",$pdf->jsonData);
+    $element2 = new TextElement("#&%() +0123",ElementPlacement::TopCenter,0,200);
+    $element2->Font(Font::Symbol());
+    array_push($pageInput->Elements,$element2);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PdfInput_WithTemplate_Pdfoutput()
-	{
+    array_push($pdf->Inputs,$pageInput);
 
-        echo("FontSamples8");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"WithTemplate";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$resource = new PdfResource(FontSamples::$resoursePath."SinglePage.pdf");
-		$input = new PdfInput($resource);
-		array_push($pdf->Instructions->Inputs,$input);
-		$font = Font::FromFile(FontSamples::$resoursePath."arialbi.ttf");
-		$template = new Template("Temp1");
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ($font);
-		array_push($template->Elements,$element);
-		$input->SetTemplate( $template);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples8.pdf",$response->PdfContent);
-		}
-		if(isset($pdf->jsonData))
-		file_put_contents(FontSamples::$outPutPath."FontSamples8.json",$pdf->jsonData);
+    $response = $pdf->Process();
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_CloudRoot_Pdfoutput()
-	{
 
-        echo("FontSamples9");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"CloudRoot";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = new Font(new FontResource(FontSamples::$resoursePath."Calibri.otf"));
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ( $font);
-		array_push($pageInput->Elements,$element);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples9.pdf",$response->PdfContent);
-		}
-		if(isset($pdf->jsonData))
-		file_put_contents(FontSamples::$outPutPath."FontSamples9.json",$pdf->jsonData);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_CloudSubFolder_Pdfoutput()
-	{
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples2.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples2.json",$pdf->jsonData);
 
-        echo("FontSamples10");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"CloudSubFolder";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = new Font(new FontResource(FontSamples::$resoursePath."Calibri.otf"));
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ($font);
-		array_push($pageInput->Elements,$element);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples10.pdf",$response->PdfContent);
-		}	
-		
-		if(isset($pdf->jsonData))		
-		file_put_contents(FontSamples::$outPutPath."FontSamples10.json",$pdf->jsonData);
+    $this->assertEquals($response->IsSuccessful,true);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PdfInput_CloudRootWithTemplate_Pdfoutput()
-	{
+}
 
-        echo("FontSamples11");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"CloudRootWithTemplate";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = new Font(new FontResource(FontSamples::$resoursePath."Calibri.otf"));
-		$resource = new PdfResource(FontSamples::$resoursePath."SinglePage.pdf");
-		$input = new PdfInput($resource);
-		$template = new Template("Temp1");
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ($font);
-		array_push($template->Elements,$element);
-		$input->SetTemplate( $template);
-		array_push($pdf->Instructions->Inputs,$input);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples11.pdf",$response->PdfContent);
-		}	
-		
-		if(isset($pdf->jsonData))		
-		file_put_contents(FontSamples::$outPutPath."FontSamples11.json",$pdf->jsonData);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PdfInput_CloudSubFolderWithTemplate_Pdfoutput()
-	{
+/** @test */
+public function PageInput_TtfFont_Pdfoutput()
+{
+    $Name = "TtfFont";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
 
-        echo("FontSamples12");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"CloudSubFolderWithTemplate";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = new Font(new FontResource(FontSamples::$resoursePath."Calibri.otf"));
-		$resource = new PdfResource(FontSamples::$resoursePath."SinglePage.pdf");
-		$input = new PdfInput($resource);
-		$template = new Template("Temp1");
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ($font);
-		array_push($template->Elements,$element);
-		$input->SetTemplate( $template);
-		array_push($pdf->Instructions->Inputs,$input);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples12.pdf",$response->PdfContent);
-		}	
-		
-		if(isset($pdf->jsonData))		
-		file_put_contents(FontSamples::$outPutPath."FontSamples12.json",$pdf->jsonData);
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_EmbedSubset_Pdfoutput()
-	{
+    $font = Font::FromFile($this->inputpath."arialbi.ttf");
 
-        echo("FontSamples13");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"EmbedSubset";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = Font::FromFile(FontSamples::$resoursePath."verdanab.ttf");
-		$font->Embed = true;
-		$font->Subset = false;
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ($font);
-		array_push($pageInput->Elements,$element);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples13.pdf",$response->PdfContent);
-		}	
-		
-		if(isset($pdf->jsonData))		
-		file_put_contents(FontSamples::$outPutPath."FontSamples13.json",$pdf->jsonData);
+    $pageInput = new PageInput();
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_SubsetEmbed_Pdfoutput()
-	{
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($pageInput->Elements,$element);
 
-        echo("FontSamples14");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"SubsetEmbed";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$font = Font::FromFile(FontSamples::$resoursePath."verdanab.ttf");
-		$font->Subset = true;
-		$font->Embed = false;
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World",ElementPlacement::TopCenter);
-		$element->Font ($font);
-		array_push($pageInput->Elements,$element);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples14.pdf",$response->PdfContent);
-		}	
-		
-		if(isset($pdf->jsonData))		
-		file_put_contents(FontSamples::$outPutPath."FontSamples14.json",$pdf->jsonData);
+    array_push($pdf->Inputs,$pageInput);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_CoreFontsHelvetica_Pdfoutput()
-	{
+    $response = $pdf->Process();
 
-        echo("FontSamples15");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"CoreFontsHelvetica";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World (Helvetica)",ElementPlacement::TopCenter);
-		$element->Font (Font::Helvetica());
-		array_push($pageInput->Elements,$element);
-		$element1 = new TextElement("Hello World (HelveticaBold)",ElementPlacement::TopCenter,0,100);
-		$element1->Font(  Font::HelveticaBold());
-		array_push($pageInput->Elements,$element1);
-		$element2 = new TextElement("Hello World (HelveticaBoldOblique)",ElementPlacement::TopCenter,0,200);
-		$element2->Font  (Font::HelveticaBoldOblique());
-		array_push($pageInput->Elements,$element2);
-		$element3 = new TextElement("Hello World (HelveticaOblique)",ElementPlacement::TopCenter,0,300);
-		$element3->Font  (Font::HelveticaOblique());
-		array_push($pageInput->Elements,$element3);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples15.pdf",$response->PdfContent);
-		}	
-		
-		if(isset($pdf->jsonData))		
-		file_put_contents(FontSamples::$outPutPath."FontSamples15.json",$pdf->jsonData);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_CoreFontsCourier_Pdfoutput()
-	{
 
-        echo("FontSamples16");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"CoreFontsCourier";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World (Courier)",ElementPlacement::TopCenter);
-		$element->Font ( Font::Courier());
-		array_push($pageInput->Elements,$element);
-		$element1 = new TextElement("Hello World (CourierBold)",ElementPlacement::TopCenter,0,100);
-		$element1->Font (Font::CourierBold());
-		array_push($pageInput->Elements,$element1);
-		$element2 = new TextElement("Hello World (CourierBoldOblique)",ElementPlacement::TopCenter,0,200);
-		$element2->Font ( Font::CourierBoldOblique());
-		array_push($pageInput->Elements,$element2);
-		$element3 = new TextElement("Hello World (CourierOblique)",ElementPlacement::TopCenter,0,300);
-		$element3->Font ( Font::CourierOblique());
-		array_push($pageInput->Elements,$element3);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples16.pdf",$response->PdfContent);
-		}	
-		
-		if(isset($pdf->jsonData))		
-		file_put_contents(FontSamples::$outPutPath."FontSamples16.json",$pdf->jsonData);
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples3.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples3.json",$pdf->jsonData);
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
-	
-	/** @test */
-	public function PageInput_CoreFontsTimesRoman_Pdfoutput()
-	{
+    $this->assertEquals($response->IsSuccessful,true);
 
-        echo("FontSamples17");
-		Pdf::$DefaultApiKey = FontSamples::$key;
-		Pdf::$DefaultBaseUrl = FontSamples::$url;
-		//$Name = $"CoreFontsTimesRoman";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = FontSamples::$Author;
-		$pdf->Instructions->Title = FontSamples::$Title;
-		$pageInput = new PageInput();
-		$element = new TextElement("Hello World (TimesBold)",ElementPlacement::TopCenter);
-		$element->Font ( Font::TimesBold());
-		array_push($pageInput->Elements,$element);
-		$element1 = new TextElement("Hello World (TimesBoldItalic)",ElementPlacement::TopCenter,0,100);
-		$element1->Font ( Font::TimesBoldItalic());
-		array_push($pageInput->Elements,$element1);
-		$element2 = new TextElement("Hello World (TimesItalic)",ElementPlacement::TopCenter,0,200);
-		$element2->Font ( Font::TimesItalic());
-		array_push($pageInput->Elements,$element2);
-		$element3 = new TextElement("Hello World (TimesRoman)",ElementPlacement::TopCenter,0,300);
-		$element3->Font (Font::TimesRoman());
-		array_push($pageInput->Elements,$element3);
-		array_push($pdf->Instructions->Inputs,$pageInput);
-		$response = $pdf->Process();
-		//if (response->IsSuccesful)
-		{
-		file_put_contents(FontSamples::$outPutPath."FontSamples17.pdf",$response->PdfContent);
-		}	
-		
-		if(isset($pdf->jsonData))		
-		file_put_contents(FontSamples::$outPutPath."FontSamples17.json",$pdf->jsonData);
+}
 
-		$this->assertEquals($response->IsSuccessful,true);
-	}
+
+/** @test */
+public function PageInput_OtfFont_Pdfoutput()
+{
+    $Name = "OtfFont";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $font = Font::FromFile($this->inputpath."Calibri.otf");
+
+    $pageInput = new PageInput();
+
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($pageInput->Elements,$element);
+
+    array_push($pdf->Inputs,$pageInput);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples4.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples4.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PageInput_MultipleFonts_Pdfoutput()
+{
+    $Name = "MultipleFonts";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $pageInput = new PageInput();
+
+    $font = Font::FromFile($this->inputpath."arialbi.ttf");
+    $element = new TextElement("Hello World (arialbi)",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($pageInput->Elements,$element);
+
+    $font1 = Font::FromFile($this->inputpath."Calibri.otf");
+    $element1 = new TextElement("Hello World (Calibri)",ElementPlacement::TopCenter,0,100);
+    $element1->Font($font1);
+    array_push($pageInput->Elements,$element1);
+
+    array_push($pdf->Inputs,$pageInput);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples5.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples5.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PageInput_Embed_Pdfoutput()
+{
+    $Name = "Embed";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $font = Font::FromFile($this->inputpath."verdanab.ttf");
+    $font->Embed = false;
+
+    $pageInput = new PageInput();
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($pageInput->Elements,$element);
+
+    array_push($pdf->Inputs,$pageInput);
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples6.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples6.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PageInput_Subset_Pdfoutput()
+{
+    $Name = "Subset";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $font = Font::FromFile($this->inputpath."verdanab.ttf");
+    $font->Subset = false;
+
+    $pageInput = new PageInput();
+
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($pageInput->Elements,$element);
+
+    array_push($pdf->Inputs,$pageInput);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples7.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples7.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PdfInput_WithTemplate_Pdfoutput()
+{
+    $Name = "WithTemplate";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $resource = new PdfResource($this->inputpath."SinglePage.pdf");
+    $input = new PdfInput($resource);
+    array_push($pdf->Inputs,$input);
+
+    $font = Font::FromFile($this->inputpath."arialbi.ttf");
+
+    $template = new Template("Temp1");
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($template->Elements,$element);
+    $input->SetTemplate($template);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples8.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples8.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PageInput_CloudRoot_Pdfoutput()
+{
+   /* $Name = "CloudRoot";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $font = new Font("Calibri.otf");
+
+    $pageInput = new PageInput();
+
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($pageInput->Elements,$element);
+
+    array_push($pdf->Inputs,$pageInput);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples9.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples9.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);*/
+
+}
+
+
+/** @test */
+public function PageInput_CloudSubFolder_Pdfoutput()
+{
+    /*$Name = "CloudSubFolder";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $font = new Font("Resources/Calibri.otf");
+
+    $pageInput = new PageInput();
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($pageInput->Elements,$element);
+
+    array_push($pdf->Inputs,$pageInput);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples10.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples10.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);*/
+
+}
+
+
+/** @test */
+public function PdfInput_CloudRootWithTemplate_Pdfoutput()
+{
+   /* $Name = "CloudRootWithTemplate";
+
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $font = new Font("Calibri.otf");
+
+    $resource = new PdfResource($this->inputpath."SinglePage.pdf");
+    $input = new PdfInput($resource);
+
+    $template = new Template("Temp1");
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($template->Elements,$element);
+    $input->SetTemplate($template);
+
+    array_push($pdf->Inputs,$input);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples11.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples11.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);*/
+
+}
+
+
+/** @test */
+public function PdfInput_CloudSubFolderWithTemplate_Pdfoutput()
+{
+  /*  $Name = "CloudSubFolderWithTemplate";
+
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $font = new Font("Resources/Calibri.otf");
+
+    $resource = new PdfResource($this->inputpath."SinglePage.pdf");
+    $input = new PdfInput($resource);
+
+    $template = new Template("Temp1");
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($template->Elements,$element);
+    $input->SetTemplate($template);
+
+    array_push($pdf->Inputs,$input);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples12.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples12.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);*/
+
+}
+
+
+/** @test */
+public function PageInput_EmbedSubset_Pdfoutput()
+{
+    $Name = "EmbedSubset";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $font = Font::FromFile($this->inputpath."verdanab.ttf");
+    $font->Embed = true;
+    $font->Subset = false;
+
+    $pageInput = new PageInput();
+
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($pageInput->Elements,$element);
+
+    array_push($pdf->Inputs,$pageInput);
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples13.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples13.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PageInput_SubsetEmbed_Pdfoutput()
+{
+    $Name = "SubsetEmbed";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $font = Font::FromFile($this->inputpath."verdanab.ttf");
+    $font->Subset = true;
+    $font->Embed = false;
+
+    $pageInput = new PageInput();
+
+    $element = new TextElement("Hello World",ElementPlacement::TopCenter);
+    $element->Font($font);
+    array_push($pageInput->Elements,$element);
+
+    array_push($pdf->Inputs,$pageInput);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples14.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples14.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PageInput_CoreFontsHelvetica_Pdfoutput()
+{
+    $Name = "CoreFontsHelvetica";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $pageInput = new PageInput();
+    $element = new TextElement("Hello World (Helvetica)",ElementPlacement::TopCenter);
+    $element->Font(Font::Helvetica());
+    array_push($pageInput->Elements,$element);
+
+    $element1 = new TextElement("Hello World (HelveticaBold)",ElementPlacement::TopCenter,0,100);
+    $element1->Font(Font::HelveticaBold());
+    array_push($pageInput->Elements,$element1);
+
+    $element2 = new TextElement("Hello World (HelveticaBoldOblique)",ElementPlacement::TopCenter,0,200);
+    $element2->Font(Font::HelveticaBoldOblique());
+    array_push($pageInput->Elements,$element2);
+
+    $element3 = new TextElement("Hello World (HelveticaOblique)",ElementPlacement::TopCenter,0,300);
+    $element3->Font(Font::HelveticaOblique());
+    array_push($pageInput->Elements,$element3);
+
+    array_push($pdf->Inputs,$pageInput);
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples15.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples15.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PageInput_CoreFontsCourier_Pdfoutput()
+{
+    $Name = "CoreFontsCourier";
+
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $pageInput = new PageInput();
+    $element = new TextElement("Hello World (Courier)",ElementPlacement::TopCenter);
+    $element->Font(Font::Courier());
+    array_push($pageInput->Elements,$element);
+
+    $element1 = new TextElement("Hello World (CourierBold)",ElementPlacement::TopCenter,0,100);
+    $element1->Font(Font::CourierBold());
+    array_push($pageInput->Elements,$element1);
+
+    $element2 = new TextElement("Hello World (CourierBoldOblique)",ElementPlacement::TopCenter,0,200);
+    $element2->Font(Font::CourierBoldOblique());
+    array_push($pageInput->Elements,$element2);
+
+    $element3 = new TextElement("Hello World (CourierOblique)",ElementPlacement::TopCenter,0,300);
+    $element3->Font(Font::CourierOblique());
+    array_push($pageInput->Elements,$element3);
+
+    array_push($pdf->Inputs,$pageInput);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples16.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples16.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PageInput_CoreFontsTimesRoman_Pdfoutput()
+{
+    $Name = "CoreFontsTimesRoman";
+
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $pageInput = new PageInput();
+    $element = new TextElement("Hello World (TimesBold)",ElementPlacement::TopCenter);
+    $element->Font(Font::TimesBold());
+    array_push($pageInput->Elements,$element);
+
+    $element1 = new TextElement("Hello World (TimesBoldItalic)",ElementPlacement::TopCenter,0,100);
+    $element1->Font(Font::TimesBoldItalic());
+    array_push($pageInput->Elements,$element1);
+
+    $element2 = new TextElement("Hello World (TimesItalic)",ElementPlacement::TopCenter,0,200);
+    $element2->Font(Font::TimesItalic());
+    array_push($pageInput->Elements,$element2);
+
+    $element3 = new TextElement("Hello World (TimesRoman)",ElementPlacement::TopCenter,0,300);
+    $element3->Font(Font::TimesRoman());
+    array_push($pageInput->Elements,$element3);
+
+    array_push($pdf->Inputs,$pageInput);
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."FontSamples17.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."FontSamples17.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
 
 
 }

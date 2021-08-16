@@ -6,16 +6,21 @@ require_once('PdfResource.php');
 require_once('MergeOptions.php');
      class PdfInput extends Input
     {
-        public function __construct(PdfResource $resource, ?MergeOptions $options =null) 
+        public function __construct(?PdfResource $resource, ?MergeOptions $options =null) 
         {
-            parent::__construct($resource);
+            if($resource!= null)
+                parent::__construct($resource);
             $this->MergeOptions = $options;
         }
-        /*public function __construct(string $resourceName) 
-        {
-            parent::__construct($resourceName,InputType::Pdf);
 
-        }*/
+        public static function CreatePdfInput(string $resourceName, ?MergeOptions $options =null) 
+        {
+            $pdfInput =new PdfInput(null,null);
+            $pdfInput->ResourceName = $resourceName;
+            $pdfInput->MergeOptions = $options;
+            return $pdfInput;
+        }
+
         public   $Type= InputType::Pdf;
         public  $MergeOptions ;
         public  $StartPage ;
@@ -23,7 +28,7 @@ require_once('MergeOptions.php');
 
         public function GetjsonSerializeString()
         {
-            $template=$this->GetTemplate();
+           $template=$this->GetTemplate();
             $jsonArray=array();
 
    

@@ -2,9 +2,9 @@
 
 class OutlineStyle
 { 
-      public const Bold = "0";
-      public const  BoldItalic = "1";
-      public const Italic = "2";
-      public const Regular = "3";
+      public const Bold = "bold";
+      public const  BoldItalic = "boldItalic";
+      public const Italic = "italic";
+      public const Regular = "regular";
 } 
 ?>

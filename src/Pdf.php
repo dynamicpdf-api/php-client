@@ -1,4 +1,6 @@
 ﻿<?php
+
+
 require_once('Endpoint.php');
 require_once('PdfInstructions.php');
 require_once('Input.php');
@@ -10,36 +12,243 @@ require_once('PageInput.php');
 //require_once('LayoutDataResource.php');
 
 
-function nestedLowercase($value) :string
-{
-    if (is_array($value)) {
-        return array_map('nestedLowercase', $value);
-    }
-    return strtolower($value);
-}
+
 
 
      class Pdf extends Endpoint
     {
-        public   $Instructions ;
-     
-
-        
-        //public $jsonData="";
-
+        public $instructions;
+        public $JsonData;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Pdf"/> class.
+        /// </summary>
         public function __construct() 
         {
-            $this->EndpointName = "pdf";
-            $this->Instructions = new PdfInstructions();
+            $this->instructions = new PdfInstructions();
         }
+
+        public $EndpointName  = "pdf";
+
+        /// <summary>
+        /// Gets or sets the collection of resource.
+        /// </summary>
+        public $Resources  = array();
+
+        /// <summary>
+        /// Gets or sets the author.
+        /// </summary>
+        public $Author;
+       
+
+        /// <summary>
+        /// Gets or sets the title.
+        /// </summary>
+        public $Title;
+       
+
+        /// <summary>
+        /// Gets or sets the subject.
+        /// </summary>
+        public $Subject;
+      
+
+        /// <summary>
+        /// Gets or sets the creator.
+        /// </summary>
+        public $Creator ="DynmaicPDF Cloud Api";
+        
+
+        /// <summary>
+        /// Gets or sets the keywords.
+        /// </summary>
+        public $Keywords; 
+       
+
+        /// <summary>
+        /// Gets or sets the security.
+        /// </summary>
+        public $Security; 
+        
+
+        /// <summary>
+        /// Gets or sets the value indicating whether to flatten all form fields.
+        /// </summary>
+        public $FlattenAllFormFields;
+        
+
+        /// <summary>
+        /// Gets or sets the value indicating whether to retain signature form field.
+        /// </summary>
+        public  $RetainSignatureFormFields; 
+        
+
+        /// <summary>
+        /// Returns a <see cref="PdfInput"/> object containing the input pdf.
+        /// </summary>
+        /// <param name="resource">The resource of type <see cref="PdfResource"/>.</param>
+        /// <param name="options">The merge options for the pdf.</param>
+        public function AddPdf(PdfResource $resource, MergeOptions $options = null)
+        {
+            $input = new PdfInput($resource, $options);
+            array_push($this->Inputs,$input);
+            return $input;
+        }
+
+        /// <summary>
+        /// Returns a <see cref="PdfInput"/> object containing the input pdf.
+        /// </summary>
+        /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
+        /// <param name="options">The merge options for the pdf.</param>
+        public function AddPdfCloud(string $cloudResourcePath, MergeOptions $options = null)
+        {
+            $input =  PdfInput::CreatePdfInput($cloudResourcePath, $options);
+            array_push($this->Inputs,$input);
+            return $input;
+        }
+
+        /// <summary>
+        /// Returns a <see cref="ImageInput"/> object containing the input pdf.
+        /// </summary>
+        /// <param name="resource">The resource of type <see cref="ImageResource"/>.</param>
+        public function AddImage(ImageResource $resource)
+        {
+            $input = new ImageInput($resource);
+            array_push($this->Inputs,$input);
+            return $input;
+        }
+
+        /// <summary>
+        /// Returns a <see cref="ImageInput"/> object containing the input pdf.
+        /// </summary>
+        /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
+        public function AddImageCloud(string $cloudResourcePath)
+        {
+            $input = new ImageInput($cloudResourcePath);
+            array_push($this->Inputs,$input);
+            return $input;
+        }
+
+        /// <summary>
+        /// Returns a <see cref="DlexInput"/> object containing the input pdf.
+        /// </summary>
+        /// <param name="dlexResource">The dlex resource of type <see cref="DlexResource"/>.</param>
+        /// <param name="layoutData">The layout data resource of type <see cref="LayoutDataResource"/>.</param>
+        public function AddDlex(DlexResource $dlexResource, LayoutDataResource $layoutData)
+        {
+            $input = new DlexInput($dlexResource, $layoutData);
+            array_push($this->Inputs,$input);
+            return $input;
+        }
+
+       /* /// <summary>
+        /// Returns a <see cref="DlexInput"/> object containing the input pdf.
+        /// </summary>
+        /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
+        /// <param name="layoutData">The layout data resource of type <see cref="LayoutDataResource"/>.</param>
+        public function AddDlexCloud(string $cloudResourcePath, LayoutDataResource $layoutData)
+        {
+            $input = new DlexInput($cloudResourcePath, $layoutData);
+            $this->Inputs($input);
+            return $input;
+        }*/
+
+        /// <summary>
+        /// Returns a <see cref="DlexInput"/> object containing the input pdf.
+        /// </summary>
+        /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
+        /// <param name="cloudLayoutDataPat">The layout data resource path in cloud resource manager.</param>
+        public function AddDlexCloud(string $cloudResourcePath, string $cloudLayoutDataPat)
+        {
+            $input = new DlexInput($cloudResourcePath, $cloudLayoutDataPat);
+            array_push($this->Inputs,$input);
+            return $input;
+        }
+
+        /// <summary>
+        /// Returns a <see cref="PageInput"/> object containing the input pdf.
+        /// </summary>
+        /// <param name="pageWidth">The width of the page.</param>
+        /// <param name="pageHeight">The height of the page.</param>
+        public function AddPage(?float $pageWidth =null, ?float $pageHeight= null)
+        {
+            if(($pageWidth != null)&& ($pageHeight != null))
+            {
+            $input = new PageInput($pageWidth, $pageHeight);
+            array_push($this->Inputs,$input);
+            return $input;
+            }
+            else
+            {
+                $input = new PageInput();
+                array_push($this->Inputs,$input);
+                return $input;
+            }
+        }
+
+        /*/// <summary>
+        /// Returns a <see cref="PageInput"/> object containing the input pdf.
+        /// </summary>
+        public function AddPage()
+        {
+            $input = new PageInput();
+            $this->Inputs($input);
+            return $input;
+        }*/
+
+        /// <summary>
+        /// Gets the inputs.
+        /// </summary>
+        public $Inputs = array();
+        
+
+        /// <summary>
+        /// Gets the templates.
+        /// </summary>
+        public $Templates = array();
+        
+
+        /// <summary>
+        /// Gets the fonts.
+        /// </summary>
+        public $Fonts = array();
+        
+
+        /// <summary>
+        /// Gets the formFields.
+        /// </summary>
+        public $FormFields = array();
+        
+
+        /// <summary>
+        /// Gets the outlines.
+        /// </summary>
+        public $Outlines = array();
+        
+
+        
        
         public function Process():PdfResponse
         {
             $client=parent::Init();
            
+            $this->instructions->Author = $this->Author;
+            $this->instructions->Title = $this->Title;
+            $this->instructions->Subject = $this->Subject;
+            $this->instructions->Creator = $this->Creator;
+            $this->instructions->Keywords = $this->Keywords;
+            $this->instructions->Security = $this->Security;
+            $this->instructions->FlattenAllFormFields = $this->FlattenAllFormFields;
+            $this->instructions->RetainSignatureFormFields = $this->RetainSignatureFormFields;
+            $this->instructions->Inputs = $this->Inputs;
+            $this->instructions->Templates = $this->Templates;
+            $this->instructions->Fonts = $this->Fonts;
+            $this->instructions->FormFields = $this->FormFields;
+            $this->instructions->Outlines = $this->Outlines;
+            //$this->Instructions->FormFields = $this->FormFields;
            
+            
             // $resources = array();
-             foreach ($this->Instructions->Inputs as $input) 
+             foreach ($this->instructions->Inputs as $input) 
              {
                 if($input->Type == InputType::Page)
                 {
@@ -53,7 +262,7 @@ function nestedLowercase($value) :string
                         if ($element->TextFont != null)
                         {
                             $fontSerializedArray=$element->TextFont->GetjsonSerializeString();
-                            array_push($this->Instructions->Fonts, $fontSerializedArray);
+                            array_push($this->instructions->Fonts, $fontSerializedArray);
                         }
                     }
                     
@@ -66,7 +275,7 @@ function nestedLowercase($value) :string
                 }
                 if ($input->GetTemplate() != null)
                 {
-                        array_push( $this->Instructions->Templates,$input->GetTemplate());
+                        array_push( $this->instructions->Templates,$input->GetTemplate());
                         if($input->GetTemplate()->Elements != null  && count($input->GetTemplate()->Elements) > 0)
                         {
                             foreach($input->GetTemplate()->Elements as $element  )
@@ -80,7 +289,7 @@ function nestedLowercase($value) :string
                                     $fontSerializedArray=$element->TextFont->GetjsonSerializeString();
                                    
                                     if(count($fontSerializedArray)>0)
-                                        array_push($this->Instructions->Fonts,$fontSerializedArray);
+                                        array_push($this->instructions->Fonts,$fontSerializedArray);
                                 }
                                 
                             }
@@ -88,15 +297,18 @@ function nestedLowercase($value) :string
                 }
              }
 
+            
+            $data_string = json_encode($this->instructions, JSON_PRETTY_PRINT);
+            
 
-            $data_string = json_encode($this->Instructions, JSON_PRETTY_PRINT);
-
+            $errCode=json_last_error();
+            echo ($errCode);
            // if(isset($debugMode))
-           // $this->jsonData=$data_string ;
+           $this->jsonData=$data_string ;
 
-            //echo( $data_string."\n\n");
+           // echo( $data_string."\n\n");
           
-            if ($this->Instructions->Inputs == null)
+            if ($this->instructions->Inputs == null)
                     throw new EndPointException("Minimum one input required."); 
 
 /*------------------------------------------------------------------------------------------------------*/

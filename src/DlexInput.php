@@ -7,9 +7,10 @@ include_once('InputType.php');
 
     class DlexInput extends Input
     {
-        public function __construct(DlexResource $dlexResource, LayoutDataResource $layoutData) 
+        public function __construct(?DlexResource $dlexResource, ?LayoutDataResource $layoutData) 
         {
-          // parent::__construct();
+         if(($dlexResource != null )&&( $layoutData != null))
+         {
             $this->ResourceName = $dlexResource->ResourceName;
             $this->LayoutDataResourceName = $layoutData->LayoutDataResourceName;
             $dlexResource->LayoutDataResourceName=$this->LayoutDataResourceName ;
@@ -17,6 +18,7 @@ include_once('InputType.php');
           
            array_push( $this->Resources,$layoutData);
            array_push( $this->Resources,$dlexResource);
+         }
 
         }
       /*  public function DlexInput2(string $cloudResourcePath, LayoutDataResource $layoutData) 
@@ -24,14 +26,16 @@ include_once('InputType.php');
             parent::__construct();
             $ResourceName = $cloudResourcePath;
             $this->LayoutDataResourceName = layoutData.ResourceName;
-        }
-
-        public function DlexInput3(string $cloudResourcePath, string $cloudLayoutDataPath) 
-        {
-            parent::__construct();
-            $ResourceName = $cloudResourcePath;
-            $this->LayoutDataResourceName = cloudLayoutDataPath;
         }*/
+
+        public  static function CreateDlexInput(string $cloudResourcePath, string $cloudLayoutDataPath) 
+        {
+            //parent::__construct();
+            $dlexInput = new DlexInput(null, null);
+            $dlexInput->ResourceName = $cloudResourcePath;
+            $dlexInput->LayoutDataResourceName = $cloudLayoutDataPath;
+            return $dlexInput;
+        }
 
         public   $Type= InputType::Dlex;
 

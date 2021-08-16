@@ -1,158 +1,258 @@
-<?php
+﻿<?php
+
 
 require_once('../../../src/Pdf.php');
-require_once('../../../src/ImageResource.php');
 require_once('../../../src/DlexResource.php');
 require_once('../../../src/LayoutDataResource.php');
 require_once('../../../src/DlexInput.php');
-require_once('../../../src/PdfResponse.php');
 require_once('../../../src/Template.php');
-require_once('../../../src/TextElement.php');
-require_once('../../../src/ElementPlacement.php');
-require_once('../../../src/PageNumberingElement.php');
+require_once('../../../src/Elements/TextElement.php');
+require_once('../../../src/Elements/ElementPlacement.php');
+require_once('../../../src/Elements/PageNumberingElement.php');
+
+
 use PHPUnit\Framework\TestCase;
 
+class DlexInputSamples extends TestCase
+ {
+    private $inputpath =  "./../../Resources/";
+    private $outPutPath =  "./Output/";
+    private $key="DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
+    private $url = "https://localhost:44397/v1.0"; 
+    private $Author= "test";
+    private $Title ="test";
 
- class DlexInputSamples extends TestCase
 
+/** @test */
+public function SimpleDlex_Pdfoutput()
 {
-	
-	static $resoursePath =  "./../../Resources/";
-	static $outPutPath =  "./Output/";
-	static $key="DP.DU6aY7uJUb2tcwcgQEOfZAj/7lkIindXp8i7UMhzKaOcQq1ia9Ys87A9";
-	static $url = "https://localhost:44397/v1.0"; 
+    $Name = "SimpleDlex_Pdfoutput";
 
-	static $Author= "test";
-	static $Title ="";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
 
-	/** @test */
-	public function SimpleDlex_Pdfoutput()
-	{
-		echo("DlexInputSamples1\r\n");
-		Pdf::$DefaultApiKey = DlexInputSamples::$key;
-		Pdf::$DefaultBaseUrl = DlexInputSamples::$url;
-		//$Name = $"SimpleDlex_Pdfoutput";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = DlexInputSamples::$Author;
-		$pdf->Instructions->Title = DlexInputSamples::$Title;
-		$img = new ImageResource(DlexInputSamples::$resoursePath."Northwind Logo.gif","northwind logo.gif");
-		array_push($pdf->Resources,$img);
-		$dlex = new DlexResource(DlexInputSamples::$resoursePath."SimpleReportWithCoverPage.dlex");
-		$layoutData = new LayoutDataResource(DlexInputSamples::$resoursePath."SimpleReportData.json");
-		
-		$input = new DlexInput($dlex,$layoutData);
-		array_push($pdf->Instructions->Inputs,$input);
-		$response = $pdf->Process();
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
 
-		if($response->IsSuccessful)
-		file_put_contents(DlexInputSamples::$outPutPath."DlexInputSamples1.pdf",$response->PdfContent);
-		
-		if(isset($pdf->jsonData))
-		file_put_contents(DlexInputSamples::$outPutPath."DlexInputSamples1.json",$pdf->jsonData);
+    $dlex = new DlexResource($this->inputpath."SimpleReportWithCoverPage.dlex");
+    $layoutData = new LayoutDataResource($this->inputpath."SimpleReportData.json");
+    $input = new DlexInput($dlex,$layoutData);
+    array_push($pdf->Inputs,$input);
 
-		$this->assertEquals($response->IsSuccessful,true);
-		
-	}
+    $response = $pdf->Process();
 
-	/** @test */
-	public function Template_Pdfoutput()
-	{
 
-		echo("DlexInputSamples2\r\n");
-		Pdf::$DefaultApiKey = DlexInputSamples::$key;
-		Pdf::$DefaultBaseUrl = DlexInputSamples::$url;
-		//$Name = $"Template_Pdfoutput";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = DlexInputSamples::$Author;
-		$pdf->Instructions->Title = DlexInputSamples::$Title;
-		$img = new ImageResource(DlexInputSamples::$resoursePath."Northwind Logo.gif","northwind logo.gif");
-		array_push($pdf->Resources,$img);
-		$dlex = new DlexResource(DlexInputSamples::$resoursePath."SimpleReportWithCoverPage.dlex");
-		$layoutData = new LayoutDataResource(DlexInputSamples::$resoursePath."SimpleReportData.json");
-		$input = new DlexInput($dlex,$layoutData);
-		$template = new Template("temp1");
-		$textElement = new TextElement("HelloWorld",ElementPlacement::TopRight);
-		array_push($template->Elements,$textElement);
-		$input->SetTemplate( $template);
-		array_push($pdf->Instructions->Inputs,$input);
-		$response = $pdf->Process();
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."DlexInputSamples1.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."DlexInputSamples1.json",$pdf->jsonData);
 
-		if($response->IsSuccessful)
-		file_put_contents(DlexInputSamples::$outPutPath."DlexInputSamples2.pdf",$response->PdfContent);
+    $this->assertEquals($response->IsSuccessful,true);
 
-		if(isset($pdf->jsonData))
-		file_put_contents(DlexInputSamples::$outPutPath."DlexInputSamples2.json",$pdf->jsonData);
+}
 
-		$this->assertEquals($response->IsSuccessful,true);
-		
-	}
 
-	/** @test */
-	public function LayoutDataUsingString_Pdfoutput()
-	{
+/** @test */
+public function SimpleDlex_Cloud_Pdfoutput()
+{
+  /*  $Name = "SimpleDlex_Cloud";
 
-		echo("DlexInputSamples3\r\n");
-		Pdf::$DefaultApiKey = DlexInputSamples::$key;
-		Pdf::$DefaultBaseUrl = DlexInputSamples::$url;
-		//$Name = $"LayoutDataUsingString";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = DlexInputSamples::$Author;
-		$pdf->Instructions->Title = DlexInputSamples::$Title;
-		$img = new ImageResource(DlexInputSamples::$resoursePath."Northwind Logo.gif","northwind logo.gif");
-		array_push($pdf->Resources,$img);
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
 
-		$dlex = new DlexResource(DlexInputSamples::$resoursePath."SimpleReportWithCoverPage.dlex");
-		$file = fopen(DlexInputSamples::$resoursePath."SimpleReportData.json", "r");
-		$layoutDataString =fread($file,filesize(DlexInputSamples::$resoursePath."SimpleReportData.json"));
-		fclose($file);
-		
-		$layoutData = new LayoutDataResource($layoutDataString);
-		$input = new DlexInput($dlex,$layoutData);
-		array_push($pdf->Instructions->Inputs,$input);
-		$response = $pdf->Process();
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
 
-		if($response->IsSuccessful)
-		file_put_contents(DlexInputSamples::$outPutPath."DlexInputSamples3.pdf",$response->PdfContent);
-		
-		if(isset($pdf->jsonData))
-		file_put_contents(DlexInputSamples::$outPutPath."DlexInputSamples3.json",$pdf->jsonData);
+    $layoutData = new LayoutDataResource($this->inputpath."SimpleReportData.json");
+    $input = new DlexInput("SimpleReportWithCoverPage.dlex",$layoutData);
+    array_push($pdf->Inputs,$input);
 
-		$this->assertEquals($response->IsSuccessful,true);
-		
-	}
+    $response = $pdf->Process();
 
-	/** @test */
-	public function PagenumberingLabelWithTemplate_Pdfoutput()
-	{
 
-		echo("DlexInputSamples4\r\n");
-		Pdf::$DefaultApiKey = DlexInputSamples::$key;
-		Pdf::$DefaultBaseUrl = DlexInputSamples::$url;
-		//$Name = $"Template_Pdfoutput";
-		$pdf = new Pdf();
-		$pdf->Instructions->Author = DlexInputSamples::$Author;
-		$pdf->Instructions->Title = DlexInputSamples::$Title;
-		$img = new ImageResource(DlexInputSamples::$resoursePath."Northwind Logo.gif","northwind logo.gif");
-		array_push($pdf->Resources,$img);
-		$dlex = new DlexResource(DlexInputSamples::$resoursePath."SimpleReportWithCoverPage.dlex");
-		$layoutData = new LayoutDataResource(DlexInputSamples::$resoursePath."SimpleReportData.json");
-		$input = new DlexInput($dlex,$layoutData);
-		$template = new Template("temp1");
-		$textElement =  new PageNumberingElement("%%CP%%", ElementPlacement::TopRight);
-		array_push($template->Elements,$textElement);
-		$input->SetTemplate( $template);
-		array_push($pdf->Instructions->Inputs,$input);
-		$response = $pdf->Process();
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."DlexInputSamples2.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."DlexInputSamples2.json",$pdf->jsonData);
 
-		if($response->IsSuccessful)
-		file_put_contents(DlexInputSamples::$outPutPath."DlexInputSamples4.pdf",$response->PdfContent);
-		
-		if(isset($pdf->jsonData))
-		file_put_contents(DlexInputSamples::$outPutPath."DlexInputSamples4.json",$pdf->jsonData);
+    $this->assertEquals($response->IsSuccessful,true);*/
 
-		$this->assertEquals($response->IsSuccessful,true);
-		
-	}
+}
+
+
+/** @test */
+public function SimpleDlex_CloudData_Pdfoutput()
+{
+    $Name = "SimpleDlex_CloudData";
+
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $input =  DlexInput::CreateDlexInput("SimpleReportWithCoverPage.dlex","SimpleReportData.json");
+    array_push($pdf->Inputs,$input);
+
+    $response = $pdf->Process();
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."DlexInputSamples3.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."DlexInputSamples3.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function Template_Pdfoutput()
+{
+    $Name = "Template_Pdfoutput";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $dlex = new DlexResource($this->inputpath."SimpleReportWithCoverPage.dlex");
+    $layoutData = new LayoutDataResource($this->inputpath."SimpleReportData.json");
+    $input = new DlexInput($dlex,$layoutData);
+
+    $template = new Template("temp1");
+    $textElement = new TextElement("HelloWorld",ElementPlacement::TopRight);
+    array_push($template->Elements,$textElement);
+    $input->SetTemplate($template);
+
+    array_push($pdf->Inputs,$input);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."DlexInputSamples4.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."DlexInputSamples4.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function PagenumberingLabelWithTemplate_Pdfoutput()
+{
+    $Name = "PagenumberingLabelWithTemplate";
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $dlex = new DlexResource($this->inputpath."SimpleReportWithCoverPage.dlex");
+    $layoutData = new LayoutDataResource($this->inputpath."SimpleReportData.json");
+    $input = new DlexInput($dlex,$layoutData);
+
+    $template = new Template("temp1");
+    $textElement = new PageNumberingElement("%%CP%%",ElementPlacement::TopRight);
+    array_push($template->Elements,$textElement);
+    $input->SetTemplate($template);
+
+    array_push($pdf->Inputs,$input);
+
+    $response = $pdf->Process();
+
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."DlexInputSamples5.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."DlexInputSamples5.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function SimpleDlex_AddDlex_Pdfoutput()
+{
+    $Name = "SimpleDlex_AddDlex";
+
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $dlex = new DlexResource($this->inputpath."SimpleReportWithCoverPage.dlex");
+    $layoutData = new LayoutDataResource($this->inputpath."SimpleReportData.json");
+    $input = $pdf->AddDlex($dlex,$layoutData);
+
+    $response = $pdf->Process();
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."DlexInputSamples6.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."DlexInputSamples6.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);
+
+}
+
+
+/** @test */
+public function SimpleDlex_AddDlexCloudResource_Pdfoutput()
+{
+    /*$Name = "SimpleDlex_AddDlexCloud";
+
+    $pdf = new Pdf();
+    Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf->Author = $this->Author;
+    $pdf->Title = $this->Title;
+
+    $layoutData = new LayoutDataResource($this->inputpath."SimpleReportData.json");
+    $input = $pdf->AddDlex("SimpleReportWithCoverPage.dlex",$layoutData);
+
+    $response = $pdf->Process();
+
+
+    if($response->IsSuccessful)
+    {
+    file_put_contents($this->outPutPath."DlexInputSamples7.pdf",$response->PdfContent);
+    }
+    if(isset($pdf->jsonData))
+    file_put_contents($this->outPutPath."DlexInputSamples7.json",$pdf->jsonData);
+
+    $this->assertEquals($response->IsSuccessful,true);*/
+
+}
+
+
 }
 
 ?>

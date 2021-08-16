@@ -2,7 +2,7 @@
 
 require_once('InputType.php');
 require_once('Resource.php');
-     abstract class Input implements JsonSerializable
+     abstract class Input 
     {
         private  $template;
 
@@ -10,6 +10,7 @@ require_once('Resource.php');
         {
             array_push($this->Resources,$resource);
             $this->ResourceName = $resource->ResourceName;
+            //echo($this->ResourceName);
         }
        /* function __construct(string $resourceName,string $type)
         {
@@ -35,11 +36,11 @@ require_once('Resource.php');
         }
         
        
-        public function jsonSerialize()
+        /*public function jsonSerialize()
         {
             return array(
                 'type' => $this->Type,
                 'resourceName' => $Resources,
             );
-        }
+        }*/
     }
