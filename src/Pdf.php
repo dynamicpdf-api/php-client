@@ -275,17 +275,20 @@ require_once('PageInput.php');
                 }
                 if ($input->GetTemplate() != null)
                 {
+                    //echo("template");
                         array_push( $this->instructions->Templates,$input->GetTemplate());
                         if($input->GetTemplate()->Elements != null  && count($input->GetTemplate()->Elements) > 0)
                         {
                             foreach($input->GetTemplate()->Elements as $element  )
                             {
+                                //echo("element");
                                 if ($element->Resource != null)
                                 {
                                     $this->Resources[$element->Resource->ResourceName]=$element->Resource;
                                 }
                                 if ($element->TextFont != null)
                                 {
+                                    //echo("font");
                                     $fontSerializedArray=$element->TextFont->GetjsonSerializeString();
                                    
                                     if(count($fontSerializedArray)>0)
@@ -302,7 +305,7 @@ require_once('PageInput.php');
             
 
             $errCode=json_last_error();
-            echo ($errCode);
+           // echo ($errCode);
            // if(isset($debugMode))
            $this->jsonData=$data_string ;
 

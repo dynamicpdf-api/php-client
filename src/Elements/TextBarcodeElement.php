@@ -10,16 +10,16 @@ include_once('BarcodeElement.php');
         }
         
         public  $TextColor  = null;
-        private $font;
+        
         public $FontName;
         public  $FontSize; 
         public  $ShowText = "null";
         public $Resource;
         public  function Font(Font $value)
          {
-            $this->font = $value;
-            $this->FontName = $this->font->Name;
-            $this->Resource = $this->font->Resource;
+            $this->TextFont = $value;
+            $this->FontName = $this->TextFont->Name;
+            $this->Resource = $this->TextFont->Resource;
          }
         public function GetFont()
         {

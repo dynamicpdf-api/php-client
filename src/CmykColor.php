@@ -12,7 +12,7 @@ include_once('Color.php');
         private  $black = 0;
         
 
-        public function __construct(string $colorString) { $this->ColorString = $colorString; }
+        public function __construct(?string $colorString =null) { $this->ColorString = $colorString; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CmykColor"/> class.
@@ -22,17 +22,20 @@ include_once('Color.php');
         /// <param name="yellow">The yellow intensity.</param>
         /// <param name="black">The black intensity.</param>
         /// <remarks>Values must be between 0.0 and 1.0.</remarks>
-        public function CreateCmykColor(float $cyan, float $magenta, float $yellow, float $black)
+        public static function CreateCmykColor(float $cyan, float $magenta, float $yellow, float $black)
         {
+            $cmykColor = new CmykColor();
             if ($cyan < 0.0 || $cyan > 1.0 || $magenta < 0.0 || $magenta > 1.0 || $yellow < 0.0 || $yellow > 1.0 || $black < 0.0 || $black > 1.0)
             {
                 throw new EndpointException("CMYK values must be from 0.0 to 1.0.");
             }
-            $this->ColorString="cmyk(" + cyan.ToString() + "," + magenta.ToString() + "," + yellow.ToString() + "," + black.ToString() + ")";
-            $this->cyan = $cyan;
-            $this->magenta = $magenta;
-            $this->yellow = $yellow;
-            $this->black = $black;
+
+            $cmykColor->ColorString="cmyk(".$cyan.",".$magenta.",".$yellow.",".$black.")";
+            $cmykColor->cyan = $cyan;
+            $cmykColor->magenta = $magenta;
+            $cmykColor->yellow = $yellow;
+            $cmykColor->black = $black;
+            return $cmykColor;
         }
         /// <summary>Gets the color black.</summary>
         public function Black() { return new CmykColor(1, 1, 1, 1); } 

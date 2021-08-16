@@ -19,7 +19,7 @@ include_once('Color.php');
         { 
             $grayscale = new Grayscale();
             $grayscale->grayLevel = $grayLevel;
-            $grayscale->ColorString = "gray(" + grayLevel.ToString()  + ")";
+            $grayscale->ColorString = "gray(".$grayLevel.")";
             return $grayscale;
          }
 

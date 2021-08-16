@@ -75,7 +75,7 @@ public function PdfPageInput_RGBColorSample_PdfOutput()
     array_push($pdf->Inputs,$input);
 
     $textElement = new TextElement("Hello World",ElementPlacement::TopCenter);
-    $textElement->Color = CreateRgbColor(0,1,0);
+    $textElement->Color = RgbColor::CreateRgbColor(0,1,0);
     array_push($input->Elements,$textElement);
 
     $response = $pdf->Process();
@@ -109,7 +109,7 @@ public function PdfPageInput_CMYKColorSample_PdfOutput()
     array_push($pdf->Inputs,$input);
 
     $textElement = new TextElement("Hello World",ElementPlacement::TopCenter);
-    $textElement->Color = CreateCmykColor(0,1,0,0);
+    $textElement->Color = CmykColor::CreateCmykColor(0,1,0,0);
     array_push($input->Elements,$textElement);
 
     $response = $pdf->Process();
@@ -143,7 +143,7 @@ public function PdfPageInput_GrayScaleColorSample_PdfOutput()
     array_push($pdf->Inputs,$input);
 
     $textElement = new TextElement("Hello World",ElementPlacement::TopCenter);
-    $textElement->Color = CreateGrayscale(0.8);
+    $textElement->Color = Grayscale::CreateGrayscale(0.8);
     array_push($input->Elements,$textElement);
 
     $response = $pdf->Process();

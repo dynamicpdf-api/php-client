@@ -61,7 +61,7 @@ public function FilePathInputAztecBarcode_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -100,7 +100,7 @@ public function FilePathInputAztecBarcodeSize_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -140,7 +140,7 @@ public function FilePathAztecBarcodeElementError_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -180,7 +180,7 @@ public function FilePathAztecBarcodeElementTilde_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -222,7 +222,7 @@ public function FilePathAztecBarcodeElementReader_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -264,7 +264,7 @@ public function FilePath_AztecBarcodeElementXDimension_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -306,7 +306,7 @@ public function FilePathAztecBarcodeElementColor_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -347,7 +347,7 @@ public function FilePathAztecBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -395,7 +395,7 @@ public function BytesAztecBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -443,7 +443,7 @@ public function StreamAztecBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
 
     $input = new PdfInput($resource);
@@ -645,7 +645,7 @@ public function PageInputAztecBarcodeAddedToPageAndPdf_Pdfoutput()
     $element->YOffset = -100;
     array_push($input->Elements,$element);
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $pdfInput = new PdfInput($resource);
     array_push($pdf->Inputs,$pdfInput);
     $template = new Template("Temp1");
@@ -689,7 +689,7 @@ public function FilePathAztecBarcodeElementByteArray_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -807,7 +807,7 @@ public function FilePathDataMatrixBarcodeElement_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -850,7 +850,7 @@ public function FilePathDataMatrixBarcodeElementXDimension_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -889,7 +889,7 @@ public function FilePathDataMatrixBarcodeElementColor_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -928,7 +928,7 @@ public function FilePathDataMatrixBarcodeElementPlacement_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -967,7 +967,7 @@ public function FilePathDataMatrixBarcodeElementTilde_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1006,7 +1006,7 @@ public function FilePathDataMatrixBarcodeElementSymbolSize_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1044,7 +1044,7 @@ public function FilePathDataMatrixBarcodeElementEncodingType_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1082,7 +1082,7 @@ public function FilePathDataMatrixBarcodeElementFucntionChar_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1121,7 +1121,7 @@ public function FilePathDataMatrixBarcodeElementEnums_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1160,7 +1160,7 @@ public function FilePathDataMatrixBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1203,7 +1203,7 @@ public function BytesDataMatrixBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1246,7 +1246,7 @@ public function StreamDataMatrixBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
 
     $input = new PdfInput($resource);
@@ -1291,7 +1291,7 @@ public function CloudRootDataMatrixBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
 
     $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
@@ -1336,7 +1336,7 @@ public function FilePathPdf417BarcodeElement_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1374,7 +1374,7 @@ public function FilePathPdf417BarcodeElementTilde_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1413,7 +1413,7 @@ public function FilePathPdf417BarcodeElementCompaction_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1454,7 +1454,7 @@ public function FilePathPdf417BarcodeElementErrorCorrection_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1494,7 +1494,7 @@ public function FilePathPdf417BarcodeElementCompactPdf417_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1534,7 +1534,7 @@ public function FilePathPdf417BarcodeElementYDimension_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1574,7 +1574,7 @@ public function FilePathPdf417BarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1624,7 +1624,7 @@ public function StreamPdf417BarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
 
     $input = new PdfInput($resource);
@@ -1676,7 +1676,7 @@ public function BytesPdf417BarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1775,7 +1775,7 @@ public function FilePathPdf417BarcodeElementByteArray_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1813,7 +1813,7 @@ public function FilePathQrcodeBarcodeElement_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1851,7 +1851,7 @@ public function FilePathQrcodeBarcodeElementVersion_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1890,7 +1890,7 @@ public function FilePathQrcodeBarcodeElementFnc1_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1929,7 +1929,7 @@ public function FilePathQrcodeBarcodeElementProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1970,7 +1970,7 @@ public function BytesQrcodeBarcodeElementProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -2011,7 +2011,7 @@ public function StreamQrcodeBarcodeElementProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
 
     $input = new PdfInput($resource);
@@ -2094,7 +2094,7 @@ public function FilePathQrcodeBarcodeElementByteArray_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -2132,7 +2132,7 @@ public function FilePathCode128Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -2168,7 +2168,7 @@ public function BytesCode128Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2204,7 +2204,7 @@ public function StreamCode128Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
 
@@ -2311,7 +2311,7 @@ public function FilePathCode128BarcodeWithOptionalParameter_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2347,7 +2347,7 @@ public function FilePathCode128BarcodeWithHeightXY_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2386,7 +2386,7 @@ public function FilePathCode128BarcodeColorXdimension_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2425,7 +2425,7 @@ public function FilePathCode128BarcodeTextProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2465,7 +2465,7 @@ public function FilePathCode128BarcodePlacement_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2502,7 +2502,7 @@ public function FilePathCode128BarcodeProcessTilde_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2540,7 +2540,7 @@ public function FilePathCode128BarcodeUccEan128_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2578,7 +2578,7 @@ public function FilePathCode128BarcodeEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2616,7 +2616,7 @@ public function FilePathCode128BarcodeOddPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2725,7 +2725,7 @@ public function FilePathCode39Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2761,7 +2761,7 @@ public function BytesCode39Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2797,7 +2797,7 @@ public function StreamCode39Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
 
@@ -2904,7 +2904,7 @@ public function FilePathCode39BarcodeOptionalParameter_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2940,7 +2940,7 @@ public function FilePathCode39BarcodeHeightXY_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2979,7 +2979,7 @@ public function FilePathCode39BarcodeColorXdimension_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3018,7 +3018,7 @@ public function FilePathCode39BarcodeTextProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3058,7 +3058,7 @@ public function FilePathCode39BarcodeEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3095,7 +3095,7 @@ public function FilePathCode39BarcodeOddPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3203,7 +3203,7 @@ public function FilePathCode39BarcodeExtended_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
 
@@ -3240,7 +3240,7 @@ public function FilePathCode25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3276,7 +3276,7 @@ public function BytesCode25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3312,7 +3312,7 @@ public function StreamCode25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
 
@@ -3419,7 +3419,7 @@ public function FilePathCode25BarcodeOptionalParameter_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3455,7 +3455,7 @@ public function FilePathCode25BarcodeHeightXY_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3494,7 +3494,7 @@ public function FilePathCode25BarcodeColorXdimension_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3533,7 +3533,7 @@ public function FilePathCode25BarcodeTextProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3572,7 +3572,7 @@ public function FilePathCode25BarcodeEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3609,7 +3609,7 @@ public function FilePathCode25BarcodeOddPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3717,7 +3717,7 @@ public function FilePathCode93Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3753,7 +3753,7 @@ public function BytesCode93Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3789,7 +3789,7 @@ public function StreamCode93Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
 
@@ -3896,7 +3896,7 @@ public function FilePathCode93BarcodeOptionalParameter_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3932,7 +3932,7 @@ public function FilePathCode93BarcodeHeightXY_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3972,7 +3972,7 @@ public function FilePathCode93BarcodeColorXdimension_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4011,7 +4011,7 @@ public function FilePathCode93BarcodeTextProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4051,7 +4051,7 @@ public function FilePathCode93BarcodeEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4088,7 +4088,7 @@ public function FilePathCode93BarcodeOddPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4196,7 +4196,7 @@ public function FilePathCode93BarcodeExtended_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4232,7 +4232,7 @@ public function FilePathCode11Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4268,7 +4268,7 @@ public function BytesCode11Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4304,7 +4304,7 @@ public function StreamCode11Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
 
@@ -4411,7 +4411,7 @@ public function FilePathCode11BarcodeOptionalParameter_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4447,7 +4447,7 @@ public function FilePathCode11BarcodeHeightXY_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4486,7 +4486,7 @@ public function FilePathCode11BarcodeColorXdimension_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4525,7 +4525,7 @@ public function FilePathCode11BarcodeTextProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4565,7 +4565,7 @@ public function FilePathCode11BarcodeEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4602,7 +4602,7 @@ public function FilePathCode11BarcodeOddPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4711,7 +4711,7 @@ public function FilePathGs1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4747,7 +4747,7 @@ public function BytesGs1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4783,7 +4783,7 @@ public function StreamGs1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
 
@@ -4890,7 +4890,7 @@ public function FilePathGs1DataBarBarcodeOptionalParameter_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4926,7 +4926,7 @@ public function FilePathGs1DataBarBarcodeHeightXY_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4966,7 +4966,7 @@ public function FilePathGs1DataBarBarcodeColorXdimension_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5005,7 +5005,7 @@ public function FilePathGs1DataBarBarcodeTextProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5044,7 +5044,7 @@ public function FilePathGs1DataBarBarcodeEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5081,7 +5081,7 @@ public function FilePathGs1DataBarBarcodeOddPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5189,7 +5189,7 @@ public function FilePathStackedGS1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5225,7 +5225,7 @@ public function BytesStackedGS1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5261,7 +5261,7 @@ public function StreamStackedGS1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
 
@@ -5368,7 +5368,7 @@ public function FilePathStackedGS1DataBarBarcodeOptionalParameter_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5404,7 +5404,7 @@ public function FilePathStackedGS1DataBarBarcodeRowheightXY_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5443,7 +5443,7 @@ public function FilePathStackedGS1DataBarBarcodeColorXdimension_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5482,7 +5482,7 @@ public function FilePathStackedGS1DataBarBarcodeTextProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5522,7 +5522,7 @@ public function FilePathStackedGS1DataBarBarcodeEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5559,7 +5559,7 @@ public function FilePathStackedGS1DataBarBarcodeOddPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5668,7 +5668,7 @@ public function FilePathIata25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5704,7 +5704,7 @@ public function BytesIata25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5740,7 +5740,7 @@ public function StreamIata25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
 
@@ -5847,7 +5847,7 @@ public function FilePathIata25BarcodeOptionalParameter_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5883,7 +5883,7 @@ public function FilePathIata25BarcodeHeightXY_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5922,7 +5922,7 @@ public function FilePathIata25BarcodeColorXdimension_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5961,14 +5961,14 @@ public function FilePathIata25BarcodeTextProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
     $element = new Iata25BarcodeElement("12345678",ElementPlacement::TopCenter,50);
     $element->TextColor = RgbColor::Pink();
-    $font = Font::FromFile($this->inputpath.@"aial.ttf");
+    $font = Font::FromFile($this->inputpath."aial.ttf");
     $element->Font($font);
     $element->FontSize = 11;
     array_push($template->Elements,$element);
@@ -6001,7 +6001,7 @@ public function FilePathIata25BarcodeIncludeCheckDigit_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6038,7 +6038,7 @@ public function FilePathIata25BarcodeEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6075,7 +6075,7 @@ public function FilePathIata25BarcodeOddPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6183,7 +6183,7 @@ public function FilePathMsiBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6219,7 +6219,7 @@ public function BytesMsiBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6255,7 +6255,7 @@ public function StreamMsiBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
     $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
 
@@ -6362,7 +6362,7 @@ public function FilePathMsiBarcodeOptionalParameter_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6399,7 +6399,7 @@ public function FilePathMsiBarcodeHeightXYAppendcheckdigit_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6439,7 +6439,7 @@ public function FilePathMsiBarcodeColorXdimension_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6479,7 +6479,7 @@ public function FilePathMsiBarcodeTextProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6519,7 +6519,7 @@ public function FilePathMsiBarcodeAppendCheckDigit_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6557,7 +6557,7 @@ public function FilePathMsiBarcodeEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6595,7 +6595,7 @@ public function FilePathMsiBarcodeOddPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource($this->inputpath.@"DocumentA100.pdf");
+    $resource = new PdfResource($this->inputpath."DocumentA100.pdf");
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
