@@ -1,6 +1,6 @@
 ﻿
 <?php
-
+include_once('JsonResponse.php');
     /// <summary>
     /// Represents an image response.
     /// </summary>
@@ -15,10 +15,10 @@
         /// Initializes a new instance of the <see cref="ImageResponse"/> class.
         /// </summary>
         /// <param name="jsonContent">The image content of the response.</param>
-        public function __consruct(string jsonContent)
+        public function __consruct(string $jsonContent)
         {
-            parent::__consruct(jsonContent)
-            $this->Content = JsonConvert.DeserializeObject<List<ImageInformation>>(base.JsonContent);
+            parent::__construct($jsonContent);
+            $this->Content = json_decode($jsonContent);
         }
 
         /// <summary>
@@ -27,4 +27,4 @@
         public $Content;
  
     }
-}
+?>

@@ -1,4 +1,6 @@
 ﻿<?php
+include_once('Response.php');
+
     /// <summary>
     /// Represents the xml response.
     /// </summary>
@@ -13,12 +15,15 @@
         /// Initializes a new instance of the <see cref="XmlResponse"/> class.
         /// </summary>
         /// <param name="xmlContent">The xml content of the response.</param>
-        public __construct(string $xmlContent) { $this->Content = $xmlContent; }
+        public function __construct(?string $xmlContent =null) 
+        { 
+            $this->Content = $xmlContent; 
+        }
 
         /// <summary>
         /// Gets the xml content.
         /// </summary>
-        public $Content
+        public $Content;
  
     }
 ?>

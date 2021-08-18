@@ -1,5 +1,7 @@
 ﻿<?php
+
 include_once('JsonResponse.php');
+
     /// <summary>
     /// Represents the pdf inforamtion response.
     /// </summary>

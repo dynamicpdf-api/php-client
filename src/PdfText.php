@@ -49,13 +49,13 @@ include_once('PdfTextResponse.php');
             $headr[] = 'Content-Type: application/pdf';
             $headr[] = 'Authorization:Bearer '.Endpoint::$DefaultApiKey;
             curl_setopt($client, CURLOPT_HTTPHEADER,$headr);
-            curl_setopt($client, CURLOPT_VERBOSE, true);
+          
 
             curl_setopt($client, CURLOPT_POSTFIELDS,$this->resource->Data);
          
-            //$params = array('startPage' => $this->StartPage,'pageCount' => $this->PageCount);
-            //$url = Endpoint::$DefaultBaseUrl."/".$this->EndpointName . '?' . http_build_query($params);
-            //curl_setopt($client, CURLOPT_URL, $url);
+            $params = array('startPage' => $this->StartPage,'pageCount' => $this->PageCount);
+            $url = Endpoint::$DefaultBaseUrl."/".$this->EndpointName . '?' . http_build_query($params);
+            curl_setopt($client, CURLOPT_URL, $url);
 
             curl_setopt($client, CURLOPT_BINARYTRANSFER, 1);
           

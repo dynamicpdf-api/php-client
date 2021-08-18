@@ -1,54 +1,84 @@
 ﻿<?php
-        public void XmpSingleResource()
+
+require_once('../../../src/Pdf.php');
+require_once('../../../src/PdfResource.php');
+require_once('../../../src/PdfXmp.php');
+require_once('../../../src/XmlResponse.php');
+
+use PHPUnit\Framework\TestCase;
+
+    class PdfXmpSamples extends TestCase
+    {
+
+        private $inputpath =  "D:/Resources/";
+        private $outputPath =  "./Output/";
+        private $key="DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
+        private $url = "https://localhost:44397/v1.0"; 
+        private $Author= "test";
+        private $Title ="test";
+
+        /** @test */
+        public   function XmpSingleResource()
         {
-            Name = "XmpSingelResource";
-            PdfResource resource = new PdfResource(base.GetResourcePath("bab6c782-2e85-4c6a-b248-9518a06549e900000.pdf"));
-            PdfXmp xmp = new PdfXmp(resource);
-            
-            XmlResponse response = xmp.Process();
-            
-            bool pass = false;
-            if (response.IsSuccessful)
+            $Name = "XmpSingelResource";
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
+
+            $resource = new PdfResource($this->inputpath."bab6c782-2e85-4c6a-b248-9518a06549e900000.pdf");
+            $xmp = new PdfXmp($resource);
+
+            $response = $xmp->Process();
+
+
+            if ($response->IsSuccessful)
             {
-                File.WriteAllText(base.GetOutputFilePath("Output.xml", InputSampleType), response.Content);
+                file_put_contents($this->outputPath."Output1.xml", $response->Content);
             }
-            
+            $this->assertEquals($response->IsSuccessful,true);
         }
 
- 
-        public void XmpSingleResource1()
+        /** @test */
+        public  function XmpSingleResource1()
         {
-            Name = "XmpSingleResource1";
-            PdfResource resource = new PdfResource(base.GetResourcePath("aaa_crash.pdf"));
+            $Name = "XmpSingleResource1";
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
 
-            PdfXmp xmp = new PdfXmp(resource);
-            XmlResponse response = xmp.Process();
-            bool pass = false;
-            if (response.IsSuccessful)
+            $resource = new PdfResource($this->inputpath."aaa_crash.pdf");
+
+            $xmp = new PdfXmp($resource);
+            $response = $xmp->Process();
+
+            if ($response->IsSuccessful)
             {
-                File.WriteAllText(base.GetOutputFilePath("Output.xml", InputSampleType), response.Content);
+                file_put_contents($this->outputPath."Output2.xml", $response->Content);
             }
+            $this->assertEquals($response->IsSuccessful,true);
         }
 
-
-        public void XmpMulitipleResource()
+        /** @test */
+        public  function XmpMulitipleResource()
         {
-            Name = "XmpMulitipleResource";
-            string [] pdfs= { "aaa_crash.pdf","bab6c782-2e85-4c6a-b248-9518a06549e900000.pdf","COR-GEN-2455447-1-A-1.pdf","Waiver TX AF.PDF" };
-            bool pass = false;
-            for (int i = 0; i < pdfs.Length; i++)
+            $Name = "XmpMulitipleResource";
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
+
+            $pdfs = array( "aaa_crash.pdf", "bab6c782-2e85-4c6a-b248-9518a06549e900000.pdf", "COR-GEN-2455447-1-A-1.pdf", "Waiver TX AF.PDF" );
+
+            for ( $i = 0; $i < count($pdfs); $i++)
             {
-                PdfResource resource = new PdfResource(base.GetResourcePath(pdfs[i]));
-                PdfXmp xmp = new PdfXmp(resource);
+                $resource = new PdfResource($this->inputpath.$pdfs[$i]);
+                $xmp = new PdfXmp($resource);
 
-                XmlResponse response = xmp.Process();
+                $response = $xmp->Process();
 
-               
-                if (response.IsSuccessful)
+
+                if ($response->IsSuccessful)
                 {
-                    File.WriteAllText(base.GetOutputFilePath("Output" + i + ".xml", InputSampleType), response.Content);
+                    file_put_contents($this->outputPath."Output3_".$i.".xml", $response->Content);
                 }
             }
-            
+            $this->assertEquals($response->IsSuccessful,true);
         }
+    }
 ?>

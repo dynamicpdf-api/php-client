@@ -61,10 +61,11 @@ include_once('EndPointException.php');
                     $this->MimeType = "image/jpeg";
                     return ".jpeg";
                 }
-                //else if(bmp)
-                //{
-                //    mimeType = "image/bmp";
-                //}
+                else if(ImageResource::IsValidBitmapImage($byteArray))
+                {
+                    $this->MimeType = "image/bmp";
+                    return ".bmp";
+                }
                 else
                 {
                     //print_r ($fileHeader);
@@ -99,6 +100,10 @@ include_once('EndPointException.php');
         private static function IsJpegImage(array $header)
         {
             return $header[0] == 0xFF && $header[1] == 0xD8 && $header[2] == 0xFF;
+        }
+        private static function IsValidBitmapImage(array $header)
+        {
+            return $header[0] == 0x42 && $header[1] == 0x4D;
         }
         public function GetjsonSerializeString()
         {
