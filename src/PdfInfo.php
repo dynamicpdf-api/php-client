@@ -1,5 +1,8 @@
 ﻿<?php
 
+include_once('Endpoint.php');
+include_once('PdfInfoResponse.php');
+
     /// <summary>
     /// Represents the pdf info endpoint.
     /// </summary>
@@ -11,7 +14,7 @@
         /// Initializes a new instance of the <see cref="PdfInfo"/> class.
         /// </summary>
         /// <param name="resource">The resource of type <see cref="PdfResource"/>.</param>
-        public __construct(PdfResource $resource)
+        public function __construct(PdfResource $resource)
         {
             $this->resource = $resource;
             $this->EndpointName  = "pdf-info";
@@ -29,48 +32,63 @@
         /// </summary>
         public $PageCount;
 
-        /// <summary>
-        /// Process the pdf resource to get pdf's information.
-        /// </summary>
-        public function Process()
-        {
-            var task = ProcessAsync();
-            task.Wait();
-            return task.Result;
-        }
+       
 
         /// <summary>
         /// Process the pdf resource to get pdf's information.
         /// </summary>
-        /// Returns collection of <see cref="PdfInfoResponse"/> as multithreading tasks <see cref="Task"/>.
-        public Task<PdfInfoResponse> ProcessAsync()
+        public function Process():PdfInfoResponse
         {
-            var request = base.CreateRestRequest();
-            request.AddHeader("Content-Type", "application/pdf");
-            RestClient restClient = base.Client;
-            return Task<PdfInfoResponse>.Run(() =>
+            $client=parent::Init();
+
+            $errCode=json_last_error();
+            
+            $headr = array();
+
+            $headr[] = 'Content-Type: application/pdf';
+            $headr[] = 'Authorization:Bearer '.Endpoint::$DefaultApiKey;
+            curl_setopt($client, CURLOPT_HTTPHEADER,$headr);
+            curl_setopt($client, CURLOPT_VERBOSE, true);
+
+            curl_setopt($client, CURLOPT_POSTFIELDS,$this->resource->Data);
+         
+            $params = array('startPage' => $this->StartPage,'pageCount' => $this->PageCount);
+            $url = Endpoint::$DefaultBaseUrl."/".$this->EndpointName . '?' . http_build_query($params);
+            curl_setopt($client, CURLOPT_URL, $url);
+
+            curl_setopt($client, CURLOPT_BINARYTRANSFER, 1);
+          
+            ob_start();
+            $result = curl_exec($client);
+            $outData = ob_get_contents();
+            ob_end_clean();
+            
+           
+
+            $resCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
+
+            $retObject = new PdfInfoResponse($outData);
+            $retObject->IsSuccessful = false;
+            $retObject->StatusCode = $resCode;
+            if ($result == true) 
             {
-                PdfInfoResponse response = new PdfInfoResponse();
-                request.AddParameter("", resource.Data, "application/pdf", ParameterType.RequestBody);
-             
-                IRestResponse restResponse = restClient.Post(request);
-                if (restResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                if ($retObject !=  null && $retObject->Content!= null ) 
                 {
-                    response = new PdfInfoResponse(restResponse.Content);
-                    response.IsSuccessful  = true;
-                }
-                else
+                    $retObject->IsSuccessful = true;
+                } 
+                elseif (trim($outData)[0] == '{') 
                 {
-                    response = new PdfInfoResponse();
-                    string output = restResponse.Content;
-                    response.ErrorJson = restResponse.Content;
-                    response.ErrorId = response.ErrorId;
-                    response.ErrorMessage = restResponse.ErrorMessage;
-                    response.IsSuccessful = false;
-                    response.StatusCode = restResponse.StatusCode;
+                    $retObject->ErrorJson = $outData;
+                    if ($retObject->StatusCode == 400) 
+                    {
+                        $retObject->ErrorMessage = json_decode($outData)->message;
+                    }
                 }
-                return response;
-            });
+            }
+         
+            curl_close($client);  
+           
+            return  $retObject;
         }
     }
 ?>

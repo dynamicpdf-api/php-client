@@ -7,6 +7,7 @@ abstract class Endpoint
 
     function __construct()
     {
+        
     }
 
     //internal Endpoint(List<EndPointResource> resources)
@@ -27,9 +28,8 @@ abstract class Endpoint
             $authorization = Endpoint::$DefaultApiKey;
             $headr = array();
             $headr[] = 'Authorization:Bearer '.$authorization;
-            //echo(Endpoint::$DefaultBaseUrl."/".$this->EndpointName."\n");
             $this->Client = curl_init( Endpoint::$DefaultBaseUrl."/".$this->EndpointName);
-            //curl_setopt($this->Client, CURLOPT_HTTPHEADER, $headr );
+            curl_setopt($this->Client, CURLOPT_HTTPHEADER, $headr );
             curl_setopt($this->Client, CURLOPT_VERBOSE, false);
             curl_setopt($this->Client, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($this->Client, CURLOPT_SSL_VERIFYHOST, 0);

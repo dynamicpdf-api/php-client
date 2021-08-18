@@ -1,4 +1,6 @@
 ﻿<?php
+include_once('JsonResponse.php');
+
 
     /// <summary>
     /// Represents the pdf text response.
@@ -14,10 +16,10 @@
         /// Initializes a new instance of the <see cref="PdfResponse"/> class.
         /// </summary>
         /// <param name="jsonContent">The json content</param>
-        public function __construct(string jsonContent) : base(jsonContent)
+        public function __construct(string $jsonContent) 
         {
-
-            $this->Content = JsonConvert.DeserializeObject<List<PdfContent>>(base.JsonContent);
+            parent::__construct($jsonContent);
+            $this->Content = json_decode($jsonContent);
         }
 
         /// <summary>
