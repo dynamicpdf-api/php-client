@@ -1,22 +1,23 @@
 {
-    "name": "dynamicpdf/client-api",
-    "description": "Description goes here",
+    "name": "dynamicpdf/api",
+    "version": "1.0.0-dev",
+    "description": "PHP client library for the DynamicPDF Cloud API.",
     "type": "library",
     "require": {
         "php": ">=7.3, <8.0",
         "ext-curl": "*",
         "ext-fileinfo": "*"
     },
-    "license": "License type goes here",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Dynamicpdf\\ClientApi\\": "src/"
+            "Dynamicpdf\\Api\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "DynamicPDF",
-            "email": "author@dynamicpdf.com"
+            "name": "DynamicPDF API",
+            "email": "support@dynamicpdf.com"
         }
     ],
     "minimum-stability": "dev",
