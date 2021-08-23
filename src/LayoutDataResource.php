@@ -4,14 +4,15 @@ include_once('ResourceType.php');
 
     class LayoutDataResource extends Resource
     {
-        public function __construct(string $layoutData, string $layoutDataResourceName = null) 
+        public function __construct(string $layoutData= null, string $layoutDataResourceName = null) 
         {
-        
+        if($layoutData != null)
+        {
             if ($this->endsWith($layoutData,".json"))
             {
                
                 $this->ResourcePath=$layoutData;
-                $this->Data = Resource::GetUTF8FileData($layoutData);
+                $this->Data = Resource::GetFileData($layoutData);
                
             }
             else
@@ -31,14 +32,22 @@ include_once('ResourceType.php');
                 $this->Type = ResourceType::LayoutData;
                 $this->ResourceName=$this->LayoutDataResourceName ;
         }
-       /* public function LayoutDataResource2(byte[] layoutData, string layoutDataResourceName = null) : base() 
+        }
+
+       /// <summary>
+        /// Initializes a new instance of the <see cref="LayoutDataResource"/> class 
+        /// using the layout data object and a resource name.
+        /// </summary>
+        /// <param name="layoutData">Serializable object data to create PDF report.</param>
+        /// <param name="layoutDataResourceName">The name for layout data resource.</param>
+        public static  function CreateLayoutDataResource(object $layoutData, string $layoutDataResourceName = null) :  LayoutDataResource
         {
-            Data = (byte[])layoutData;
-            if ($this->LayoutDataResourceName == null)
-            $this->LayoutDataResourceName = Guid.NewGuid().ToString() + ".json";
-            else
-            $this->LayoutDataResourceName = layoutDataResourceName;
-        }*/
+           // print_r ($layoutData);
+            $jsonText = json_encode($layoutData);
+            //echo($jsonText);
+            $layoutDataResource =new LayoutDataResource($jsonText ,$layoutDataResourceName);
+            return $layoutDataResource;
+        }
 
        /* public function LayoutDataResource(Stream $layoutData, string $layoutDataResourceName = null)  
         {

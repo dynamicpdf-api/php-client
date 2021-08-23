@@ -2,6 +2,7 @@
 
 include_once('BarcodeElement.php');
 include_once('ElementPlacement.php');
+include_once('ValueType.php');
 
     abstract class Dim2BarcodeElement extends BarcodeElement
     {       

@@ -35,17 +35,21 @@
         public function jsonSerialize()
         {
         $inputJsonArray = array();
-        $templatesJson = array();
+       
         foreach ($this->Inputs as $input) 
         {
             array_push($inputJsonArray,$input->GetjsonSerializeString());
         }
        
-        
+        $fontsJson = array();
+        foreach ($this->Fonts as $font) 
+        {
+            array_push($fontsJson,$font);
+        }
             $jsonArray= array();
 
              $jsonArray['templates']=$this->Templates;
-             $jsonArray['fonts']=$this->Fonts;
+             $jsonArray['fonts']=$fontsJson;
              $jsonArray['author'] = $this->Author;
              $jsonArray['title'] = $this->Title;
 

@@ -257,12 +257,14 @@ require_once('PageInput.php');
                     {
                         if ($element->Resource != null)
                         {
-                            array_push($this->Resources,$element->Resource);
+                            //array_push($this->Resources,$element->Resource);
+                            $this->Resources[$element->Resource->ResourceName]=$element->Resource;
                         }
                         if ($element->TextFont != null)
                         {
                             $fontSerializedArray=$element->TextFont->GetjsonSerializeString();
-                            array_push($this->instructions->Fonts, $fontSerializedArray);
+                            //array_push($this->instructions->Fonts, $fontSerializedArray);
+                            $this->instructions->Fonts[$element->TextFont->Name]=$fontSerializedArray;
                         }
                     }
                     
@@ -292,7 +294,7 @@ require_once('PageInput.php');
                                     $fontSerializedArray=$element->TextFont->GetjsonSerializeString();
                                    
                                     if(count($fontSerializedArray)>0)
-                                        array_push($this->instructions->Fonts,$fontSerializedArray);
+                                        $this->instructions->Fonts[$element->TextFont->Name]=$fontSerializedArray;
                                 }
                                 
                             }
