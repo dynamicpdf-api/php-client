@@ -22,15 +22,6 @@ include_once('PdfInfoResponse.php');
 
        
 
-        /// <summary>
-        /// Gets or sets the start page.
-        /// </summary>
-        public $StartPage;
-
-        /// <summary>
-        /// Gets or sets the page count.
-        /// </summary>
-        public $PageCount;
 
        
 

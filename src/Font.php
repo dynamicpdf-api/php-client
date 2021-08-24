@@ -3,6 +3,9 @@
 include_once('FontResource.php');
 include_once('Font.php');
 
+  /// <summary>
+    /// Represents font.
+    /// </summary>
      class Font
     {
 
@@ -22,6 +25,12 @@ include_once('Font.php');
 
             $this->Name = md5(uniqid(rand(), true));
         }
+
+         /// <summary>
+        /// Initializes a new instance of the <see cref="Font"/> class 
+        /// using the font name that is present in the cloud resource manager.
+        /// </summary>
+        /// <param name="cloudResourceName">The font name present in the cloud resource manager.</param>
         public static function CreateFont(string $Name)
         {
             $font=new Font();
@@ -29,9 +38,22 @@ include_once('Font.php');
             return $font;
         }
         public  $Resource;
+
+          /// <summary>
+        /// Gets or sets a boolean indicating whether to embed the font.
+        /// </summary>
         public  $Embed;
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to subset embed the font.
+        /// </summary>
         public $Subset;
         public  $Name;
+
+        
+        /// <summary>
+        /// Gets or sets a name for the font resource.
+        /// </summary>
         public  $ResourceName;
 
         /// <summary>
@@ -174,6 +196,12 @@ include_once('Font.php');
             return $font;
         }  
        
+           /// <summary>
+        /// Initializes a new instance of the <see cref="Font"/> class 
+        /// using the file path of the font and resource name.
+        /// </summary>
+        /// <param name="filePath">The file path of the font file.</param>
+        /// <param name="resourceName">The resource name for the font.</param>
         public static function FromFile(string $filePath,string $resourceName = null)
         {
             $resource = new FontResource($filePath,$resourceName);

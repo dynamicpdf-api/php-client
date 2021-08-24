@@ -8,14 +8,24 @@ include_once('InputType.php');
 include_once('Align.php');
 include_once('VAlign.php');
 
+    /// <summary>
+    /// Represents an image input.
+    /// </summary>
      class ImageInput extends Input
     {
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageInput"/> class.
+        /// </summary>
+        /// <param name="resource">The <see cref="ImageResource"/> object to create ImageInput.</param>
         public function __construct(?ImageResource $resource) 
         { 
             if($resource != null)
             parent::__construct($resource);
         }
+             /// <summary>
+        /// Initializes a new instance of the <see cref="ImageInput"/> class.
+        /// </summary>
+        /// <param name="cloudResourcePath">The image file path present in cloud resource manager.</param>
        public static function CreateImageInput(string $cloudResourcePath)  
         { 
             $imageInput =new ImageInput(null);

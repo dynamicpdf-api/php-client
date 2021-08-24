@@ -2,6 +2,10 @@
 <?php
 include_once('Action.php');
 include_once('OutlineStyle.php');
+
+    /// <summary>
+    /// Represents an outline.
+    /// </summary>
     class Outline  implements JsonSerializable
     {  
 

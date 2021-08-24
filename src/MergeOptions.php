@@ -1,26 +1,93 @@
 ﻿
 <?php
+
+    /// <summary>
+    /// Represents different options for merging PDF documents.
+    /// </summary>
      class MergeOptions  
     {
         public function __construct()
         {
 
         }
-        public  $DocumentInfo="null"; 
-        public  $DocumentJavaScript="null"; 
-        public  $DocumentProperties="null"; 
-        public  $EmbeddedFiles="null"; 
-        public  $FormFields="null";
-        public  $FormsXfaData="null"; 
-        public  $LogicalStructure="null";
-        public  $OpenAction="null";
-        public  $OptionalContentInfo="null";
-        public  $Outlines="null"; 
-        public  $OutputIntent="null"; 
-        public  $PageAnnotations="null"; 
-        public  $PageLabelsAndSections="null";
-        public  $RootFormField  = "null";
-        public  $XmpMetadata="null"; 
+       /// <summary>
+        /// Gets or sets a boolean indicating whether to import document information when merging.
+        /// </summary>
+        public  $DocumentInfo= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import document level JavaScript when merging.
+        /// </summary>
+        public  $DocumentJavaScript= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import document properties when merging.
+        /// </summary>
+        public  $DocumentProperties= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import embedded files when merging.
+        /// </summary>
+        public  $EmbeddedFiles= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import form fields when merging.
+        /// </summary>
+        public  $FormFields= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import XFA form data when merging.
+        /// </summary>
+        public  $FormsXfaData= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import logical structure 
+        /// (tagging information) when merging.
+        /// </summary>
+        public  $LogicalStructure= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import document's opening 
+        /// action (initial page and zoom settings) when merging.
+        /// </summary>
+        public  $OpenAction= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import optional content when merging.
+        /// </summary>
+        public  $OptionalContentInfo= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import outlines and bookmarks when merging.
+        /// </summary>
+        public  $Outlines= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import OutputIntent when merging.
+        /// </summary>
+        public  $OutputIntent= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import PageAnnotations when merging.
+        /// </summary>
+        public  $PageAnnotations= "null";
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import PageLabelsAndSections when merging.
+        /// </summary>
+        public  $PageLabelsAndSections= "null";
+
+        /// <summary>
+        /// Gets or sets the root form field for imported form fields. 
+        /// Useful when merging a PDF repeatedly to have a better 
+        /// contorl on the form field names.
+        /// </summary>
+        public $RootFormField= "null"; = null;
+
+        /// <summary>
+        /// Gets or sets a boolean indicating whether to import XmpMetadata when merging.
+        /// </summary>
+        public  $XmpMetadata= "null";
 
         public function GetjsonSerializeString()
        {

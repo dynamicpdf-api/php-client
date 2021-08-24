@@ -2,6 +2,9 @@
 include_once('EndpointException.php');
 include_once('Color.php');
 
+/// <summary>
+    /// Represents an RGB color.
+    /// </summary>
     class RgbColor extends Color
     {
         //private string colorString;

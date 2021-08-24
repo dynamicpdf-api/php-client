@@ -1,5 +1,8 @@
 <?php
 
+/// <summary>
+/// Specifies vertical alignment.
+/// </summary>
 class VAlign
 { 
       /// <summary>

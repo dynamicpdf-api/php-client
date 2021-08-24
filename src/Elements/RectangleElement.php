@@ -3,8 +3,18 @@ include_once('Element.php');
 include_once('ElementPlacement.php');
 include_once('ElementType.php');
 
+/// <summary>
+    /// Represents a rectangle page element.
+    /// </summary>
+    /// <remarks>This class can be used to place rectangles of any size or color on a page.</remarks>
     class RectangleElement extends Element
     {
+                /// <summary>
+        /// Initializes a new instance of the <see cref="RectangleElement"/> class.
+        /// </summary>
+        /// <param name="placement">The placement of the rectangle on the page.</param>
+        /// <param name="width">Width of the rectangle.</param>
+        /// <param name="height">Height of the rectangle.</param>
         public function __construct(string $placement, float $width, float $height)
         {
             $this->Placement = $placement;
@@ -15,12 +25,40 @@ include_once('ElementType.php');
 
         public   $Type  = ElementType::Rectangle;
 
+        /// <summary>
+		/// Gets or sets the width of the rectangle.
+		/// </summary>
         public  $Width = 0;
+
+        /// <summary>
+		/// Gets or sets the height of the rectangle.
+		/// </summary>
         public  $Height = 0;
+        /// <summary>
+		/// Gets or sets the border width of the rectangle.
+		/// </summary>
+		/// <remarks>To force the borders not to appear set the border width to any value 0 or less.</remarks>
         public  $BorderWidth = 0;
+
+         /// <summary>
+		/// Gets or sets the corner radius of the rectangle.
+		/// </summary>
         public  $CornerRadius = 0;
+
+        /// <summary>
+		/// Gets or sets the <see cref="LineStyle"/> object used to specify the border style of the rectangle.
+		/// </summary>
         public  $BorderStyle= 0;
+
+        /// <summary>
+		/// Gets or sets the <see cref="Color"/> object to use for the border of the rectangle.
+		/// </summary>
         public  $BorderColor = 0;
+
+        /// <summary>
+		/// Gets or sets the <see cref="Color"/> object to use for the fill of the rectangle.
+		/// </summary>
+		/// <remarks>To force no color to appear in the rectangle (only borders) set the fill color to null (Nothing in Visual Basic).</remarks>
         public  $FillColor = 0;
         public function GetjsonSerializeString()
         {

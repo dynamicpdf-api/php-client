@@ -14,11 +14,14 @@ require_once('PageInput.php');
 
 
 
-
+/// <summary>
+    /// Represents a pdf endpoint.
+    /// </summary>
      class Pdf extends Endpoint
     {
         public $instructions;
         public $JsonData;
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="Pdf"/> class.
         /// </summary>

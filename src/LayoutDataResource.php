@@ -2,8 +2,17 @@
 include_once('Resource.php');
 include_once('ResourceType.php');
 
+/// <summary>
+    /// Represents the Layout data resource used to create PDF reports.
+    /// </summary>
     class LayoutDataResource extends Resource
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LayoutDataResource"/> class 
+        /// using the layout data object and a resource name.
+        /// </summary>
+        /// <param name="layoutData">Serializable object data to create PDF report.</param>
+        /// <param name="layoutDataResourceName">The name for layout data resource.</param>
         public function __construct(string $layoutData= null, string $layoutDataResourceName = null) 
         {
         if($layoutData != null)
@@ -49,21 +58,17 @@ include_once('ResourceType.php');
             return $layoutDataResource;
         }
 
-       /* public function LayoutDataResource(Stream $layoutData, string $layoutDataResourceName = null)  
-        {
-            parent::__construct();
-            $Data = parent::GetSteamData($layoutData);
-            if ($this->LayoutDataResourceName == null)
-            $this->LayoutDataResourceName = bin2hex(openssl_random_pseudo_bytes(16)) + ".json";
-            else
-            $this->LayoutDataResourceName = $layoutDataResourceName;
-        }*/
+      
         public  function  FileExtension()
         {
             return ".json";
         }
         
         public  $FileExtension = ".json";
+
+        /// <summary>
+        /// Gets or sets name of the layout data resource.
+        /// </summary>
         public  $LayoutDataResourceName ;
 
         public function GetjsonSerializeString()

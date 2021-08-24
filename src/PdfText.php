@@ -3,7 +3,9 @@
 include_once('Endpoint.php');
 include_once('PdfTextResponse.php');
 
-
+/// <summary>
+    /// Represents the pdf text endpoint.
+    /// </summary>
     class PdfText extends Endpoint
     {
         private $resource;

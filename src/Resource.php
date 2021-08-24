@@ -40,6 +40,10 @@
         }*/
 
         public  $Data;
+
+           /// <summary>
+        /// Gets or sets the resource name.
+        /// </summary>
         public  $ResourceName;
         public  $Name;
         public  $Type ;
