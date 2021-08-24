@@ -1,5 +1,5 @@
 <?php
-
+    /// <summary>
     /// The level of error correction to use in a barcode.
     /// </summary>
 class ErrorCorrection

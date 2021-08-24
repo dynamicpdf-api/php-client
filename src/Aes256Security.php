@@ -10,7 +10,7 @@ include_once('Security.php');
     /// <remarks>
     /// AES 256 bit PDF security is compatible with PDF version 1.5 and higher. 
     /// This class is FIPS compliant when used in applications targetting .NET framework v3.5 or higher. 
-    /// Adobe Acrobat Reader version X or higher is needed to open these documents. 
+    /// Adobe Acrobat Reader version X or higher is needed to open these documents. </remarks>
     class Aes256Security extends Security
     {
         /// <summary>
@@ -34,7 +34,6 @@ include_once('Security.php');
 
         public function GetjsonSerializeString()
         {
-            //{"type":"aes256","documentComponents":"All","ownerPassword":"owner","userPassword":"user"}
 
             $jsonArray=array();
             $jsonArray['type']="aes256";

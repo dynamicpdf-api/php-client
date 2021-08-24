@@ -143,12 +143,12 @@ require_once('PageInput.php');
             return $input;
         }
 
-       /* /// <summary>
+        /// <summary>
         /// Returns a <see cref="DlexInput"/> object containing the input pdf.
         /// </summary>
         /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
         /// <param name="layoutData">The layout data resource of type <see cref="LayoutDataResource"/>.</param>
-        public function AddDlexCloud(string $cloudResourcePath, LayoutDataResource $layoutData)
+       /* public function AddDlexCloud(string $cloudResourcePath, LayoutDataResource $layoutData)
         {
             $input = new DlexInput($cloudResourcePath, $layoutData);
             $this->Inputs($input);
@@ -188,10 +188,10 @@ require_once('PageInput.php');
             }
         }
 
-        /*/// <summary>
+        /// <summary>
         /// Returns a <see cref="PageInput"/> object containing the input pdf.
         /// </summary>
-        public function AddPage()
+        /*public function AddPage()
         {
             $input = new PageInput();
             $this->Inputs($input);
