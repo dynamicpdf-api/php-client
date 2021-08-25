@@ -1,4 +1,4 @@
-﻿<?php
+<?php
      
      include_once('Element.php');
 
@@ -14,3 +14,4 @@
         public ?floatval $FontSize ;
     }
 ?>
+

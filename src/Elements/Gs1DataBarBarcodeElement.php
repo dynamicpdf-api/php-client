@@ -1,23 +1,30 @@
-﻿<?php
+<?php
     include_once('TextBarcodeElement.php');
     include_once('ElementType.php');
     
-    /// <summary>
-    /// Represents a GS1DataBar barcode element.
-    /// </summary>
-    /// <remarks>This class can be used to place a GS1DataBar barcode on a page.</remarks>
+
+    /**
+    *
+    * Represents a GS1DataBar barcode element.
+    *
+    * This class can be used to place a GS1DataBar barcode on a page.
+    *
+    */
     class Gs1DataBarBarcodeElement extends TextBarcodeElement
     {
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Gs1DataBarBarcodeElement"/> class.
-        /// </summary>
-        /// <param name="value">The value of the barcode.</param>
-        /// <param name="placement">The placement of the barcode on the page.</param>
-        /// <param name="height">The height of the barcode.</param>
-        /// <param name="type">The GS1DataBarType of the barcode.</param>
-        /// <param name="xOffset">The X coordinate of the barcode.</param>
-        /// <param name="yOffset">The Y coordinate of the barcode.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the Gs1DataBarBarcodeElement class. 
+        *
+        * @param  string $value The value of the barcode.
+        * @param  string $placement The placement of the barcode on the page.
+        * @param  float $height The height of the barcode.
+        * @param  string $type The GS1DataBarType of the barcode.
+        * @param  float $xOffset The X coordinate of the barcode.
+        * @param  float $yOffset The Y coordinate of the barcode.
+        */
         public function __construct(string $value, string $placement,float $height, string $type ,float $xOffset = 0, float $yOffset = 0) 
         { 
             parent::__construct($value, $placement, $xOffset, $yOffset);
@@ -29,9 +36,12 @@
        
         public  $Gs1DataBarType;
 
-        /// <summary>
-        /// Gets or sets the height of the barcode.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the height of the barcode.
+        *
+        */
         public $Height;
         public function GetjsonSerializeString()
         {
@@ -93,3 +103,4 @@
     }
     
 ?>
+

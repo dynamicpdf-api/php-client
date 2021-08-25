@@ -1,33 +1,52 @@
 <?php
 
-/// <summary>
-/// Specifies resouce type.
-/// </summary>
+
+/**
+*
+* Specifies resouce type.
+*
+*/
 class ResourceType
 { 
-      /// <summary>
-      /// Image resource.
-      /// </summary>
+
+      /**
+      *
+      * Image resource.
+      *
+      */
       public const Image = "Image";
 
-      /// <summary>
-      /// Pdf resource.
-      /// </summary>
+
+      /**
+      *
+      * Pdf resource.
+      *
+      */
       public const Pdf = "Pdf";
 
-      /// <summary>
-      /// LayoutData resource.
-      /// </summary>
+
+      /**
+      *
+      * LayoutData resource.
+      *
+      */
       public const LayoutData = "LayoutData";
 
-      /// <summary>
-      /// Dlex resource.
-      /// </summary>
+
+      /**
+      *
+      * Dlex resource.
+      *
+      */
       public const Dlex = "Dlex";
 
-      /// <summary>
-      /// Font resource.
-      /// </summary>
+
+      /**
+      *
+      * Font resource.
+      *
+      */
       public const Font = "Font";
 } 
 ?>
+

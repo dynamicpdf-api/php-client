@@ -1,19 +1,29 @@
 <?php
 
-/// <summary>
-/// Represents value type.
-/// </summary>
+
+/**
+*
+* Represents value type.
+*
+*/
 class ValueType
 { 
-      /// <summary>
-      /// String.
-      /// </summary>
+
+      /**
+      *
+      * String.
+      *
+      */
       public const String = "string";
 
-      /// <summary>
-      /// Base 64 encoded byte array.
-      /// </summary>
+
+      /**
+      *
+      * Base 64 encoded byte array.
+      *
+      */
       public const Base64EncodedBytes = "base64EncodedBytes";
 
 } 
 ?>
+

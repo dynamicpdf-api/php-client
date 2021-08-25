@@ -1,9 +1,12 @@
 <?php
 
-/// <summary>
-/// Represents the base class for endpoint and has settings for base url, 
-/// api key and creates a rest request object.
-/// </summary>
+
+/**
+*
+* Represents the base class for endpoint and has settings for base url, api key and creates a rest request 
+* object. 
+*
+*/
 abstract class Endpoint
 {
     protected  $enableLogging = false;
@@ -20,24 +23,36 @@ abstract class Endpoint
     //    this.resources = resources;
     //}
 
-    /// <summary>
-    /// Gets or sets default base url.
-    /// </summary>
+
+    /**
+    *
+    * Gets or sets default base url.
+    *
+    */
     public static  $DefaultBaseUrl;
 
-    /// <summary>
-    /// Gets or sets default api key.
-    /// </summary>
+
+    /**
+    *
+    * Gets or sets default api key.
+    *
+    */
     public static  $DefaultApiKey;
 
-    /// <summary>
-    /// Gets or sets base url for the api.
-    /// </summary>
+
+    /**
+    *
+    * Gets or sets base url for the api.
+    *
+    */
     public   $BaseUrl="";
 
-    /// <summary>
-    /// Gets or sets api key.
-    /// </summary>
+
+    /**
+    *
+    * Gets or sets api key.
+    *
+    */
     public   $ApiKey="";
 
 

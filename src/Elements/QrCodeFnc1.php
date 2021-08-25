@@ -1,24 +1,37 @@
 <?php
 
 
-/// <summary>
-/// The type of FNC1 mode to use.
-/// </summary>
+
+/**
+*
+* The type of FNC1 mode to use.
+*
+*/
 class QrCodeFnc1
 { 
-      /// <summary>
-      /// FNC1 None.
-      /// </summary>
+
+      /**
+      *
+      * FNC1 None.
+      *
+      */
       public const Gs1 = "gs1";
 
-      /// <summary>
-      /// FNC1 Gs1.
-      /// </summary>
+
+      /**
+      *
+      * FNC1 Gs1.
+      *
+      */
       public const Industry  = "industry";
 
-      /// <summary>
-      /// FNC1 Industry.
-      /// </summary>
+
+      /**
+      *
+      * FNC1 Industry.
+      *
+      */
       public const None  = "none";
 } 
 ?>
+

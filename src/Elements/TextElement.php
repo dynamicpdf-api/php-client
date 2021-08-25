@@ -1,21 +1,28 @@
-﻿<?php
+<?php
     
     include_once('Element.php');
     include_once('ElementType.php');
     
-   /// <summary>
-    /// Represents a text element.
-    /// </summary>
-    /// <remarks>This class can be used to place text on a page.</remarks>
+
+    /**
+    *
+    * Represents a text element.
+    *
+    * This class can be used to place text on a page.
+    *
+    */
     class TextElement extends Element
     {
-         /// <summary>
-        /// Initializes a new instance of the <see cref="TextElement"/> class.
-        /// </summary>
-        /// <param name="value">Text to display in the text element.</param>
-        /// <param name="placement">The placement of the text element on the page.</param>
-        /// <param name="xOffset">X coordinate of the text element.</param>
-        /// <param name="yOffset">Y coordinate of the text element.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the TextElement class. 
+        *
+        * @param  string $value Text to display in the text element.
+        * @param  string $placement The placement of the text element on the page.
+        * @param  float $xOffset X coordinate of the text element.
+        * @param  float $yOffset Y coordinate of the text element.
+        */
         public function __construct(string $value, string $placement, float $xOffset = 0, float $yOffset = 0) 
          { 
             parent::__construct($value, $placement, $xOffset, $yOffset) ;
@@ -26,22 +33,34 @@
          public   $Type  = ElementType::Text;
         
         public  $FontName;
-        /// <summary>
-        /// Gets or sets the <see cref="Color"/> object to use for the text of the text element.
-        /// </summary>
+
+        /**
+        *
+        *  Gets or sets the Color object to use for the text of the text element. 
+        *
+        */
         public  $Color  = null;
-        /// <summary>
-        /// Gets or sets the font size for the text of the text element.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the font size for the text of the text element.
+        *
+        */
         public  $FontSize;
         
-        /// <summary>
-        /// Gets or sets the text to display in the text element.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the text to display in the text element.
+        *
+        */
         public  $Text;
-         /// <summary>
-        /// Gets or sets the <see cref="Font"/> object used to specify the font of the text for the text element.
-        /// </summary>
+
+         /**
+         *
+         *  Gets or sets the Font object used to specify the font of the text for the text element. 
+         *
+         */
          public  function Font(Font $value)
          {
             $this->TextFont = $value;
@@ -87,3 +106,4 @@ $jsonArray['oddPages'] = $this->OddPages;
          }
     }
 ?>
+

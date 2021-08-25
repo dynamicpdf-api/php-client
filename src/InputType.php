@@ -1,28 +1,44 @@
 <?php
 
- /// <summary>
-    /// Specifies an input type.
-    /// </summary>
+
+/**
+*
+* Specifies an input type.
+*
+*/
 class InputType
 { 
-       /// <summary>
-        /// Pdf input.
-        /// </summary>
+
+      /**
+      *
+      * Pdf input.
+      *
+      */
       public const Pdf = "Pdf";
 
-         /// <summary>
-        /// Image input.
-        /// </summary>
+
+      /**
+      *
+      * Image input.
+      *
+      */
       public const Image = "Image";
 
-       /// <summary>
-        /// Dlex input.
-        /// </summary>
+
+      /**
+      *
+      * Dlex input.
+      *
+      */
       public const Dlex = "Dlex";
 
-       /// <summary>
-        /// Page input.
-        /// </summary>
+
+      /**
+      *
+      * Page input.
+      *
+      */
       public const Page = "Page";
 } 
 ?>
+

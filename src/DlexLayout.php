@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 {
 
     include_once('Endpoint.php');
@@ -7,12 +7,15 @@
     {
         private $resource;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DlexLayout"/> class using the 
-        /// DLEX file path present in the cloud environment and the JSON data for the PDF report.
-        /// </summary>
-        /// <param name="cloudDlexPath">The DLEX file path present in the resource manager.</param>
-        /// <param name="layoutData">The <see cref="LayoutDataResource"/>, json data file used to create the PDF report.</param>
+
+        /**
+        *
+        * Initializes a new instance of the DlexLayout class using the DLEX file path present in the cloud environment 
+        * and the JSON data for the PDF report. 
+        *
+        * @param  string $cloudDlexPath The DLEX file path present in the resource manager.
+        * @param  LayoutDataResource $layoutData The LayoutDataResource, json data file used to create the PDF report.        *
+        */
         public function __construct(string $cloudDlexPath, LayoutDataResource $layoutData) 
         {
             $this->DlexPath = $cloudDlexPath;
@@ -23,14 +26,20 @@
 
         
 
-        /// <summary>
-        /// Gets or sets the DLEX file path present in the resource manager.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the DLEX file path present in the resource manager.
+        *
+        */
         public $DlexPath;
 
-        /// <summary>
-        /// Process the DLEX and layout data to create PDF report.
-        /// </summary>
+
+        /**
+        *
+        * Process the DLEX and layout data to create PDF report.
+        *
+        */
         public function Process():PdfResponse
         {
             $client=parent::Init();
@@ -122,3 +131,4 @@
         }
     }
 }
+

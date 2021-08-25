@@ -1,17 +1,26 @@
-﻿<?php
-    /// <summary>
-    /// Represents information of a signature field.
-    /// </summary>
+<?php
+
+    /**
+    *
+    * Represents information of a signature field.
+    *
+    */
     class SignatureFieldInformation
     {
-        /// <summary>
-        /// Gets or Sets the name of a signature field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or Sets the name of a signature field.
+        *
+        */
         public $Name;
 
-        /// <summary>
-        /// Gets or Sets the boolean, indicating the field signed or not.
-        /// </summary>
+
+        /**
+        *
+        * Gets or Sets the boolean, indicating the field signed or not.
+        *
+        */
         public $Signed;
     }
 ?>

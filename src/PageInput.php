@@ -1,18 +1,24 @@
-﻿<?php
+<?php
 
 include_once('InputType.php');
 
-/// <summary>
-/// Represents a page input.
-/// </summary>
+
+/**
+*
+* Represents a page input.
+*
+*/
 class PageInput extends Input
 {
     
-/// <summary>
-        /// Initializes a new instance of the <see cref="PageInput"/> class.
-        /// </summary>
-        /// <param name="pageWidth">The width of the page.</param>
-        /// <param name="pageHeight">The height of the page.</param>
+
+    /**
+    *
+    *  Initializes a new instance of the PageInput class. 
+    *
+    * @param  float $pageWidth The width of the page.
+    * @param  float $pageHeight The height of the page.
+    */
     public function __construct(float $pageWidth= null, float $pageHeight= null) 
     { 
         $this->PageWidth = $pageWidth; 
@@ -22,21 +28,30 @@ class PageInput extends Input
     
     public  $Type =InputType::Page; 
 
-    /// <summary>
-    /// Gets or sets the width of the page.
-    /// </summary>
+
+    /**
+    *
+    * Gets or sets the width of the page.
+    *
+    */
     public  $PageWidth;
 
-    /// <summary>
-    /// Gets or sets the height of the page.
-    /// </summary>
+
+    /**
+    *
+    * Gets or sets the height of the page.
+    *
+    */
     public  $PageHeight;
 
     public  $Elements= array();
     
-    /// <summary>
-    /// Gets or sets the elements of the page.
-    /// </summary>
+
+    /**
+    *
+    * Gets or sets the elements of the page.
+    *
+    */
     public  function GetElements()
     {
         return $this->Elements;
@@ -78,3 +93,4 @@ class PageInput extends Input
     }
 }
 ?>
+

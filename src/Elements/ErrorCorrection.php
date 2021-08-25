@@ -1,57 +1,91 @@
 <?php
-    /// <summary>
-    /// The level of error correction to use in a barcode.
-    /// </summary>
+
+/**
+*
+* The level of error correction to use in a barcode.
+*
+*/
 class ErrorCorrection
 { 
-      /// <summary>
-      /// Error Correction Level 0.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Level 0.
+      *
+      */
       public const Level0 = "level0";
 
-      /// <summary>
-      /// Error Correction Level 1.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Level 1.
+      *
+      */
       public const Level1 = "level1";
 
-      /// <summary>
-      /// Error Correction Level 2.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Level 2.
+      *
+      */
       public const Level2 = "level2";
 
-      /// <summary>
-      /// Error Correction Level 3.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Level 3.
+      *
+      */
       public const Level3 = "level3";
 
-      /// <summary>
-      /// Error Correction Level 4.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Level 4.
+      *
+      */
       public const Level4 = "level4";
 
-      /// <summary>
-      /// Error Correction Level 5.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Level 5.
+      *
+      */
       public const Level5 = "level5";
 
-      /// <summary>
-      /// Error Correction Level 6.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Level 6.
+      *
+      */
       public const Level6 = "level6";
 
-      /// <summary>
-      /// Error Correction Level 7.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Level 7.
+      *
+      */
       public const Level7 = "level7";
 
-      /// <summary>
-      /// Error Correction Level 8.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Level 8.
+      *
+      */
       public const Level8 = "level8";
 
-      /// <summary>
-      /// Error Correction Auto.
-      /// </summary>
+
+      /**
+      *
+      * Error Correction Auto.
+      *
+      */
       public const Auto = "auto";
 } 
 ?>
+

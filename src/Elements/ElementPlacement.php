@@ -1,38 +1,60 @@
 <?php
 
-    /// <summary>
-    /// Represents the placement of a page element.
-    /// </summary>
+
+/**
+*
+* Represents the placement of a page element.
+*
+*/
 class ElementPlacement
 { 
-        /// <summary>
-        /// Represents top left placement.
-        /// </summary>
+
+      /**
+      *
+      * Represents top left placement.
+      *
+      */
       public const TopLeft = "topLeft";
 
-        /// <summary>
-        /// Represents top center placement.
-        /// </summary>
+
+      /**
+      *
+      * Represents top center placement.
+      *
+      */
       public const TopCenter = "topCenter";
 
-        /// <summary>
-        /// Represents top right placement.
-        /// </summary>
+
+      /**
+      *
+      * Represents top right placement.
+      *
+      */
       public const TopRight = "topRight";
 
-        /// <summary>
-        /// Represents bottom left placement.
-        /// </summary>
+
+      /**
+      *
+      * Represents bottom left placement.
+      *
+      */
       public const BottomLeft = "bottomLeft";
 
-        /// <summary>
-        /// Represents bottom center placement.
-        /// </summary>
+
+      /**
+      *
+      * Represents bottom center placement.
+      *
+      */
       public const BottomCenter = "bottomCenter";
 
-        /// <summary>
-        /// Represents bottom right placement.
-        /// </summary>
+
+      /**
+      *
+      * Represents bottom right placement.
+      *
+      */
       public const BottomRight = "bottomRight";
 } 
 ?>
+

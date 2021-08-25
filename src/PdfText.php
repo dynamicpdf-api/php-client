@@ -1,21 +1,27 @@
-﻿<?php
+<?php
 
 include_once('Endpoint.php');
 include_once('PdfTextResponse.php');
 
-/// <summary>
-    /// Represents the pdf text endpoint.
-    /// </summary>
+
+    /**
+    *
+    * Represents the pdf text endpoint.
+    *
+    */
     class PdfText extends Endpoint
     {
         private $resource;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PdfText"/> class.
-        /// </summary>
-        /// <param name="resource">The image resource of type <see cref="PdfResource"/>.</param>
-        /// <param name="startPage">The start page.</param>
-        /// <param name="pageCount">The page count.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the PdfText class. 
+        *
+        * @param  PdfResource $resource The image resource of type PdfResource.        *
+        * @param  int $startPage The start page.
+        * @param  int $pageCount The page count.
+        */
         public function __construct(PdfResource $resource, int $startPage = 1, int $pageCount = 0)
         {
             $this->resource = $resource;
@@ -25,21 +31,30 @@ include_once('PdfTextResponse.php');
 
         public  $EndpointName  = "pdf-text";
 
-        /// <summary>
-        /// Gets or sets the start page.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the start page.
+        *
+        */
         public $StartPage=1;
 
-        /// <summary>
-        /// Gets or sets the page count.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the page count.
+        *
+        */
         public $PageCount=0 ;
 
        
       
-        /// <summary>
-        /// Process the pdf resource to get pdf's text.
-        /// </summary>
+
+        /**
+        *
+        * Process the pdf resource to get pdf's text.
+        *
+        */
         public function Process():PdfTextResponse
         {
             $client=parent::Init();
@@ -95,3 +110,4 @@ include_once('PdfTextResponse.php');
         }
     }
 ?>
+

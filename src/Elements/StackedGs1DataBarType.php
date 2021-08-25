@@ -1,23 +1,36 @@
 <?php
 
-/// <summary>
-/// Represents Stacked GS1 DataBar types.
-/// </summary>
+
+/**
+*
+* Represents Stacked GS1 DataBar types.
+*
+*/
 class StackedGs1DataBarType
 { 
-      /// <summary>
-      /// Stacked type.
-      /// </summary>
+
+      /**
+      *
+      * Stacked type.
+      *
+      */
       public const Stacked = "stacked";
 
-      /// <summary>
-      /// Stacked Omnidirectional type.
-      /// </summary>
+
+      /**
+      *
+      * Stacked Omnidirectional type.
+      *
+      */
       public const StackedOmnidirectional = "stackedOmnidirectional";
       
-      /// <summary>
-      /// Expanded stacked type.
-      /// </summary>
+
+      /**
+      *
+      * Expanded stacked type.
+      *
+      */
       public const ExpandedStacked = "expandedStacked";
 } 
 ?>
+

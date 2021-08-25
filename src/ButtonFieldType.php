@@ -1,17 +1,26 @@
-﻿<?php
+<?php
 
-    /// <summary>
-    /// Specifies the type of a button field.
-    /// </summary>
+
+    /**
+    *
+    * Specifies the type of a button field.
+    *
+    */
     class ButtonFieldType
     {
-        /// <summary>
-        /// Represents a Radio Button.
-        /// </summary>
+
+        /**
+        *
+        * Represents a Radio Button.
+        *
+        */
         public const RadioButton = "radioButton";
-        /// <summary>
-        /// Represents a Checkbox.
-        /// </summary>
+
+        /**
+        *
+        * Represents a Checkbox.
+        *
+        */
         public const CheckBox = "checkBox";
     }
 ?>

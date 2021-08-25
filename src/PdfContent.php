@@ -1,17 +1,27 @@
-﻿<?php>
-    /// <summary>
-    /// Represents the pdf content
-    /// </summary>
+<?php>
+
+    /**
+    *
+    * Represents the pdf content
+    *
+    */
     class PdfContent
     {
-        /// <summary>
-        /// Gets or sets the page number.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the page number.
+        *
+        */
         public  $PageNumber;
 
-        /// <summary>
-        /// Gets the text in the pdf.
-        /// </summary>
+
+        /**
+        *
+        * Gets the text in the pdf.
+        *
+        */
         public  $Text;
     }
 ?>
+

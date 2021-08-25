@@ -2,34 +2,53 @@
 
 {
 
-/// <summary>
-/// Specifies the Function Character for a Datamatrix barcode.
-/// </summary>
+
+/**
+*
+* Specifies the Function Character for a Datamatrix barcode.
+*
+*/
 class DataMatrixFunctionCharacter
 { 
-      /// <summary>
-      /// Macro 05 Character.
-      /// </summary>
+
+      /**
+      *
+      * Macro 05 Character.
+      *
+      */
       public const Macro05 = "macro05";
 
-      /// <summary>
-      /// Macro 06 Character.
-      /// </summary>
+
+      /**
+      *
+      * Macro 06 Character.
+      *
+      */
       public const Macro06 = "macro06";
 
-      /// <summary>
-      /// ReaderProgramming Character.
-      /// </summary>
+
+      /**
+      *
+      * ReaderProgramming Character.
+      *
+      */
       public const ReaderProgramming = "readerProgramming";
 
-      /// <summary>
-      /// FNC1 Character.
-      /// </summary>
+
+      /**
+      *
+      * FNC1 Character.
+      *
+      */
       public const FNC1 = "fnC1";
 
-      /// <summary>
-      /// None.
-      /// </summary>
+
+      /**
+      *
+      * None.
+      *
+      */
       public const None = "none";
 } 
 ?>
+

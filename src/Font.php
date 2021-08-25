@@ -1,11 +1,14 @@
-﻿<?php
+<?php
 
 include_once('FontResource.php');
 include_once('Font.php');
 
-  /// <summary>
-    /// Represents font.
-    /// </summary>
+
+     /**
+     *
+     * Represents font.
+     *
+     */
      class Font
     {
 
@@ -26,11 +29,14 @@ include_once('Font.php');
             $this->Name = md5(uniqid(rand(), true));
         }
 
-         /// <summary>
-        /// Initializes a new instance of the <see cref="Font"/> class 
-        /// using the font name that is present in the cloud resource manager.
-        /// </summary>
-        /// <param name="cloudResourceName">The font name present in the cloud resource manager.</param>
+
+        /**
+        *
+        * Initializes a new instance of the Font class using the font name that is present in the cloud resource 
+        * manager. 
+        *
+        * @param  string $cloudResourceName The font name present in the cloud resource manager.
+        */
         public static function CreateFont(string $cloudResourceName)
         {
             $font=new Font();
@@ -39,26 +45,38 @@ include_once('Font.php');
         }
         public  $Resource;
 
-          /// <summary>
-        /// Gets or sets a boolean indicating whether to embed the font.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a boolean indicating whether to embed the font.
+        *
+        */
         public  $Embed;
 
-        /// <summary>
-        /// Gets or sets a boolean indicating whether to subset embed the font.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a boolean indicating whether to subset embed the font.
+        *
+        */
         public $Subset;
         public  $Name;
 
         
-        /// <summary>
-        /// Gets or sets a name for the font resource.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a name for the font resource.
+        *
+        */
         public  $ResourceName;
 
-        /// <summary>
-        /// Gets the Times Roman core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Times Roman core font with Latin 1 encoding.
+        *
+        */
         public static function TimesRoman()
         {
             $font=new Font();
@@ -66,9 +84,12 @@ include_once('Font.php');
             return $font;
         } 
 
-        /// <summary>
-        /// Gets the Times Bold core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Times Bold core font with Latin 1 encoding.
+        *
+        */
         public static function TimesBold()
         {
             $font=new Font();
@@ -76,9 +97,12 @@ include_once('Font.php');
             return $font;
         } 
         
-        /// <summary>
-        /// Gets the Times Italic core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Times Italic core font with Latin 1 encoding.
+        *
+        */
         public static function TimesItalic()
         {
             $font=new Font();
@@ -86,9 +110,12 @@ include_once('Font.php');
             return $font;
         }  
        
-        /// <summary>
-        /// Gets the Times Bold Italic core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Times Bold Italic core font with Latin 1 encoding.
+        *
+        */
         public static function TimesBoldItalic()
         {
             $font=new Font();
@@ -96,9 +123,12 @@ include_once('Font.php');
             return $font;
         }  
 
-        /// <summary>
-        /// Gets the Helvetica core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Helvetica core font with Latin 1 encoding.
+        *
+        */
         public static function Helvetica()
         {
             $font=new Font();
@@ -106,9 +136,12 @@ include_once('Font.php');
             return $font;
         }  
         
-        /// <summary>
-        /// Gets the Helvetica Bold core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Helvetica Bold core font with Latin 1 encoding.
+        *
+        */
         public static function HelveticaBold()
         {
             $font=new Font();
@@ -116,9 +149,12 @@ include_once('Font.php');
             return $font;
         } 
         
-        /// <summary>
-        /// Gets the Helvetica Oblique core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Helvetica Oblique core font with Latin 1 encoding.
+        *
+        */
         public static function HelveticaOblique()
         {
             $font=new Font();
@@ -126,9 +162,12 @@ include_once('Font.php');
             return $font;
         }  
         
-        /// <summary>
-        /// Gets the Helvetica Bold Oblique core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Helvetica Bold Oblique core font with Latin 1 encoding.
+        *
+        */
         public static function HelveticaBoldOblique()
         {
             $font=new Font();
@@ -136,9 +175,12 @@ include_once('Font.php');
             return $font;
         }
         
-        /// <summary>
-        /// Gets the Courier core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Courier core font with Latin 1 encoding.
+        *
+        */
         public static function Courier()
         {
             $font=new Font();
@@ -146,9 +188,12 @@ include_once('Font.php');
             return $font;
         }  
         
-        /// <summary>
-        /// Gets the Courier Bold core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Courier Bold core font with Latin 1 encoding.
+        *
+        */
         public static function CourierBold()
         {
             $font=new Font();
@@ -156,9 +201,12 @@ include_once('Font.php');
             return $font;
         }   
         
-        /// <summary>
-        /// Gets the Courier Oblique core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Courier Oblique core font with Latin 1 encoding.
+        *
+        */
         public static function CourierOblique()
         {
             $font=new Font();
@@ -166,9 +214,12 @@ include_once('Font.php');
             return $font;
         }  
         
-        /// <summary>
-        /// Gets the Courier Bold Oblique core font with Latin 1 encoding.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Courier Bold Oblique core font with Latin 1 encoding.
+        *
+        */
         public static function CourierBoldOblique()
         {
             $font=new Font();
@@ -176,9 +227,12 @@ include_once('Font.php');
             return $font;
         }   
         
-        /// <summary>
-        /// Gets the Symbol core font.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Symbol core font.
+        *
+        */
         public static function Symbol()
         {
             $font=new Font();
@@ -186,9 +240,12 @@ include_once('Font.php');
             return $font;
         }  
         
-        /// <summary>
-        /// Gets the Zapf Dingbats core font.
-        /// </summary>
+
+        /**
+        *
+        * Gets the Zapf Dingbats core font.
+        *
+        */
         public static function ZapfDingbats()
         {
             $font=new Font();
@@ -196,12 +253,14 @@ include_once('Font.php');
             return $font;
         }  
        
-           /// <summary>
-        /// Initializes a new instance of the <see cref="Font"/> class 
-        /// using the file path of the font and resource name.
-        /// </summary>
-        /// <param name="filePath">The file path of the font file.</param>
-        /// <param name="resourceName">The resource name for the font.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the Font class using the file path of the font and resource name. 
+        *
+        * @param  string $filePath The file path of the font file.
+        * @param  string $resourceName The resource name for the font.
+        */
         public static function FromFile(string $filePath,string $resourceName = null)
         {
             $resource = new FontResource($filePath,$resourceName);

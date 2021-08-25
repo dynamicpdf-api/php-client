@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include_once('Resource.php');
 include_once('ResourceType.php');
 
@@ -69,3 +69,4 @@ include_once('ResourceType.php');
         }
     }
 ?>
+

@@ -1,18 +1,24 @@
-﻿<?php
+<?php
 include_once('Resource.php');
 include_once('ResourceType.php');
 
-/// <summary>
-    /// Represents the Layout data resource used to create PDF reports.
-    /// </summary>
+
+    /**
+    *
+    * Represents the Layout data resource used to create PDF reports.
+    *
+    */
     class LayoutDataResource extends Resource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LayoutDataResource"/> class 
-        /// using the layout data object and a resource name.
-        /// </summary>
-        /// <param name="layoutData">Serializable object data to create PDF report.</param>
-        /// <param name="layoutDataResourceName">The name for layout data resource.</param>
+
+        /**
+        *
+        * Initializes a new instance of the LayoutDataResource class using the layout data object and a resource 
+        * name. 
+        *
+        * @param  string $layoutData Serializable object data to create PDF report.
+        * @param  string $layoutDataResourceName The name for layout data resource.
+        */
         public function __construct(string $layoutData= null, string $layoutDataResourceName = null) 
         {
         if($layoutData != null)
@@ -43,12 +49,15 @@ include_once('ResourceType.php');
         }
         }
 
-       /// <summary>
-        /// Initializes a new instance of the <see cref="LayoutDataResource"/> class 
-        /// using the layout data object and a resource name.
-        /// </summary>
-        /// <param name="layoutData">Serializable object data to create PDF report.</param>
-        /// <param name="layoutDataResourceName">The name for layout data resource.</param>
+
+        /**
+        *
+        * Initializes a new instance of the LayoutDataResource class using the layout data object and a resource 
+        * name. 
+        *
+        * @param  object $layoutData Serializable object data to create PDF report.
+        * @param  string $layoutDataResourceName The name for layout data resource.
+        */
         public static  function CreateLayoutDataResource(object $layoutData, string $layoutDataResourceName = null) :  LayoutDataResource
         {
            // print_r ($layoutData);
@@ -66,9 +75,12 @@ include_once('ResourceType.php');
         
         public  $FileExtension = ".json";
 
-        /// <summary>
-        /// Gets or sets name of the layout data resource.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets name of the layout data resource.
+        *
+        */
         public  $LayoutDataResourceName ;
 
         public function GetjsonSerializeString()
@@ -86,3 +98,4 @@ include_once('ResourceType.php');
         }
     }
 ?>
+

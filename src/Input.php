@@ -1,11 +1,14 @@
-﻿<?php
+<?php
 
 require_once('InputType.php');
 require_once('Resource.php');
 
-    /// <summary>
-    /// Represents the base class for inputs.
-    /// </summary>
+
+     /**
+     *
+     * Represents the base class for inputs.
+     *
+     */
      abstract class Input 
     {
         private  $template;
@@ -26,18 +29,27 @@ require_once('Resource.php');
         public $Type;
         public $TemplateId;
         public $Resources= array();
-        /// <summary>
-        /// Gets or sets the resource name.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the resource name.
+        *
+        */
         public $ResourceName;
-        /// <summary>
-        /// Gets or sets the id.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the id.
+        *
+        */
         public $Id;
 
-          /// <summary>
-        /// Gets or sets the template.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the template.
+        *
+        */
         public function SetTemplate(Template $template)
         {  
             $this->template = $template;
@@ -57,3 +69,4 @@ require_once('Resource.php');
             );
         }*/
     }
+

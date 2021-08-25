@@ -1,22 +1,34 @@
-﻿<?php
-    /// <summary>
-    /// Represents information of a text field.
-    /// </summary>
+<?php
+
+    /**
+    *
+    * Represents information of a text field.
+    *
+    */
     class TextFieldInformation
     {
-        /// <summary>
-        /// Gets or Sets the name of the Text field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or Sets the name of the Text field.
+        *
+        */
         public $Name;
 
-        /// <summary>
-        /// Gets or Sets the value of the Text field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or Sets the value of the Text field.
+        *
+        */
         public $Value;
 
-        /// <summary>
-        /// Gets or Sets the default value of the Text field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or Sets the default value of the Text field.
+        *
+        */
         public $DefaultValue;
     }
 ?>

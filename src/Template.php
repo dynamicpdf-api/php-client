@@ -1,27 +1,39 @@
-﻿<?php
+<?php
 
-    /// <summary>
-    /// Represents a document template.
-    /// </summary>
+
+    /**
+    *
+    * Represents a document template.
+    *
+    */
     class Template implements JsonSerializable
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Template"/> class.
-        /// </summary>
-        /// <param name="id">The id string representing id for the template.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the Template class. 
+        *
+        * @param  string $id The id string representing id for the template.
+        */
         public function __construct(string $id)
         {
             $this->Id = $id;
         }
 
-        /// <summary>
-        /// Gets or sets the id for the template.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the id for the template.
+        *
+        */
         public  $Id;
 
-        /// <summary>
-        /// Gets or sets the elements for the template.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the elements for the template.
+        *
+        */
         public  $Elements =  array();
 
         public function jsonSerialize()
@@ -42,3 +54,4 @@
         }
     }
 ?>
+

@@ -1,23 +1,33 @@
-﻿<?php
+<?php
     require_once('Response.php');
 
-    /// <summary>
-    /// Represents the pdf response.
-    /// </summary>
+
+    /**
+    *
+    * Represents the pdf response.
+    *
+    */
     class PdfResponse  extends Response
     {
        
-          /// <summary>
-        /// Gets the content od pdf.
-        /// </summary>
+
+        /**
+        *
+        * Gets the content od pdf.
+        *
+        */
         public  $Content;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PdfResponse"/> class.
-        /// </summary>
-        /// <param name="pdfContent">The byte array of pdf content.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the PdfResponse class. 
+        *
+        * @param  mixed $pdfContent The byte array of pdf content.
+        */
         public function  __construct(mixed $pdfContent)
         {
             $this->Content = $value;
         }
     }
+

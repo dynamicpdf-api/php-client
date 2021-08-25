@@ -1,12 +1,15 @@
-﻿<?php
+<?php
 
 include_once('BarcodeElement.php');
 include_once('ElementPlacement.php');
 include_once('ValueType.php');
 
-    /// <summary>
-    /// The base class for 2 dimensional barcodes (Aztec, Pdf417, DataMatrixBarcode and QrCode).
-    /// </summary>
+
+    /**
+    *
+    * The base class for 2 dimensional barcodes (Aztec, Pdf417, DataMatrixBarcode and QrCode).
+    *
+    */
     abstract class Dim2BarcodeElement extends BarcodeElement
     {       
         public function __construct(string $value, string $placement, float $xOffset, float $yOffset)
@@ -29,3 +32,4 @@ include_once('ValueType.php');
        
     }
 ?>
+

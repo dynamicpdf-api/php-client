@@ -2,9 +2,12 @@
 include_once('Element.php');
 include_once('ElementPlacement.php');
 
-    /// <summary>
-    /// Base class from which barcode page elements are derived.
-    /// </summary>
+
+    /**
+    *
+    * Base class from which barcode page elements are derived.
+    *
+    */
     abstract class BarcodeElement extends Element
     {      
         //public BarcodeElement() { }
@@ -14,19 +17,29 @@ include_once('ElementPlacement.php');
             $this->Value=$value;
         }
 
-        /// <summary>
-        /// Gets or sets the Color of the barcode.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the Color of the barcode.
+        *
+        */
         public   $Color = null;
 
-        /// <summary>
-        /// Gets or sets the XDimension of the barcode.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the XDimension of the barcode.
+        *
+        */
         public   $XDimension; 
 
-        /// <summary>
-        /// Gets or sets the value of the barcode.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the value of the barcode.
+        *
+        */
         public   $Value;
     }
 ?>
+

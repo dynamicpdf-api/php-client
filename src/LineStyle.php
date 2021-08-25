@@ -1,19 +1,25 @@
-﻿<?php
+<?php
 
-    /// <summary>
-    /// Represents a style of line.
-    /// </summary>
+
+    /**
+    *
+    * Represents a style of line.
+    *
+    */
     class LineStyle
     {
         //private static System.Globalization.NumberFormatInfo objFormatter = new System.Globalization.NumberFormatInfo();
 
        // internal LineStyle(string lineStyle) { LineStyleString = lineStyle; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LineStyle"/> class.
-        /// </summary>
-        /// <param name="dashArray">The array specifying the line style.</param>
-        /// <param name="dashPhase">The phase of the line style.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the LineStyle class. 
+        *
+        * @param  ?array $dashArray The array specifying the line style.
+        * @param  float $dashPhase The phase of the line style.
+        */
         public function __construct(?array $dashArray, float $dashPhase = 0)
         {
             if($dashArray != null)
@@ -44,34 +50,52 @@
         }
 
         public  $LineStyleString;
-        /// <summary>
-        /// Gets a solid line.
-        /// </summary>
+
+        /**
+        *
+        * Gets a solid line.
+        *
+        */
         public static function Solid() { return LineStyle::CreateLineStyle("solid");} 
 
-        /// <summary>
-        /// Gets a dotted line.
-        /// </summary>
+
+        /**
+        *
+        * Gets a dotted line.
+        *
+        */
         public static function Dots() { return  LineStyle::CreateLineStyle("dots");}
 
-        /// <summary>
-        /// Gets a line with small dashes.
-        /// </summary>
+
+        /**
+        *
+        * Gets a line with small dashes.
+        *
+        */
         public static function DashSmall() { return  LineStyle::CreateLineStyle("dashSmall");}
 
-        /// <summary>
-        /// Gets a dashed line.
-        /// </summary>
+
+        /**
+        *
+        * Gets a dashed line.
+        *
+        */
         public static function Dash() { return  LineStyle::CreateLineStyle("dash"); }
 
-        /// <summary>
-        /// Gets a line with large dashes. 
-        /// </summary>
+
+        /**
+        *
+        * Gets a line with large dashes.
+        *
+        */
         public static function DashLarge() { return  LineStyle::CreateLineStyle("dashLarge"); }
 
-        /// <summary>
-        /// Gets a invisible line. 
-        /// </summary>
+
+        /**
+        *
+        * Gets a invisible line.
+        *
+        */
         public static function None() { return  LineStyle::CreateLineStyle("none");}
 
         public function GetjsonSerializeString()
@@ -80,3 +104,4 @@
         }
     }
 ?>
+

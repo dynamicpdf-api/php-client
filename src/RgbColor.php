@@ -1,10 +1,13 @@
-﻿<?php
+<?php
 include_once('EndpointException.php');
 include_once('Color.php');
 
-/// <summary>
-    /// Represents an RGB color.
-    /// </summary>
+
+    /**
+    *
+    * Represents an RGB color.
+    *
+    */
     class RgbColor extends Color
     {
         //private string colorString;
@@ -18,12 +21,15 @@ include_once('Color.php');
             $this->ColorString = $colorString; 
         }
        
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RgbColor"/> class.
-        /// </summary>
-        /// <param name="red">The red intensity.</param>
-        /// <param name="green">The green intensity.</param>
-        /// <param name="blue">The blue intensity.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the RgbColor class. 
+        *
+        * @param  float $red The red intensity.
+        * @param  float $green The green intensity.
+        * @param  float $blue The blue intensity.
+        */
         public  static function CreateRgbColor(float $red, float $green, float $blue)
         {
            
@@ -43,426 +49,1141 @@ include_once('Color.php');
         
        
 
-        /// <summary>Gets the color red.</summary>
+
+        /**
+        *
+        * Gets the color red.
+        *
+        */
         public static function Red()  { return new RgbColor("Red"); } 
-        /// <summary>Gets the color blue.</summary>
+
+        /**
+        *
+        * Gets the color blue.
+        *
+        */
         public static function Blue()  { return new RgbColor("Blue");  } 
-        /// <summary>Gets the color green.</summary>
+
+        /**
+        *
+        * Gets the color green.
+        *
+        */
         public static function Green()  { return new RgbColor("Green"); } 
-        /// <summary>Gets the color black.</summary>
+
+        /**
+        *
+        * Gets the color black.
+        *
+        */
         public static function Black()  { return new RgbColor("Black"); } 
 
-        /// <summary>Gets the color silver.</summary>
+
+        /**
+        *
+        * Gets the color silver.
+        *
+        */
         public static function Silver()  { return new RgbColor("Silver"); } 
 
-        /// <summary>Gets the color dark gray.</summary>
+
+        /**
+        *
+        * Gets the color dark gray.
+        *
+        */
         public static function DarkGray()  { return new RgbColor("DarkGray"); } 
 
-        /// <summary>Gets the color gray.</summary>
+
+        /**
+        *
+        * Gets the color gray.
+        *
+        */
         public static function Gray()  { return new RgbColor("Gray"); } 
 
-        /// <summary>Gets the color dim gray.</summary>
+
+        /**
+        *
+        * Gets the color dim gray.
+        *
+        */
         public static function DimGray()  { return new RgbColor("DimGray"); } 
 
-        /// <summary>Gets the color white.</summary>
+
+        /**
+        *
+        * Gets the color white.
+        *
+        */
         public static function White()  { return new RgbColor("White"); } 
 
-        /// <summary>Gets the color lime.</summary>
+
+        /**
+        *
+        * Gets the color lime.
+        *
+        */
         public static function Lime()  { return new RgbColor("Lime"); } 
 
-        /// <summary>Gets the color aqua.</summary>
+
+        /**
+        *
+        * Gets the color aqua.
+        *
+        */
         public static function Aqua()  { return new RgbColor("Aqua"); } 
 
-        /// <summary>Gets the color purple.</summary>
+
+        /**
+        *
+        * Gets the color purple.
+        *
+        */
         public static function Purple()  { return new RgbColor("Purple"); } 
 
-        /// <summary>Gets the color cyan.</summary>
+
+        /**
+        *
+        * Gets the color cyan.
+        *
+        */
         public static function Cyan()  { return new RgbColor("Cyan"); } 
 
-        /// <summary>Gets the color magenta.</summary>
+
+        /**
+        *
+        * Gets the color magenta.
+        *
+        */
         public static function Magenta()  { return new RgbColor("Magenta"); } 
 
-        /// <summary>Gets the color yellow.</summary>
+
+        /**
+        *
+        * Gets the color yellow.
+        *
+        */
         public static function Yellow()  { return new RgbColor("Yellow"); } 
 
-        /// <summary>Gets the color alice blue.</summary>
+
+        /**
+        *
+        * Gets the color alice blue.
+        *
+        */
         public static function AliceBlue()  { return new RgbColor("AliceBlue"); } 
 
-        /// <summary>Gets the color antique white.</summary>
+
+        /**
+        *
+        * Gets the color antique white.
+        *
+        */
         public static function AntiqueWhite()  { return new RgbColor("AntiqueWhite"); } 
 
-        /// <summary>Gets the color aquamarine.</summary>
+
+        /**
+        *
+        * Gets the color aquamarine.
+        *
+        */
         public static function Aquamarine()  { return new RgbColor("Aquamarine"); } 
 
-        /// <summary>Gets the color azure.</summary>
+
+        /**
+        *
+        * Gets the color azure.
+        *
+        */
         public static function Azure()  { return new RgbColor("Azure"); } 
         
-        /// <summary>Gets the color beige.</summary>
+
+        /**
+        *
+        * Gets the color beige.
+        *
+        */
         public static function Beige()  { return new RgbColor("Beige"); } 
 
-        /// <summary>Gets the color bisque.</summary>
+
+        /**
+        *
+        * Gets the color bisque.
+        *
+        */
         public static function Bisque()  { return new RgbColor("Bisque"); } 
 
-        /// <summary>Gets the color blanched almond.</summary>
+
+        /**
+        *
+        * Gets the color blanched almond.
+        *
+        */
         public static function BlanchedAlmond()  { return new RgbColor("BlanchedAlmond"); } 
 
-        /// <summary>Gets the color blue violet.</summary>
+
+        /**
+        *
+        * Gets the color blue violet.
+        *
+        */
         public static function BlueViolet()  { return new RgbColor("BlueViolet"); } 
 
-        /// <summary>Gets the color brown.</summary>
+
+        /**
+        *
+        * Gets the color brown.
+        *
+        */
         public static function Brown()  { return new RgbColor("Brown"); } 
 
-        /// <summary>Gets the color burly wood.</summary>
+
+        /**
+        *
+        * Gets the color burly wood.
+        *
+        */
         public static function BurlyWood()  { return new RgbColor("BurlyWood"); } 
 
-        /// <summary>Gets the color cadet blue.</summary>
+
+        /**
+        *
+        * Gets the color cadet blue.
+        *
+        */
         public static function CadetBlue()  { return new RgbColor("CadetBlue"); } 
 
-        /// <summary>Gets the color chartreuse.</summary>
+
+        /**
+        *
+        * Gets the color chartreuse.
+        *
+        */
         public static function Chartreuse()  { return new RgbColor("Chartreuse"); } 
 
-        /// <summary>Gets the color chocolate.</summary>
+
+        /**
+        *
+        * Gets the color chocolate.
+        *
+        */
         public static function Chocolate()  { return new RgbColor("Chocolate"); } 
 
-        /// <summary>Gets the color coral.</summary>
+
+        /**
+        *
+        * Gets the color coral.
+        *
+        */
         public static function Coral()  { return new RgbColor("Coral"); } 
 
-        /// <summary>Gets the color cornflower blue.</summary>
+
+        /**
+        *
+        * Gets the color cornflower blue.
+        *
+        */
         public static function CornflowerBlue()  { return new RgbColor("CornflowerBlue"); } 
 
-        /// <summary>Gets the color cornsilk.</summary>
+
+        /**
+        *
+        * Gets the color cornsilk.
+        *
+        */
         public static function Cornsilk()  { return new RgbColor("Cornsilk"); } 
 
-        /// <summary>Gets the color crimson.</summary>
+
+        /**
+        *
+        * Gets the color crimson.
+        *
+        */
         public static function Crimson()  { return new RgbColor("Crimson"); } 
 
-        /// <summary>Gets the color dark blue.</summary>
+
+        /**
+        *
+        * Gets the color dark blue.
+        *
+        */
         public static function DarkBlue()  { return new RgbColor("DarkBlue"); } 
 
-        /// <summary>Gets the color dark cyan.</summary>
+
+        /**
+        *
+        * Gets the color dark cyan.
+        *
+        */
         public static function DarkCyan()  { return new RgbColor("DarkCyan"); } 
 
-        /// <summary>Gets the color dark golden rod.</summary>
+
+        /**
+        *
+        * Gets the color dark golden rod.
+        *
+        */
         public static function DarkGoldenRod()  { return new RgbColor("DarkGoldenRod"); } 
 
-        /// <summary>Gets the color dark green.</summary>
+
+        /**
+        *
+        * Gets the color dark green.
+        *
+        */
         public static function DarkGreengreen()  { return new RgbColor("DarkGreen"); } 
 
-        /// <summary>Gets the color dark khaki.</summary>
+
+        /**
+        *
+        * Gets the color dark khaki.
+        *
+        */
         public static function DarkKhaki()  { return new RgbColor("DarkKhaki"); } 
 
-        /// <summary>Gets the color dark magenta.</summary>
+
+        /**
+        *
+        * Gets the color dark magenta.
+        *
+        */
         public static function DarkMagenta()  { return new RgbColor("DarkMagenta"); } 
 
-        /// <summary>Gets the color dark olive green.</summary>
+
+        /**
+        *
+        * Gets the color dark olive green.
+        *
+        */
         public static function DarkOliveGreen()  { return new RgbColor("DarkOliveGreen"); } 
 
-        /// <summary>Gets the color dark orange.</summary>
+
+        /**
+        *
+        * Gets the color dark orange.
+        *
+        */
         public static function DarkOrange()  { return new RgbColor("DarkOrange"); } 
 
-        /// <summary>Gets the color dark orchid.</summary>
+
+        /**
+        *
+        * Gets the color dark orchid.
+        *
+        */
         public static function DarkOrchid()  { return new RgbColor("DarkOrchid"); } 
 
-        /// <summary>Gets the color dark red.</summary>
+
+        /**
+        *
+        * Gets the color dark red.
+        *
+        */
         public static function DarkRed()  { return new RgbColor("DarkRed"); } 
 
-        /// <summary>Gets the color dark salmon.</summary>
+
+        /**
+        *
+        * Gets the color dark salmon.
+        *
+        */
         public static function DarkSalmon()  { return new RgbColor("DarkSalmon"); } 
 
-        /// <summary>Gets the color dark sea green.</summary>
+
+        /**
+        *
+        * Gets the color dark sea green.
+        *
+        */
         public static function DarkSeaGreen()  { return new RgbColor("DarkSeaGreen"); } 
 
-        /// <summary>Gets the color dark slate blue.</summary>
+
+        /**
+        *
+        * Gets the color dark slate blue.
+        *
+        */
         public static function DarkSlateBlue()  { return new RgbColor("DarkSlateBlue"); } 
 
-        /// <summary>Gets the color dark slate gray.</summary>
+
+        /**
+        *
+        * Gets the color dark slate gray.
+        *
+        */
         public static function DarkSlateGray()  { return new RgbColor("DarkSlateGray"); } 
 
-        /// <summary>Gets the color dark turquoise.</summary>
+
+        /**
+        *
+        * Gets the color dark turquoise.
+        *
+        */
         public static function DarkTurquoise()  { return new RgbColor("DarkTurquoise"); } 
 
-        /// <summary>Gets the color dark violet.</summary>
+
+        /**
+        *
+        * Gets the color dark violet.
+        *
+        */
         public static function DarkViolet()  { return new RgbColor("DarkViolet"); } 
 
-        /// <summary>Gets the color deep pink.</summary>
+
+        /**
+        *
+        * Gets the color deep pink.
+        *
+        */
         public static function DeepPink()  { return new RgbColor("DeepPink"); } 
 
-        /// <summary>Gets the color deep sky blue.</summary>
+
+        /**
+        *
+        * Gets the color deep sky blue.
+        *
+        */
         public static function DeepSkyBlue()  { return new RgbColor("DeepSkyBlue"); } 
 
-        /// <summary>Gets the color dodger blue.</summary>
+
+        /**
+        *
+        * Gets the color dodger blue.
+        *
+        */
         public static function DodgerBlue()  { return new RgbColor("DodgerBlue"); } 
 
-        /// <summary>Gets the color feldspar.</summary>
+
+        /**
+        *
+        * Gets the color feldspar.
+        *
+        */
         public static function Feldspar()  { return new RgbColor("Feldspar"); } 
 
-        /// <summary>Gets the color fire brick.</summary>
+
+        /**
+        *
+        * Gets the color fire brick.
+        *
+        */
         public static function FireBrick()  { return new RgbColor("FireBrick"); } 
 
-        /// <summary>Gets the color floral white.</summary>
+
+        /**
+        *
+        * Gets the color floral white.
+        *
+        */
         public static function FloralWhite()  { return new RgbColor("FloralWhite"); } 
 
-        /// <summary>Gets the color forest green.</summary>
+
+        /**
+        *
+        * Gets the color forest green.
+        *
+        */
         public static function ForestGreen()  { return new RgbColor("ForestGreen"); } 
 
-        /// <summary>Gets the color fuchsia.</summary>
+
+        /**
+        *
+        * Gets the color fuchsia.
+        *
+        */
         public static function Fuchsia()  { return new RgbColor("Fuchsia"); } 
 
-        /// <summary>Gets the color ghost white.</summary>
+
+        /**
+        *
+        * Gets the color ghost white.
+        *
+        */
         public static function GhostWhite()  { return new RgbColor("GhostWhite"); } 
 
-        /// <summary>Gets the color gold.</summary>
+
+        /**
+        *
+        * Gets the color gold.
+        *
+        */
         public static function Gold()  { return new RgbColor("Gold"); } 
 
-        /// <summary>Gets the color golden rod.</summary>
+
+        /**
+        *
+        * Gets the color golden rod.
+        *
+        */
         public static function GoldenRod()  { return new RgbColor("GoldenRod"); } 
 
-        /// <summary>Gets the color green yellow.</summary>
+
+        /**
+        *
+        * Gets the color green yellow.
+        *
+        */
         public static function GreenYellow()  { return new RgbColor("GreenYellow"); } 
 
-        /// <summary>Gets the color honey dew.</summary>
+
+        /**
+        *
+        * Gets the color honey dew.
+        *
+        */
         public static function HoneyDew()  { return new RgbColor("HoneyDew"); } 
 
-        /// <summary>Gets the color hot pink.</summary>
+
+        /**
+        *
+        * Gets the color hot pink.
+        *
+        */
         public static function HotPink()  { return new RgbColor("HotPink"); } 
 
-        /// <summary>Gets the color indian red.</summary>
+
+        /**
+        *
+        * Gets the color indian red.
+        *
+        */
         public static function IndianRed()  { return new RgbColor("IndianRed"); } 
 
-        /// <summary>Gets the color indigo.</summary>
+
+        /**
+        *
+        * Gets the color indigo.
+        *
+        */
         public static function Indigo()  { return new RgbColor("Indigo"); } 
 
-        /// <summary>Gets the color ivory.</summary>
+
+        /**
+        *
+        * Gets the color ivory.
+        *
+        */
         public static function Ivory()  { return new RgbColor("Ivory"); } 
 
-        /// <summary>Gets the color khaki.</summary>
+
+        /**
+        *
+        * Gets the color khaki.
+        *
+        */
         public static function Khaki()  { return new RgbColor("Khaki"); } 
 
-        /// <summary>Gets the color lavender.</summary>
+
+        /**
+        *
+        * Gets the color lavender.
+        *
+        */
         public static function Lavender()  { return new RgbColor("Lavender"); } 
 
-        /// <summary>Gets the color lavender blush.</summary>
+
+        /**
+        *
+        * Gets the color lavender blush.
+        *
+        */
         public static function LavenderBlush()  { return new RgbColor("LavenderBlush"); } 
 
-        /// <summary>Gets the color lawn Green.</summary>
+
+        /**
+        *
+        * Gets the color lawn Green.
+        *
+        */
         public static function LawnGreen()  { return new RgbColor("LawnGreen"); } 
 
-        /// <summary>Gets the color lemon chiffon.</summary>
+
+        /**
+        *
+        * Gets the color lemon chiffon.
+        *
+        */
         public static function LemonChiffon()  { return new RgbColor("LemonChiffon"); } 
 
-        /// <summary>Gets the color light blue.</summary>
+
+        /**
+        *
+        * Gets the color light blue.
+        *
+        */
         public static function LightBlue()  { return new RgbColor("LightBlue"); } 
 
-        /// <summary>Gets the color light coral.</summary>
+
+        /**
+        *
+        * Gets the color light coral.
+        *
+        */
         public static function LightCoral()  { return new RgbColor("LightCoral"); } 
 
-        /// <summary>Gets the color light cyan.</summary>
+
+        /**
+        *
+        * Gets the color light cyan.
+        *
+        */
         public static function LightCyan()  { return new RgbColor("LightCyan"); } 
 
-        /// <summary>Gets the color light golden rod yellow.</summary>
+
+        /**
+        *
+        * Gets the color light golden rod yellow.
+        *
+        */
         public static function LightGoldenRodYellow()  { return new RgbColor("LightGoldenRodYellow"); } 
 
-        /// <summary>Gets the color light grey.</summary>
+
+        /**
+        *
+        * Gets the color light grey.
+        *
+        */
         public static function LightGrey()  { return new RgbColor("LightGrey"); } 
 
-        /// <summary>Gets the color light green.</summary>
+
+        /**
+        *
+        * Gets the color light green.
+        *
+        */
         public static function LightGreen()  { return new RgbColor("LightGreen"); } 
 
-        /// <summary>Gets the color light pink.</summary>
+
+        /**
+        *
+        * Gets the color light pink.
+        *
+        */
         public static function LightPink()  { return new RgbColor("LightPink"); } 
 
-        /// <summary>Gets the color light salmon.</summary>
+
+        /**
+        *
+        * Gets the color light salmon.
+        *
+        */
         public static function LightSalmon()  { return new RgbColor("LightSalmon"); } 
 
-        /// <summary>Gets the color light sea green.</summary>
+
+        /**
+        *
+        * Gets the color light sea green.
+        *
+        */
         public static function LightSeaGreen()  { return new RgbColor("LightSeaGreen"); } 
 
-        /// <summary>Gets the color light sky blue.</summary>
+
+        /**
+        *
+        * Gets the color light sky blue.
+        *
+        */
         public static function LightSkyBlue()  { return new RgbColor("LightSkyBlue"); } 
 
-        /// <summary>Gets the color light slate blue.</summary>
+
+        /**
+        *
+        * Gets the color light slate blue.
+        *
+        */
         public static function LightSlateBlue()  { return new RgbColor("LightSlateBlue"); } 
-        /// <summary>Gets the color light slate gray.</summary>
+
+        /**
+        *
+        * Gets the color light slate gray.
+        *
+        */
         public static function LightSlateGray()  { return new RgbColor("LightSlateGray"); } 
 
-        /// <summary>Gets the color light steel blue.</summary>
+
+        /**
+        *
+        * Gets the color light steel blue.
+        *
+        */
         public static function LightSteelBlue()  { return new RgbColor("LightSteelBlue"); } 
 
-        /// <summary>Gets the color light yellow.</summary>
+
+        /**
+        *
+        * Gets the color light yellow.
+        *
+        */
         public static function LightYellow()  { return new RgbColor("LightYellow"); } 
 
-        /// <summary>Gets the color lime green.</summary>
+
+        /**
+        *
+        * Gets the color lime green.
+        *
+        */
         public static function LimeGreen()  { return new RgbColor("LimeGreen"); } 
 
-        /// <summary>Gets the color linen.</summary>
+
+        /**
+        *
+        * Gets the color linen.
+        *
+        */
         public static function Linen()  { return new RgbColor("Linen"); } 
 
-        /// <summary>Gets the color maroon.</summary>
+
+        /**
+        *
+        * Gets the color maroon.
+        *
+        */
         public static function Maroon()  { return new RgbColor("Maroon"); } 
 
-        /// <summary>Gets the color medium aqua marine.</summary>
+
+        /**
+        *
+        * Gets the color medium aqua marine.
+        *
+        */
         public static function MediumAquaMarine()  { return new RgbColor("MediumAquaMarine"); } 
 
-        /// <summary>Gets the color medium blue.</summary>
+
+        /**
+        *
+        * Gets the color medium blue.
+        *
+        */
         public static function MediumBlue()  { return new RgbColor("MediumBlue"); } 
 
-        /// <summary>Gets the color medium orchid.</summary>
+
+        /**
+        *
+        * Gets the color medium orchid.
+        *
+        */
         public static function MediumOrchid()  { return new RgbColor("MediumOrchid"); } 
 
-        /// <summary>Gets the color medium purple.</summary>
+
+        /**
+        *
+        * Gets the color medium purple.
+        *
+        */
         public static function MediumPurple()  { return new RgbColor("MediumPurple"); } 
 
-        /// <summary>Gets the color medium sea green.</summary>
+
+        /**
+        *
+        * Gets the color medium sea green.
+        *
+        */
         public static function MediumSeaGreen()  { return new RgbColor("MediumSeaGreen"); } 
 
-        /// <summary>Gets the color medium slate blue.</summary>
+
+        /**
+        *
+        * Gets the color medium slate blue.
+        *
+        */
         public static function MediumSlateBlue()  { return new RgbColor("MediumSlateBlue"); } 
 
-        /// <summary>Gets the color medium spring green.</summary>
+
+        /**
+        *
+        * Gets the color medium spring green.
+        *
+        */
         public static function MediumSpringGreen()  { return new RgbColor("MediumSpringGreen"); } 
 
-        /// <summary>Gets the color medium turquoise.</summary>
+
+        /**
+        *
+        * Gets the color medium turquoise.
+        *
+        */
         public static function MediumTurquoise()  { return new RgbColor("MediumTurquoise"); } 
 
-        /// <summary>Gets the color medium violet red.</summary>
+
+        /**
+        *
+        * Gets the color medium violet red.
+        *
+        */
         public static function MediumVioletRed()  { return new RgbColor("MediumVioletRed"); } 
 
-        /// <summary>Gets the color midnight blue.</summary>
+
+        /**
+        *
+        * Gets the color midnight blue.
+        *
+        */
         public static function MidnightBlue()  { return new RgbColor("MidnightBlue"); } 
 
-        /// <summary>Gets the color mint cream.</summary>
+
+        /**
+        *
+        * Gets the color mint cream.
+        *
+        */
         public static function MintCream()  { return new RgbColor("MintCream"); } 
-        /// <summary>Gets the color misty rose.</summary>
+
+        /**
+        *
+        * Gets the color misty rose.
+        *
+        */
         public static function MistyRose()  { return new RgbColor("MistyRose"); } 
-        /// <summary>Gets the color moccasin.</summary>
+
+        /**
+        *
+        * Gets the color moccasin.
+        *
+        */
         public static function Moccasin()  { return new RgbColor("Moccasin"); } 
 
-        /// <summary>Gets the color navajo white.</summary>
+
+        /**
+        *
+        * Gets the color navajo white.
+        *
+        */
         public static function NavajoWhite()  { return new RgbColor("NavajoWhite"); } 
 
-        /// <summary>Gets the color navy.</summary>
+
+        /**
+        *
+        * Gets the color navy.
+        *
+        */
         public static function Navy()  { return new RgbColor("Navy"); } 
 
-        /// <summary>Gets the color old lace.</summary>
+
+        /**
+        *
+        * Gets the color old lace.
+        *
+        */
         public static function OldLace()  { return new RgbColor("OldLace"); } 
 
-        /// <summary>Gets the color olive.</summary>
+
+        /**
+        *
+        * Gets the color olive.
+        *
+        */
         public static function Olive()  { return new RgbColor("Olive"); } 
 
-        /// <summary>Gets the color olive drab.</summary>
+
+        /**
+        *
+        * Gets the color olive drab.
+        *
+        */
         public static function OliveDrab()  { return new RgbColor("OliveDrab"); } 
 
-        /// <summary>Gets the color gainsboro.</summary>
+
+        /**
+        *
+        * Gets the color gainsboro.
+        *
+        */
         public static function Gainsboro()  { return new RgbColor("Gainsboro"); } 
 
-        /// <summary>Gets the color orange.</summary>
+
+        /**
+        *
+        * Gets the color orange.
+        *
+        */
         public static function Orange()  { return new RgbColor("Orange"); } 
 
-        /// <summary>Gets the color orange red.</summary>
+
+        /**
+        *
+        * Gets the color orange red.
+        *
+        */
         public static function OrangeRed()  { return new RgbColor("OrangeRed"); } 
 
-        /// <summary>Gets the color orchid.</summary>
+
+        /**
+        *
+        * Gets the color orchid.
+        *
+        */
         public static function Orchid()  { return new RgbColor("Orchid"); } 
 
-        /// <summary>Gets the color pale golden rod.</summary>
+
+        /**
+        *
+        * Gets the color pale golden rod.
+        *
+        */
         public static function PaleGoldenRod()  { return new RgbColor("PaleGoldenRod"); } 
 
-        /// <summary>Gets the color pale green.</summary>
+
+        /**
+        *
+        * Gets the color pale green.
+        *
+        */
         public static function PaleGreen()  { return new RgbColor("PaleGreen"); } 
 
-        /// <summary>Gets the color pale turquoise.</summary>
+
+        /**
+        *
+        * Gets the color pale turquoise.
+        *
+        */
         public static function PaleTurquoise()  { return new RgbColor("PaleTurquoise"); } 
 
-        /// <summary>Gets the color pale violet red.</summary>
+
+        /**
+        *
+        * Gets the color pale violet red.
+        *
+        */
         public static function PaleVioletRed()  { return new RgbColor("PaleVioletRed"); } 
 
-        /// <summary>Gets the color papaya whip.</summary>
+
+        /**
+        *
+        * Gets the color papaya whip.
+        *
+        */
         public static function PapayaWhip()  { return new RgbColor("PapayaWhip"); } 
 
-        /// <summary>Gets the color peach puff.</summary>
+
+        /**
+        *
+        * Gets the color peach puff.
+        *
+        */
         public static function PeachPuff()  { return new RgbColor("PeachPuff"); } 
 
-        /// <summary>Gets the color peru.</summary>
+
+        /**
+        *
+        * Gets the color peru.
+        *
+        */
         public static function Peru()  { return new RgbColor("Peru"); } 
 
-        /// <summary>Gets the color pink.</summary>
+
+        /**
+        *
+        * Gets the color pink.
+        *
+        */
         public static function Pink()  { return new RgbColor("Pink"); } 
 
-        /// <summary>Gets the color plum.</summary>
+
+        /**
+        *
+        * Gets the color plum.
+        *
+        */
         public static function Plum()  { return new RgbColor("Plum"); } 
 
-        /// <summary>Gets the color powder blue.</summary>
+
+        /**
+        *
+        * Gets the color powder blue.
+        *
+        */
         public static function PowderBlue()  { return new RgbColor("PowderBlue"); } 
 
-        /// <summary>Gets the color rosy brown.</summary>
+
+        /**
+        *
+        * Gets the color rosy brown.
+        *
+        */
         public static function RosyBrown()  { return new RgbColor("RosyBrown"); } 
 
-        /// <summary>Gets the color royal blue.</summary>
+
+        /**
+        *
+        * Gets the color royal blue.
+        *
+        */
         public static function RoyalBlue()  { return new RgbColor("RoyalBlue"); } 
 
-        /// <summary>Gets the color saddle brown.</summary>
+
+        /**
+        *
+        * Gets the color saddle brown.
+        *
+        */
         public static function SaddleBrown()  { return new RgbColor("SaddleBrown"); } 
 
-        /// <summary>Gets the color salmon.</summary>
+
+        /**
+        *
+        * Gets the color salmon.
+        *
+        */
         public static function Salmon()  { return new RgbColor("Salmon"); } 
 
-        /// <summary>Gets the color sandy brown.</summary>
+
+        /**
+        *
+        * Gets the color sandy brown.
+        *
+        */
         public static function SandyBrown()  { return new RgbColor("SandyBrown"); } 
 
-        /// <summary>Gets the color sea green.</summary>
+
+        /**
+        *
+        * Gets the color sea green.
+        *
+        */
         public static function SeaGreen()  { return new RgbColor("SeaGreen"); } 
 
-        /// <summary>Gets the color sea shell.</summary>
+
+        /**
+        *
+        * Gets the color sea shell.
+        *
+        */
         public static function SeaShell()  { return new RgbColor("SeaShell"); } 
 
-        /// <summary>Gets the color sienna.</summary>
+
+        /**
+        *
+        * Gets the color sienna.
+        *
+        */
         public static function Sienna()  { return new RgbColor("Sienna"); } 
 
-        /// <summary>Gets the color sky blue.</summary>
+
+        /**
+        *
+        * Gets the color sky blue.
+        *
+        */
         public static function SkyBlue()  { return new RgbColor("SkyBlue"); } 
 
-        /// <summary>Gets the color slate blue.</summary>
+
+        /**
+        *
+        * Gets the color slate blue.
+        *
+        */
         public static function SlateBlue()  { return new RgbColor("SlateBlue"); } 
 
-        /// <summary>Gets the color slate gray.</summary>
+
+        /**
+        *
+        * Gets the color slate gray.
+        *
+        */
         public static function SlateGray()  { return new RgbColor("SlateGray"); } 
 
-        /// <summary>Gets the color snow.</summary>
+
+        /**
+        *
+        * Gets the color snow.
+        *
+        */
         public static function Snow()  { return new RgbColor("Snow"); } 
 
-        /// <summary>Gets the color spring green.</summary>
+
+        /**
+        *
+        * Gets the color spring green.
+        *
+        */
         public static function SpringGreen()  { return new RgbColor("SpringGreen"); } 
 
-        /// <summary>Gets the color steel blue.</summary>
+
+        /**
+        *
+        * Gets the color steel blue.
+        *
+        */
         public static function SteelBlue()  { return new RgbColor("SteelBlue"); } 
 
-        /// <summary>Gets the color Tan.</summary>
+
+        /**
+        *
+        * Gets the color Tan.
+        *
+        */
         public static function tan()  { return new RgbColor("Tan"); } 
 
-        /// <summary>Gets the color teal.</summary>
+
+        /**
+        *
+        * Gets the color teal.
+        *
+        */
         public static function Teal()  { return new RgbColor("Teal"); } 
 
-        /// <summary>Gets the color thistle.</summary>
+
+        /**
+        *
+        * Gets the color thistle.
+        *
+        */
         public static function Thistle()  { return new RgbColor("Thistle"); } 
 
-        /// <summary>Gets the color tomato.</summary>
+
+        /**
+        *
+        * Gets the color tomato.
+        *
+        */
         public static function Tomato()  { return new RgbColor("Tomato"); } 
 
-        /// <summary>Gets the color turquoise.</summary>
+
+        /**
+        *
+        * Gets the color turquoise.
+        *
+        */
         public static function Turquoise()  { return new RgbColor("Turquoise"); } 
-        /// <summary>Gets the color violet.</summary>
+
+        /**
+        *
+        * Gets the color violet.
+        *
+        */
         public static function Violet()  { return new RgbColor("Violet"); } 
 
-        /// <summary>Gets the color violet red.</summary>
+
+        /**
+        *
+        * Gets the color violet red.
+        *
+        */
         public static function VioletRed()  { return new RgbColor("VioletRed"); } 
 
-        /// <summary>Gets the color wheat.</summary>
+
+        /**
+        *
+        * Gets the color wheat.
+        *
+        */
         public static function Wheat()  { return new RgbColor("Wheat"); } 
 
-        /// <summary>Gets the color white smoke.</summary>
+
+        /**
+        *
+        * Gets the color white smoke.
+        *
+        */
         public static function WhiteSmoke()  { return new RgbColor("WhiteSmoke"); } 
 
-        /// <summary>Gets the color yellow green.</summary>
+
+        /**
+        *
+        * Gets the color yellow green.
+        *
+        */
         public static function YellowGreen()  { return new RgbColor("YellowGreen"); } 
         public function GetjsonSerializeString()
         {
@@ -477,3 +1198,4 @@ include_once('Color.php');
 
     }
 ?>
+

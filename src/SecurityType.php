@@ -1,23 +1,36 @@
 <?php
 
-/// <summary>
-/// Represents different types of the security.
-/// </summary>
+
+/**
+*
+* Represents different types of the security.
+*
+*/
 class SecurityType
 { 
-      /// <summary>
-      /// AES 128 bit security.
-      /// </summary>
+
+      /**
+      *
+      * AES 128 bit security.
+      *
+      */
       public const Aes128 = "aes128";
 
-      /// <summary>
-      /// AES 256 bit security.
-      /// </summary>
+
+      /**
+      *
+      * AES 256 bit security.
+      *
+      */
       public const Aes256 = "aes256";
 
-      /// <summary>
-      /// RC4 128 bit security.
-      /// </summary>
+
+      /**
+      *
+      * RC4 128 bit security.
+      *
+      */
       public const RC4128 = "aC4128";
 } 
 ?>
+

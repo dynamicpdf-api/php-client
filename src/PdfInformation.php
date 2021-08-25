@@ -1,70 +1,110 @@
-﻿<?php
+<?php
 
-    /// <summary>
-    /// Represents the pdf inforamtion.
-    /// </summary>
+
+    /**
+    *
+    * Represents the pdf inforamtion.
+    *
+    */
     class PdfInformation
     {
-        /// <summary>
-        /// Gets the author.
-        /// </summary>
+
+        /**
+        *
+        * Gets the author.
+        *
+        */
         public  $Author;
 
-        /// <summary>
-        /// Gets the subject.
-        /// </summary>
+
+        /**
+        *
+        * Gets the subject.
+        *
+        */
         public  $Subject;
 
-        /// <summary>
-        /// Gets the keywords.
-        /// </summary>
+
+        /**
+        *
+        * Gets the keywords.
+        *
+        */
         public  $Keywords;
 
-        /// <summary>
-        /// Gets the creator.
-        /// </summary>
+
+        /**
+        *
+        * Gets the creator.
+        *
+        */
         public  $Creator;
 
-        /// <summary>
-        /// Gets the producer.
-        /// </summary>
+
+        /**
+        *
+        * Gets the producer.
+        *
+        */
         public  $Producer;
 
-        /// <summary>
-        /// Gets the title.
-        /// </summary>
+
+        /**
+        *
+        * Gets the title.
+        *
+        */
         public  $Title;
 
         public function PdfInformation() { }
 
-        /// <summary>
-        /// Gets the collection of PageInformation.
-        /// </summary>
+
+        /**
+        *
+        * Gets the collection of PageInformation.
+        *
+        */
         public Pages = array();
 
-        /// <summary>
-        /// Gets the form fields.
-        /// </summary>
+
+        /**
+        *
+        * Gets the form fields.
+        *
+        */
         public $FormFields;
 
-        /// <summary>
-        /// Gets the custom properties.
-        /// </summary>
+
+        /**
+        *
+        * Gets the custom properties.
+        *
+        */
         public $CustomProperties;
 
-        /// <summary>
-        /// Gets the boolean representing xmp meta data.
-        /// </summary>
+
+        /**
+        *
+        * Gets the boolean representing xmp meta data.
+        *
+        */
         public $XmpMetaData;
 
-        /// <summary>
-        /// Gets the boolean, indicating whether the pdf is signed.
-        /// </summary>
+
+        /**
+        *
+        * Gets the boolean, indicating whether the pdf is signed.
+        *
+        */
         public $Signed;
 
-        /// <summary>
-        /// Gets the boolean, indicating whether the pdf is tagged.
-        /// </summary>
+
+        /**
+        *
+        * Gets the boolean, indicating whether the pdf is tagged.
+        *
+        */
         public $Tagged;
     }
 ?>
+

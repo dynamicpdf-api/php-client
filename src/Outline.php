@@ -3,16 +3,22 @@
 include_once('Action.php');
 include_once('OutlineStyle.php');
 
-    /// <summary>
-    /// Represents an outline.
-    /// </summary>
+
+    /**
+    *
+    * Represents an outline.
+    *
+    */
     class Outline  implements JsonSerializable
     {  
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Outline"/> class.
-        /// </summary>
-        /// <param name="input">The input of type <see cref="PdfInput"/> .</param>
+
+        /**
+        *
+        *  Initializes a new instance of the Outline class. 
+        *
+        * @param  ?PdfInput $input The input of type PdfInput .        *
+        */
         public function __construct(?PdfInput $input = null) 
         {
             if($input!= null)
@@ -30,11 +36,14 @@ include_once('OutlineStyle.php');
         }
     }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Outline"/> class.
-        /// </summary>
-        /// <param name="text">text for the outline.</param>
-        /// <param name="action">Action of the outline.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the Outline class. 
+        *
+        * @param  string $text text for the outline.
+        * @param  ?Action $action Action of the outline.
+        */
         public static function CreateOutline(string $text, ?Action $action = null):Outline
          { 
              $outline= new Outline();
@@ -46,36 +55,54 @@ include_once('OutlineStyle.php');
         
         public  $ColorName;
 
-        /// <summary>
-        /// Gets or sets the text of the outline.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the text of the outline.
+        *
+        */
         public $Text = "";
 
-        /// <summary>
-        /// Gets or sets the style of the outline.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the style of the outline.
+        *
+        */
         public $Style;
 
-        /// <summary>
-        /// Gets or sets a value specifying if the outline is expanded.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a value specifying if the outline is expanded.
+        *
+        */
         public $Expanded;
 
-        /// <summary>
-        /// Gets or sets a collection of child outlines.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a collection of child outlines.
+        *
+        */
         public $Children = array();
 
-        /// <summary>
-        /// Gets or sets the Action of the outline.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the Action of the outline.
+        *
+        */
         public $Action;
         
         public $FromInputID;
 
-        /// <summary>
-        /// Gets or sets the color of the outline.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the color of the outline.
+        *
+        */
         public $Color;
         
       
@@ -124,3 +151,4 @@ include_once('OutlineStyle.php');
        }
     }
 ?>
+

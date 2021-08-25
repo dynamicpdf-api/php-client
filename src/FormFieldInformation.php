@@ -1,40 +1,60 @@
-﻿<?php
-    /// <summary>
-    /// Represents the form field information containing the collection 
-    /// of different types of field informations.
-    /// </summary>
+<?php
+
+    /**
+    *
+    * Represents the form field information containing the collection of different types of field informations.
+    *
+    */
     class FormFieldInformation
     {
         public __construct() { }
 
-        /// <summary>
-        /// Gets or sets a collection of <see cref="SignatureFieldInformation"/>.
-        /// </summary>
+
+        /**
+        *
+        *  Gets or sets a collection of SignatureFieldInformation. 
+        *
+        */
         public  $SignatureFields;
 
-        /// <summary>
-        /// Gets or sets a collection of <see cref="TextFieldInformation"/>.
-        /// </summary>
+
+        /**
+        *
+        *  Gets or sets a collection of TextFieldInformation. 
+        *
+        */
         public  $TextFields;
 
-        /// <summary>
-        /// Gets or sets a collection of <see cref="ChoiceFieldInformation"/>.
-        /// </summary>
+
+        /**
+        *
+        *  Gets or sets a collection of ChoiceFieldInformation. 
+        *
+        */
         public  $ChoiceFields;
 
-        /// <summary>
-        /// Gets or sets a collection of <see cref="ButtonFieldInformation"/>.
-        /// </summary>
+
+        /**
+        *
+        *  Gets or sets a collection of ButtonFieldInformation. 
+        *
+        */
         public  $ButtonFields;
 
-        /// <summary>
-        /// Gets or sets a collection of <see cref="PushButtonInformation"/>.
-        /// </summary>
+
+        /**
+        *
+        *  Gets or sets a collection of PushButtonInformation. 
+        *
+        */
         public  $PushButtons;
 
-        /// <summary>
-        /// Gets or sets a collection of <see cref="MultiSelectListBoxInformation"/>.
-        /// </summary>
+
+        /**
+        *
+        *  Gets or sets a collection of MultiSelectListBoxInformation. 
+        *
+        */
         public  $MultiSelectListBoxFields;
     }
 ?>

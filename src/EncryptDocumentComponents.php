@@ -1,18 +1,28 @@
 <?php
 
-/// <summary>
-/// Specifies the document components to be encrypted. 
-/// </summary>
+
+/**
+*
+* Specifies the document components to be encrypted.
+*
+*/
 class EncryptDocumentComponents
 { 
-      /// <summary>
-      /// Encrypts all document contents.
-      /// </summary>
+
+      /**
+      *
+      * Encrypts all document contents.
+      *
+      */
       public const All = "all";
 
-      /// <summary>
-      /// Encrypts all document contents except metadata.
-      /// </summary>
+
+      /**
+      *
+      * Encrypts all document contents except metadata.
+      *
+      */
       public const AllExceptMetadata = "allExceptMetadata";
 } 
 ?>
+

@@ -1,48 +1,62 @@
-﻿<?php
+<?php
     include_once('Dim2BarcodeElement.php');
     include_once('ElementType.php');
 
-    /// <summary>
-    /// Represents a QR code barcode element.
-    /// </summary>
-    /// <remarks>
-    /// With some of the .Net runtimes (example: .Net Core 2.0), the Kanchi encoding will give the error 
-    /// "No data is available for encoding 932. For information on defining a custom encoding, 
-    /// see the documentation for the Encoding.RegisterProvider method.".
-    /// </remarks>
+
+    /**
+    *
+    * Represents a QR code barcode element.
+    *
+    * With some of the .Net runtimes (example: .Net Core 2.0), the Kanchi encoding will give the error "No 
+    * data is available for encoding 932. For information on defining a custom encoding, see the documentation 
+    * for the Encoding.RegisterProvider method.". 
+    *
+    */
     class QrCodeElement extends Dim2BarcodeElement
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QrCodeElement"/> class.
-        /// </summary>
-        /// <param name="value">The value of the QR code.</param>
-        /// <param name="placement">The placement of the barcode on the page.</param>
-        /// <param name="xOffset">The X coordinate of the QR code.</param>
-        /// <param name="yOffset">The Y coordinate of the QR code.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the QrCodeElement class. 
+        *
+        * @param  string $value The value of the QR code.
+        * @param  string $placement The placement of the barcode on the page.
+        * @param  float $xOffset The X coordinate of the QR code.
+        * @param  float $yOffset The Y coordinate of the QR code.
+        */
         public function __construct(string $value, string $placement, float $xOffset = 0, float $yOffset = 0) 
         {
             parent::__construct($value, $placement, $xOffset, $yOffset);
         }
-         /// <summary>
-        /// Initializes a new instance of the <see cref="QrCodeElement"/> class.
-        /// </summary>
-        /// <param name="value">The value of the QR code.</param>
-        /// <param name="placement">The placement of the barcode on the page.</param>
-        /// <param name="xOffset">The X coordinate of the QR code.</param>
-        /// <param name="yOffset">The Y coordinate of the QR code.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the QrCodeElement class. 
+        *
+        * @param  byte[] $value The value of the QR code.
+        * @param  ElementPlacement $placement The placement of the barcode on the page.
+        * @param  float $xOffset The X coordinate of the QR code.
+        * @param  float $yOffset The Y coordinate of the QR code.
+        */
         //public function QrCodeElement(byte[] $value, ElementPlacement $placement, float $xOffset = 0, float $yOffset = 0) : base(value, placement, xOffset, yOffset) { }
 
        
         public  $Type = ElementType::QrCode;
 
-                /// <summary>
-        /// Gets or sets FNC1 mode.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets FNC1 mode.
+        *
+        */
         public  $Fnc1;
 
-              /// <summary>
-        /// Gets or sets the QR code version.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the QR code version.
+        *
+        */
         public  $Version ;
 
         public function GetjsonSerializeString()
@@ -100,3 +114,4 @@
     }
     }
 ?>
+

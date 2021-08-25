@@ -1,17 +1,26 @@
-﻿<?php
-    /// <summary>
-    /// Represents information of a PushButton field.
-    /// </summary>
+<?php
+
+    /**
+    *
+    * Represents information of a PushButton field.
+    *
+    */
     class PushButtonInformation
     {
-        /// <summary>
-        /// Gets or Sets the name of a PushButton field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or Sets the name of a PushButton field.
+        *
+        */
         public  $Name;
 
-        /// <summary>
-        /// Gets or Sets the label of a PushButton field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or Sets the label of a PushButton field.
+        *
+        */
         public  $Label;
     }
 ?>

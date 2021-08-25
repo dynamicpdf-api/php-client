@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     class FontInformation
     {
         
@@ -16,3 +16,4 @@
          
     }
 ?>
+

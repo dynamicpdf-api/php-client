@@ -1,23 +1,30 @@
-﻿
+
 <?php
 
 include_once('Element.php');
 include_once('ElementType.php');
 
-    /// <summary>
-    /// Represents an image element.
-    /// </summary>
-    /// <remarks>This class can be used to place images on a page.</remarks>
+
+    /**
+    *
+    * Represents an image element.
+    *
+    * This class can be used to place images on a page.
+    *
+    */
     class  ImageElement extends Element
     {
 
-                /// <summary>
-        /// Initializes a new instance of the <see cref="ImageElement"/> class.
-        /// </summary>
-        /// <param name="resource"><see cref="ImageResource"/> object containing the image resource.</param>
-        /// <param name="placement">The placement of the image on the page.</param>
-        /// <param name="xOffset">X coordinate of the image.</param>
-        /// <param name="yOffset">Y coordinate of the image.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the ImageElement class. 
+        *
+        * @param  ?ImageResource $resource ImageResource object containing the image resource.        *
+        * @param  ?string $placement The placement of the image on the page.
+        * @param  float $xOffset X coordinate of the image.
+        * @param  float $yOffset Y coordinate of the image.
+        */
         public function __construct(?ImageResource $resource, ?string $placement, float $xOffset = 0, float $yOffset = 0)
         {
             if($resource != null)
@@ -31,13 +38,16 @@ include_once('ElementType.php');
             }
         }
 
-                /// <summary>
-        /// Initializes a new instance of the <see cref="ImageElement"/> class.
-        /// </summary>
-        /// <param name="resourceName">The name of the image resource.</param>
-        /// <param name="placement">The placement of the image on the page.</param>
-        /// <param name="xOffset">X coordinate of the image.</param>
-        /// <param name="yOffset">Y coordinate of the image.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the ImageElement class. 
+        *
+        * @param  string $resourceName The name of the image resource.
+        * @param  string $placement The placement of the image on the page.
+        * @param  float $xOffset X coordinate of the image.
+        * @param  float $yOffset Y coordinate of the image.
+        */
         public static function CreateImageElement(string $resourceName, string $placement, float $xOffset = 0, float $yOffset = 0) 
         {
             $imageElement = new ImageElement(null, null);
@@ -53,24 +63,36 @@ include_once('ElementType.php');
       
         public  $ResourceName;
 
-        /// <summary>
-        /// Gets or sets the horizontal scale of the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the horizontal scale of the image.
+        *
+        */
         public  $ScaleX;
 
-        /// <summary>
-        /// Gets or sets the vertical scale of the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the vertical scale of the image.
+        *
+        */
         public  $ScaleY;
 
-        /// <summary>
-        /// Gets or sets the maximum height of the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the maximum height of the image.
+        *
+        */
         public  $MaxHeight;
 
-        /// <summary>
-        /// Gets or sets the maximum width of the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the maximum width of the image.
+        *
+        */
         public  $MaxWidth;
 
         //{"type":"image","resourceName":"d37ca3c8-96dc-4772-abf3-d6417be534f1.gif","placement":"topCenter","xOffset":0.0,"yOffset":0.0}]}
@@ -116,3 +138,4 @@ include_once('ElementType.php');
         }
     }
 ?>
+

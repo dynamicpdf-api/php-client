@@ -1,9 +1,12 @@
-﻿<?php
+<?php
 include_once('Color.php');
 
-    /// <summary>
-    /// Represents a CMYK color.
-    /// </summary>
+
+    /**
+    *
+    * Represents a CMYK color.
+    *
+    */
     class CmykColor extends Color
     {
         private  $cyan = 0;
@@ -14,14 +17,18 @@ include_once('Color.php');
 
         public function __construct(?string $colorString =null) { $this->ColorString = $colorString; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CmykColor"/> class.
-        /// </summary>
-        /// <param name="cyan">The cyan intensity.</param>
-        /// <param name="magenta">The magenta intensity.</param>
-        /// <param name="yellow">The yellow intensity.</param>
-        /// <param name="black">The black intensity.</param>
-        /// <remarks>Values must be between 0.0 and 1.0.</remarks>
+
+        /**
+        *
+        *  Initializes a new instance of the CmykColor class. 
+        *
+        * Values must be between 0.0 and 1.0.
+        *
+        * @param  float $cyan The cyan intensity.
+        * @param  float $magenta The magenta intensity.
+        * @param  float $yellow The yellow intensity.
+        * @param  float $black The black intensity.
+        */
         public static function CreateCmykColor(float $cyan, float $magenta, float $yellow, float $black)
         {
             $cmykColor = new CmykColor();
@@ -37,10 +44,20 @@ include_once('Color.php');
             $cmykColor->black = $black;
             return $cmykColor;
         }
-        /// <summary>Gets the color black.</summary>
+
+        /**
+        *
+        * Gets the color black.
+        *
+        */
         public function Black() { return new CmykColor(1, 1, 1, 1); } 
 
-        /// <summary>Gets the color white.</summary>
+
+        /**
+        *
+        * Gets the color white.
+        *
+        */
         public function White() { return new CmykColor(0, 0, 0, 0); } 
         
         /*internal override string ColorString
@@ -60,3 +77,4 @@ include_once('Color.php');
 
     }
 ?>
+

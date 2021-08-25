@@ -41,9 +41,12 @@
 
         public  $Data;
 
-           /// <summary>
-        /// Gets or sets the resource name.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the resource name.
+        *
+        */
         public  $ResourceName;
         public  $Name;
         public  $Type ;
@@ -79,3 +82,4 @@
         }
     }
 ?>
+

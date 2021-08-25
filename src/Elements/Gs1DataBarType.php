@@ -1,23 +1,36 @@
 <?php
 
-    /// <summary>
-    /// Represents GS1 DataBar types.
-    /// </summary>
+
+/**
+*
+* Represents GS1 DataBar types.
+*
+*/
 class Gs1DataBarType
 { 
-              /// <summary>
-        /// Omnidirectional GS1 DataBar type.
-        /// </summary>
+
+      /**
+      *
+      * Omnidirectional GS1 DataBar type.
+      *
+      */
       public const Omnidirectional = "omnidirectional";
 
-        /// <summary>
-        /// Limited GS1 DataBar type.
-        /// </summary>
+
+      /**
+      *
+      * Limited GS1 DataBar type.
+      *
+      */
       public const Limited = "limited";
 
-        /// <summary>
-        /// Expanded GS1 DataBar type.
-        /// </summary>
+
+      /**
+      *
+      * Expanded GS1 DataBar type.
+      *
+      */
       public const Expanded = "expanded";
 } 
 ?>
+

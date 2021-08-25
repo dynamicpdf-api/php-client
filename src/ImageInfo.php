@@ -1,19 +1,25 @@
-﻿<?php
+<?php
 
 include_once('Endpoint.php');
 include_once('PdfInfoResponse.php');
 
-    /// <summary>
-    /// Represents an image information endpoint.
-    /// </summary>
+
+    /**
+    *
+    * Represents an image information endpoint.
+    *
+    */
     class ImageInfo extends Endpoint
     {
         private $resource;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageInfo"/> class.
-        /// </summary>
-        /// <param name="resource">The image resource of type <see cref="ImageResource"/>.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the ImageInfo class. 
+        *
+        * @param  ImageResource $resource The image resource of type ImageResource.        *
+        */
         public function __construct(ImageResource $resource)
         {
             $this->resource = $resource;
@@ -21,21 +27,30 @@ include_once('PdfInfoResponse.php');
         }
 
 
-        /// <summary>
-        /// Gets or sets the start page.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the start page.
+        *
+        */
         public  $StartPage;
 
-        /// <summary>
-        /// Gets or sets the page count.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the page count.
+        *
+        */
         public $PageCount;
 
        
 
-        /// <summary>
-        /// Process the image resource to get image's information.
-        /// </summary>
+
+        /**
+        *
+        * Process the image resource to get image's information.
+        *
+        */
         public function Process():PdfInfoResponse
         {
             $client=parent::Init();
@@ -91,3 +106,4 @@ include_once('PdfInfoResponse.php');
         }
     }
 ?>
+

@@ -1,24 +1,31 @@
-﻿<?php
+<?php
 
 include_once('TextBarcodeElement.php');
 include_once('ElementPlacement.php');
 include_once('ElementType.php');
 
-    /// <summary>
-    /// Represents a Code 3 of 9 barcode element.
-    /// </summary>
-    /// <remarks>This class can be used to place a Code 3 of 9 barcode on a page.</remarks>
+
+     /**
+     *
+     * Represents a Code 3 of 9 barcode element.
+     *
+     * This class can be used to place a Code 3 of 9 barcode on a page.
+     *
+     */
      class Code39BarcodeElement extends TextBarcodeElement
     {
 
-                /// <summary>
-        /// Initializes a new instance of the <see cref="Code39BarcodeElement"/> class.
-        /// </summary>
-        /// <param name="value">The value of the barcode.</param>
-        /// <param name="placement">The placement of the barcode on the page.</param>
-        /// <param name="height">The height of the barcode.</param>
-        /// <param name="xOffset">The X coordinate of the barcode.</param>
-        /// <param name="yOffset">The Y coordinate of the barcode.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the Code39BarcodeElement class. 
+        *
+        * @param  string $value The value of the barcode.
+        * @param  string $placement The placement of the barcode on the page.
+        * @param  float $height The height of the barcode.
+        * @param  float $xOffset The X coordinate of the barcode.
+        * @param  float $yOffset The Y coordinate of the barcode.
+        */
         public function __construct(string $value, string $placement, float $height, float $xOffset = 0, float $yOffset = 0) 
         {
             parent::__construct($value,  $placement,  $xOffset,  $yOffset);
@@ -28,9 +35,12 @@ include_once('ElementType.php');
         
         public  $Type= ElementType::Code39Barcode;
 
-                /// <summary>
-        /// Gets or sets the height of the barcode.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the height of the barcode.
+        *
+        */
         public  $Height ;
 
         public function GetjsonSerializeString()
@@ -89,3 +99,4 @@ include_once('ElementType.php');
         }
     }
 ?>
+

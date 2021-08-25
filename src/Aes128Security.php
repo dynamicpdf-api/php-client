@@ -1,25 +1,30 @@
-﻿
+
 <?php
 include_once('SecurityType.php');
 include_once('EncryptDocumentComponents.php');
 include_once('Security.php');
 
-    /// <summary>
-    /// Represents AES 128 bit PDF document security.
-    /// </summary>
-    /// <remarks>
-    /// AES 128 bit PDF security is compatible with PDF version 1.5 and higher and, 
-    /// Adobe Acrobat Reader version 7 or higher is needed to open these documents. 
-    /// Older readers will not be able to read documents encrypted with this security.
-    /// </remarks>
+
+     /**
+     *
+     * Represents AES 128 bit PDF document security.
+     *
+     * AES 128 bit PDF security is compatible with PDF version 1.5 and higher and, Adobe Acrobat Reader version 
+     * 7 or higher is needed to open these documents. Older readers will not be able to read documents encrypted 
+     * with this security. 
+     *
+     */
      class Aes128Security extends Security
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Aes128Security"/> class by 
-        /// taking the owner and user passwords as parameters to create PDF.
-        /// </summary>
-        /// <param name="ownerPassword">The owner password to open the document.</param>
-        /// <param name="userPassword">The user password to open the document.</param>
+
+        /**
+        *
+        * Initializes a new instance of the Aes128Security class by taking the owner and user passwords as parameters 
+        * to create PDF. 
+        *
+        * @param  string $ownerPassword The owner password to open the document.
+        * @param  string $userPassword The user password to open the document.
+        */
         public function __construct(string $userPassword, string $ownerPassword) 
         {
             parent::__construct($userPassword,  $ownerPassword);
@@ -27,10 +32,13 @@ include_once('Security.php');
         
         public  $Type = SecurityType::Aes128; 
 
-        /// <summary>
-        /// Gets or sets the <see cref="EncryptDocumentComponents"/>, components of the document to be encrypted. 
-        /// We can encrypt all the PDF content or the content, excluding the metadata.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the EncryptDocumentComponents, components of the document to be encrypted. We can encrypt 
+        * all the PDF content or the content, excluding the metadata. 
+        *
+        */
         public  $DocumentComponents= EncryptDocumentComponents::All;
 
         public function GetjsonSerializeString()
@@ -79,3 +87,4 @@ include_once('Security.php');
         }
     }
 ?>
+

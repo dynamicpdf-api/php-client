@@ -1,4 +1,4 @@
-﻿
+
 
 <?php
 
@@ -8,24 +8,33 @@ include_once('InputType.php');
 include_once('Align.php');
 include_once('VAlign.php');
 
-    /// <summary>
-    /// Represents an image input.
-    /// </summary>
+
+     /**
+     *
+     * Represents an image input.
+     *
+     */
      class ImageInput extends Input
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageInput"/> class.
-        /// </summary>
-        /// <param name="resource">The <see cref="ImageResource"/> object to create ImageInput.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the ImageInput class. 
+        *
+        * @param  ?ImageResource $resource The ImageResource object to create ImageInput.        *
+        */
         public function __construct(?ImageResource $resource) 
         { 
             if($resource != null)
             parent::__construct($resource);
         }
-             /// <summary>
-        /// Initializes a new instance of the <see cref="ImageInput"/> class.
-        /// </summary>
-        /// <param name="cloudResourcePath">The image file path present in cloud resource manager.</param>
+
+       /**
+       *
+       *  Initializes a new instance of the ImageInput class. 
+       *
+       * @param  string $cloudResourcePath The image file path present in cloud resource manager.
+       */
        public static function CreateImageInput(string $cloudResourcePath)  
         { 
             $imageInput =new ImageInput(null);
@@ -34,74 +43,116 @@ include_once('VAlign.php');
         }
 
             
-       /// <summary>
-        /// Gets or sets the scaleX of the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the scaleX of the image.
+        *
+        */
         public  $ScaleX;
 
-        /// <summary>
-        /// Gets or sets the scaleY of the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the scaleY of the image.
+        *
+        */
         public  $ScaleY;
 
-        /// <summary>
-        /// Gets or sets the top margin.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the top margin.
+        *
+        */
         public  $TopMargin;
 
-        /// <summary>
-        /// Gets or sets the left margin.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the left margin.
+        *
+        */
         public  $LeftMargin;
 
-        /// <summary>
-        /// Gets or sets the bottom margin.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the bottom margin.
+        *
+        */
         public  $BottomMargin;
 
-        /// <summary>
-        /// Gets or sets the right margin.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the right margin.
+        *
+        */
         public  $RightMargin;
 
-        /// <summary>
-        /// Gets or sets the page width.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the page width.
+        *
+        */
         public  $PageWidth;
 
-        /// <summary>
-        /// Gets or sets the page height.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the page height.
+        *
+        */
         public  $PageHeight;
 
-        /// <summary>
-        /// Gets or sets a boolean indicating whether to expand the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a boolean indicating whether to expand the image.
+        *
+        */
         public  $ExpandToFit;
 
-        /// <summary>
-        /// Gets or sets a boolean indicating whether to shrink the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a boolean indicating whether to shrink the image.
+        *
+        */
         public  $ShrinkToFit;
 
-        /// <summary>
-        /// Gets or sets the horizontal alignment of the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the horizontal alignment of the image.
+        *
+        */
         public $Align = Align::Center;
 
-        /// <summary>
-        /// Gets or sets the vertical alignment of the image.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the vertical alignment of the image.
+        *
+        */
         public $VAlign = VAlign::Center;
 
-        /// <summary>
-        /// Gets or sets the start page.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the start page.
+        *
+        */
         public  $StartPage;
 
-        /// <summary>
-        /// Gets or sets the page count.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the page count.
+        *
+        */
         public  $PageCount;
 
         public function GetjsonSerializeString()
@@ -176,3 +227,4 @@ include_once('VAlign.php');
 
     }
 ?>
+

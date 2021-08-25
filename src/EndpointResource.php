@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class EndPointResource
     {
@@ -16,3 +16,4 @@ class EndPointResource
         //subclasses PdfResoruce  , ImageResorce, DlexResoruce FontResoruce, LayoutDataResource(static Load method in PDfResource)
     } 
 ?>
+

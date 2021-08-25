@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
     public class FullNameTable 
     {
@@ -127,3 +127,4 @@
 
     }
 }
+

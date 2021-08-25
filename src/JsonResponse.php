@@ -1,8 +1,11 @@
-﻿<?php
+<?php
 include_once('Response.php');
-    /// <summary>
-    /// Represents the base class for json response.
-    /// </summary>
+
+    /**
+    *
+    * Represents the base class for json response.
+    *
+    */
     abstract class JsonResponse extends Response
     {
         //internal JsonResponse() { }
@@ -11,9 +14,12 @@ include_once('Response.php');
              $this->JsonContent = $jsonContent;
         }
 
-        /// <summary>
-        /// Gets the json content.
-        /// </summary>
+
+        /**
+        *
+        * Gets the json content.
+        *
+        */
         public  $JsonContent;
     }
 ?>

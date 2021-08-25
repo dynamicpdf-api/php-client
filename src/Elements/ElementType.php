@@ -1,98 +1,156 @@
 <?php
 
-/// <summary>
-/// Represents page element type.
-/// </summary>
+
+/**
+*
+* Represents page element type.
+*
+*/
 class ElementType
 { 
-      /// <summary>
-      /// Image element.
-      /// </summary>
+
+      /**
+      *
+      * Image element.
+      *
+      */
       public const Image = "Image";
 
-      /// <summary>
-      /// Text element.
-      /// </summary>
+
+      /**
+      *
+      * Text element.
+      *
+      */
       public const Text = "Text";
 
-      /// <summary>
-      /// Page numbering element.
-      /// </summary>
+
+      /**
+      *
+      * Page numbering element.
+      *
+      */
       public const PageNumbering = "PageNumbering";
 
-      /// <summary>
-      /// Code 128 barcode element.
-      /// </summary>
+
+      /**
+      *
+      * Code 128 barcode element.
+      *
+      */
       public const Code128Barcode = "Code128Barcode";
 
-      /// <summary>
-      /// Code 39 barcode element.
-      /// </summary>
+
+      /**
+      *
+      * Code 39 barcode element.
+      *
+      */
       public const Code39Barcode = "Code39Barcode";
 
-      /// <summary>
-      /// Code 2 of 5 barcode element.
-      /// </summary>
+
+      /**
+      *
+      * Code 2 of 5 barcode element.
+      *
+      */
       public const Code25Barcode = "Code25Barcode";
 
-      /// <summary>
-      /// Code 93 barcode element.
-      /// </summary>
+
+      /**
+      *
+      * Code 93 barcode element.
+      *
+      */
       public const Code93Barcode = "Code93Barcode";
 
-      /// <summary>
-      /// Code 11 barcode element.
-      /// </summary>
+
+      /**
+      *
+      * Code 11 barcode element.
+      *
+      */
       public const Code11Barcode = "Code11Barcode";
 
-      /// <summary>
-      /// GS1 databar barcode element.
-      /// </summary>
+
+      /**
+      *
+      * GS1 databar barcode element.
+      *
+      */
       public const Gs1DataBarBarcode = "Gs1DataBarBarcode";
 
-      /// <summary>
-      /// IATA 25 barcode element.
-      /// </summary>
+
+      /**
+      *
+      * IATA 25 barcode element.
+      *
+      */
       public const Iata25Barcode = "Iata25Barcode";
 
-      /// <summary>
-      /// MSI barcode element.
-      /// </summary>
+
+      /**
+      *
+      * MSI barcode element.
+      *
+      */
       public const MsiBarcode = "MsiBarcode";
 
-      /// <summary>
-      /// Stacked GS1 databar barcode element.
-      /// </summary>
+
+      /**
+      *
+      * Stacked GS1 databar barcode element.
+      *
+      */
       public const StackedGs1DataBarBarcode = "StackedGs1DataBarBarcode";
 
-      /// <summary>
-      /// Aztec barcode element.
-      /// </summary>
+
+      /**
+      *
+      * Aztec barcode element.
+      *
+      */
       public const AztecBarcode = "AztecBarcode";
 
-      /// <summary>
-      /// QR Code barcode element.
-      /// </summary>
+
+      /**
+      *
+      * QR Code barcode element.
+      *
+      */
       public const QrCode = "QrCode";
 
-      /// <summary>
-      /// PDF417 barcode element.
-      /// </summary>
+
+      /**
+      *
+      * PDF417 barcode element.
+      *
+      */
       public const Pdf417Barcode = "Pdf417Barcode";
 
-      /// <summary>
-      /// Data Matrix barcode element.
-      /// </summary>
+
+      /**
+      *
+      * Data Matrix barcode element.
+      *
+      */
       public const DataMatrixBarcode = "DataMatrixBarcode";
 
-      /// <summary>
-      /// Rectangle element.
-      /// </summary>
+
+      /**
+      *
+      * Rectangle element.
+      *
+      */
       public const Rectangle = "Rectangle";
 
-      /// <summary>
-      /// Line element.
-      /// </summary>
+
+      /**
+      *
+      * Line element.
+      *
+      */
       public const Line = "Line";
 } 
 ?>
+

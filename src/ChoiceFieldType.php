@@ -1,16 +1,25 @@
-﻿<?php
-    /// <summary>
-    /// Specifies type of the Choice Field.
-    /// </summary>
+<?php
+
+    /**
+    *
+    * Specifies type of the Choice Field.
+    *
+    */
     class ChoiceFieldType
     {
-        /// <summary>
-        /// Represents a List box.
-        /// </summary>
+
+        /**
+        *
+        * Represents a List box.
+        *
+        */
         public const ListBox = "listBox";
-        /// <summary>
-        /// Represents a Combo box.
-        /// </summary>
+
+        /**
+        *
+        * Represents a Combo box.
+        *
+        */
         public const ComboBox = "comboBox";
     }
 ?>

@@ -1,28 +1,44 @@
 <?php
 
-    /// <summary>
-    /// The type of Compaction to encode.
-    /// </summary>
+
+/**
+*
+* The type of Compaction to encode.
+*
+*/
 class Compaction
 { 
-      /// <summary>
-      /// Byte Compaction.
-      /// </summary>
+
+      /**
+      *
+      * Byte Compaction.
+      *
+      */
       public const Byte = "byte";
 
-      /// <summary>
-      /// Text Compaction.
-      /// </summary>
+
+      /**
+      *
+      * Text Compaction.
+      *
+      */
       public const Text = "text";
 
-      /// <summary>
-      /// Numeric Compaction.
-      /// </summary>
+
+      /**
+      *
+      * Numeric Compaction.
+      *
+      */
       public const Numeric = "numeric";
 
-      /// <summary>
-      /// All Compactions.
-      /// </summary>
+
+      /**
+      *
+      * All Compactions.
+      *
+      */
       public const Automatic = "automatic";
 } 
 ?>
+

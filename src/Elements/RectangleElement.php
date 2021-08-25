@@ -1,20 +1,27 @@
-﻿<?php
+<?php
 include_once('Element.php');
 include_once('ElementPlacement.php');
 include_once('ElementType.php');
 
-/// <summary>
-    /// Represents a rectangle page element.
-    /// </summary>
-    /// <remarks>This class can be used to place rectangles of any size or color on a page.</remarks>
+
+    /**
+    *
+    * Represents a rectangle page element.
+    *
+    * This class can be used to place rectangles of any size or color on a page.
+    *
+    */
     class RectangleElement extends Element
     {
-                /// <summary>
-        /// Initializes a new instance of the <see cref="RectangleElement"/> class.
-        /// </summary>
-        /// <param name="placement">The placement of the rectangle on the page.</param>
-        /// <param name="width">Width of the rectangle.</param>
-        /// <param name="height">Height of the rectangle.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the RectangleElement class. 
+        *
+        * @param  string $placement The placement of the rectangle on the page.
+        * @param  float $width Width of the rectangle.
+        * @param  float $height Height of the rectangle.
+        */
         public function __construct(string $placement, float $width, float $height)
         {
             $this->Placement = $placement;
@@ -25,40 +32,64 @@ include_once('ElementType.php');
 
         public   $Type  = ElementType::Rectangle;
 
-        /// <summary>
-		/// Gets or sets the width of the rectangle.
-		/// </summary>
+
+        /**
+        *
+        * Gets or sets the width of the rectangle.
+        *
+        */
         public  $Width = 0;
 
-        /// <summary>
-		/// Gets or sets the height of the rectangle.
-		/// </summary>
+
+        /**
+        *
+        * Gets or sets the height of the rectangle.
+        *
+        */
         public  $Height = 0;
-        /// <summary>
-		/// Gets or sets the border width of the rectangle.
-		/// </summary>
-		/// <remarks>To force the borders not to appear set the border width to any value 0 or less.</remarks>
+
+        /**
+        *
+        * Gets or sets the border width of the rectangle.
+        *
+        * To force the borders not to appear set the border width to any value 0 or less.
+        *
+        */
         public  $BorderWidth = 0;
 
-         /// <summary>
-		/// Gets or sets the corner radius of the rectangle.
-		/// </summary>
+
+        /**
+        *
+        * Gets or sets the corner radius of the rectangle.
+        *
+        */
         public  $CornerRadius = 0;
 
-        /// <summary>
-		/// Gets or sets the <see cref="LineStyle"/> object used to specify the border style of the rectangle.
-		/// </summary>
+
+        /**
+        *
+        *  Gets or sets the LineStyle object used to specify the border style of the rectangle. 
+        *
+        */
         public  $BorderStyle= 0;
 
-        /// <summary>
-		/// Gets or sets the <see cref="Color"/> object to use for the border of the rectangle.
-		/// </summary>
+
+        /**
+        *
+        *  Gets or sets the Color object to use for the border of the rectangle. 
+        *
+        */
         public  $BorderColor = 0;
 
-        /// <summary>
-		/// Gets or sets the <see cref="Color"/> object to use for the fill of the rectangle.
-		/// </summary>
-		/// <remarks>To force no color to appear in the rectangle (only borders) set the fill color to null (Nothing in Visual Basic).</remarks>
+
+        /**
+        *
+        *  Gets or sets the Color object to use for the fill of the rectangle. 
+        *
+        * To force no color to appear in the rectangle (only borders) set the fill color to null (Nothing in Visual 
+        * Basic). 
+        *
+        */
         public  $FillColor = 0;
         public function GetjsonSerializeString()
         {
@@ -110,3 +141,4 @@ $jsonArray['oddPages'] = $this->OddPages;
         }
     }
 ?>
+

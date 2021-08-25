@@ -1,31 +1,44 @@
-﻿<?php
+<?php
 include_once('JsonResponse.php');
 
 
-    /// <summary>
-    /// Represents the pdf text response.
-    /// </summary>
+
+    /**
+    *
+    * Represents the pdf text response.
+    *
+    */
     class PdfTextResponse extends JsonResponse
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PdfTextResponse"/> class.
-        /// </summary>
+
+        /**
+        *
+        *  Initializes a new instance of the PdfTextResponse class. 
+        *
+        */
         //public PdfTextResponse() : base() { }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PdfResponse"/> class.
-        /// </summary>
-        /// <param name="jsonContent">The json content</param>
+
+        /**
+        *
+        *  Initializes a new instance of the PdfResponse class. 
+        *
+        * @param  string $jsonContent The json content
+        */
         public function __construct(string $jsonContent) 
         {
             parent::__construct($jsonContent);
             $this->Content = json_decode($jsonContent);
         }
 
-        /// <summary>
-        /// Gets the collection of PdfContent.
-        /// </summary>
+
+        /**
+        *
+        * Gets the collection of PdfContent.
+        *
+        */
         public $Content = array();
 
     }
 ?>
+

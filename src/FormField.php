@@ -1,27 +1,34 @@
-﻿
+
 <?php
 
-    /// <summary>
-    /// Represents a form field in the PDF document.
-    /// </summary>
+
+     /**
+     *
+     * Represents a form field in the PDF document.
+     *
+     */
      class FormField implements JsonSerializable
     {
-           /// <summary>
-        /// Initializes a new instance of the <see cref="FormField"/> class 
-        /// using the name of the form field as a parameter.
-        /// </summary>
-        /// <param name="name">The name of the form field.</param>
+
+      /**
+      *
+      *  Initializes a new instance of the FormField class using the name of the form field as a parameter. 
+      *
+      * @param  string $name The name of the form field.
+      */
       /*  public function __construct(string $name)
         {
             $this->Name = $name;
         }*/
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FormField"/> class 
-        /// using the name and the value of the form field as parameters.
-        /// </summary>
-        /// <param name="name">The name of the form field.</param>
-        /// <param name="value">The value of the form field.</param>
+
+        /**
+        *
+        * Initializes a new instance of the FormField class using the name and the value of the form field as parameters. 
+        *
+        * @param  string $name The name of the form field.
+        * @param  string $value The value of the form field.
+        */
         public function __construct(string $name, string $value= null)
         {
             $this->Name = $name;
@@ -32,24 +39,36 @@
 
         }
 
-         /// <summary>
-        /// Gets or sets name of the form field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets name of the form field.
+        *
+        */
         public   $Name ;
 
-        /// <summary>
-        /// Gets or sets value of the form field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets value of the form field.
+        *
+        */
         public  $Value  = null;
 
-         /// <summary>
-        /// Gets or sets a boolean indicating whether to flatten the form field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a boolean indicating whether to flatten the form field.
+        *
+        */
         public    $Flatten =null;
 
-        /// <summary>
-        /// Gets or sets a boolean indicating whether to remove the form field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a boolean indicating whether to remove the form field.
+        *
+        */
         public    $Remove =null;
         
         public function jsonSerialize()
@@ -73,3 +92,4 @@
         }
     }
 ?>
+

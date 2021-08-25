@@ -1,30 +1,43 @@
-﻿
+
 <?php
 include_once('JsonResponse.php');
-    /// <summary>
-    /// Represents an image response.
-    /// </summary>
+
+    /**
+    *
+    * Represents an image response.
+    *
+    */
     class ImageResponse extends JsonResponse
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageResponse"/> class.
-        /// </summary>
+
+        /**
+        *
+        *  Initializes a new instance of the ImageResponse class. 
+        *
+        */
         //public ImageResponse()  { }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageResponse"/> class.
-        /// </summary>
-        /// <param name="jsonContent">The image content of the response.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the ImageResponse class. 
+        *
+        * @param  string $jsonContent The image content of the response.
+        */
         public function __consruct(string $jsonContent)
         {
             parent::__construct($jsonContent);
             $this->Content = json_decode($jsonContent);
         }
 
-        /// <summary>
-        /// Gets or sets a collection of <see cref="ImageInformation"/>.
-        /// </summary>
+
+        /**
+        *
+        *  Gets or sets a collection of ImageInformation. 
+        *
+        */
         public $Content;
  
     }
 ?>
+

@@ -1,9 +1,12 @@
-﻿<?php
+<?php
 
 include_once('Color.php');
-    /// <summary>
-    /// Represents a grayscale color.
-    /// </summary>
+
+    /**
+    *
+    * Represents a grayscale color.
+    *
+    */
     class Grayscale extends Color
     {
         private  $colorString;
@@ -11,10 +14,13 @@ include_once('Color.php');
 
         public function __construct(string $colorString = null) { $this->ColorString = $colorString; }
 
-        /// <summary>
-        /// Initializes a new instance of the  <see cref="Grayscale"/> class.
-        /// </summary>
-        /// <param name="grayLevel">The gray level for the color.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the  Grayscale class. 
+        *
+        * @param  float $grayLevel The gray level for the color.
+        */
         public static function CreateGrayscale(float $grayLevel) 
         { 
             $grayscale = new Grayscale();
@@ -23,10 +29,20 @@ include_once('Color.php');
             return $grayscale;
          }
 
-        /// <summary>Gets the color black.</summary>
+
+        /**
+        *
+        * Gets the color black.
+        *
+        */
         public static function Black() { return new Grayscale(0); } 
 
-        /// <summary>Gets the color white.</summary>
+
+        /**
+        *
+        * Gets the color white.
+        *
+        */
         public static function White()  { return new Grayscale(1); } 
       
 
@@ -46,3 +62,4 @@ include_once('Color.php');
         }*/
     }
 ?>
+

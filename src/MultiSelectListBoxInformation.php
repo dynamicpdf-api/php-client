@@ -1,37 +1,58 @@
-﻿<?php
-    /// <summary>
-    /// Represents information of a MultiSelectListBox.
-    /// </summary>
+<?php
+
+    /**
+    *
+    * Represents information of a MultiSelectListBox.
+    *
+    */
     class MultiSelectListBoxInformation
     {
-        /// <summary>
-        /// Gets or Sets the name of a MultiSelectListBox.
-        /// </summary>
+
+        /**
+        *
+        * Gets or Sets the name of a MultiSelectListBox.
+        *
+        */
         public $Name;
 
-        /// <summary>
-        /// Gets or sets a collection of values of the MultiSelectListBox.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a collection of values of the MultiSelectListBox.
+        *
+        */
         public  $Values = array();
 
-        /// <summary>
-        /// Gets or sets a collection of default values of the MultiSelectListBox.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a collection of default values of the MultiSelectListBox.
+        *
+        */
         public DefaultValues = array();
 
-        /// <summary>
-        /// Gets or sets a collection of export values of the MultiSelectListBox.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a collection of export values of the MultiSelectListBox.
+        *
+        */
         public  ExportValues = array();
 
-        /// <summary>
-        /// Gets or sets a collection of items of the MultiSelectListBox.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a collection of items of the MultiSelectListBox.
+        *
+        */
         public  Items = array();
 
-        /// <summary>
-        /// Gets or sets a collection of export values of the MultiSelectListBox.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a collection of export values of the MultiSelectListBox.
+        *
+        */
         public  ItemsExportValues = array();
     }
 ?>

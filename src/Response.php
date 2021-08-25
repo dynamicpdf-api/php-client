@@ -1,34 +1,52 @@
-﻿<?php
+<?php
 
-   /// <summary>
-    /// Represents the base class for response.
-    /// </summary>
+
+     /**
+     *
+     * Represents the base class for response.
+     *
+     */
      class Response
     {
         
- /// <summary>
-        /// Gets the boolean, indicating the response's status.
-        /// </summary>
+
+        /**
+        *
+        * Gets the boolean, indicating the response's status.
+        *
+        */
         public  $IsSuccesful; 
 
-   /// <summary>
-        /// Gets the error message.
-        /// </summary>
+
+        /**
+        *
+        * Gets the error message.
+        *
+        */
         public  $ErrorMessage;
 
-           /// <summary>
-        /// Gets the error id.
-        /// </summary>
+
+        /**
+        *
+        * Gets the error id.
+        *
+        */
         public Guid? ErrorId { get; internal set; }
 
-         /// <summary>
-        /// Gets the status code.
-        /// </summary>
+
+        /**
+        *
+        * Gets the status code.
+        *
+        */
         public  $StatusCode;
 
-            /// <summary>
-        /// Gets the error json.
-        /// </summary>
+
+        /**
+        *
+        * Gets the error json.
+        *
+        */
         public  $ErrorJson;
 
         public function SetErrorJson(string $value)
@@ -51,3 +69,4 @@
         }
     }
 ?>
+

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 
 require_once('Endpoint.php');
@@ -14,17 +14,23 @@ require_once('PageInput.php');
 
 
 
-/// <summary>
-    /// Represents a pdf endpoint.
-    /// </summary>
+
+     /**
+     *
+     * Represents a pdf endpoint.
+     *
+     */
      class Pdf extends Endpoint
     {
         public $instructions;
         public $JsonData;
         
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Pdf"/> class.
-        /// </summary>
+
+        /**
+        *
+        *  Initializes a new instance of the Pdf class. 
+        *
+        */
         public function __construct() 
         {
             $this->instructions = new PdfInstructions();
@@ -32,64 +38,94 @@ require_once('PageInput.php');
 
         public $EndpointName  = "pdf";
 
-        /// <summary>
-        /// Gets or sets the collection of resource.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the collection of resource.
+        *
+        */
         public $Resources  = array();
 
-        /// <summary>
-        /// Gets or sets the author.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the author.
+        *
+        */
         public $Author;
        
 
-        /// <summary>
-        /// Gets or sets the title.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the title.
+        *
+        */
         public $Title;
        
 
-        /// <summary>
-        /// Gets or sets the subject.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the subject.
+        *
+        */
         public $Subject;
       
 
-        /// <summary>
-        /// Gets or sets the creator.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the creator.
+        *
+        */
         public $Creator ="DynmaicPDF Cloud Api";
         
 
-        /// <summary>
-        /// Gets or sets the keywords.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the keywords.
+        *
+        */
         public $Keywords; 
        
 
-        /// <summary>
-        /// Gets or sets the security.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the security.
+        *
+        */
         public $Security; 
         
 
-        /// <summary>
-        /// Gets or sets the value indicating whether to flatten all form fields.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the value indicating whether to flatten all form fields.
+        *
+        */
         public $FlattenAllFormFields;
         
 
-        /// <summary>
-        /// Gets or sets the value indicating whether to retain signature form field.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the value indicating whether to retain signature form field.
+        *
+        */
         public  $RetainSignatureFormFields; 
         
 
-        /// <summary>
-        /// Returns a <see cref="PdfInput"/> object containing the input pdf.
-        /// </summary>
-        /// <param name="resource">The resource of type <see cref="PdfResource"/>.</param>
-        /// <param name="options">The merge options for the pdf.</param>
+
+        /**
+        *
+        *  Returns a PdfInput object containing the input pdf. 
+        *
+        * @param  PdfResource $resource The resource of type PdfResource.        *
+        * @param  MergeOptions $options The merge options for the pdf.
+        */
         public function AddPdf(PdfResource $resource, MergeOptions $options = null)
         {
             $input = new PdfInput($resource, $options);
@@ -97,11 +133,14 @@ require_once('PageInput.php');
             return $input;
         }
 
-        /// <summary>
-        /// Returns a <see cref="PdfInput"/> object containing the input pdf.
-        /// </summary>
-        /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
-        /// <param name="options">The merge options for the pdf.</param>
+
+        /**
+        *
+        *  Returns a PdfInput object containing the input pdf. 
+        *
+        * @param  string $cloudResourcePath The resource path in cloud resource manager.
+        * @param  MergeOptions $options The merge options for the pdf.
+        */
         public function AddPdfCloud(string $cloudResourcePath, MergeOptions $options = null)
         {
             $input =  PdfInput::CreatePdfInput($cloudResourcePath, $options);
@@ -109,10 +148,13 @@ require_once('PageInput.php');
             return $input;
         }
 
-        /// <summary>
-        /// Returns a <see cref="ImageInput"/> object containing the input pdf.
-        /// </summary>
-        /// <param name="resource">The resource of type <see cref="ImageResource"/>.</param>
+
+        /**
+        *
+        *  Returns a ImageInput object containing the input pdf. 
+        *
+        * @param  ImageResource $resource The resource of type ImageResource.        *
+        */
         public function AddImage(ImageResource $resource)
         {
             $input = new ImageInput($resource);
@@ -120,10 +162,13 @@ require_once('PageInput.php');
             return $input;
         }
 
-        /// <summary>
-        /// Returns a <see cref="ImageInput"/> object containing the input pdf.
-        /// </summary>
-        /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
+
+        /**
+        *
+        *  Returns a ImageInput object containing the input pdf. 
+        *
+        * @param  string $cloudResourcePath The resource path in cloud resource manager.
+        */
         public function AddImageCloud(string $cloudResourcePath)
         {
             $input = new ImageInput($cloudResourcePath);
@@ -131,11 +176,14 @@ require_once('PageInput.php');
             return $input;
         }
 
-        /// <summary>
-        /// Returns a <see cref="DlexInput"/> object containing the input pdf.
-        /// </summary>
-        /// <param name="dlexResource">The dlex resource of type <see cref="DlexResource"/>.</param>
-        /// <param name="layoutData">The layout data resource of type <see cref="LayoutDataResource"/>.</param>
+
+        /**
+        *
+        *  Returns a DlexInput object containing the input pdf. 
+        *
+        * @param  DlexResource $dlexResource The dlex resource of type DlexResource.        *
+        * @param  LayoutDataResource $layoutData The layout data resource of type LayoutDataResource.        *
+        */
         public function AddDlex(DlexResource $dlexResource, LayoutDataResource $layoutData)
         {
             $input = new DlexInput($dlexResource, $layoutData);
@@ -143,11 +191,14 @@ require_once('PageInput.php');
             return $input;
         }
 
-        /// <summary>
-        /// Returns a <see cref="DlexInput"/> object containing the input pdf.
-        /// </summary>
-        /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
-        /// <param name="layoutData">The layout data resource of type <see cref="LayoutDataResource"/>.</param>
+
+       /**
+       *
+       *  Returns a DlexInput object containing the input pdf. 
+       *
+       * @param  string $cloudResourcePath The resource path in cloud resource manager.
+       * @param  LayoutDataResource $layoutData The layout data resource of type LayoutDataResource.       *
+       */
        /* public function AddDlexCloud(string $cloudResourcePath, LayoutDataResource $layoutData)
         {
             $input = new DlexInput($cloudResourcePath, $layoutData);
@@ -155,11 +206,14 @@ require_once('PageInput.php');
             return $input;
         }*/
 
-        /// <summary>
-        /// Returns a <see cref="DlexInput"/> object containing the input pdf.
-        /// </summary>
-        /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
-        /// <param name="cloudLayoutDataPat">The layout data resource path in cloud resource manager.</param>
+
+        /**
+        *
+        *  Returns a DlexInput object containing the input pdf. 
+        *
+        * @param  string $cloudResourcePath The resource path in cloud resource manager.
+        * @param  string $cloudLayoutDataPat The layout data resource path in cloud resource manager.
+        */
         public function AddDlexCloud(string $cloudResourcePath, string $cloudLayoutDataPat)
         {
             $input = new DlexInput($cloudResourcePath, $cloudLayoutDataPat);
@@ -167,11 +221,14 @@ require_once('PageInput.php');
             return $input;
         }
 
-        /// <summary>
-        /// Returns a <see cref="PageInput"/> object containing the input pdf.
-        /// </summary>
-        /// <param name="pageWidth">The width of the page.</param>
-        /// <param name="pageHeight">The height of the page.</param>
+
+        /**
+        *
+        *  Returns a PageInput object containing the input pdf. 
+        *
+        * @param  ?float $pageWidth The width of the page.
+        * @param  ?float $pageHeight The height of the page.
+        */
         public function AddPage(?float $pageWidth =null, ?float $pageHeight= null)
         {
             if(($pageWidth != null)&& ($pageHeight != null))
@@ -188,9 +245,12 @@ require_once('PageInput.php');
             }
         }
 
-        /// <summary>
-        /// Returns a <see cref="PageInput"/> object containing the input pdf.
-        /// </summary>
+
+        /**
+        *
+        *  Returns a PageInput object containing the input pdf. 
+        *
+        */
         /*public function AddPage()
         {
             $input = new PageInput();
@@ -198,33 +258,48 @@ require_once('PageInput.php');
             return $input;
         }*/
 
-        /// <summary>
-        /// Gets the inputs.
-        /// </summary>
+
+        /**
+        *
+        * Gets the inputs.
+        *
+        */
         public $Inputs = array();
         
 
-        /// <summary>
-        /// Gets the templates.
-        /// </summary>
+
+        /**
+        *
+        * Gets the templates.
+        *
+        */
         public $Templates = array();
         
 
-        /// <summary>
-        /// Gets the fonts.
-        /// </summary>
+
+        /**
+        *
+        * Gets the fonts.
+        *
+        */
         public $Fonts = array();
         
 
-        /// <summary>
-        /// Gets the formFields.
-        /// </summary>
+
+        /**
+        *
+        * Gets the formFields.
+        *
+        */
         public $FormFields = array();
         
 
-        /// <summary>
-        /// Gets the outlines.
-        /// </summary>
+
+        /**
+        *
+        * Gets the outlines.
+        *
+        */
         public $Outlines = array();
         
 
@@ -425,3 +500,4 @@ require_once('PageInput.php');
        
     }
 ?>
+

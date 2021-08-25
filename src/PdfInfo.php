@@ -1,19 +1,25 @@
-﻿<?php
+<?php
 
 include_once('Endpoint.php');
 include_once('PdfInfoResponse.php');
 
-    /// <summary>
-    /// Represents the pdf info endpoint.
-    /// </summary>
+
+    /**
+    *
+    * Represents the pdf info endpoint.
+    *
+    */
     class PdfInfo extends Endpoint
     {
         private $resource;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PdfInfo"/> class.
-        /// </summary>
-        /// <param name="resource">The resource of type <see cref="PdfResource"/>.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the PdfInfo class. 
+        *
+        * @param  PdfResource $resource The resource of type PdfResource.        *
+        */
         public function __construct(PdfResource $resource)
         {
             $this->resource = $resource;
@@ -25,9 +31,12 @@ include_once('PdfInfoResponse.php');
 
        
 
-        /// <summary>
-        /// Process the pdf resource to get pdf's information.
-        /// </summary>
+
+        /**
+        *
+        * Process the pdf resource to get pdf's information.
+        *
+        */
         public function Process():PdfInfoResponse
         {
             $client=parent::Init();
@@ -83,3 +92,4 @@ include_once('PdfInfoResponse.php');
         }
     }
 ?>
+

@@ -1,10 +1,13 @@
-﻿<?php
+<?php
 
 include_once('BarcodeElement.php');
 
-    /// <summary>
-    /// Base class from which barcode page elements that display text are derived.
-    /// </summary>
+
+    /**
+    *
+    * Base class from which barcode page elements that display text are derived.
+    *
+    */
     abstract class TextBarcodeElement extends BarcodeElement
     {
         public function __construct(string $value, string $placement, float $xOffset, float $yOffset)
@@ -12,27 +15,39 @@ include_once('BarcodeElement.php');
             parent::__construct($value, $placement, $xOffset, $yOffset);
         }
         
-        /// <summary>
-        /// Gets or sets the color of the text.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the color of the text.
+        *
+        */
         public  $TextColor  = null;
         
         public $FontName;
 
-        /// <summary>
-        /// Gets or sets the font size to use when displaying the text.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the font size to use when displaying the text.
+        *
+        */
         public  $FontSize; 
 
-        /// <summary>
-        /// Gets or sets a value indicating if the value should be placed as text below the barcode.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets a value indicating if the value should be placed as text below the barcode.
+        *
+        */
         public  $ShowText = "null";
         public $Resource;
 
-        /// <summary>
-        /// Gets or sets the font to use when displaying the text.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the font to use when displaying the text.
+        *
+        */
         public  function Font(Font $value)
          {
             $this->TextFont = $value;
@@ -48,3 +63,4 @@ include_once('BarcodeElement.php');
       
     }
 ?>
+

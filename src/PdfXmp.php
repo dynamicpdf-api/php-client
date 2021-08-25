@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     include_once('PdfResource.php');
     include_once('Endpoint.php');
     include_once('XmlResponse.php');
@@ -7,10 +7,13 @@
     {
         private $resource;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PdfInfo"/> class.
-        /// </summary>
-        /// <param name="resource">The resource of type <see cref="PdfResource"/>.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the PdfInfo class. 
+        *
+        * @param  PdfResource $resource The resource of type PdfResource.        *
+        */
         public function __construct(PdfResource $resource)
         {
             $this->resource = $resource;
@@ -19,19 +22,28 @@
 
        
 
-        /// <summary>
-        /// Gets or sets the start page.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the start page.
+        *
+        */
         public  $StartPage;
 
-        /// <summary>
-        /// Gets or sets the page count.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the page count.
+        *
+        */
         public  $PageCount;
 
-        /// <summary>
-        /// Process the pdf resource to get pdf's information.
-        /// </summary>
+
+        /**
+        *
+        * Process the pdf resource to get pdf's information.
+        *
+        */
         public function Process():XmlResponse
         {
             $client=parent::Init();
@@ -87,3 +99,4 @@
         }
     }
 ?>
+

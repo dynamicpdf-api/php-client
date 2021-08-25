@@ -1,33 +1,55 @@
-﻿<?php
+<?php
 
-    /// <summary>
-    /// Specifies Color Space.
-    /// </summary>
+
+    /**
+    *
+    * Specifies Color Space.
+    *
+    */
     class ColorSpaceType
     {
-        /// <summary>
-        /// Represents a Monochrome color space.
-        /// </summary>
+
+        /**
+        *
+        * Represents a Monochrome color space.
+        *
+        */
         public const Monochrome = "monochrome";
-        /// <summary>
-        /// Represents a Grayscale color space.
-        /// </summary>
+
+        /**
+        *
+        * Represents a Grayscale color space.
+        *
+        */
         public const Grayscale = "grayscale";
-        /// <summary>
-        /// Represents an RGB color space.
-        /// </summary>
+
+        /**
+        *
+        * Represents an RGB color space.
+        *
+        */
         public const RGB = "rGB";
-        /// <summary>
-        /// Represents a CMYK color space.
-        /// </summary>
+
+        /**
+        *
+        * Represents a CMYK color space.
+        *
+        */
         public const CMYK = "cMYK";
-        /// <summary>
-        /// Represents an Indexed color space.
-        /// </summary>
+
+        /**
+        *
+        * Represents an Indexed color space.
+        *
+        */
         public const Indexed = "indexed";
-        /// <summary>
-        /// Unknown color space.
-        /// </summary>
+
+        /**
+        *
+        * Unknown color space.
+        *
+        */
         public const Unknown = "unknown";
     }
 }
+

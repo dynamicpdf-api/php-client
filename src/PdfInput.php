@@ -1,21 +1,27 @@
-﻿<?php
+<?php
 require_once('Input.php');
 require_once('InputType.php');
 require_once('MergeOptions.php');
 require_once('PdfResource.php');
 require_once('MergeOptions.php');
 
-/// <summary>
-    /// Represents a pdf input.
-    /// </summary>
+
+     /**
+     *
+     * Represents a pdf input.
+     *
+     */
      class PdfInput extends Input
     {
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PdfInput"/> class.
-        /// </summary>
-        /// <param name="resource">The resource of type <see cref="PdfResource"/>.</param>
-        /// <param name="options">The merge options for the pdf.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the PdfInput class. 
+        *
+        * @param  ?PdfResource $resource The resource of type PdfResource.        *
+        * @param  ?MergeOptions $options The merge options for the pdf.
+        */
         public function __construct(?PdfResource $resource, ?MergeOptions $options =null) 
         {
             if($resource!= null)
@@ -23,11 +29,14 @@ require_once('MergeOptions.php');
             $this->MergeOptions = $options;
         }
 
-        /// <summary>
-        /// Returns a <see cref="PdfInput"/> object containing the input pdf.
-        /// </summary>
-        /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
-        /// <param name="options">The merge options for the pdf.</param>
+
+        /**
+        *
+        *  Returns a PdfInput object containing the input pdf. 
+        *
+        * @param  string $cloudResourcePath The resource path in cloud resource manager.
+        * @param  ?MergeOptions $options The merge options for the pdf.
+        */
         public static function CreatePdfInput(string $cloudResourcePath, ?MergeOptions $options =null) 
         {
             $pdfInput =new PdfInput(null,null);
@@ -38,19 +47,28 @@ require_once('MergeOptions.php');
 
         public   $Type= InputType::Pdf;
 
-        /// <summary>
-        /// Gets or sets the merge options <see cref="MergeOptions"/>.
-        /// </summary>
+
+        /**
+        *
+        *  Gets or sets the merge options MergeOptions. 
+        *
+        */
         public  $MergeOptions ;
 
-        /// <summary>
-        /// Gets or sets the start page.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the start page.
+        *
+        */
         public  $StartPage ;
 
-        /// <summary>
-        /// Gets or sets the page count.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the page count.
+        *
+        */
         public  $PageCount ;
 
         public function GetjsonSerializeString()
@@ -96,3 +114,4 @@ require_once('MergeOptions.php');
 
     }
 ?>
+

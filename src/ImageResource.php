@@ -1,40 +1,51 @@
-﻿<?php
+<?php
 include_once('Resource.php');
 include_once('ResourceType.php');
 include_once('EndPointException.php');
 
-  /// <summary>
-    /// Represents an image resource used to create an <see cref="ImageInput"/> 
-    /// object to create PDF from images.
-    /// </summary>
+
+     /**
+     *
+     *  Represents an image resource used to create an ImageInput object to create PDF from images. 
+     *
+     */
      class ImageResource extends Resource
     {
-          /// <summary>
-        /// Initializes a new instance of the <see cref="ImageResource"/> class.
-        /// </summary>
-        /// <param name="filePath">The image file path.</param>
-        /// <param name="resourceName">The name of the resource.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the ImageResource class. 
+        *
+        * @param  string $filePath The image file path.
+        * @param  string $resourceName The name of the resource.
+        */
         public function __construct(string $filePath, string $resourceName = null)  
         { 
             parent::__construct($filePath, $resourceName);
             $this->Type = ResourceType::Image;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageResource"/> class.
-        /// </summary>
-        /// <param name="value">The byte array of the image file.</param>
-        /// <param name="resourceName">The name of the resource.</param>
+
+      /**
+      *
+      *  Initializes a new instance of the ImageResource class. 
+      *
+      * @param  array $value The byte array of the image file.
+      * @param  string $resourceName The name of the resource.
+      */
       /*  public function __construct(array $value, string $resourceName = null) 
         { 
             parent::__construct($value,  $resourceName);
         }
 
-         /// <summary>
-        /// Initializes a new instance of the <see cref="ImageResource"/> class.
-        /// </summary>
-        /// <param name="data">The stream of the image file.</param>
-        /// <param name="resourceName">The name of the resource.</param>
+
+        /**
+        *
+        *  Initializes a new instance of the ImageResource class. 
+        *
+        * @param  Stream $data The stream of the image file.
+        * @param  string $resourceName The name of the resource.
+        */
         public function __construct(Stream $data, string $resourceName = null) 
         { 
             parent::__construct($data,  $resourceName);
@@ -149,3 +160,4 @@ include_once('EndPointException.php');
     }
 
      ?>
+

@@ -1,22 +1,34 @@
-﻿<?php
-    /// <summary>
-    /// Represents an page information.
-    /// </summary>
+<?php
+
+    /**
+    *
+    * Represents an page information.
+    *
+    */
     class PageInformation
     {
-        /// <summary>
-        /// Gets or sets the page number.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the page number.
+        *
+        */
         public $PageNumber ;
 
-        /// <summary>
-        /// Gets or sets the width of the page.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the width of the page.
+        *
+        */
         public $Width ;
 
-        /// <summary>
-        /// Gets or sets the height of the page.
-        /// </summary>
+
+        /**
+        *
+        * Gets or sets the height of the page.
+        *
+        */
         public $Height ;
     }
 ?>

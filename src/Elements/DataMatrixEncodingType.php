@@ -1,57 +1,91 @@
 <?php
-    /// <summary>
-    /// Specifies EncodingType for Datamatrix barcodes.
-    /// </summary>
+
+/**
+*
+* Specifies EncodingType for Datamatrix barcodes.
+*
+*/
 class DataMatrixEncodingType
 { 
-              /// <summary>
-        /// Calculates Encoding based on Value.
-        /// </summary>
+
+      /**
+      *
+      * Calculates Encoding based on Value.
+      *
+      */
       public const Auto = "auto";
 
-              /// <summary>
-        /// Calculates ASCII Encoding based on Value.
-        /// </summary>
+
+      /**
+      *
+      * Calculates ASCII Encoding based on Value.
+      *
+      */
       public const AutoAscii = "autoAscii";
 
-              /// <summary>
-        /// ASCII Encoding.
-        /// </summary>
+
+      /**
+      *
+      * ASCII Encoding.
+      *
+      */
       public const Ascii = "ascii";
 
-              /// <summary>
-        /// Extended ASCII Encoding.
-        /// </summary>
+
+      /**
+      *
+      * Extended ASCII Encoding.
+      *
+      */
       public const ExtendedAscii = "extendedAscii";
 
-              /// <summary>
-        /// Double digit Encoding.
-        /// </summary>
+
+      /**
+      *
+      * Double digit Encoding.
+      *
+      */
       public const DoubleDigit = "doubleDigit";
 
-              /// <summary>
-        /// C40 Encoding.
-        /// </summary>
+
+      /**
+      *
+      * C40 Encoding.
+      *
+      */
       public const C40 = "c40";
 
-              /// <summary>
-        /// Text Encoding.
-        /// </summary>
+
+      /**
+      *
+      * Text Encoding.
+      *
+      */
       public const Text = "text";
 
-              /// <summary>
-        /// ANSI X12 Encoding.
-        /// </summary>
+
+      /**
+      *
+      * ANSI X12 Encoding.
+      *
+      */
       public const AnsiX12 = "ansiX12";
 
-              /// <summary>
-        /// EDIFACT Encoding.
-        /// </summary>
+
+      /**
+      *
+      * EDIFACT Encoding.
+      *
+      */
       public const Edifact = "edifact";
 
-              /// <summary>
-        /// Base256 Encoding.
-        /// </summary>
+
+      /**
+      *
+      * Base256 Encoding.
+      *
+      */
       public const Base256 = "base256";
 } 
 ?>
+

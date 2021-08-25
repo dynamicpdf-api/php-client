@@ -1,28 +1,44 @@
 <?php
 
-/// <summary>
-/// Specifies the style of the outline.
-/// </summary>
+
+/**
+*
+* Specifies the style of the outline.
+*
+*/
 class OutlineStyle
 { 
-      /// <summary>
-      /// Bold.
-      /// </summary>
+
+      /**
+      *
+      * Bold.
+      *
+      */
       public const Bold = "bold";
 
-      /// <summary>
-      /// Bold Italic.
-      /// </summary>
+
+      /**
+      *
+      * Bold Italic.
+      *
+      */
       public const  BoldItalic = "boldItalic";
 
-      /// <summary>
-      /// Italic.
-      /// </summary>
+
+      /**
+      *
+      * Italic.
+      *
+      */
       public const Italic = "italic";
 
-      /// <summary>
-      /// Regular.
-      /// </summary>
+
+      /**
+      *
+      * Regular.
+      *
+      */
       public const Regular = "regular";
 } 
 ?>
+

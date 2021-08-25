@@ -1,21 +1,34 @@
 <?php
 
-    /// <summary>
-    /// Specifies horizontal alignment. Center alignment is the default value for alignments.
-    /// </summary>
+
+    /**
+    *
+    * Specifies horizontal alignment. Center alignment is the default value for alignments.
+    *
+    */
     class Align
       { 
-            /// <summary>
-            /// Align left.
-            /// </summary>
+
+            /**
+            *
+            * Align left.
+            *
+            */
             public const Left = "left";
-            /// <summary>
-            /// Align center. This is default.
-            /// </summary>
+
+            /**
+            *
+            * Align center. This is default.
+            *
+            */
             public const Center = "center";
-            /// <summary>
-            /// Align right.
-            /// </summary>
+
+            /**
+            *
+            * Align right.
+            *
+            */
             public const Right = "right";
       } 
 ?>
+
