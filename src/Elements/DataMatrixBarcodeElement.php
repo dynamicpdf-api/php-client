@@ -42,7 +42,7 @@ include_once('ElementType.php');
         /// <param name="symbolSize">The symbol size of the barcode.</param>
         /// <param name="encodingType">The encoding type of the barcode.</param>
         /// <param name="functionCharacter">The function character of the barcode.</param>
-       /* public DataMatrixBarcodeElement(byte[] value, ElementPlacement placement, float xOffset = 0, float yOffset = 0, DataMatrixSymbolSize symbolSize = DataMatrixSymbolSize.Auto, DataMatrixEncodingType encodingType = DataMatrixEncodingType.Auto, DataMatrixFunctionCharacter functionCharacter = DataMatrixFunctionCharacter.None)
+       /* public function DataMatrixBarcodeElement(byte[] $value, ElementPlacement $placement, float $xOffset = 0, float $yOffset = 0, DataMatrixSymbolSize $symbolSize = DataMatrixSymbolSize.Auto, DataMatrixEncodingType $encodingType = DataMatrixEncodingType.Auto, DataMatrixFunctionCharacter $functionCharacter = DataMatrixFunctionCharacter.None)
                  : base(value, placement, xOffset, yOffset) 
         {
             DataMatrixSymbolSize = symbolSize;

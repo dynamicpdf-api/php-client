@@ -30,7 +30,7 @@
         /// <param name="placement">The placement of the barcode on the page.</param>
         /// <param name="xOffset">The X coordinate of the QR code.</param>
         /// <param name="yOffset">The Y coordinate of the QR code.</param>
-        //public QrCodeElement(byte[] value, ElementPlacement placement, float xOffset = 0, float yOffset = 0) : base(value, placement, xOffset, yOffset) { }
+        //public function QrCodeElement(byte[] $value, ElementPlacement $placement, float $xOffset = 0, float $yOffset = 0) : base(value, placement, xOffset, yOffset) { }
 
        
         public  $Type = ElementType::QrCode;

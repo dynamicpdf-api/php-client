@@ -15,7 +15,6 @@ include_once('Response.php');
         /// Initializes a new instance of the <see cref="XmlResponse"/> class.
         /// </summary>
         /// <param name="xmlContent">The xml content of the response.</param>
-        
         public function __construct(?string $xmlContent =null) 
         { 
             $this->Content = $xmlContent; 

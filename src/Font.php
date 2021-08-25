@@ -31,7 +31,7 @@ include_once('Font.php');
         /// using the font name that is present in the cloud resource manager.
         /// </summary>
         /// <param name="cloudResourceName">The font name present in the cloud resource manager.</param>
-        public static function CreateFont(string $Name)
+        public static function CreateFont(string $cloudResourceName)
         {
             $font=new Font();
             $font->Name=$Name;

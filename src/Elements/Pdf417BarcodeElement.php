@@ -35,7 +35,7 @@ include_once('Compaction.php');
         /// <param name="columns">Columns of the PDF417 barcode.</param>
         /// <param name="xOffset">The X coordinate of the PDF417 barcode.</param>
         /// <param name="yOffset">The Y coordinate of the PDF417 barcode.</param>
-       // public Pdf417BarcodeElement(byte[] value, ElementPlacement placement, int columns, float xOffset = 0, float yOffset= 0): base(value, placement, xOffset, yOffset) { }
+       // public function Pdf417BarcodeElement(byte[] $value, ElementPlacement $placement, int $columns, float $xOffset = 0, float $yOffset= 0): base(value, placement, xOffset, yOffset) { }
 
         
         public  $Type = ElementType::Pdf417Barcode;

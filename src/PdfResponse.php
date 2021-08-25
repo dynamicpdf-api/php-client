@@ -16,7 +16,7 @@
         /// Initializes a new instance of the <see cref="PdfResponse"/> class.
         /// </summary>
         /// <param name="pdfContent">The byte array of pdf content.</param>
-        public function  __construct(mixed $value)
+        public function  __construct(mixed $pdfContent)
         {
             $this->Content = $value;
         }

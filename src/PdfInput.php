@@ -28,7 +28,7 @@ require_once('MergeOptions.php');
         /// </summary>
         /// <param name="cloudResourcePath">The resource path in cloud resource manager.</param>
         /// <param name="options">The merge options for the pdf.</param>
-        public static function CreatePdfInput(string $resourceName, ?MergeOptions $options =null) 
+        public static function CreatePdfInput(string $cloudResourcePath, ?MergeOptions $options =null) 
         {
             $pdfInput =new PdfInput(null,null);
             $pdfInput->ResourceName = $resourceName;
