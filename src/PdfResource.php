@@ -46,7 +46,7 @@
         * @param  Stream $data The stream of the pdf file.
         * @param  ?string $resourceName The name of the resource.
         */
-        public function __construct(Stream $data, ?string $resourceName = null)
+        /*public function __construct(Stream $data, ?string $resourceName = null)
          { 
             parent::__construct($data,  $resourceName);
          }*/

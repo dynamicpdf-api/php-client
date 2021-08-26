@@ -1,60 +1,60 @@
 ﻿<?php
 
-require_once('../../../src/Pdf.php');
-require_once('../../../src/PdfResource.php');
-require_once('../../../src/PdfInput.php');
-require_once('../../../src/PageInput.php');
+require_once(__DIR__.'/../../../src/Pdf.php');
+require_once(__DIR__.'/../../../src/PdfResource.php');
+require_once(__DIR__.'/../../../src/PdfInput.php');
+require_once(__DIR__.'/../../../src/PageInput.php');
 
-require_once('../../../src/Font.php');
-require_once('../../../src/Elements/ElementPlacement.php');
-require_once('../../../src/ImageResource.php');
-require_once('../../../src/Elements/ImageElement.php');
-require_once('../../../src/RgbColor.php');
-require_once('../../../src/ImageInput.php');
-require_once('../../../src/Template.php');
-require_once('../../../src/Elements/TextElement.php');
-require_once('../../../src/DlexResource.php');
-require_once('../../../src/LayoutDataResource.php');
+require_once(__DIR__.'/../../../src/Font.php');
+require_once(__DIR__.'/../../../src/Elements/ElementPlacement.php');
+require_once(__DIR__.'/../../../src/ImageResource.php');
+require_once(__DIR__.'/../../../src/Elements/ImageElement.php');
+require_once(__DIR__.'/../../../src/RgbColor.php');
+require_once(__DIR__.'/../../../src/ImageInput.php');
+require_once(__DIR__.'/../../../src/Template.php');
+require_once(__DIR__.'/../../../src/Elements/TextElement.php');
+require_once(__DIR__.'/../../../src/DlexResource.php');
+require_once(__DIR__.'/../../../src/LayoutDataResource.php');
   
-require_once('../../../src/DlexInput.php');
-require_once('../../../src/PageInput.php');
+require_once(__DIR__.'/../../../src/DlexInput.php');
+require_once(__DIR__.'/../../../src/PageInput.php');
 
-require_once('../../../src/Aes128Security.php');
-require_once('../../../src/Elements/RectangleElement.php');
-require_once('../../../src/Elements/LineElement.php');
-require_once('../../../src/LineStyle.php');
-require_once('../../../src/Elements/PageNumberingElement.php');
-require_once('../../../src/Elements/Code128BarcodeElement.php');
-require_once('../../../src/Outline.php');
-require_once('../../../src/Elements/AztecBarcodeElement.php');
-require_once('../../../src/MergeOptions.php');
-require_once('../../../src/OutlineStyle.php');
-require_once('../../../src/Elements/Code39BarcodeElement.php');
-require_once('../../../src/Elements/Code25BarcodeElement.php');
+require_once(__DIR__.'/../../../src/Aes128Security.php');
+require_once(__DIR__.'/../../../src/Elements/RectangleElement.php');
+require_once(__DIR__.'/../../../src/Elements/LineElement.php');
+require_once(__DIR__.'/../../../src/LineStyle.php');
+require_once(__DIR__.'/../../../src/Elements/PageNumberingElement.php');
+require_once(__DIR__.'/../../../src/Elements/Code128BarcodeElement.php');
+require_once(__DIR__.'/../../../src/Outline.php');
+require_once(__DIR__.'/../../../src/Elements/AztecBarcodeElement.php');
+require_once(__DIR__.'/../../../src/MergeOptions.php');
+require_once(__DIR__.'/../../../src/OutlineStyle.php');
+require_once(__DIR__.'/../../../src/Elements/Code39BarcodeElement.php');
+require_once(__DIR__.'/../../../src/Elements/Code25BarcodeElement.php');
          
-require_once('../../../src/Elements/Code93BarcodeElement.php');
-require_once('../../../src/Elements/Code11BarcodeElement.php');
-require_once('../../../src/Elements/Gs1DataBarBarcodeElement.php');
-require_once('../../../src/Elements/StackedGs1DataBarBarcodeElement.php');
-require_once('../../../src/Elements/Iata25BarcodeElement.php');
-require_once('../../../src/Elements/MsiBarcodeElement.php');
-require_once('../../../src/Elements/Pdf417BarcodeElement.php');
-require_once('../../../src/Elements/DataMatrixBarcodeElement.php');
-require_once('../../../src/Elements/QrCodeElement.php');
-require_once('../../../src/GoToAction.php');
-require_once('../../../src/PageZoom.php');
-require_once('../../../src/Elements/StackedGs1DataBarType.php');
-require_once('../../../src/Elements/Gs1DataBarType.php');
-require_once('../../../src/Elements/DataMatrixSymbolSize.php');  
-require_once('../../../src/Elements/DataMatrixEncodingType.php');
-require_once('../../../src/Elements/DataMatrixFunctionCharacter.php');
+require_once(__DIR__.'/../../../src/Elements/Code93BarcodeElement.php');
+require_once(__DIR__.'/../../../src/Elements/Code11BarcodeElement.php');
+require_once(__DIR__.'/../../../src/Elements/Gs1DataBarBarcodeElement.php');
+require_once(__DIR__.'/../../../src/Elements/StackedGs1DataBarBarcodeElement.php');
+require_once(__DIR__.'/../../../src/Elements/Iata25BarcodeElement.php');
+require_once(__DIR__.'/../../../src/Elements/MsiBarcodeElement.php');
+require_once(__DIR__.'/../../../src/Elements/Pdf417BarcodeElement.php');
+require_once(__DIR__.'/../../../src/Elements/DataMatrixBarcodeElement.php');
+require_once(__DIR__.'/../../../src/Elements/QrCodeElement.php');
+require_once(__DIR__.'/../../../src/GoToAction.php');
+require_once(__DIR__.'/../../../src/PageZoom.php');
+require_once(__DIR__.'/../../../src/Elements/StackedGs1DataBarType.php');
+require_once(__DIR__.'/../../../src/Elements/Gs1DataBarType.php');
+require_once(__DIR__.'/../../../src/Elements/DataMatrixSymbolSize.php');  
+require_once(__DIR__.'/../../../src/Elements/DataMatrixEncodingType.php');
+require_once(__DIR__.'/../../../src/Elements/DataMatrixFunctionCharacter.php');
           
 use PHPUnit\Framework\TestCase;
 
-    class ComplexSamples   extends TestCase
+    class ComplexSamplesTest   extends TestCase
     {
-        private $inputpath =  "./../../Resources/";
-        private $outputPath =  "./Output/";
+        private $inputpath =  __DIR__."./../../Resources/";
+        private $outputPath =  __DIR__."./../Output/";
         private $key="DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
         private $url = "https://localhost:44397/v1.0"; 
         private $Author= "test";
@@ -87,7 +87,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples1.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples1.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -116,7 +116,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples2.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples2.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -151,7 +151,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples3.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples3.pdf", $response->Content);
             }
             else{
                 echo ($response->ErrorMessage);
@@ -183,7 +183,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples4.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples4.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -209,7 +209,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples5.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples5.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -259,7 +259,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples6.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples6.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -286,7 +286,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples7.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples7.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -341,7 +341,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples8.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples8.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -372,7 +372,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples9.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples9.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -416,7 +416,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples10.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples10.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -468,7 +468,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples11.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples11.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -536,7 +536,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples12.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples12.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -582,7 +582,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples13.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples13.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -695,7 +695,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples14.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples14.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -801,7 +801,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath . "ComplexSamples15.pdf", $response->PdfContent);
+                file_put_contents($this->outputPath . "ComplexSamples15.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }

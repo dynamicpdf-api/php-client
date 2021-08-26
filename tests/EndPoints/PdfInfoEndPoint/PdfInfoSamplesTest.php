@@ -1,15 +1,15 @@
 ﻿<?php
-require_once('../../../src/Pdf.php');
-require_once('../../../src/PdfResource.php');
-require_once('../../../src/PdfInput.php');
-require_once('../../../src/PdfInfo.php');
+require_once(__DIR__.'./../../../src/Pdf.php');
+require_once(__DIR__.'./../../../src/PdfResource.php');
+require_once(__DIR__.'./../../../src/PdfInput.php');
+require_once(__DIR__.'./../../../src/PdfInfo.php');
 
 use PHPUnit\Framework\TestCase;
 
-    class PdfInfoSamples  extends TestCase
+    class PdfInfoSamplesTest  extends TestCase
     {
-        private $inputpath =  "./../../Resources/";
-        private $outPutPath =  "./Output/";
+        private $inputpath =  __DIR__."./../../Resources/";
+        private $outPutPath =  __DIR__."./../Output/";
         private $key="DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
         private $url = "https://localhost:44397/v1.0"; 
         private $Author= "test";

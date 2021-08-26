@@ -11,7 +11,7 @@
     */
     abstract class Action
     {
-        public __construct()
+        public function __construct()
         {
 
         }

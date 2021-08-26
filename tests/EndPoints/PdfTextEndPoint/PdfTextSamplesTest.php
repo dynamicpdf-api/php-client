@@ -1,14 +1,14 @@
 ﻿<?php
-require_once('../../../src/Pdf.php');
-require_once('../../../src/PdfResource.php');
-require_once('../../../src/PdfText.php');
+require_once(__DIR__.'./../../../src/Pdf.php');
+require_once(__DIR__.'./../../../src/PdfResource.php');
+require_once(__DIR__.'./../../../src/PdfText.php');
 
 use PHPUnit\Framework\TestCase;
 
-    class PdfTextSamples extends TestCase
+    class PdfTextSamplesTest extends TestCase
     {
-        private $inputpath =  "D:/Resources/";
-        private $outPutPath =  "./Output/";
+        private $inputpath =  __DIR__."./../../Resources/";
+        private $outPutPath =  __DIR__."./../Output/";
         private $key="DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
         private $url = "https://localhost:44397/v1.0"; 
         private $Author= "test";

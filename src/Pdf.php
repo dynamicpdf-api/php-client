@@ -463,8 +463,10 @@ require_once('PageInput.php');
             {
                 if (strncmp($outData, '%PDF', 4) == 0) 
                     {
+                       
+                    $retObject = new PdfResponse($outData);
                     $retObject->IsSuccessful = true;
-                    $retObject->PdfContent = $outData;
+                    //$retObject->PdfContent = $outData;
                     } 
                 elseif (trim($outData)[0] == '{') 
                     {

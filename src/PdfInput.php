@@ -40,7 +40,7 @@ require_once('MergeOptions.php');
         public static function CreatePdfInput(string $cloudResourcePath, ?MergeOptions $options =null) 
         {
             $pdfInput =new PdfInput(null,null);
-            $pdfInput->ResourceName = $resourceName;
+            $pdfInput->ResourceName = $cloudResourcePath;
             $pdfInput->MergeOptions = $options;
             return $pdfInput;
         }

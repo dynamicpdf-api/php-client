@@ -23,11 +23,11 @@
         *
         *  Initializes a new instance of the PdfResponse class. 
         *
-        * @param  mixed $pdfContent The byte array of pdf content.
+        * @param  string $pdfContent The byte array of pdf content.
         */
-        public function  __construct(mixed $pdfContent)
+        public function  __construct(?string $pdfContent=null)
         {
-            $this->Content = $value;
+            $this->Content = $pdfContent;
         }
     }
 

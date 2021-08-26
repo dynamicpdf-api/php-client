@@ -31,7 +31,7 @@
         * Gets the error id.
         *
         */
-        public Guid? ErrorId { get; internal set; }
+        public $ErrorId;
 
 
         /**

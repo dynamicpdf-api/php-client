@@ -125,7 +125,7 @@
         * a better contorl on the form field names. 
         *
         */
-        public $RootFormField= "null"; = null;
+        public $RootFormField= "null";
 
 
         /**

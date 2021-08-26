@@ -47,7 +47,7 @@ require_once('ResourceType.php');
         * @param  Stream $data The stream of the dlex file.
         * @param  string $resourceName The name of the resource.
         */
-        public function DlexResource3(Stream $data, string $resourceName = null) 
+        /*public function DlexResource3(Stream $data, string $resourceName = null) 
         { 
             parent::__construct($data, $resourceName);
         }        */
