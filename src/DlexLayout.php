@@ -114,7 +114,7 @@
                 if (strncmp($outData, '%PDF', 4) == 0) 
                     {
                     $retObject->IsSuccessful = true;
-                    $retObject->PdfContent = $outData;
+                    $retObject->Content = $outData;
                     } 
                 elseif (trim($outData)[0] == '{') 
                     {

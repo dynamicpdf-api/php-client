@@ -25,17 +25,22 @@ include_once('ElementType.php');
         * @param  float $xOffset X coordinate of the image.
         * @param  float $yOffset Y coordinate of the image.
         */
-        public function __construct(?ImageResource $resource, ?string $placement, float $xOffset = 0, float $yOffset = 0)
+        public function __construct($resource, ?string $placement, float $xOffset = 0, float $yOffset = 0)
         {
-            if($resource != null)
+            if(gettype($resource)=="object")
             {
             //parent::__construct() ;
-           $this->Resource = $resource;
-           $this->ResourceName = $resource->ResourceName;
-           $this->Placement = $placement;
-           $this->XOffset = $xOffset;
-           $this->YOffset = $yOffset;
+                $this->Resource = $resource;
+                $this->ResourceName = $resource->ResourceName;
+          
             }
+            else
+            {
+                $this->ResourceName = $resource;
+            }
+            $this->Placement = $placement;
+            $this->XOffset = $xOffset;
+            $this->YOffset = $yOffset;
         }
 
 

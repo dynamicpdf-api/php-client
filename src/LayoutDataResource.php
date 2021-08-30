@@ -19,53 +19,29 @@ include_once('ResourceType.php');
         * @param  string $layoutData Serializable object data to create PDF report.
         * @param  string $layoutDataResourceName The name for layout data resource.
         */
-        public function __construct(string $layoutData= null, string $layoutDataResourceName = null) 
+        public function __construct( $layoutData= null, string $layoutDataResourceName = null) 
         {
-        if($layoutData != null)
-        {
-            if ($this->endsWith($layoutData,".json"))
+            if(gettype($layoutData)=="object")
             {
-               
-                $this->ResourcePath=$layoutData;
-                $this->Data = Resource::GetFileData($layoutData);
-               
+                $this->Data =  json_encode($layoutData);
             }
             else
             {
-               
-                $this->ResourcePath=null;
-                $this->Data = $layoutData;
-               
+                $this->Data = Resource::GetFileData($layoutData);
             }
-
             if ($layoutDataResourceName == null)
                 $this->LayoutDataResourceName =  md5(uniqid(rand(), true)).".json";
             else
                 $this->LayoutDataResourceName = $layoutDataResourceName;
 
-                $this->MimeType = "application/json";
-                $this->Type = ResourceType::LayoutData;
-                $this->ResourceName=$this->LayoutDataResourceName ;
-        }
+            $this->MimeType = "application/json";
+            $this->Type = ResourceType::LayoutData;
+            $this->ResourceName=$this->LayoutDataResourceName ;
+       
         }
 
 
-        /**
-        *
-        * Initializes a new instance of the LayoutDataResource class using the layout data object and a resource 
-        * name. 
-        *
-        * @param  object $layoutData Serializable object data to create PDF report.
-        * @param  string $layoutDataResourceName The name for layout data resource.
-        */
-        public static  function CreateLayoutDataResource(object $layoutData, string $layoutDataResourceName = null) :  LayoutDataResource
-        {
-           // print_r ($layoutData);
-            $jsonText = json_encode($layoutData);
-            //echo($jsonText);
-            $layoutDataResource =new LayoutDataResource($jsonText ,$layoutDataResourceName);
-            return $layoutDataResource;
-        }
+       
 
       
         public  function  FileExtension()

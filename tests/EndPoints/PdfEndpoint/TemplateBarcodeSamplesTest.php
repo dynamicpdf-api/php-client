@@ -701,7 +701,7 @@ public function FilePathAztecBarcodeElementByteArray_Pdfoutput()
 
     $template = new Template("Temp1");
     $value = unpack('C*',utf8_encode("Hello World"));
-    $element = new AztecBarcodeElement($value,0,0);
+    $element = new AztecBarcodeElement($value,ElementPlacement::TopLeft,0);
     array_push($template->Elements,$element);
     $input->SetTemplate($template);
 

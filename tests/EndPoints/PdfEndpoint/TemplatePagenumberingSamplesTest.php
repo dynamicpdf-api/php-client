@@ -980,7 +980,7 @@ public function Stream_PNEAddedToEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $file = fopen($this->inputpath. "Invoice.pdf", "r");
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
     $pdfResource = new PdfResource($file);
     fclose($file);
 
@@ -1607,7 +1607,7 @@ public function PageInputTextAndImageAndPNEWithProperties_PdfOutput()
 
 
     //create EvenAddTemplate with pagenumbering label
-    $templateC = new Template("TemplateB");
+    $templateC = new Template("TemplateC");
     $pageNumberingElement2 = new PageNumberingElement("%%CP%% of %%TP%%",ElementPlacement::BottomCenter);
     array_push($templateC->Elements,$pageNumberingElement2);
 

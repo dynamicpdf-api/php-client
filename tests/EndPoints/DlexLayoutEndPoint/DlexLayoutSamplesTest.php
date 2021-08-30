@@ -34,9 +34,10 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath."DlexLayoutSamples1cs.pdf", $response->Content);
+                file_put_contents($this->outputPath."DlexLayoutSamples1.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
+            
         }
 
 
@@ -57,7 +58,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath."DlexLayoutSamples2cs.pdf", $response->Content);
+                file_put_contents($this->outputPath."DlexLayoutSamples2.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -78,7 +79,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath."DlexLayoutSamples3cs.pdf", $response->Content);
+                file_put_contents($this->outputPath."DlexLayoutSamples3.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -99,7 +100,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath."DlexLayoutSamples4cs.pdf", $response->Content);
+                file_put_contents($this->outputPath."DlexLayoutSamples4.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -120,7 +121,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath."DlexLayoutSamples5cs.pdf", $response->Content);
+                file_put_contents($this->outputPath."DlexLayoutSamples5.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -141,7 +142,7 @@ use PHPUnit\Framework\TestCase;
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath."DlexLayoutSamples6cs.pdf", $response->Content);
+                file_put_contents($this->outputPath."DlexLayoutSamples6.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }
@@ -156,14 +157,14 @@ use PHPUnit\Framework\TestCase;
             $invoiceData = new InvoiceData();
             $invoiceLinqData = $invoiceData->Order11077;
 
-            $layoutDataResource =  LayoutDataResource::CreateLayoutDataResource($invoiceLinqData);
+            $layoutDataResource = new LayoutDataResource($invoiceLinqData);
             $dlexEndpoint = new DlexLayout("InvoiceOrderId.dlex", $layoutDataResource);
 
             $response = $dlexEndpoint->Process();
 
             if ($response->IsSuccessful)
             {
-                file_put_contents($this->outputPath."DlexLayoutSamples7cs.pdf", $response->Content);
+                file_put_contents($this->outputPath."DlexLayoutSamples7.pdf", $response->Content);
             }
             $this->assertEquals($response->IsSuccessful,true);
         }

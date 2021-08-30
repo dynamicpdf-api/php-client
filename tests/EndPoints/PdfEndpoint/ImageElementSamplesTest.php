@@ -268,7 +268,7 @@ public function PdfInputUsingStream_Template_Pdfoutput()
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
-    
+
     $file = fopen($this->inputpath. "Northwind Logo.gif", "r");
     $resource1 = new ImageResource($file);
     fclose($file);
@@ -346,7 +346,7 @@ public function PdfInputUsingCloudRoot_Template_Pdfoutput()
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
-    $element =  ImageElement::CreateImageElement("Northwind Logo.gif",ElementPlacement::TopCenter);
+    $element = new ImageElement("Northwind Logo.gif",ElementPlacement::TopCenter);
     array_push($template->Elements,$element);
     $input->SetTemplate($template);
 

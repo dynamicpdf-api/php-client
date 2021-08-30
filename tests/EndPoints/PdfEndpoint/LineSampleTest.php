@@ -179,7 +179,7 @@ public function PageInputProperties_Pdfoutput()
     array_push($pdf->Inputs,$input);
 
     $element = new LineElement(ElementPlacement::TopLeft,200,200);
-    $element->Color =  RgbColor::CreateRgbColor(0,0,1);
+    $element->Color = new RgbColor(0,0,1);
     $element->XOffset = 100;
     $element->YOffset = 100;
     $element->LineStyle = LineStyle::DashLarge();
@@ -218,7 +218,7 @@ public function PdfPageInputPropertiesWithTemplate_Pdfoutput()
 
     $template = new Template("temp");
     $element = new LineElement(ElementPlacement::TopLeft,200,200);
-    $element->Color = RgbColor::CreateRgbColor(0,0,1);
+    $element->Color = new RgbColor(0,0,1);
     $element->XOffset = 100;
     $element->YOffset = 100;
     $element->LineStyle = LineStyle::DashLarge();
@@ -260,7 +260,7 @@ public function PdfInputUsingFilePath_Template_Pdfoutput()
 
     $template = new Template("temp");
     $element = new LineElement(ElementPlacement::TopLeft,200,200);
-    $element->Color =  RgbColor::CreateRgbColor(0,0,1);
+    $element->Color = new RgbColor(0,0,1);
     $element->XOffset = 100;
     $element->YOffset = 100;
     $element->LineStyle = LineStyle::DashLarge();

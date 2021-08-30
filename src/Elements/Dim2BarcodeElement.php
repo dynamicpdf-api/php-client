@@ -20,7 +20,7 @@ include_once('ValueType.php');
             }
             else
             {
-                $this->Base64String = true;
+                $this->ValueType = ValueType::Base64EncodedBytes;
                 $this->Value  = base64_encode(implode(array_map("chr", $value)));
                 $this->Placement = $placement;
                 $this->XOffset = $xOffset;
