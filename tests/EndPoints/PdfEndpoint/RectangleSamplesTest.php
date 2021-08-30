@@ -396,7 +396,7 @@ public function Bytes_PdfOutput()
 /** @test */
 public function Stream_PdfOutput()
 {
-   /* $Name = "Stream";
+    $Name = "Stream";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -404,8 +404,10 @@ public function Stream_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+    
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -424,7 +426,7 @@ public function Stream_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."RectangleSamples12.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -440,7 +442,7 @@ public function CloudRoot_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
 
@@ -474,7 +476,7 @@ public function CloudSubFolder_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
 

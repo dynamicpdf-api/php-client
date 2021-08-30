@@ -15,7 +15,7 @@
         * Gets or Sets the name of the button field.
         *
         */
-        public  Name; 
+        public  $Name; 
 
 
         /**
@@ -23,7 +23,7 @@
         * Gets or sets the type of the button field, ex: RadioButton, CheckBox etc.
         *
         */
-        public  Type; 
+        public  $Type; 
 
 
         /**
@@ -31,7 +31,7 @@
         * Gets or sets the value of the button field.
         *
         */
-        public  Value; 
+        public  $Value; 
 
 
         /**
@@ -39,7 +39,7 @@
         * Gets or Sets the default value of the button field.
         *
         */
-        public  DefaultValue; 
+        public  $DefaultValue; 
 
 
         /**
@@ -50,7 +50,7 @@
         * create the fields with the same name but different export values. 
         *
         */
-        public  ExportValue; 
+        public  $ExportValue; 
 
 
         /**
@@ -58,6 +58,6 @@
         * Gets the collection of export value.
         *
         */
-        public  ExportValues = array(); 
+        public  $ExportValues = array(); 
     }
 ?>

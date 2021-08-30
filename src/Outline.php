@@ -17,40 +17,31 @@ include_once('OutlineStyle.php');
         *
         *  Initializes a new instance of the Outline class. 
         *
-        * @param  ?PdfInput $input The input of type PdfInput .        *
-        */
-        public function __construct(?PdfInput $input = null) 
-        {
-            if($input!= null)
-            {
-            $this->FromInputID = $input->Id;
-            if ($input->MergeOptions == null)
-            {
-                $input->MergeOptions = new MergeOptions();
-                $input->MergeOptions->Outlines = false;
-            }
-            else 
-            {
-                $input->MergeOptions->Outlines = false;
-            }
-        }
-    }
-
-
-        /**
-        *
-        *  Initializes a new instance of the Outline class. 
-        *
-        * @param  string $text text for the outline.
+        * @param  ?PdfInput $input The input of type PdfInput . 
         * @param  ?Action $action Action of the outline.
         */
-        public static function CreateOutline(string $text, ?Action $action = null):Outline
-         { 
-             $outline= new Outline();
-             $outline->Text = $text; 
-             $outline->Action = $action; 
-             return $outline;
-         }
+        public function __construct($input, ?Action $action = null) 
+        {
+            if(gettype($input)== "object")
+            {
+                $this->FromInputID = $input->Id;
+                if ($input->MergeOptions == null)
+                {
+                    $input->MergeOptions = new MergeOptions();
+                    $input->MergeOptions->Outlines = false;
+                }
+                else 
+                {
+                    $input->MergeOptions->Outlines = false;
+                }
+            }
+            else
+            {
+                $this->Text = $input; 
+                $this->Action = $action; 
+            }
+        }
+
 
         
         public  $ColorName;

@@ -17,7 +17,10 @@
         */
         public function __construct(string $id)
         {
-            $this->Id = $id;
+            if ($id == null)
+                $this->Id = md5(uniqid(rand(), true));
+            else
+                $this->Id =  $id;
         }
 
 

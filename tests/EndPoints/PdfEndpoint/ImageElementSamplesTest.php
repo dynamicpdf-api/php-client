@@ -252,7 +252,7 @@ public function PdfPageInput_Page_Pdfoutput()
 /** @test */
 public function PdfInputUsingStream_Template_Pdfoutput()
 {
-    /*$Name = "StreamTemplate";
+    $Name = "StreamTemplate";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -260,14 +260,19 @@ public function PdfInputUsingStream_Template_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $pdfStream = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $pdfResource = new PdfResource($pdfStream);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $pdfResource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($pdfResource);
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
-    $imageStream = new MemoryStream(File::ReadAllBytes((inputpath + "Northwind Logo::gif")));
-    $resource1 = new ImageResource($imageStream);
+    
+    $file = fopen($this->inputpath. "Northwind Logo.gif", "r");
+    $resource1 = new ImageResource($file);
+    fclose($file);
+
     $element = new ImageElement($resource1,ElementPlacement::TopCenter);
     array_push($template->Elements,$element);
     $input->SetTemplate($template);
@@ -283,7 +288,7 @@ public function PdfInputUsingStream_Template_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."ImageElementSamples7.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -337,7 +342,7 @@ public function PdfInputUsingCloudRoot_Template_Pdfoutput()
     $pdf->Title = $this->Title;
 
 
-    $input =  PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");

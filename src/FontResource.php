@@ -4,25 +4,12 @@ include_once('ResourceType.php');
 
      class FontResource extends Resource
     {
-        public function __construct(string $filePath, string $resourceName = null) 
+        public function __construct(string $file, string $resourceName = null) 
         { 
-            parent::__construct($filePath,  $resourceName);
+            parent::__construct($file,  $resourceName);
         }
-       /* public function FontResource2(array $value, string $resourceName = null) 
-        { 
-            parent::__construct($value, $resourceName);
-        }
-        public function FontResource3(Stream $data, string $resourceName = null)  
-        { 
-            parent::__construct( $data, $resourceName);
-        }*/
 
         public   $Type  = ResourceType::Font;
-       //internal override string ResourcePath ;
-       
-     
-        
-
 
         public  function FileExtension() : string
         {

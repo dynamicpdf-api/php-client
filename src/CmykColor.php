@@ -13,14 +13,10 @@ include_once('Color.php');
         private  $magenta = 0;
         private  $yellow = 0;
         private  $black = 0;
-        
-
-        public function __construct(?string $colorString =null) { $this->ColorString = $colorString; }
-
 
         /**
         *
-        *  Initializes a new instance of the CmykColor class. 
+        * Initializes a new instance of the CmykColor class. 
         *
         * Values must be between 0.0 and 1.0.
         *
@@ -29,20 +25,20 @@ include_once('Color.php');
         * @param  float $yellow The yellow intensity.
         * @param  float $black The black intensity.
         */
-        public static function CreateCmykColor(float $cyan, float $magenta, float $yellow, float $black)
+        public  function __construct(float $cyan = 0, float $magenta = 0, float $yellow = 0, float $black = 0)
         {
-            $cmykColor = new CmykColor();
+           
             if ($cyan < 0.0 || $cyan > 1.0 || $magenta < 0.0 || $magenta > 1.0 || $yellow < 0.0 || $yellow > 1.0 || $black < 0.0 || $black > 1.0)
             {
                 throw new EndpointException("CMYK values must be from 0.0 to 1.0.");
             }
 
-            $cmykColor->ColorString="cmyk(".$cyan.",".$magenta.",".$yellow.",".$black.")";
-            $cmykColor->cyan = $cyan;
-            $cmykColor->magenta = $magenta;
-            $cmykColor->yellow = $yellow;
-            $cmykColor->black = $black;
-            return $cmykColor;
+            $this->ColorString="cmyk(".$cyan.",".$magenta.",".$yellow.",".$black.")";
+            $this->cyan = $cyan;
+            $this->magenta = $magenta;
+            $this->yellow = $yellow;
+            $this->black = $black;
+           
         }
 
         /**
@@ -60,20 +56,7 @@ include_once('Color.php');
         */
         public function White() { return new CmykColor(0, 0, 0, 0); } 
         
-        /*internal override string ColorString
-        {
-            get
-            {
-                if (colorString != null)
-                    return colorString;
-                else
-                    return "cmyk(" + cyan.ToString() + "," + magenta.ToString() + "," + yellow.ToString() + "," + black.ToString() + ")";
-            }
-            set
-            {
-                colorString = value;
-            }
-        }*/
+       
 
     }
 ?>

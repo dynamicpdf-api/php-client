@@ -59,7 +59,7 @@ public function FilePathTiffImage_Pdfoutput()
 /** @test */
 public function StreamTiffImage_Pdfoutput()
 {
-   /* $Name = "StreamTiffImage";
+    $Name = "StreamTiffImage";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -67,8 +67,10 @@ public function StreamTiffImage_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "CCITT_1::tif")));
-    $resource = new ImageResource($memory);
+    $file = fopen($this->inputpath. "CCITT_1.tif", "r");
+    $resource = new ImageResource($file);
+    fclose($file);
+
     $input = new ImageInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -83,7 +85,7 @@ public function StreamTiffImage_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."ImageInputSamples2.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -130,7 +132,7 @@ public function ImageInputUsingCloudRoot_TiffImageAddedToInput_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  ImageInput::CreateImageInput("Small.jpg");
+    $input = new ImageInput("Small.jpg");
     array_push($pdf->Inputs,$input);
 
     $response = $pdf->Process();
@@ -218,7 +220,7 @@ public function FilePathMulitiTiffImage_Pdfoutput()
 /** @test */
 public function StreamMulitiTiffImage_Pdfoutput()
 {
-   /* $Name = "StreamMulitiTiffImage";
+    $Name = "StreamMulitiTiffImage";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -226,8 +228,9 @@ public function StreamMulitiTiffImage_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "PalaisDuLouvre::tif")));
-    $resource = new ImageResource($memory);
+    $file = fopen($this->inputpath. "PalaisDuLouvre.tif", "r");
+    $resource = new ImageResource($file);
+    fclose($file);
     $input = new ImageInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -242,7 +245,7 @@ public function StreamMulitiTiffImage_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."ImageInputSamples7.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -349,7 +352,7 @@ public function FilePathPngImage_Pdfoutput()
 /** @test */
 public function StreamPngImage_Pdfoutput()
 {
-   /* $Name = "StreamPngImage";
+    $Name = "StreamPngImage";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -357,8 +360,10 @@ public function StreamPngImage_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "170x220_T::png")));
-    $resource = new ImageResource($memory);
+    $file = fopen($this->inputpath. "170x220_T.png", "r");
+    $resource = new ImageResource($file);
+    fclose($file);
+
     $input = new ImageInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -374,7 +379,7 @@ public function StreamPngImage_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."ImageInputSamples11.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -422,7 +427,7 @@ public function CloudRootPngImage_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  ImageInput::CreateImageInput("170x220_T.png");
+    $input = new ImageInput("170x220_T.png");
 
     array_push($pdf->Inputs,$input);
 
@@ -453,7 +458,7 @@ public function CloudSubFolderPngImage_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  ImageInput::CreateImageInput("Resources/170x220_T.png");
+    $input = new ImageInput("Resources/170x220_T.png");
 
     array_push($pdf->Inputs,$input);
 
@@ -543,7 +548,7 @@ public function FilePathGifImage_Pdfouput()
 /** @test */
 public function StreamGifImage_Pdfouput()
 {
-   /* $Name = "StreamGifImage";
+    $Name = "StreamGifImage";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -551,8 +556,10 @@ public function StreamGifImage_Pdfouput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "Northwind Logo::gif")));
-    $resource = new ImageResource($memory);
+    $file = fopen($this->inputpath. "Northwind Logo.gif", "r");
+    $resource = new ImageResource($file);
+    fclose($file);
+
     $input = new ImageInput($resource);
     array_push($pdf->Inputs,$input);
     $input->Align = Align::Left;
@@ -571,7 +578,7 @@ public function StreamGifImage_Pdfouput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."ImageInputSamples17.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -618,7 +625,7 @@ public function CloudRootGifImage_Pdfouput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  ImageInput::CreateImageInput("Northwind Logo.gif");
+    $input = new ImageInput("Northwind Logo.gif");
 
     array_push($pdf->Inputs,$input);
 
@@ -649,7 +656,7 @@ public function CloudSubFolderGifImage_Pdfouput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  ImageInput::CreateImageInput("Resources/Northwind Logo.gif");
+    $input = new ImageInput("Resources/Northwind Logo.gif");
 
     array_push($pdf->Inputs,$input);
     $input->Align = Align::Left;
@@ -742,7 +749,7 @@ public function FilePathJpegImage_Pdfoutput()
 /** @test */
 public function StreamJpegImage_Pdfoutput()
 {
-  /*  $Name = "StreamJpegImage";
+    $Name = "StreamJpegImage";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -750,8 +757,10 @@ public function StreamJpegImage_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "Small::jpg")));
-    $resource = new ImageResource($memory);
+    $file = fopen($this->inputpath. "Small.jpg", "r");
+    $resource = new ImageResource($file);
+    fclose($file);
+
     $input = new ImageInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -766,7 +775,7 @@ public function StreamJpegImage_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."ImageInputSamples23.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -814,7 +823,7 @@ public function CloudRootJpegImage_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = ImageInput::CreateImageInput("Small.jpg");
+    $input =new ImageInput("Small.jpg");
 
     array_push($pdf->Inputs,$input);
 
@@ -845,7 +854,7 @@ public function CloudSubFolderJpegImage_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = ImageInput::CreateImageInput("Resources/Small.jpg");
+    $input =new ImageInput("Resources/Small.jpg");
 
     array_push($pdf->Inputs,$input);
 

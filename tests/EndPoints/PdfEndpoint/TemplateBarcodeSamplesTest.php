@@ -386,7 +386,7 @@ public function FilePathAztecBarcodeElementProperties_Pdfoutput()
 /** @test */
 public function BytesAztecBarcodeElementProperties_Pdfoutput()
 {
-    /*$Name = "BytesAztecBarcodeElementProperties";
+    $Name = "BytesAztecBarcodeElementProperties";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -395,7 +395,12 @@ public function BytesAztecBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -426,7 +431,7 @@ public function BytesAztecBarcodeElementProperties_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples9.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -434,7 +439,7 @@ public function BytesAztecBarcodeElementProperties_Pdfoutput()
 /** @test */
 public function StreamAztecBarcodeElementProperties_Pdfoutput()
 {
-   /* $Name = "StreamAztecBarcodeElementProperties_Pdfoutput";
+    $Name = "StreamAztecBarcodeElementProperties_Pdfoutput";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -443,8 +448,9 @@ public function StreamAztecBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
 
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
@@ -476,7 +482,7 @@ public function StreamAztecBarcodeElementProperties_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples10.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -493,7 +499,7 @@ public function CloudRootAztecBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
@@ -680,7 +686,7 @@ public function PageInputAztecBarcodeAddedToPageAndPdf_Pdfoutput()
 /** @test */
 public function FilePathAztecBarcodeElementByteArray_Pdfoutput()
 {
-    /*$Name = "FilePathAztecBarcodeElementByteArray";
+    $Name = "FilePathAztecBarcodeElementByteArray";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -694,7 +700,7 @@ public function FilePathAztecBarcodeElementByteArray_Pdfoutput()
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
-    $value = System::Text::Encoding::UTF8::GetBytes("Hello World");
+    $value = unpack('C*',utf8_encode("Hello World"));
     $element = new AztecBarcodeElement($value,0,0);
     array_push($template->Elements,$element);
     $input->SetTemplate($template);
@@ -710,7 +716,7 @@ public function FilePathAztecBarcodeElementByteArray_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples15.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -718,7 +724,7 @@ public function FilePathAztecBarcodeElementByteArray_Pdfoutput()
 /** @test */
 public function FilePathAztecBarcodeElementPageByteArray_Pdfoutput()
 {
-    /*$Name = "FilePathAztecBarcodeElementPageByteArray";
+    $Name = "FilePathAztecBarcodeElementPageByteArray";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -730,7 +736,7 @@ public function FilePathAztecBarcodeElementPageByteArray_Pdfoutput()
     $input = new PageInput();
     array_push($pdf->Inputs,$input);
 
-    $value = System::Text::Encoding::UTF8::GetBytes("Hello World");
+    $value = unpack('C*',utf8_encode("Hello World"));
     $element = new AztecBarcodeElement($value,ElementPlacement::TopCenter);
     $element->Color = RgbColor::Green();
     $element->AztecErrorCorrection = 45;
@@ -750,7 +756,7 @@ public function FilePathAztecBarcodeElementPageByteArray_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples16.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -758,7 +764,7 @@ public function FilePathAztecBarcodeElementPageByteArray_Pdfoutput()
 /** @test */
 public function FilePathAztecBarcodeElementPageXY_Pdfoutput()
 {
-    /*$Name = "FilePathAztecBarcodeElementPageXY";
+    $Name = "FilePathAztecBarcodeElementPageXY";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -770,7 +776,7 @@ public function FilePathAztecBarcodeElementPageXY_Pdfoutput()
     $input = new PageInput();
     array_push($pdf->Inputs,$input);
 
-    $value = System::Text::Encoding::UTF8::GetBytes("Hello World");
+    $value = unpack('C*',utf8_encode("Hello World"));
     $element = new AztecBarcodeElement($value,ElementPlacement::TopCenter,0,100);
     $element->Color = RgbColor::Green();
     $element->AztecErrorCorrection = 45;
@@ -790,7 +796,7 @@ public function FilePathAztecBarcodeElementPageXY_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples17.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1194,7 +1200,7 @@ public function FilePathDataMatrixBarcodeElementProperties_Pdfoutput()
 /** @test */
 public function BytesDataMatrixBarcodeElementProperties_Pdfoutput()
 {
-   /* $Name = "BytesDataMatrixBarcodeElementProperties";
+    $Name = "BytesDataMatrixBarcodeElementProperties";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -1203,7 +1209,12 @@ public function BytesDataMatrixBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1229,7 +1240,7 @@ public function BytesDataMatrixBarcodeElementProperties_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples28.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1237,7 +1248,7 @@ public function BytesDataMatrixBarcodeElementProperties_Pdfoutput()
 /** @test */
 public function StreamDataMatrixBarcodeElementProperties_Pdfoutput()
 {
-    /*$Name = "StreamDataMatrixBarcodeElementProperties";
+    $Name = "StreamDataMatrixBarcodeElementProperties";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -1246,8 +1257,9 @@ public function StreamDataMatrixBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
 
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
@@ -1274,7 +1286,7 @@ public function StreamDataMatrixBarcodeElementProperties_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples29.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1282,7 +1294,7 @@ public function StreamDataMatrixBarcodeElementProperties_Pdfoutput()
 /** @test */
 public function CloudRootDataMatrixBarcodeElementProperties_Pdfoutput()
 {
-    /*$Name = "CloudRootDataMatrixBarcodeElementProperties";
+    $Name = "CloudRootDataMatrixBarcodeElementProperties";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -1291,10 +1303,11 @@ public function CloudRootDataMatrixBarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
@@ -1319,7 +1332,7 @@ public function CloudRootDataMatrixBarcodeElementProperties_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples30.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1615,7 +1628,7 @@ public function FilePathPdf417BarcodeElementProperties_Pdfoutput()
 /** @test */
 public function StreamPdf417BarcodeElementProperties_Pdfoutput()
 {
-   /* $Name = "StreamPdf417BarcodeElementProperties";
+   $Name = "StreamPdf417BarcodeElementProperties";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -1624,8 +1637,9 @@ public function StreamPdf417BarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
 
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
@@ -1659,7 +1673,7 @@ public function StreamPdf417BarcodeElementProperties_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples38.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1667,7 +1681,7 @@ public function StreamPdf417BarcodeElementProperties_Pdfoutput()
 /** @test */
 public function BytesPdf417BarcodeElementProperties_Pdfoutput()
 {
-    /*$Name = "BytesPdf417BarcodeElementProperties";
+    $Name = "BytesPdf417BarcodeElementProperties";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -1676,7 +1690,12 @@ public function BytesPdf417BarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1709,7 +1728,7 @@ public function BytesPdf417BarcodeElementProperties_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples39.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1726,7 +1745,7 @@ public function CloudRootPdf417BarcodeElementProperties_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
@@ -1766,7 +1785,7 @@ public function CloudRootPdf417BarcodeElementProperties_Pdfoutput()
 /** @test */
 public function FilePathPdf417BarcodeElementByteArray_Pdfoutput()
 {
-  /*  $Name = "FilePathPdf417BarcodeElementByteArray";
+   $Name = "FilePathPdf417BarcodeElementByteArray";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -1780,7 +1799,7 @@ public function FilePathPdf417BarcodeElementByteArray_Pdfoutput()
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
-    $value = System::Text::Encoding::UTF8::GetBytes("Hello World");
+    $value = unpack('C*',utf8_encode("Hello World"));
     $element = new Pdf417BarcodeElement($value,ElementPlacement::TopLeft,3,0,0);
     array_push($template->Elements,$element);
     $input->SetTemplate($template);
@@ -1796,7 +1815,7 @@ public function FilePathPdf417BarcodeElementByteArray_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples41.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1961,7 +1980,7 @@ public function FilePathQrcodeBarcodeElementProperties_PdfOutput()
 /** @test */
 public function BytesQrcodeBarcodeElementProperties_PdfOutput()
 {
-    /*$Name = "BytesQrcodeBarcodeElementProperties";
+    $Name = "BytesQrcodeBarcodeElementProperties";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -1970,7 +1989,12 @@ public function BytesQrcodeBarcodeElementProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1994,7 +2018,7 @@ public function BytesQrcodeBarcodeElementProperties_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples46.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -2002,7 +2026,7 @@ public function BytesQrcodeBarcodeElementProperties_PdfOutput()
 /** @test */
 public function StreamQrcodeBarcodeElementProperties_PdfOutput()
 {
-   /* $Name = "StreamQrcodeBarcodeElementProperties";
+    $Name = "StreamQrcodeBarcodeElementProperties";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -2011,8 +2035,9 @@ public function StreamQrcodeBarcodeElementProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
 
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
@@ -2037,7 +2062,7 @@ public function StreamQrcodeBarcodeElementProperties_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples47.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -2054,7 +2079,7 @@ public function CloudRootQrcodeBarcodeElementProperties_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
@@ -2085,7 +2110,7 @@ public function CloudRootQrcodeBarcodeElementProperties_PdfOutput()
 /** @test */
 public function FilePathQrcodeBarcodeElementByteArray_PdfOutput()
 {
-  /*  $Name = "FilePathQrcodeBarcodeElementByteArray";
+    $Name = "FilePathQrcodeBarcodeElementByteArray";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -2099,7 +2124,7 @@ public function FilePathQrcodeBarcodeElementByteArray_PdfOutput()
     array_push($pdf->Inputs,$input);
 
     $template = new Template("Temp1");
-    $value = System::Text::Encoding::UTF8::GetBytes("Hello World");
+    $value =unpack('C*',utf8_encode("Hello World"));
     $element = new QrCodeElement($value,ElementPlacement::TopLeft);
     array_push($template->Elements,$element);
     $input->SetTemplate($template);
@@ -2115,7 +2140,7 @@ public function FilePathQrcodeBarcodeElementByteArray_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples49.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -2159,7 +2184,7 @@ public function FilePathCode128Barcode_PdfOutput()
 /** @test */
 public function BytesCode128Barcode_PdfOutput()
 {
-    /*$Name = "BytesCode128Barcode";
+    $Name = "BytesCode128Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -2168,7 +2193,12 @@ public function BytesCode128Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2187,7 +2217,7 @@ public function BytesCode128Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples51.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -2195,7 +2225,7 @@ public function BytesCode128Barcode_PdfOutput()
 /** @test */
 public function StreamCode128Barcode_PdfOutput()
 {
-  /*  $Name = "StreamCode128Barcode";
+    $Name = "StreamCode128Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -2204,9 +2234,12 @@ public function StreamCode128Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
+    
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -2224,7 +2257,7 @@ public function StreamCode128Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples52.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -2241,7 +2274,7 @@ public function CloudRootCode128Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -2276,7 +2309,7 @@ public function CloudSubFolderCode128Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -2752,7 +2785,7 @@ public function FilePathCode39Barcode_PdfOutput()
 /** @test */
 public function BytesCode39Barcode_PdfOutput()
 {
-    /*$Name = "BytesCode39Barcode";
+    $Name = "BytesCode39Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -2761,7 +2794,12 @@ public function BytesCode39Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -2780,7 +2818,7 @@ public function BytesCode39Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples67.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -2788,7 +2826,7 @@ public function BytesCode39Barcode_PdfOutput()
 /** @test */
 public function StreamCode39Barcode_PdfOutput()
 {
-    /*$Name = "StreamCode39Barcode";
+    $Name = "StreamCode39Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -2797,9 +2835,12 @@ public function StreamCode39Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
+    
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -2817,7 +2858,7 @@ public function StreamCode39Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples68.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -2834,7 +2875,7 @@ public function CloudRootCode39Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -2869,7 +2910,7 @@ public function CloudSubFolderCode39Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -3267,7 +3308,7 @@ public function FilePathCode25Barcode_PdfOutput()
 /** @test */
 public function BytesCode25Barcode_PdfOutput()
 {
-    /*$Name = "BytesCode25Barcode";
+    $Name = "BytesCode25Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -3276,7 +3317,12 @@ public function BytesCode25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3295,7 +3341,7 @@ public function BytesCode25Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples81.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -3303,7 +3349,7 @@ public function BytesCode25Barcode_PdfOutput()
 /** @test */
 public function StreamCode25Barcode_PdfOutput()
 {
-  /*  $Name = "StreamCode25Barcode";
+    $Name = "StreamCode25Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -3312,9 +3358,12 @@ public function StreamCode25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
+   
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -3332,7 +3381,7 @@ public function StreamCode25Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples82.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -3349,7 +3398,7 @@ public function CloudRootCode25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -3384,7 +3433,7 @@ public function CloudSubFolderCode25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -3744,7 +3793,7 @@ public function FilePathCode93Barcode_PdfOutput()
 /** @test */
 public function BytesCode93Barcode_PdfOutput()
 {
-   /* $Name = "BytesCode93Barcode";
+    $Name = "BytesCode93Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -3753,7 +3802,12 @@ public function BytesCode93Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -3772,7 +3826,7 @@ public function BytesCode93Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples94.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -3780,7 +3834,7 @@ public function BytesCode93Barcode_PdfOutput()
 /** @test */
 public function StreamCode93Barcode_PdfOutput()
 {
-    /*$Name = "StreamCode93Barcode";
+    $Name = "StreamCode93Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -3789,9 +3843,12 @@ public function StreamCode93Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
+    
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -3809,7 +3866,7 @@ public function StreamCode93Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples95.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -3826,7 +3883,7 @@ public function CloudRootCode93Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -3861,7 +3918,7 @@ public function CloudSubFolderCode93Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -4259,7 +4316,7 @@ public function FilePathCode11Barcode_PdfOutput()
 /** @test */
 public function BytesCode11Barcode_PdfOutput()
 {
-  /*  $Name = "BytesCode11Barcode";
+    $Name = "BytesCode11Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -4268,7 +4325,12 @@ public function BytesCode11Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4287,7 +4349,7 @@ public function BytesCode11Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples108.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -4295,7 +4357,7 @@ public function BytesCode11Barcode_PdfOutput()
 /** @test */
 public function StreamCode11Barcode_PdfOutput()
 {
-  /*  $Name = "StreamCode11Barcode";
+    $Name = "StreamCode11Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -4304,9 +4366,12 @@ public function StreamCode11Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
+    
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -4324,7 +4389,7 @@ public function StreamCode11Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples109.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -4341,7 +4406,7 @@ public function CloudRootCode11Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -4376,7 +4441,7 @@ public function CloudSubFolderCode11Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -4738,7 +4803,7 @@ public function FilePathGs1DataBarBarcode_PdfOutput()
 /** @test */
 public function BytesGs1DataBarBarcode_PdfOutput()
 {
-   /* $Name = "BytesGs1DataBarBarcode";
+    $Name = "BytesGs1DataBarBarcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -4747,7 +4812,12 @@ public function BytesGs1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -4766,7 +4836,7 @@ public function BytesGs1DataBarBarcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples121.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -4774,7 +4844,7 @@ public function BytesGs1DataBarBarcode_PdfOutput()
 /** @test */
 public function StreamGs1DataBarBarcode_PdfOutput()
 {
-   /* $Name = "StreamGs1DataBarBarcode";
+    $Name = "StreamGs1DataBarBarcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -4783,9 +4853,12 @@ public function StreamGs1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
+    
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -4803,7 +4876,7 @@ public function StreamGs1DataBarBarcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples122.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -4820,7 +4893,7 @@ public function CloudRootGs1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -4855,7 +4928,7 @@ public function CloudSubFolderGs1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -5216,7 +5289,7 @@ public function FilePathStackedGS1DataBarBarcode_PdfOutput()
 /** @test */
 public function BytesStackedGS1DataBarBarcode_PdfOutput()
 {
-  /*  $Name = "BytesStackedGS1DataBarBarcode";
+    $Name = "BytesStackedGS1DataBarBarcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -5225,7 +5298,12 @@ public function BytesStackedGS1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5244,7 +5322,7 @@ public function BytesStackedGS1DataBarBarcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples134.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -5252,7 +5330,7 @@ public function BytesStackedGS1DataBarBarcode_PdfOutput()
 /** @test */
 public function StreamStackedGS1DataBarBarcode_PdfOutput()
 {
-   /* $Name = "StreamStackedGS1DataBarBarcode";
+    $Name = "StreamStackedGS1DataBarBarcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -5261,9 +5339,12 @@ public function StreamStackedGS1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
+    
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -5281,7 +5362,7 @@ public function StreamStackedGS1DataBarBarcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples135.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -5298,7 +5379,7 @@ public function CloudRootStackedGS1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -5333,7 +5414,7 @@ public function CloudSubFolderStackedGS1DataBarBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -5695,7 +5776,7 @@ public function FilePathIata25Barcode_PdfOutput()
 /** @test */
 public function BytesIata25Barcode_PdfOutput()
 {
-    /*$Name = "BytesIata25Barcode";
+    $Name = "BytesIata25Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -5704,7 +5785,12 @@ public function BytesIata25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -5723,7 +5809,7 @@ public function BytesIata25Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples147.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -5731,7 +5817,7 @@ public function BytesIata25Barcode_PdfOutput()
 /** @test */
 public function StreamIata25Barcode_PdfOutput()
 {
-  /*  $Name = "StreamIata25Barcode";
+    $Name = "StreamIata25Barcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -5740,9 +5826,12 @@ public function StreamIata25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
+    
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -5760,7 +5849,7 @@ public function StreamIata25Barcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples148.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -5777,7 +5866,7 @@ public function PdfInputCloudRoot_Iata25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -5812,7 +5901,7 @@ public function CloudSubFolderIata25Barcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -6210,7 +6299,7 @@ public function FilePathMsiBarcode_PdfOutput()
 /** @test */
 public function BytesMsiBarcode_PdfOutput()
 {
-    /*$Name = "BytesMsiBarcode";
+    $Name = "BytesMsiBarcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -6219,7 +6308,12 @@ public function BytesMsiBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -6238,7 +6332,7 @@ public function BytesMsiBarcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples161.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -6246,7 +6340,7 @@ public function BytesMsiBarcode_PdfOutput()
 /** @test */
 public function StreamMsiBarcode_PdfOutput()
 {
-    /*$Name = "StreamMsiBarcode";
+    $Name = "StreamMsiBarcode";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -6255,9 +6349,12 @@ public function StreamMsiBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
+    
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -6275,7 +6372,7 @@ public function StreamMsiBarcode_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateBarcodeSamples162.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -6292,7 +6389,7 @@ public function CloudRootMsiBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");
@@ -6327,7 +6424,7 @@ public function CloudSubFolderMsiBarcode_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input = new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
     $template = new Template("Temp1");

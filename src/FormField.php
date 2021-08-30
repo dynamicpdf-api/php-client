@@ -10,17 +10,6 @@
      class FormField implements JsonSerializable
     {
 
-      /**
-      *
-      *  Initializes a new instance of the FormField class using the name of the form field as a parameter. 
-      *
-      * @param  string $name The name of the form field.
-      */
-      /*  public function __construct(string $name)
-        {
-            $this->Name = $name;
-        }*/
-
 
         /**
         *

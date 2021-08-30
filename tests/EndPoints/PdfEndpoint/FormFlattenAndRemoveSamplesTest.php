@@ -79,7 +79,7 @@ public function PdfInputFilePath_Field_Pdfoutput()
 /** @test */
 public function PdfInputStream_FormFlattenField_Pdfoutput()
 {
-   /* $Name = "StreamField";
+    $Name = "StreamField";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -87,8 +87,10 @@ public function PdfInputStream_FormFlattenField_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "fw9AcroForm_14::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "fw9AcroForm_14.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -128,7 +130,7 @@ public function PdfInputStream_FormFlattenField_Pdfoutput()
     file_put_contents($this->outPutPath."FormFlattenAndRemoveSamples2.json",$pdf->jsonData);
 
     $this->assertEquals($response->IsSuccessful,true);
-*/
+
 }
 
 
@@ -198,7 +200,7 @@ public function PdfInputCloudRoot_FormFlattenField_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("fw9AcroForm_14.pdf");
+    $input = new PdfInput("fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input);
 
     $field = new FormField("topmostSubform[0].Page1[0].f1_1[0]","Any Company, Inc.");
@@ -252,7 +254,7 @@ public function PdfInputCloudSubFolder_FormFlattenField_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("Resources/fw9AcroForm_14.pdf");
+    $input = new PdfInput("Resources/fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input);
 
     $field = new FormField("topmostSubform[0].Page1[0].f1_1[0]","Any Company, Inc.");
@@ -349,7 +351,7 @@ public function PdfInputFilePath_FormFlattenFieldRemove_Pdfoutput()
 /** @test */
 public function PdfInputStream_FormFlattenFieldRemove_Pdfoutput()
 {
-    /*$Name = "StreamFieldRemove";
+    $Name = "StreamFieldRemove";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -357,8 +359,10 @@ public function PdfInputStream_FormFlattenFieldRemove_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "fw9AcroForm_14::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "fw9AcroForm_14.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -393,7 +397,7 @@ public function PdfInputStream_FormFlattenFieldRemove_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."FormFlattenAndRemoveSamples7.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -461,7 +465,7 @@ public function PdfInputUsingCloudRoot_FormFlattenFieldRemove_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("fw9AcroForm_14.pdf");
+    $input = new PdfInput("fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input);
 
     $field = new FormField("topmostSubform[0].Page1[0].f1_1[0]");
@@ -511,7 +515,7 @@ public function PdfInputUsingCloudSubFolder_FormFlattenFieldRemove_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/fw9AcroForm_14.pdf");
+    $input = new PdfInput("Resources/fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input);
 
     $field = new FormField("topmostSubform[0].Page1[0].f1_1[0]");
@@ -606,7 +610,7 @@ public function PdfInputUsingFilePath_FormFlattenAllFields_Pdfoutput()
 /** @test */
 public function PdfInputUsingStream_FormFlattenAllFields_Pdfoutput()
 {
-    /*$Name = "StreamAllFields";
+    $Name = "StreamAllFields";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -614,8 +618,9 @@ public function PdfInputUsingStream_FormFlattenAllFields_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "fw9AcroForm_14::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "fw9AcroForm_14.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -651,7 +656,7 @@ public function PdfInputUsingStream_FormFlattenAllFields_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."FormFlattenAndRemoveSamples12.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -719,7 +724,7 @@ public function PdfInputUsingCloudRoot_AllFields_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("fw9AcroForm_14.pdf");
+    $input = new PdfInput("fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input);
 
     $field = new FormField("topmostSubform[0].Page1[0].f1_1[0]","Any Company, Inc.");
@@ -770,7 +775,7 @@ public function PdfInputUsingCloudSubFolder_AllFields_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("Resources/fw9AcroForm_14.pdf");
+    $input = new PdfInput("Resources/fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input);
 
     $field = new FormField("topmostSubform[0].Page1[0].f1_1[0]","Any Company, Inc.");
@@ -847,7 +852,7 @@ public function PdfInputUsingFilePath_RetainSignature_Pdfoutput()
 /** @test */
 public function PdfInputUsingStream_RetainSignature_Pdfoutput()
 {
-    /*$Name = "StreamRetainSignature";
+    $Name = "StreamRetainSignature";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -855,8 +860,10 @@ public function PdfInputUsingStream_RetainSignature_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "Org::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "Org.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+    
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -874,7 +881,7 @@ public function PdfInputUsingStream_RetainSignature_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."FormFlattenAndRemoveSamples17.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -924,7 +931,7 @@ public function PdfInputUsingCloudRoot_RetainSignature_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("Org.pdf");
+    $input = new PdfInput("Org.pdf");
     array_push($pdf->Inputs,$input);
 
     $pdf->FlattenAllFormFields = true;

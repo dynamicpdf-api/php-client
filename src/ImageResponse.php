@@ -14,20 +14,15 @@ include_once('JsonResponse.php');
         *
         *  Initializes a new instance of the ImageResponse class. 
         *
-        */
-        //public ImageResponse()  { }
-
-
-        /**
-        *
-        *  Initializes a new instance of the ImageResponse class. 
-        *
         * @param  string $jsonContent The image content of the response.
         */
-        public function __consruct(string $jsonContent)
+        public function __consruct(?string $jsonContent = null)
         {
+            if($jsonContent != null)
+            {
             parent::__construct($jsonContent);
             $this->Content = json_decode($jsonContent);
+            }
         }
 
 

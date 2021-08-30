@@ -30,7 +30,7 @@ include_once('ElementType.php');
        * @param  string $encodingType The encoding type of the barcode.
        * @param  string $functionCharacter The function character of the barcode.
        */
-       public function __construct(string $value, string $placement, float $xOffset = 0, float $yOffset = 0, string $symbolSize = DataMatrixSymbolSize::Auto, string $encodingType = DataMatrixEncodingType::Auto, string $functionCharacter = DataMatrixFunctionCharacter::None)
+       public function __construct( $value, string $placement, float $xOffset = 0, float $yOffset = 0, string $symbolSize = DataMatrixSymbolSize::Auto, string $encodingType = DataMatrixEncodingType::Auto, string $functionCharacter = DataMatrixFunctionCharacter::None)
         {
            parent::__construct($value, $placement, $xOffset, $yOffset); 
            $this->DataMatrixSymbolSize = $symbolSize;

@@ -23,26 +23,10 @@ include_once('VAlign.php');
         *
         * @param  ?ImageResource $resource The ImageResource object to create ImageInput.        *
         */
-        public function __construct(?ImageResource $resource) 
+        public function __construct( $resource) 
         { 
-            if($resource != null)
             parent::__construct($resource);
         }
-
-       /**
-       *
-       *  Initializes a new instance of the ImageInput class. 
-       *
-       * @param  string $cloudResourcePath The image file path present in cloud resource manager.
-       */
-       public static function CreateImageInput(string $cloudResourcePath)  
-        { 
-            $imageInput =new ImageInput(null);
-            $imageInput->ResourceName = $cloudResourcePath;
-            return $imageInput;
-        }
-
-            
 
         /**
         *

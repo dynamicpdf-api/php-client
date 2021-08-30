@@ -64,7 +64,7 @@ public function FilePathInputTextElement_Pdfoutput()
 /** @test */
 public function StreamInputTextElement_Pdfoutput()
 {
-   /* $Name = "StreamInputTextElement";
+   $Name = "StreamInputTextElement";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -73,8 +73,9 @@ public function StreamInputTextElement_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -95,7 +96,7 @@ public function StreamInputTextElement_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateSamples2.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -103,7 +104,7 @@ public function StreamInputTextElement_Pdfoutput()
 /** @test */
 public function BytesTextElement_Pdfoutput()
 {
-   /* $Name = "BytesInputTextElement";
+    $Name = "BytesInputTextElement";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -112,7 +113,11 @@ public function BytesTextElement_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + @"DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -133,7 +138,7 @@ public function BytesTextElement_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplateSamples3.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -150,7 +155,7 @@ public function CloudRootTextElement_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
 
@@ -187,7 +192,7 @@ public function CloudSubFolderTextElement_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input =new PdfInput("Resources/DocumentA100.pdf");
 
     array_push($pdf->Inputs,$input);
 

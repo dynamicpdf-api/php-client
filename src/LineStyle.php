@@ -8,10 +8,7 @@
     */
     class LineStyle
     {
-        //private static System.Globalization.NumberFormatInfo objFormatter = new System.Globalization.NumberFormatInfo();
-
-       // internal LineStyle(string lineStyle) { LineStyleString = lineStyle; }
-
+        
 
         /**
         *

@@ -287,7 +287,7 @@ public function PdfInputUsingFilePath_Template_Pdfoutput()
 /** @test */
 public function PdfInputUsingStream_Template_Pdfoutput()
 {
-    /*$Name = "PdfInputStreamPropertiesWithTemplate";
+    $Name = "PdfInputStreamPropertiesWithTemplate";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -295,8 +295,10 @@ public function PdfInputUsingStream_Template_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
 
     array_push($pdf->Inputs,$input);
@@ -306,7 +308,7 @@ public function PdfInputUsingStream_Template_Pdfoutput()
     $element->Color = new RgbColor(0,0,1);
     $element->XOffset = 100;
     $element->YOffset = 100;
-    $element->LineStyle = LineStyle::DashLarge;
+    $element->LineStyle = LineStyle::DashLarge();
     $element->Width = 4;
     array_push($template->Elements,$element);
     $input->SetTemplate($template);
@@ -322,7 +324,7 @@ public function PdfInputUsingStream_Template_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."LineSample8.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 

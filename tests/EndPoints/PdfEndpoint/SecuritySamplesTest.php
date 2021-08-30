@@ -62,7 +62,7 @@ public function PdfInputFilePathAes256Security_PdfOutput()
 /** @test */
 public function PdfInputBytesAes256Security_PdfOutput()
 {
-   /* $Name = "PdfInputBytesAes256Security";
+    $Name = "PdfInputBytesAes256Security";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -70,7 +70,11 @@ public function PdfInputBytesAes256Security_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "XmpAndOtherSample::pdf")));
+    $length = filesize($this->inputpath . "XmpAndOtherSample.pdf");
+    $file = fopen($this->inputpath . "XmpAndOtherSample.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -88,7 +92,7 @@ public function PdfInputBytesAes256Security_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."SecuritySamples2.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -96,7 +100,7 @@ public function PdfInputBytesAes256Security_PdfOutput()
 /** @test */
 public function PdfInputStream_Aes256Security_PdfOutput()
 {
-   /* $Name = "PdfInputStreamAes256Security";
+    $Name = "PdfInputStreamAes256Security";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -104,8 +108,10 @@ public function PdfInputStream_Aes256Security_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "XmpAndOtherSample::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "XmpAndOtherSample.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -123,7 +129,7 @@ public function PdfInputStream_Aes256Security_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."SecuritySamples3.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -139,7 +145,7 @@ public function PdfInputCloudRoot_Aes256Security_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("XmpAndOtherSample.pdf");
+    $input = new PdfInput("XmpAndOtherSample.pdf");
     array_push($pdf->Inputs,$input);
 
     $security = new Aes256Security("user","owner");
@@ -172,7 +178,7 @@ public function PdfInputSubFolder_Aes256Security_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/XmpAndOtherSample.pdf");
+    $input =new PdfInput("Resources/XmpAndOtherSample.pdf");
     array_push($pdf->Inputs,$input);
 
     $security = new Aes256Security("user","owner");
@@ -516,7 +522,7 @@ public function PdfInputUsingFilePath_Aes128Security_PdfOutput()
 /** @test */
 public function PdfInputUsingBytes_Aes128Security_PdfOutput()
 {
- /*   $Name = "PdfInputBytesPathAes128Security";
+    $Name = "PdfInputBytesPathAes128Security";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -527,7 +533,12 @@ public function PdfInputUsingBytes_Aes128Security_PdfOutput()
     $security = new Aes128Security("user","owner");
     $pdf->Security = $security;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "XmpAndOtherSample::pdf")));
+    $length = filesize($this->inputpath . "XmpAndOtherSample.pdf");
+    $file = fopen($this->inputpath . "XmpAndOtherSample.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -542,7 +553,7 @@ public function PdfInputUsingBytes_Aes128Security_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."SecuritySamples15.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -550,7 +561,7 @@ public function PdfInputUsingBytes_Aes128Security_PdfOutput()
 /** @test */
 public function PdfInputUsingStream_Aes128Security_PdfOutput()
 {
-  /*  $Name = "PdfInputStreamPathAes128Security";
+    $Name = "PdfInputStreamPathAes128Security";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -561,8 +572,10 @@ public function PdfInputUsingStream_Aes128Security_PdfOutput()
     $security = new Aes128Security("user","owner");
     $pdf->Security = $security;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "XmpAndOtherSample::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "XmpAndOtherSample.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -577,7 +590,7 @@ public function PdfInputUsingStream_Aes128Security_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."SecuritySamples16.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -596,7 +609,7 @@ public function PdfInputUsingCloudRoot_Aes128Security_PdfOutput()
     $security = new Aes128Security("user","owner");
     $pdf->Security = $security;
 
-    $input = PdfInput::CreatePdfInput("XmpAndOtherSample.pdf");
+    $input =new PdfInput("XmpAndOtherSample.pdf");
     array_push($pdf->Inputs,$input);
 
     $response = $pdf->Process();
@@ -628,7 +641,7 @@ public function PdfInputUsingCloudSubFolder_Aes128Security_PdfOutput()
 
     $security = new Aes128Security("user","owner");
 
-    $input = PdfInput::CreatePdfInput("Resources/XmpAndOtherSample.pdf");
+    $input =new PdfInput("Resources/XmpAndOtherSample.pdf");
 
     array_push($pdf->Inputs,$input);
     $pdf->Security = $security;
@@ -972,7 +985,7 @@ public function PdfInputUsingFilePath_RC4128Security_PdfOutput()
 /** @test */
 public function PdfInputUsingBytes_RC4128Security_PdfOutput()
 {
-  /*  $Name = "PdfInputBytesRC4128Security";
+    $Name = "PdfInputBytesRC4128Security";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -983,7 +996,12 @@ public function PdfInputUsingBytes_RC4128Security_PdfOutput()
     $security = new RC4128Security("user","owner");
     $pdf->Security = $security;
 
-    $resource = new PdfResource(File::ReadAllBytes((inputpath + "XmpAndOtherSample::pdf")));
+    $length = filesize($this->inputpath . "XmpAndOtherSample.pdf");
+    $file = fopen($this->inputpath . "XmpAndOtherSample.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $resource = new PdfResource(unpack('C*',$array));
+    
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -998,7 +1016,7 @@ public function PdfInputUsingBytes_RC4128Security_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."SecuritySamples28.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1006,7 +1024,7 @@ public function PdfInputUsingBytes_RC4128Security_PdfOutput()
 /** @test */
 public function PdfInputUsingStream_RC4128Security_PdfOutput()
 {
-    /*$Name = "PdfInputStreamRC4128Security";
+    $Name = "PdfInputStreamRC4128Security";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -1017,8 +1035,10 @@ public function PdfInputUsingStream_RC4128Security_PdfOutput()
     $security = new RC4128Security("user","owner");
     $pdf->Security = $security;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "XmpAndOtherSample::pdf")));
-    $resource = new PdfResource($memory);
+    $resource = new PdfResource($this->inputpath."XmpAndOtherSample.pdf");
+    $input = new PdfInput($resource);
+    array_push($pdf->Inputs,$input);
+    
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -1033,7 +1053,7 @@ public function PdfInputUsingStream_RC4128Security_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."SecuritySamples29.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1052,7 +1072,7 @@ public function PdfInputUsingCloudRoot_RC4128Security_PdfOutput()
     $security = new RC4128Security("user","owner");
     $pdf->Security = $security;
 
-    $input = PdfInput::CreatePdfInput("XmpAndOtherSample.pdf");
+    $input =new PdfInput("XmpAndOtherSample.pdf");
     array_push($pdf->Inputs,$input);
 
     $response = $pdf->Process();
@@ -1085,7 +1105,7 @@ public function PdfInputUsingCloudSubFolder_RC4128Security_PdfOutput()
     $security = new RC4128Security("user","owner");
     $pdf->Security = $security;
 
-    $input = PdfInput::CreatePdfInput("Resources/XmpAndOtherSample.pdf");
+    $input =new PdfInput("Resources/XmpAndOtherSample.pdf");
     array_push($pdf->Inputs,$input);
 
     $response = $pdf->Process();

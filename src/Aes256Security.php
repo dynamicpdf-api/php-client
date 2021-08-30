@@ -39,7 +39,7 @@ include_once('Security.php');
         * all the PDF content or the content, excluding the metadata. 
         *
         */
-        public  $DocumentComponents= EncryptDocumentComponents::All;
+        public  $DocumentComponents ;
 
         public function GetjsonSerializeString()
         {

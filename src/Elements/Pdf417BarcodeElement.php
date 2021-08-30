@@ -26,7 +26,7 @@ include_once('Compaction.php');
         * @param  float $xOffset The X coordinate of the PDF417 barcode.
         * @param  float $yOffset The Y coordinate of the PDF417 barcode.
         */
-        public function __construct(string $value, string $placement, int $columns, float $xOffset = 0, float $yOffset = 0) 
+        public function __construct( $value, string $placement, int $columns, float $xOffset = 0, float $yOffset = 0) 
         {
             parent::__construct($value, $placement, $xOffset, $yOffset);
             $this->Columns=$columns;

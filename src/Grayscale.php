@@ -12,22 +12,31 @@ include_once('Color.php');
         private  $colorString;
         private  $grayLevel;
 
-        public function __construct(string $colorString = null) { $this->ColorString = $colorString; }
 
-
-        /**
+         /**
         *
         *  Initializes a new instance of the  Grayscale class. 
         *
         * @param  float $grayLevel The gray level for the color.
         */
-        public static function CreateGrayscale(float $grayLevel) 
+        public  function __construct(float $grayLevel=0) 
         { 
-            $grayscale = new Grayscale();
-            $grayscale->grayLevel = $grayLevel;
-            $grayscale->ColorString = "gray(".$grayLevel.")";
-            return $grayscale;
+          
+            $this->grayLevel = $grayLevel;
+            $this->ColorString = "gray(".$grayLevel.")";
+            
          }
+
+
+        public static function CreateGrayscale(string $colorString = null) 
+        {
+            $grayscale = new Grayscale();
+             $grayscale->ColorString = $colorString; 
+             return $grayscale;
+            }
+
+
+       
 
 
         /**

@@ -19,9 +19,9 @@ require_once('ResourceType.php');
         * @param  string $dlexPath The dlex file path.
         * @param  string $resourceName The name of the resource.
         */
-        public function __construct(string $dlexPath, string  $resourceName = null)
+        public function __construct( $dlex, string  $resourceName = null)
         {
-            parent::__construct($dlexPath, $resourceName); 
+            parent::__construct($dlex, $resourceName); 
         }
 
 

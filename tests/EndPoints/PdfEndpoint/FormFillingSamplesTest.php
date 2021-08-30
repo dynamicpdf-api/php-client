@@ -74,7 +74,7 @@ public function PdfInputFilePath_PdfOutput()
 /** @test */
 public function PdfInputStream_PdfOutput()
 {
-    /*$Name = "PdfInputStream";
+    $Name = "PdfInputStream";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -82,8 +82,10 @@ public function PdfInputStream_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "fw9AcroForm_14::pdf")));
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "fw9AcroForm_14.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+    
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -117,7 +119,7 @@ public function PdfInputStream_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."FormFillingSamples2.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -183,7 +185,7 @@ public function PdfInputCloudRoot_FormFill_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("fw9AcroForm_14.pdf");
+    $input = new PdfInput("fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input);
 
     $field = new FormField("topmostSubform[0].Page1[0].f1_1[0]","Any Company, Inc.");
@@ -232,7 +234,7 @@ public function PdfInputCloudSubFolder_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("Resources/fw9AcroForm_14.pdf");
+    $input = new PdfInput("Resources/fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input);
 
     $field = new FormField("topmostSubform[0].Page1[0].f1_1[0]","Any Company, Inc.");
@@ -493,16 +495,19 @@ public function PdfInputFilePath_XfaFormFill_Pdfoutput()
 /** @test */
 public function PdfInputStream_Xfa_Pdfoutput()
 {
-    /*$Name = "XfaStream";
+    $Name = "XfaStream";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
+    
+    
+    $file = fopen($this->inputpath. "All Fields Sample.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
 
-    $memory = new MemoryStream(File::ReadAllBytes((inputpath + "All Fields Sample::pdf")));
-    $resource = new PdfResource($memory);
     $input = new PdfInput($resource);
     array_push($pdf->Inputs,$input);
 
@@ -536,7 +541,7 @@ public function PdfInputStream_Xfa_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."FormFillingSamples12.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -602,7 +607,7 @@ public function PdfInputCloudRoot_Xfa_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("All Fields Sample.pdf");
+    $input = new PdfInput("All Fields Sample.pdf");
 
     array_push($pdf->Inputs,$input);
     $field = new FormField("form1[0].#subform[0].TextField1[0]","text");

@@ -13,17 +13,19 @@ require_once('Resource.php');
     {
         private  $template;
 
-        public function __construct(Resource $resource)
+        public function __construct( $resource)
         {
-            array_push($this->Resources,$resource);
-            $this->ResourceName = $resource->ResourceName;
-            //echo($this->ResourceName);
+            if(gettype($resource) == "object")
+            {
+                array_push($this->Resources,$resource);
+                $this->ResourceName = $resource->ResourceName;
+            }
+            else 
+            {
+                $this->ResourceName = $resource;
+            }
         }
-       /* function __construct(string $resourceName,string $type)
-        {
-            $this->ResourceName = $resourceName;
-            $this->Type=$type;
-        }*/
+     
  
       
         public $Type;

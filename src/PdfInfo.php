@@ -26,11 +26,6 @@ include_once('PdfInfoResponse.php');
             $this->EndpointName  = "pdf-info";
         }
 
-       
-
-
-       
-
 
         /**
         *

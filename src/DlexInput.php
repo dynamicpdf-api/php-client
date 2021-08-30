@@ -21,53 +21,31 @@ include_once('InputType.php');
         * @param  ?DlexResource $dlexResource The DlexResource, dlex file created as per the desired PDF report layout design.        *
         * @param  ?LayoutDataResource $layoutData The LayoutDataResource, json data file used to create the PDF report.        *
         */
-        public function __construct(?DlexResource $dlexResource, ?LayoutDataResource $layoutData) 
+        public function __construct($dlex, $layout) 
         {
-         if(($dlexResource != null )&&( $layoutData != null))
+         if((gettype($dlex)=="object")&&(gettype($layout)=="object"))
          {
-            $this->ResourceName = $dlexResource->ResourceName;
-            $this->LayoutDataResourceName = $layoutData->LayoutDataResourceName;
-            $dlexResource->LayoutDataResourceName=$this->LayoutDataResourceName ;
-         
-          
-           array_push( $this->Resources,$layoutData);
-           array_push( $this->Resources,$dlexResource);
+            $this->ResourceName = $dlex->ResourceName;
+            $this->LayoutDataResourceName = $layout->LayoutDataResourceName;
+            //$dlex->LayoutDataResourceName=$this->LayoutDataResourceName ;
+
+            array_push( $this->Resources,$layout);
+            array_push( $this->Resources,$dlex);
          }
-
-        }
-
-
-      /**
-      *
-      * Initializes a new instance of the DlexInput class by taking the DLEX file path that is present in the 
-      * cloud environment and the JSON data file from the client. 
-      *
-      * @param  string $cloudResourcePath The DLEX file path present in the resource manager.
-      * @param  LayoutDataResource $layoutData The LayoutDataResource, json data file used to create the PDF report.      *
-      */
-      /*  public function DlexInput2(string $cloudResourcePath, LayoutDataResource $layoutData) 
-        {
-            parent::__construct();
-            $ResourceName = $cloudResourcePath;
-            $this->LayoutDataResourceName = layoutData.ResourceName;
-        }*/
-
-
-        /**
-        *
-        *  Initializes a new instance of the DlexInput class. 
-        *
-        * @param  string $cloudResourcePath The DLEX file path present in the resource manager.
-        * @param  string $cloudLayoutDataPath The JSON data file path present in the resource manager used to create the PDF report.
-        */
-        public  static function CreateDlexInput(string $cloudResourcePath, string $cloudLayoutDataPath) 
-        {
+         else if((gettype($dlex)=="string")&&(gettype($layout)=="object"))
+         {
+            $this->ResourceName = $dlex;
+            $this->LayoutDataResourceName = $layout->LayoutDataResourceName;
+            array_push( $this->Resources,$layout);
+         }
+         else if((gettype($dlex)=="string")&&(gettype($layout)=="string"))
+         {
             //parent::__construct();
-            $dlexInput = new DlexInput(null, null);
-            $dlexInput->ResourceName = $cloudResourcePath;
-            $dlexInput->LayoutDataResourceName = $cloudLayoutDataPath;
-            return $dlexInput;
+            $this->ResourceName = $dlex;
+            $this->LayoutDataResourceName = $layout;
+         }
         }
+
 
         public   $Type= InputType::Dlex;
 

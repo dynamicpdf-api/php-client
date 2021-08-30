@@ -58,7 +58,7 @@ public function SimpleDlex_Pdfoutput()
 /** @test */
 public function SimpleDlex_Cloud_Pdfoutput()
 {
-  /*  $Name = "SimpleDlex_Cloud";
+    $Name = "SimpleDlex_Cloud";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -81,7 +81,7 @@ public function SimpleDlex_Cloud_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."DlexInputSamples2.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -98,7 +98,7 @@ public function SimpleDlex_CloudData_Pdfoutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  DlexInput::CreateDlexInput("SimpleReportWithCoverPage.dlex","SimpleReportData.json");
+    $input =  new DlexInput("SimpleReportWithCoverPage.dlex","SimpleReportData.json");
     array_push($pdf->Inputs,$input);
 
     $response = $pdf->Process();
@@ -226,7 +226,7 @@ public function SimpleDlex_AddDlex_Pdfoutput()
 /** @test */
 public function SimpleDlex_AddDlexCloudResource_Pdfoutput()
 {
-    /*$Name = "SimpleDlex_AddDlexCloud";
+    $Name = "SimpleDlex_AddDlexCloud";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -248,8 +248,7 @@ public function SimpleDlex_AddDlexCloudResource_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."DlexInputSamples7.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
-
+    $this->assertEquals($response->IsSuccessful,true);
 }
 
 

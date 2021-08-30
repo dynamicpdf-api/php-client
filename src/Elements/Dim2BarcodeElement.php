@@ -12,18 +12,25 @@ include_once('ValueType.php');
     */
     abstract class Dim2BarcodeElement extends BarcodeElement
     {       
-        public function __construct(string $value, string $placement, float $xOffset, float $yOffset)
+        public function __construct( $value, string $placement, float $xOffset, float $yOffset)
         { 
+            if(gettype($value)== "string")
+            {
               parent::__construct($value, $placement, $xOffset, $yOffset);
+            }
+            else
+            {
+                $this->Base64String = true;
+                $this->Value  = base64_encode(implode(array_map("chr", $value)));
+                $this->Placement = $placement;
+                $this->XOffset = $xOffset;
+                $this->YOffset = $yOffset;
+            }
         }
 
        /* public Dim2BarcodeElement(byte[] value, ElementPlacement placement, float xOffset, float yOffset) 
         {
-            Base64String = true;
-            Value = Value = Convert.ToBase64String(value);
-            Placement = placement;
-            XOffset = xOffset;
-            YOffset = yOffset;
+          
         }*/
      
        

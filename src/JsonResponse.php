@@ -9,7 +9,7 @@ include_once('Response.php');
     abstract class JsonResponse extends Response
     {
         //internal JsonResponse() { }
-        public function __construct(string $jsonContent) 
+        public function __construct(?string $jsonContent = null) 
         {
              $this->JsonContent = $jsonContent;
         }

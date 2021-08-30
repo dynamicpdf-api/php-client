@@ -12,24 +12,6 @@ include_once('Font.php');
      class Font
     {
 
-      
-        public function __construct(FontResource $fontResource= null, string $resourceName = null)
-        {
-            $this->Resource = $fontResource;
-
-        
-            
-            if($resourceName != null)
-                $this->ResourceName = $resourceName;
-            else if($fontResource != null)
-                $this->ResourceName = $fontResource->ResourceName;
-            else
-            $this->ResourceName ="";
-
-            $this->Name = md5(uniqid(rand(), true));
-        }
-
-
         /**
         *
         * Initializes a new instance of the Font class using the font name that is present in the cloud resource 
@@ -37,13 +19,29 @@ include_once('Font.php');
         *
         * @param  string $cloudResourceName The font name present in the cloud resource manager.
         */
-        public static function CreateFont(string $cloudResourceName)
+        public  function __construct(?string $cloudResourceName = null)
         {
-            $font=new Font();
-            $font->Name=$Name;
+            $this->ResourceName=$cloudResourceName;
+            $this->Name = md5(uniqid(rand(), true));
+        }
+        
+
+        public static function CreateFont(FontResource $fontResource= null, string $resourceName = null)
+        {
+            $font = new Font();
+            $font->Resource = $fontResource;
+
+            if($resourceName != null)
+                $font->ResourceName = $resourceName;
+            else if($fontResource != null)
+                $font->ResourceName = $fontResource->ResourceName;
+            else
+                $font->ResourceName ="";
+
+            $font->Name = md5(uniqid(rand(), true));
             return $font;
         }
-        public  $Resource;
+
 
 
         /**
@@ -62,7 +60,7 @@ include_once('Font.php');
         public $Subset;
         public  $Name;
 
-        
+        public  $Resource;
 
         /**
         *
@@ -79,9 +77,11 @@ include_once('Font.php');
         */
         public static function TimesRoman()
         {
-            $font=new Font();
-            $font->Name= "timesRoman";
-            return $font;
+            if(Font::$timesRoman== null)
+            Font::$timesRoman=new Font();
+
+            Font::$timesRoman->Name ="timesRoman";
+            return Font::$timesRoman;
         } 
 
 
@@ -92,9 +92,11 @@ include_once('Font.php');
         */
         public static function TimesBold()
         {
-            $font=new Font();
-            $font->Name = "timesBold";
-            return $font;
+            if(Font::$timesBold == null)
+                Font::$timesBold=new Font();
+
+            Font::$timesBold->Name ="timesBold";
+            return Font::$timesBold;
         } 
         
 
@@ -105,9 +107,11 @@ include_once('Font.php');
         */
         public static function TimesItalic()
         {
-            $font=new Font();
-            $font->Name= "timesItalic";
-            return $font;
+            if(Font::$timesItalic== null)
+                Font::$timesItalic=new Font();
+
+                Font::$timesItalic->Name ="timesItalic";
+            return Font::$timesItalic;
         }  
        
 
@@ -118,9 +122,11 @@ include_once('Font.php');
         */
         public static function TimesBoldItalic()
         {
-            $font=new Font();
-            $font->Name= "timesBoldItalic";
-            return $font;
+            if(Font::$timesBoldItalic== null)
+            Font::$timesBoldItalic=new Font();
+
+            Font::$timesBoldItalic->Name = "timesBoldItalic";
+            return Font::$timesBoldItalic;
         }  
 
 
@@ -131,9 +137,11 @@ include_once('Font.php');
         */
         public static function Helvetica()
         {
-            $font=new Font();
-            $font->Name= "helvetica";
-            return $font;
+            if(Font::$helvetica== null)
+            Font::$helvetica=new Font();
+
+            Font::$helvetica->Name ="helvetica";
+            return Font::$helvetica;
         }  
         
 
@@ -144,9 +152,11 @@ include_once('Font.php');
         */
         public static function HelveticaBold()
         {
-            $font=new Font();
-            $font->Name = "helveticaBold";
-            return $font;
+            if(Font::$helveticaBold== null)
+            Font::$helveticaBold=new Font();
+
+            Font::$helveticaBold->Name ="helveticaBold";
+            return Font::$helveticaBold;
         } 
         
 
@@ -157,9 +167,11 @@ include_once('Font.php');
         */
         public static function HelveticaOblique()
         {
-            $font=new Font();
-            $font->Name= "helveticaOblique";
-            return $font;
+            if(Font::$helveticaOblique== null)
+            Font::$helveticaOblique=new Font();
+
+            Font::$helveticaOblique->Name ="helveticaOblique";
+            return Font::$helveticaOblique;
         }  
         
 
@@ -170,9 +182,11 @@ include_once('Font.php');
         */
         public static function HelveticaBoldOblique()
         {
-            $font=new Font();
-            $font->Name  = "helveticaBoldOblique";
-            return $font;
+            if(Font::$helveticaBoldOblique== null)
+            Font::$helveticaBoldOblique=new Font();
+
+            Font::$helveticaBoldOblique->Name ="helveticaBoldOblique";
+            return Font::$helveticaBoldOblique;
         }
         
 
@@ -183,9 +197,11 @@ include_once('Font.php');
         */
         public static function Courier()
         {
-            $font=new Font();
-            $font->Name = "courier";
-            return $font;
+            if(Font::$courier== null)
+            Font::$courier=new Font();
+
+            Font::$courier->Name ="courier";
+            return Font::$courier;
         }  
         
 
@@ -195,10 +211,12 @@ include_once('Font.php');
         *
         */
         public static function CourierBold()
-        {
-            $font=new Font();
-            $font->Name= "courierBold";
-            return $font;
+        { 
+            if(Font::$courierBold== null)
+            Font::$courierBold=new Font();
+
+            Font::$courierBold->Name ="courierBold";
+            return Font::$courierBold;
         }   
         
 
@@ -208,10 +226,12 @@ include_once('Font.php');
         *
         */
         public static function CourierOblique()
-        {
-            $font=new Font();
-            $font->Name= "courierOblique";
-            return $font;
+        { 
+            if(Font::$courierOblique== null)
+            Font::$courierOblique=new Font();
+
+            Font::$courierOblique->Name ="courierOblique";
+            return Font::$courierOblique;
         }  
         
 
@@ -221,10 +241,12 @@ include_once('Font.php');
         *
         */
         public static function CourierBoldOblique()
-        {
-            $font=new Font();
-            $font->Name= "courierBoldOblique";
-            return $font;
+        { 
+            if(Font::$courierBoldOblique== null)
+            Font::$courierBoldOblique=new Font();
+
+            Font::$courierBoldOblique->Name ="courierBoldOblique";
+            return Font::$courierBoldOblique;
         }   
         
 
@@ -234,10 +256,12 @@ include_once('Font.php');
         *
         */
         public static function Symbol()
-        {
-            $font=new Font();
-            $font->Name = "symbol";
-            return $font;
+        { if(Font::$symbol== null)
+            Font::$symbol=new Font();
+
+            Font::$symbol->Name ="symbol";
+            return Font::$symbol;
+           
         }  
         
 
@@ -247,10 +271,12 @@ include_once('Font.php');
         *
         */
         public static function ZapfDingbats()
-        {
-            $font=new Font();
-            $font->Name= "zapfDingbats";
-            return $font;
+        { 
+            if(Font::$zapfDingbats== null)
+            Font::$zapfDingbats=new Font();
+
+            Font::$zapfDingbats->Name ="zapfDingbats";
+            return Font::$zapfDingbats;
         }  
        
 
@@ -264,9 +290,26 @@ include_once('Font.php');
         public static function FromFile(string $filePath,string $resourceName = null)
         {
             $resource = new FontResource($filePath,$resourceName);
-            $font=new Font($resource,$resource->ResourceName);
+            $font=Font::CreateFont($resource,$resource->ResourceName);
             return $font;
         }
+
+        private static  $timesRoman = null;
+        private static  $timesBold = null;
+        private static  $timesItalic = null;
+        private static  $timesBoldItalic = null;
+        private static  $helvetica = null;
+        private static  $helveticaBold = null;
+        private static  $helveticaOblique = null;
+        private static  $helveticaBoldOblique = null;
+        private static  $courier = null;
+        private static  $courierBold = null;
+        private static  $courierOblique = null;
+        private static  $courierBoldOblique = null;
+        private static  $symbol = null;
+        private static  $zapfDingbats = null;
+        private $data = array();
+
         public function GetjsonSerializeString()
         {
             $jsonArray = array();

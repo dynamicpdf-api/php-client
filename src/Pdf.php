@@ -126,28 +126,21 @@ require_once('PageInput.php');
         * @param  PdfResource $resource The resource of type PdfResource.        *
         * @param  MergeOptions $options The merge options for the pdf.
         */
-        public function AddPdf(PdfResource $resource, MergeOptions $options = null)
+        public function AddPdf( $resource, MergeOptions $options = null)
         {
-            $input = new PdfInput($resource, $options);
-            array_push($this->Inputs,$input);
-            return $input;
+            if(gettype($resource)== "object")
+            {
+                $input = new PdfInput($resource, $options);
+                array_push($this->Inputs,$input);
+                return $input;
+            }
+            else
+            {
+                $input = new PdfInput($resource, $options);
+                array_push($this->Inputs,$input);
+                return $input;
+            }
         }
-
-
-        /**
-        *
-        *  Returns a PdfInput object containing the input pdf. 
-        *
-        * @param  string $cloudResourcePath The resource path in cloud resource manager.
-        * @param  MergeOptions $options The merge options for the pdf.
-        */
-        public function AddPdfCloud(string $cloudResourcePath, MergeOptions $options = null)
-        {
-            $input =  PdfInput::CreatePdfInput($cloudResourcePath, $options);
-            array_push($this->Inputs,$input);
-            return $input;
-        }
-
 
         /**
         *
@@ -155,27 +148,24 @@ require_once('PageInput.php');
         *
         * @param  ImageResource $resource The resource of type ImageResource.        *
         */
-        public function AddImage(ImageResource $resource)
+        public function AddImage( $resource)
         {
-            $input = new ImageInput($resource);
-            array_push($this->Inputs,$input);
-            return $input;
+            if(gettype($resource)== "object")
+            {
+                $input = new ImageInput($resource);
+                array_push($this->Inputs,$input);
+                return $input;
+            }
+            else
+            {
+                $input = new ImageInput($resource);
+                array_push($this->Inputs,$input);
+                return $input;
+            }
         }
 
 
-        /**
-        *
-        *  Returns a ImageInput object containing the input pdf. 
-        *
-        * @param  string $cloudResourcePath The resource path in cloud resource manager.
-        */
-        public function AddImageCloud(string $cloudResourcePath)
-        {
-            $input = new ImageInput($cloudResourcePath);
-            array_push($this->Inputs,$input);
-            return $input;
-        }
-
+       
 
         /**
         *
@@ -184,41 +174,26 @@ require_once('PageInput.php');
         * @param  DlexResource $dlexResource The dlex resource of type DlexResource.        *
         * @param  LayoutDataResource $layoutData The layout data resource of type LayoutDataResource.        *
         */
-        public function AddDlex(DlexResource $dlexResource, LayoutDataResource $layoutData)
+        public function AddDlex( $dlex,  $layout)
         {
-            $input = new DlexInput($dlexResource, $layoutData);
-            array_push($this->Inputs,$input);
-            return $input;
-        }
-
-
-       /**
-       *
-       *  Returns a DlexInput object containing the input pdf. 
-       *
-       * @param  string $cloudResourcePath The resource path in cloud resource manager.
-       * @param  LayoutDataResource $layoutData The layout data resource of type LayoutDataResource.       *
-       */
-       /* public function AddDlexCloud(string $cloudResourcePath, LayoutDataResource $layoutData)
-        {
-            $input = new DlexInput($cloudResourcePath, $layoutData);
-            $this->Inputs($input);
-            return $input;
-        }*/
-
-
-        /**
-        *
-        *  Returns a DlexInput object containing the input pdf. 
-        *
-        * @param  string $cloudResourcePath The resource path in cloud resource manager.
-        * @param  string $cloudLayoutDataPat The layout data resource path in cloud resource manager.
-        */
-        public function AddDlexCloud(string $cloudResourcePath, string $cloudLayoutDataPat)
-        {
-            $input = new DlexInput($cloudResourcePath, $cloudLayoutDataPat);
-            array_push($this->Inputs,$input);
-            return $input;
+            if((gettype($dlex)== "object")&&(gettype($layout)== "object"))
+            {
+                $input = new DlexInput($dlex, $layout);
+                array_push($this->Inputs,$input);
+                return $input;
+            }
+            else if((gettype($dlex)== "string")&&(gettype($layout)== "object"))
+            {
+                $input = new DlexInput($dlex, $layout);
+                array_push($this->Inputs,$input);
+                return $input;
+            }
+            else 
+            {
+                $input = new DlexInput($dlex, $layout);
+                array_push($this->Inputs,$input);
+                return $input;
+            }
         }
 
 
@@ -233,9 +208,9 @@ require_once('PageInput.php');
         {
             if(($pageWidth != null)&& ($pageHeight != null))
             {
-            $input = new PageInput($pageWidth, $pageHeight);
-            array_push($this->Inputs,$input);
-            return $input;
+                $input = new PageInput($pageWidth, $pageHeight);
+                array_push($this->Inputs,$input);
+                return $input;
             }
             else
             {
@@ -246,17 +221,7 @@ require_once('PageInput.php');
         }
 
 
-        /**
-        *
-        *  Returns a PageInput object containing the input pdf. 
-        *
-        */
-        /*public function AddPage()
-        {
-            $input = new PageInput();
-            $this->Inputs($input);
-            return $input;
-        }*/
+      
 
 
         /**
@@ -482,23 +447,6 @@ require_once('PageInput.php');
             return  $retObject;
         }
     
-        private function GetImageMimeType(string $filePath)
-        {
-             $mimeType = "";
-            if (filePath.EndsWith("jpg") || filePath.EndsWith("jpeg"))
-                $mimeType = "image/jpeg";
-            else if (filePath.EndsWith("tif") || filePath.EndsWith("tiff"))
-                $mimeType = "image/tiff";
-            else if (filePath.EndsWith("gif"))
-                $mimeType = "image/gif";
-            else if (filePath.EndsWith("bmp"))
-                $mimeType = "image/bmp";
-            else if (filePath.EndsWith("png"))
-                $mimeType = "image/png";
-            else
-                throw new Exception("Unsupported image type");
-            return $mimeType;
-        }
        
     }
 ?>

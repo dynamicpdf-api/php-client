@@ -9,9 +9,9 @@
             parent::__construct($text);
         }
 
-        public ?string $Color  = null;
-        public ?string $Font  = null;
-        public ?floatval $FontSize ;
+        public $Color  = null;
+        public  $Font  = null;
+        public  $FontSize ;
     }
 ?>
 

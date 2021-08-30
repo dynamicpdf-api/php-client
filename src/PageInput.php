@@ -19,7 +19,7 @@ class PageInput extends Input
     * @param  float $pageWidth The width of the page.
     * @param  float $pageHeight The height of the page.
     */
-    public function __construct(float $pageWidth= null, float $pageHeight= null) 
+    public function __construct(?float $pageWidth= null, ?float $pageHeight= null) 
     { 
         $this->PageWidth = $pageWidth; 
         $this->PageHeight = $pageHeight; 

@@ -11,12 +11,7 @@ include_once('JsonResponse.php');
     class PdfInfoResponse extends JsonResponse
     {
 
-       /**
-       *
-       *  Initializes a new instance of the PdfInfoResponse class. 
-       *
-       */
-       // public __construct()  { }
+      
 
 
         /**
@@ -25,10 +20,13 @@ include_once('JsonResponse.php');
         *
         * @param  string $jsonContent The json of pdf information.
         */
-        public function __construct(string $jsonContent) 
+        public function __construct(?string $jsonContent = null) 
         {
-            parent::__construct($jsonContent);
-            $this->Content = json_decode($jsonContent);
+            if($jsonContent != null)
+            {
+                parent::__construct($jsonContent);
+                $this->Content = json_decode($jsonContent);
+            }
         }
 
 

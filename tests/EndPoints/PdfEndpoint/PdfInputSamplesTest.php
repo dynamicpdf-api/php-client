@@ -89,7 +89,7 @@ public function Bytes_PdfOutput()
 /** @test */
 public function Stream_PdfOutput()
 {
-  /*  $Name = "Stream";
+    $Name = "Stream";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -97,8 +97,10 @@ public function Stream_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoiceStream = new MemoryStream($this->inputpath."Emptypages.pdf");
-    $pdfResource = new PdfResource($invoiceStream);
+    $file = fopen($this->inputpath. "Emptypages.pdf", "r");
+    $pdfResource = new PdfResource($file);
+    fclose($file);
+
     $pdfInput = new PdfInput($pdfResource);
     array_push($pdf->Inputs,$pdfInput);
 
@@ -113,7 +115,7 @@ public function Stream_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."PdfInputSamples3.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -129,7 +131,7 @@ public function CloudRoot_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $pdfInput =  PdfInput::CreatePdfInput("Emptypages.pdf");
+    $pdfInput = new PdfInput("Emptypages.pdf");
 
     array_push($pdf->Inputs,$pdfInput);
     $response = $pdf->Process();
@@ -159,7 +161,7 @@ public function CloudSubFolder_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $pdfInput =  PdfInput::CreatePdfInput("Resources/Emptypages.pdf");
+    $pdfInput = new PdfInput("Resources/Emptypages.pdf");
 
     array_push($pdf->Inputs,$pdfInput);
     $response = $pdf->Process();
@@ -261,7 +263,7 @@ public function BytesPdfInputs_PdfOutput()
 /** @test */
 public function StreamPdfInputs_PdfOutput()
 {
-   /* $Name = "StreamInputs";
+    $Name = "StreamInputs";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -269,18 +271,24 @@ public function StreamPdfInputs_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoiceStream = new MemoryStream($this->inputpath."Invoice.pdf");
-    $invoiceResource = new PdfResource($invoiceStream);
+    $file = fopen($this->inputpath. "Invoice.pdf", "r");
+    $invoiceResource = new PdfResource($file);
+    fclose($file);
+
     $invoice = new PdfInput($invoiceResource);
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18Stream = new MemoryStream($this->inputpath."fw9AcroForm_18.pdf");
-    $fw9AcroForm_18Resource = new PdfResource($fw9AcroForm_18Stream);
+    $file2 = fopen($this->inputpath. "fw9AcroForm_18.pdf", "r");
+    $fw9AcroForm_18Resource = new PdfResource($file2);
+    fclose($file2);
+
     $fw9AcroForm_18 = new PdfInput($fw9AcroForm_18Resource);
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100Stream = new MemoryStream($this->inputpath."DocumentA100.pdf");
-    $documentA100Resource = new PdfResource($documentA100Stream);
+    $file3 = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $documentA100Resource = new PdfResource($file3);
+    fclose($file3);
+
     $documentA100 = new PdfInput($documentA100Resource);
     array_push($pdf->Inputs,$documentA100);
 
@@ -295,7 +303,7 @@ public function StreamPdfInputs_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."PdfInputSamples8.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -311,13 +319,13 @@ public function CloudRootPdfInputs_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoice = PdfInput::CreatePdfInput("Invoice.pdf");
+    $invoice =new PdfInput("Invoice.pdf");
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18 = PdfInput::CreatePdfInput("fw9AcroForm_18.pdf");
+    $fw9AcroForm_18 =new PdfInput("fw9AcroForm_18.pdf");
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100 = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $documentA100 =new PdfInput("DocumentA100.pdf");
     array_push($pdf->Inputs,$documentA100);
 
 
@@ -348,13 +356,13 @@ public function CloudSubFolderPdfInputs_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoice = PdfInput::CreatePdfInput("Resources/Invoice.pdf");
+    $invoice =new PdfInput("Resources/Invoice.pdf");
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18 = PdfInput::CreatePdfInput("Resources/fw9AcroForm_18.pdf");
+    $fw9AcroForm_18 =new PdfInput("Resources/fw9AcroForm_18.pdf");
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100 = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $documentA100 =new PdfInput("Resources/DocumentA100.pdf");
     array_push($pdf->Inputs,$documentA100);
 
 
@@ -459,7 +467,7 @@ public function BytesMergeMultipleDocuments_PdfOutput()
 /** @test */
 public function StreamMergeMultipleDocuments_PdfOutput()
 {
-   /* $Name = "StreamPathMergeMultipleDocuments";
+    $Name = "StreamPathMergeMultipleDocuments";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -467,20 +475,25 @@ public function StreamMergeMultipleDocuments_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $memory = new MemoryStream($this->inputpath."AllPageElements.pdf");
-    $resource = new PdfResource($memory);
+    $file = fopen($this->inputpath. "AllPageElements.pdf", "r");
+    $resource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($resource);
     $input->StartPage = 1;
     $input->PageCount = 6;
     array_push($pdf->Inputs,$input);
 
-    $memory1 = new MemoryStream($this->inputpath."All Fields Sample.pdf");
-    $resource1 = new PdfResource($memory1);
+    $file1 = fopen($this->inputpath. "All Fields Sample.pdf", "r");
+    $resource1 = new PdfResource($file1);
+    fclose($file1);
     $input1 = new PdfInput($resource1);
     array_push($pdf->Inputs,$input1);
 
-    $memory2 = new MemoryStream($this->inputpath."fw9AcroForm_14.pdf");
-    $resource2 = new PdfResource($memory2);
+    $file2 = fopen($this->inputpath. "fw9AcroForm_14.pdf", "r");
+    $resource2 = new PdfResource($file2);
+    fclose($file2);
+
     $input2 = new PdfInput($resource2);
     array_push($pdf->Inputs,$input2);
 
@@ -495,7 +508,7 @@ public function StreamMergeMultipleDocuments_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."PdfInputSamples13.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -511,15 +524,15 @@ public function CloudRootMergeMultipleDocuments_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("AllPageElements.pdf");
+    $input =new PdfInput("AllPageElements.pdf");
     $input->StartPage = 1;
     $input->PageCount = 6;
     array_push($pdf->Inputs,$input);
 
-    $input1 = PdfInput::CreatePdfInput("All Fields Sample.pdf");
+    $input1 =new PdfInput("All Fields Sample.pdf");
     array_push($pdf->Inputs,$input1);
 
-    $input2 = PdfInput::CreatePdfInput("fw9AcroForm_14.pdf");
+    $input2 =new PdfInput("fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input2);
 
     $response = $pdf->Process();
@@ -549,15 +562,15 @@ public function CloudSubFolderMergeMultipleDocuments_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/AllPageElements.pdf");
+    $input =new PdfInput("Resources/AllPageElements.pdf");
     $input->StartPage = 1;
     $input->PageCount = 6;
     array_push($pdf->Inputs,$input);
 
-    $input1 = PdfInput::CreatePdfInput("Resources/All Fields Sample.pdf");
+    $input1 =new PdfInput("Resources/All Fields Sample.pdf");
     array_push($pdf->Inputs,$input1);
 
-    $input2 = PdfInput::CreatePdfInput("Resources/fw9AcroForm_14.pdf");
+    $input2 =new PdfInput("Resources/fw9AcroForm_14.pdf");
     array_push($pdf->Inputs,$input2);
 
     $response = $pdf->Process();
@@ -1690,7 +1703,7 @@ public function Cloud_AddPdf_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $pdfInput = $pdf->AddPdfCloud("DocumentA100.pdf");
+    $pdfInput = $pdf->AddPdf("DocumentA100.pdf");
 
     $response = $pdf->Process();
 

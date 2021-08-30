@@ -71,7 +71,7 @@ public function FilePathInputPNE_PdfOutput()
 /** @test */
 public function StreamInputPNE_PdfOutput()
 {
-   /* $Name = "StreamInputPNE";
+    $Name = "StreamInputPNE";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -80,8 +80,10 @@ public function StreamInputPNE_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $pdfStream = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $pdfResource = new PdfResource($pdfStream);
+    $file = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $pdfResource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($pdfResource);
 
     $templateA = new Template("TemplateA");
@@ -101,7 +103,7 @@ public function StreamInputPNE_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplatePagenumberingSamples2.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -109,7 +111,7 @@ public function StreamInputPNE_PdfOutput()
 /** @test */
 public function BytesInputPNE_PdfOutput()
 {
-   /* $Name = "BytesInputPNE";
+    $Name = "BytesInputPNE";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -118,7 +120,12 @@ public function BytesInputPNE_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $pdfResource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+
+    $pdfResource = new PdfResource(unpack('C*',$array));
     $input = new PdfInput($pdfResource);
 
     $templateA = new Template("TemplateA");
@@ -138,7 +145,7 @@ public function BytesInputPNE_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplatePagenumberingSamples3.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -155,7 +162,7 @@ public function CloudRootInputPNE_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input =  PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input = new PdfInput("DocumentA100.pdf");
 
     $templateA = new Template("TemplateA");
     $element = new PageNumberingElement("%%CP%% of %%TP%%",ElementPlacement::TopCenter);
@@ -191,7 +198,7 @@ public function CloudSubFolderInputPNE_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input =new PdfInput("Resources/DocumentA100.pdf");
 
     $templateA = new Template("TemplateA");
     $element = new PageNumberingElement("%%CP%% of %%TP%%",ElementPlacement::TopCenter);
@@ -317,7 +324,7 @@ public function FilePathInputPNEs_PdfOutput()
 /** @test */
 public function StreamInputPNEs_PdfOutput()
 {
-  /*  $Name = "StreamInputPNEs";
+    $Name = "StreamInputPNEs";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -326,19 +333,24 @@ public function StreamInputPNEs_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoiceStream = new MemoryStream(File::ReadAllBytes((inputpath + "Invoice::pdf")));
-    $invoiceResource = new PdfResource($invoiceStream);
+    $file = fopen($this->inputpath. "Invoice.pdf", "r");
+    $invoiceResource = new PdfResource($file);
+    fclose($file);
+
     $invoice = new PdfInput($invoiceResource);
     array_push($pdf->Inputs,$invoice);
 
+    $file2 = fopen($this->inputpath. "fw9AcroForm_18.pdf", "r");
+    $fw9AcroForm_18Resource = new PdfResource($file2);
+    fclose($file2);
 
-    $fw9AcroForm_18Stream = new MemoryStream(File::ReadAllBytes((inputpath + "fw9AcroForm_18::pdf")));
-    $fw9AcroForm_18Resource = new PdfResource($fw9AcroForm_18Stream);
     $fw9AcroForm_18 = new PdfInput($fw9AcroForm_18Resource);
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100Stream = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $documentA100Resource = new PdfResource($documentA100Stream);
+    $file3 = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $documentA100Resource = new PdfResource($file3);
+    fclose($file3);
+
     $documentA100 = new PdfInput($documentA100Resource);
     array_push($pdf->Inputs,$documentA100);
 
@@ -366,7 +378,7 @@ public function StreamInputPNEs_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplatePagenumberingSamples8.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -374,7 +386,7 @@ public function StreamInputPNEs_PdfOutput()
 /** @test */
 public function BytesInputPNEs_PdfOutput()
 {
-   /* $Name = "BytesInputPNEs";
+    $Name = "BytesInputPNEs";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -383,15 +395,28 @@ public function BytesInputPNEs_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoiceResource = new PdfResource(File::ReadAllBytes((inputpath + "Invoice::pdf")));
+    $length = filesize($this->inputpath . "Invoice.pdf");
+    $file = fopen($this->inputpath . "Invoice.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+
+    $invoiceResource = new PdfResource(unpack('C*',$array));
     $invoice = new PdfInput($invoiceResource);
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18Resource = new PdfResource(File::ReadAllBytes((inputpath + "fw9AcroForm_18::pdf")));
+    $length = filesize($this->inputpath . "fw9AcroForm_18.pdf");
+    $file = fopen($this->inputpath . "fw9AcroForm_18.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $fw9AcroForm_18Resource = new PdfResource(unpack('C*',$array));
     $fw9AcroForm_18 = new PdfInput($fw9AcroForm_18Resource);
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100Resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $documentA100Resource = new PdfResource(unpack('C*',$array));
     $documentA100 = new PdfInput($documentA100Resource);
     array_push($pdf->Inputs,$documentA100);
 
@@ -419,7 +444,7 @@ public function BytesInputPNEs_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplatePagenumberingSamples9.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -436,13 +461,13 @@ public function CloudRootInputPNEs_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoice = PdfInput::CreatePdfInput("Invoice.pdf");
+    $invoice =new PdfInput("Invoice.pdf");
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18 = PdfInput::CreatePdfInput("fw9AcroForm_18.pdf");
+    $fw9AcroForm_18 =new PdfInput("fw9AcroForm_18.pdf");
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100 = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $documentA100 =new PdfInput("DocumentA100.pdf");
     array_push($pdf->Inputs,$documentA100);
 
     $templateA = new Template("TemplateA");
@@ -486,13 +511,13 @@ public function CloudSubFolderInputPNEs_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoice = PdfInput::CreatePdfInput("Resources/Invoice.pdf");
+    $invoice =new PdfInput("Resources/Invoice.pdf");
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18 = PdfInput::CreatePdfInput("Resources/fw9AcroForm_18.pdf");
+    $fw9AcroForm_18 =new PdfInput("Resources/fw9AcroForm_18.pdf");
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100 = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $documentA100 =new PdfInput("Resources/DocumentA100.pdf");
     array_push($pdf->Inputs,$documentA100);
 
     $templateA = new Template("TemplateA");
@@ -946,7 +971,7 @@ public function FilePathPNEAddedToEvenPages_PdfOutput()
 /** @test */
 public function Stream_PNEAddedToEvenPages_PdfOutput()
 {
-   /* $Name = "Stream_PNEAddedToEvenPages";
+    $Name = "Stream_PNEAddedToEvenPages";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -955,8 +980,10 @@ public function Stream_PNEAddedToEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $pdfStream = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $pdfResource = new PdfResource($pdfStream);
+    $file = fopen($this->inputpath. "Invoice.pdf", "r");
+    $pdfResource = new PdfResource($file);
+    fclose($file);
+
     $input = new PdfInput($pdfResource);
 
     $templateA = new Template("TemplateA");
@@ -977,7 +1004,7 @@ public function Stream_PNEAddedToEvenPages_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplatePagenumberingSamples19.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -985,7 +1012,7 @@ public function Stream_PNEAddedToEvenPages_PdfOutput()
 /** @test */
 public function Bytes_PNEAddedToEvenPages_PdfOutput()
 {
-   /* $Name = "Bytes_PNEAddedToEvenPages";
+    $Name = "Bytes_PNEAddedToEvenPages";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -994,7 +1021,11 @@ public function Bytes_PNEAddedToEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $pdfResource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $pdfResource = new PdfResource(unpack('C*',$array));
     $input = new PdfInput($pdfResource);
 
     $templateA = new Template("TemplateA");
@@ -1015,7 +1046,7 @@ public function Bytes_PNEAddedToEvenPages_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplatePagenumberingSamples20.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1032,7 +1063,7 @@ public function CloudRootPNEAddedToEvenPages_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $input =new PdfInput("DocumentA100.pdf");
 
     $templateA = new Template("TemplateA");
     $element = new PageNumberingElement("%%CP%% of %%TP%%",ElementPlacement::TopCenter);
@@ -1069,7 +1100,7 @@ public function CloudSubFolderPNEAddedToEO_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $input = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $input =new PdfInput("Resources/DocumentA100.pdf");
 
     $templateA = new Template("TemplateA");
     $element = new PageNumberingElement("%%CP%% of %%TP%%",ElementPlacement::TopCenter);
@@ -1195,7 +1226,7 @@ public function FilePathPNEAddedToEO_PdfOutput()
 /** @test */
 public function StreamInputPNEAddedToEO_PdfOutput()
 {
-   /* $Name = "StreamInputPNEAddedToEO";
+    $Name = "StreamInputPNEAddedToEO";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -1204,18 +1235,24 @@ public function StreamInputPNEAddedToEO_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoiceStream = new MemoryStream(File::ReadAllBytes((inputpath + "Invoice::pdf")));
-    $invoiceResource = new PdfResource($invoiceStream);
+    $file = fopen($this->inputpath. "Invoice.pdf", "r");
+    $invoiceResource = new PdfResource($file);
+    fclose($file);
+
     $invoice = new PdfInput($invoiceResource);
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18Stream = new MemoryStream(File::ReadAllBytes((inputpath + "fw9AcroForm_18::pdf")));
-    $fw9AcroForm_18Resource = new PdfResource($fw9AcroForm_18Stream);
+    $file2 = fopen($this->inputpath. "fw9AcroForm_18.pdf", "r");
+    $fw9AcroForm_18Resource = new PdfResource($file2);
+    fclose($file2);
+
     $fw9AcroForm_18 = new PdfInput($fw9AcroForm_18Resource);
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100RStream = new MemoryStream(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
-    $documentA100Resource = new PdfResource($documentA100RStream);
+    $file3 = fopen($this->inputpath. "DocumentA100.pdf", "r");
+    $documentA100Resource = new PdfResource($file3);
+    fclose($file3);
+
     $documentA100 = new PdfInput($documentA100Resource);
     array_push($pdf->Inputs,$documentA100);
 
@@ -1245,7 +1282,7 @@ public function StreamInputPNEAddedToEO_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplatePagenumberingSamples25.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1253,7 +1290,7 @@ public function StreamInputPNEAddedToEO_PdfOutput()
 /** @test */
 public function BytesInputPNEAddedToEO_PdfOutput()
 {
-    /*$Name = "BytesInputPNEAddedToEO";
+    $Name = "BytesInputPNEAddedToEO";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -1262,15 +1299,27 @@ public function BytesInputPNEAddedToEO_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoiceResource = new PdfResource(File::ReadAllBytes((inputpath + "Invoice::pdf")));
+    $length = filesize($this->inputpath . "Invoice.pdf");
+    $file = fopen($this->inputpath . "Invoice.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $invoiceResource = new PdfResource(unpack('C*',$array));
     $invoice = new PdfInput($invoiceResource);
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18Resource = new PdfResource(File::ReadAllBytes((inputpath + "fw9AcroForm_18::pdf")));
+    $length = filesize($this->inputpath . "fw9AcroForm_18.pdf");
+    $file = fopen($this->inputpath . "fw9AcroForm_18.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $fw9AcroForm_18Resource = new PdfResource(unpack('C*',$array));
     $fw9AcroForm_18 = new PdfInput($fw9AcroForm_18Resource);
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100Resource = new PdfResource(File::ReadAllBytes((inputpath + "DocumentA100::pdf")));
+    $length = filesize($this->inputpath . "DocumentA100.pdf");
+    $file = fopen($this->inputpath . "DocumentA100.pdf", "r");
+    $array =  fread($file, $length);
+    fclose($file);
+    $documentA100Resource = new PdfResource(unpack('C*',$array));
     $documentA100 = new PdfInput($documentA100Resource);
     array_push($pdf->Inputs,$documentA100);
 
@@ -1300,7 +1349,7 @@ public function BytesInputPNEAddedToEO_PdfOutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."TemplatePagenumberingSamples26.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -1317,13 +1366,13 @@ public function CloudRootPNEAddedToEO_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoice = PdfInput::CreatePdfInput("Invoice.pdf");
+    $invoice =new PdfInput("Invoice.pdf");
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18 = PdfInput::CreatePdfInput("fw9AcroForm_18.pdf");
+    $fw9AcroForm_18 =new PdfInput("fw9AcroForm_18.pdf");
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100 = PdfInput::CreatePdfInput("DocumentA100.pdf");
+    $documentA100 =new PdfInput("DocumentA100.pdf");
     array_push($pdf->Inputs,$documentA100);
 
     $templateA = new Template("TemplateA");
@@ -1369,13 +1418,13 @@ public function ColudSubFolderPNEAddedToEO_PdfOutput()
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
-    $invoice = PdfInput::CreatePdfInput("Resources/Invoice.pdf");
+    $invoice =new PdfInput("Resources/Invoice.pdf");
     array_push($pdf->Inputs,$invoice);
 
-    $fw9AcroForm_18 = PdfInput::CreatePdfInput("Resources/fw9AcroForm_18.pdf");
+    $fw9AcroForm_18 =new PdfInput("Resources/fw9AcroForm_18.pdf");
     array_push($pdf->Inputs,$fw9AcroForm_18);
 
-    $documentA100 = PdfInput::CreatePdfInput("Resources/DocumentA100.pdf");
+    $documentA100 =new PdfInput("Resources/DocumentA100.pdf");
     array_push($pdf->Inputs,$documentA100);
 
     $templateA = new Template("TemplateA");

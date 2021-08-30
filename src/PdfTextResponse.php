@@ -11,13 +11,6 @@ include_once('JsonResponse.php');
     class PdfTextResponse extends JsonResponse
     {
 
-        /**
-        *
-        *  Initializes a new instance of the PdfTextResponse class. 
-        *
-        */
-        //public PdfTextResponse() : base() { }
-
 
         /**
         *

@@ -24,7 +24,7 @@
         * @param  float $xOffset The X coordinate of the QR code.
         * @param  float $yOffset The Y coordinate of the QR code.
         */
-        public function __construct(string $value, string $placement, float $xOffset = 0, float $yOffset = 0) 
+        public function __construct( $value, string $placement, float $xOffset = 0, float $yOffset = 0) 
         {
             parent::__construct($value, $placement, $xOffset, $yOffset);
         }

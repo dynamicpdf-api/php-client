@@ -109,7 +109,7 @@ public function PdfPageInput_CMYKColorSample_PdfOutput()
     array_push($pdf->Inputs,$input);
 
     $textElement = new TextElement("Hello World",ElementPlacement::TopCenter);
-    $textElement->Color = CmykColor::CreateCmykColor(0,1,0,0);
+    $textElement->Color = new CmykColor(0,1,0,0);
     array_push($input->Elements,$textElement);
 
     $response = $pdf->Process();

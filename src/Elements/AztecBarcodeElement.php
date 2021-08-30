@@ -28,7 +28,7 @@ include_once('Dim2BarcodeElement.php');
         * @param  float $xOffset The X coordinate of the barcode.
         * @param  float $yOffset The Y coordinate of the barcode.
         */
-        public function __construct(string $value, string $placement, float $xOffset = 0, float $yOffset = 0)
+        public function __construct($value, string $placement, float $xOffset = 0, float $yOffset = 0)
         { 
             parent::__construct($value, $placement, $xOffset, $yOffset);
         }

@@ -242,7 +242,7 @@ use PHPUnit\Framework\TestCase;
             $pdfInput1 = new PdfInput($resource1);
             array_push($pdf->Inputs,$pdfInput1);
 
-            $pdfInput2 =  PdfInput::CreatePdfInput("DocumentA100.pdf");
+            $pdfInput2 = new PdfInput("DocumentA100.pdf");
             array_push($pdf->Inputs,$pdfInput2);
 
             $pageInput1 = new PageInput();
@@ -323,7 +323,7 @@ use PHPUnit\Framework\TestCase;
             $imageInput2 = new ImageInput($resource2);
             array_push($pdf->Inputs,$imageInput2);
 
-            $imageInput3 = ImageInput::CreateImageInput("Image1.jpg");
+            $imageInput3 = new ImageInput("Image1.jpg");
             array_push($pdf->Inputs,$imageInput3);
 
             $resource3 = new PdfResource($this->inputpath. "DocumentA100.pdf");
@@ -408,7 +408,7 @@ use PHPUnit\Framework\TestCase;
             $input1 = new DlexInput($dlex1, $layoutData1);
             array_push($pdf->Inputs,$input1);
 
-            $input2 =  DlexInput::CreateDlexInput("SimpleReportWithCoverPage.dlex", "SimpleReportData.json");
+            $input2 = new DlexInput("SimpleReportWithCoverPage.dlex", "SimpleReportData.json");
             array_push($pdf->Inputs,$input2);
 
             $response = $pdf->Process();
@@ -554,7 +554,7 @@ use PHPUnit\Framework\TestCase;
             Pdf::$DefaultApiKey = $this->key;
             Pdf::$DefaultBaseUrl = $this->url;
 
-            $pdfInput =  PdfInput::CreatePdfInput("DocumentA100.pdf");
+            $pdfInput = new PdfInput("DocumentA100.pdf");
             $mergeOptions = new MergeOptions();
             $pdfInput->MergeOptions = $mergeOptions;
             array_push($pdf->Inputs,$pdfInput);
@@ -567,10 +567,10 @@ use PHPUnit\Framework\TestCase;
 
             $img = new ImageResource($this->inputpath. "Northwind Logo.gif", "northwind logo.gif");
             array_push($pdf->Resources,$img);
-            $dlexInput =  DlexInput::CreateDlexInput("SimpleReportWithCoverPage.dlex", "SimpleReportData.json");
+            $dlexInput = new DlexInput("SimpleReportWithCoverPage.dlex", "SimpleReportData.json");
             array_push($pdf->Inputs,$dlexInput);
 
-            $imageInput = ImageInput::CreateImageInput("Image1.jpg");
+            $imageInput = new ImageInput("Image1.jpg");
             $imageInput->TopMargin = 10;
             $imageInput->LeftMargin = 10;
             $imageInput->RightMargin = 10;
@@ -730,7 +730,7 @@ use PHPUnit\Framework\TestCase;
             array_push($template->Elements,$pageNumberingElement);
             $pageInput->SetTemplate( $template);
 
-            $outline =  Outline::CreateOutline("Outline Page Input");
+            $outline = new Outline("Outline Page Input");
             $outline->Color = RgbColor::Red();
             $outline->Style = OutlineStyle::Bold;
             $outline->Expanded = true;
@@ -748,7 +748,7 @@ use PHPUnit\Framework\TestCase;
             $pdfInput->Id = "pdf1";
             $pdfInput->SetTemplate( $template);
 
-            $outline1 =  Outline::CreateOutline("Outline Pdf Input");
+            $outline1 = new Outline("Outline Pdf Input");
             $outline1->Style = OutlineStyle::Italic;
 
             $linkTo1 = new GoToAction($pdfInput);
@@ -765,7 +765,7 @@ use PHPUnit\Framework\TestCase;
             $dlexInput = new DlexInput($dlex, $layoutData);
             $dlexInput->Id = "dlex1";
 
-            $outline2 =  Outline::CreateOutline("Outline Dlex Input");
+            $outline2 = new Outline("Outline Dlex Input");
             $outline2->Style = OutlineStyle::Regular;
             $outline2->Color = RgbColor::Green();
 
@@ -784,7 +784,7 @@ use PHPUnit\Framework\TestCase;
             $imageInput->BottomMargin = 50;
             $imageInput->Id = "img1";
 
-            $outline3 =  Outline::CreateOutline("Outline Image Input");
+            $outline3 = new Outline("Outline Image Input");
             $outline3->Style = OutlineStyle::Regular;
             $outline3->Color = RgbColor::Blue();
 

@@ -332,7 +332,7 @@ public function PdfInput_WithTemplate_Pdfoutput()
 /** @test */
 public function PageInput_CloudRoot_Pdfoutput()
 {
-   /* $Name = "CloudRoot";
+$Name = "CloudRoot";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -361,7 +361,7 @@ public function PageInput_CloudRoot_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."FontSamples9.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -369,7 +369,7 @@ public function PageInput_CloudRoot_Pdfoutput()
 /** @test */
 public function PageInput_CloudSubFolder_Pdfoutput()
 {
-    /*$Name = "CloudSubFolder";
+    $Name = "CloudSubFolder";
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
@@ -397,7 +397,7 @@ public function PageInput_CloudSubFolder_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."FontSamples10.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -405,7 +405,7 @@ public function PageInput_CloudSubFolder_Pdfoutput()
 /** @test */
 public function PdfInput_CloudRootWithTemplate_Pdfoutput()
 {
-   /* $Name = "CloudRootWithTemplate";
+    $Name = "CloudRootWithTemplate";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -438,7 +438,7 @@ public function PdfInput_CloudRootWithTemplate_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."FontSamples11.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
@@ -446,7 +446,7 @@ public function PdfInput_CloudRootWithTemplate_Pdfoutput()
 /** @test */
 public function PdfInput_CloudSubFolderWithTemplate_Pdfoutput()
 {
-  /*  $Name = "CloudSubFolderWithTemplate";
+    $Name = "CloudSubFolderWithTemplate";
 
     $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
@@ -479,7 +479,7 @@ public function PdfInput_CloudSubFolderWithTemplate_Pdfoutput()
     if(isset($pdf->jsonData))
     file_put_contents($this->outPutPath."FontSamples12.json",$pdf->jsonData);
 
-    $this->assertEquals($response->IsSuccessful,true);*/
+    $this->assertEquals($response->IsSuccessful,true);
 
 }
 
