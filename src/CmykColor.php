@@ -56,7 +56,7 @@ include_once('Color.php');
         */
         public function White() { return new CmykColor(0, 0, 0, 0); } 
         
-       
+        public   $ColorString = null ;
 
     }
 ?>

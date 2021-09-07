@@ -42,7 +42,7 @@ include_once('ResourceType.php');
 
 
        
-
+        public $Type  = ResourceType::LayoutData;
       
         public  function  FileExtension()
         {
@@ -51,6 +51,7 @@ include_once('ResourceType.php');
         
         public  $FileExtension = ".json";
 
+        public $MimeType  = "application/json";
 
         /**
         *
@@ -64,14 +65,7 @@ include_once('ResourceType.php');
            return null;
         }
 
-        function endsWith( $Str1, $Str2 ) {
-
-            $length = strlen( $Str2 );
-            if( !$length ) {
-                return true;
-            }
-            return strtolower(substr( $Str1, -$length ) )== strtolower($Str2);
-        }
+        
     }
 ?>
 

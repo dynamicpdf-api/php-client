@@ -28,6 +28,8 @@ include_once('VAlign.php');
             parent::__construct($resource);
         }
 
+        public   $Type =InputType::Image;
+
         /**
         *
         * Gets or sets the scaleX of the image.
@@ -204,7 +206,7 @@ include_once('VAlign.php');
         }
 
 
-        public   $Type =InputType::Image;
+        
         // internal override InputResourceType InputResourceType { get; } = InputResourceType.Upload;
 
    

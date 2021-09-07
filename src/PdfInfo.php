@@ -25,7 +25,8 @@ include_once('PdfInfoResponse.php');
             $this->resource = $resource;
             $this->EndpointName  = "pdf-info";
         }
-
+        
+        public $EndpointName  = "pdf-info";
 
         /**
         *

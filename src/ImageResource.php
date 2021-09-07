@@ -25,6 +25,10 @@ class ImageResource extends Resource
         $this->Type = ResourceType::Image;
     }
 
+    public $Type  = ResourceType::Image;
+
+    public $MimeType;
+
     public  function  FileExtension()
     {
         $fileHeader =  substr($this->Data, 0, 16);

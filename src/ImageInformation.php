@@ -39,7 +39,7 @@
         * Gets the horizondalDpi of the image.
         *
         */
-        public float HorizondalDpi;
+        public  $HorizondalDpi;
 
 
         /**

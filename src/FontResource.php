@@ -4,12 +4,14 @@ include_once('ResourceType.php');
 
      class FontResource extends Resource
     {
-        public function __construct(string $file, string $resourceName = null) 
+        public function __construct( $file, string $resourceName = null) 
         { 
             parent::__construct($file,  $resourceName);
         }
 
         public   $Type  = ResourceType::Font;
+
+        public $MimeType;
 
         public  function FileExtension() : string
         {
@@ -39,19 +41,12 @@ include_once('ResourceType.php');
         }
         public function GetjsonSerializeString()
         {
-//"fonts":[{"name":"f934f893-9f27-4c37-889b-b7036b4e4297","resourceName":"f3926706-aafc-4091-a6f4-5155d0d9fa81.ttf"}]
 
             $inputjson=array();
             $inputjson['name']=$this->Name;
             $inputjson['resourceName']==$this->ResourceName;
            
             return $inputjson;
-
-       /* return    array (
-            "type"=>"image",
-            "align"=>1,
-            "vAlign"=>1,
-            "resourceName"=>$this->ResourceName);*/
 
         }
     }

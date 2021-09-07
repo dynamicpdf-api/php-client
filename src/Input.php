@@ -13,7 +13,7 @@ require_once('Resource.php');
     {
         private  $template;
 
-        public function __construct( $resource)
+        public function __construct( $resource )
         {
             if(gettype($resource) == "object")
             {

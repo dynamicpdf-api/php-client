@@ -50,6 +50,7 @@ include_once('Color.php');
             return $rgbColor;
         }
        
+        public  $ColorString;
 
 
         /**
@@ -1187,6 +1188,7 @@ include_once('Color.php');
         *
         */
         public static function YellowGreen()  { return RgbColor::CreateRgbColor("YellowGreen"); } 
+
         public function GetjsonSerializeString()
         {
             //$jsonArray=array();

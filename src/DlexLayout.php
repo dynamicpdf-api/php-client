@@ -20,12 +20,10 @@
         {
             $this->DlexPath = $cloudDlexPath;
             $this->resource = $layoutData;
-            //echo($this->resource->Data);
-            $this->EndpointName = "dlex-layout";
         }
 
         
-
+        public $EndpointName  = "dlex-layout";
 
         /**
         *

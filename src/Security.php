@@ -12,7 +12,7 @@ include_once('SecurityType.php');
     class Security
     {
        
-        public function __construct(string $userPwd,string $ownerPwd ) 
+        public function __construct(string $userPwd = null,string $ownerPwd = null) 
         {
             $this->UserPassword = $userPwd;
             $this->OwnerPassword = $ownerPwd;

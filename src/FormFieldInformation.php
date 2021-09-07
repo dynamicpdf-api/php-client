@@ -7,7 +7,7 @@
     */
     class FormFieldInformation
     {
-        public __construct() { }
+        public  function __construct() { }
 
 
         /**

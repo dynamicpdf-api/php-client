@@ -55,6 +55,9 @@
         public  $Text;
 
 
+        public $TextFont;
+        public $Resource;
+
         /**
         *
         *  Gets or sets the Font object to use for the text of the label. 

@@ -4,20 +4,27 @@ include_once('ResourceType.php');
 
 abstract class Resource
 {
-    /*public function Resource() 
-        { 
-
-        }*/
-    public function __construct( $file, ?string $resourceName)
+   
+    public function __construct( $file =null, ?string $resourceName= null)
     {
+        if($file != null)
+        {
         if (gettype($file) == "array") 
         {
             $this->Data = implode(array_map("chr", $file));
         } 
         else if (gettype($file) == "string")
         {
-            $this->ResourcePath = $file;
-            $this->Data = Resource::GetFileData($file);
+            if(file_exists($file))
+            {
+                $this->FilePath  = $file;
+                $this->Data = Resource::GetFileData($file);
+            }
+            else
+            {
+                throw new EndpointException("File does not exist.");
+            }
+
         } 
         else 
         {
@@ -30,25 +37,11 @@ abstract class Resource
             $this->ResourceName = $resourceName;
 
         $this->MimeType = "";
-        // $this->FileExtension();
+    }
+       
     }
 
-    /* public function Resource(byte[] value, string resourceName)
-        {
-            Data = value;
-            if (resourceName == null)
-            $this->ResourceName = Guid.NewGuid().ToString() + FileExtension;
-            else
-            $this->ResourceName = resourceName;
-        }*/
-    /*public function Resource(Stream $value, string $resourceName)
-        {
-            $Data = Resource::GetSteamData($value);
-            if ($resourceName == null)
-            $this->ResourceName = Guid.NewGuid().ToString() + FileExtension;
-            else
-            $this->ResourceName = $resourceName;
-        }*/
+   
 
     public  $Data;
 
@@ -63,17 +56,8 @@ abstract class Resource
     public  $Type;
     public  $MimeType = "";
 
-    public  $ResourcePath;
-    /* public function static string GetSteamData(Stream $stream)
-        {
-            string $data = null;
-            if (stream != null && stream.Length > 0)
-            {
-                data = new byte[stream.Length - stream.Position];
-                stream.Read(data, (int)stream.Position, data.Length);
-            }
-            return data;
-        }*/
+    public  $FilePath;
+    
     public  static function  GetUTF8FileData(string $filePath)
     {
         $data = Resource::GetFileData($filePath);

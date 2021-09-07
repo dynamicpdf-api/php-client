@@ -23,10 +23,10 @@ include_once('PdfInfoResponse.php');
         public function __construct(ImageResource $resource)
         {
             $this->resource = $resource;
-            $this->EndpointName="image-info";
+           
         }
 
-
+        public $EndpointName="image-info";
 
         /**
         *

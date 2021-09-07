@@ -39,25 +39,7 @@ include_once('ElementType.php');
         }
 
 
-       /**
-       *
-       *  Initializes a new instance of the DataMatrixBarcodeElement class. 
-       *
-       * @param  byte[] $value The value of the barcode.
-       * @param  ElementPlacement $placement The placement of the barcode on the page.
-       * @param  float $xOffset The X coordinate of the barcode.
-       * @param  float $yOffset The Y coordinate of the barcode.
-       * @param  DataMatrixSymbolSize $symbolSize The symbol size of the barcode.
-       * @param  DataMatrixEncodingType $encodingType The encoding type of the barcode.
-       * @param  DataMatrixFunctionCharacter $functionCharacter The function character of the barcode.
-       */
-       /* public function DataMatrixBarcodeElement(byte[] $value, ElementPlacement $placement, float $xOffset = 0, float $yOffset = 0, DataMatrixSymbolSize $symbolSize = DataMatrixSymbolSize.Auto, DataMatrixEncodingType $encodingType = DataMatrixEncodingType.Auto, DataMatrixFunctionCharacter $functionCharacter = DataMatrixFunctionCharacter.None)
-                 : base(value, placement, xOffset, yOffset) 
-        {
-            DataMatrixSymbolSize = symbolSize;
-            DataMatrixEncodingType = encodingType;
-            DataMatrixFunctionCharacter = functionCharacter;
-        }*/
+       
 
         
         public  $Type = ElementType::DataMatrixBarcode;

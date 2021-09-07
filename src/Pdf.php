@@ -394,8 +394,8 @@ require_once('PageInput.php');
                 $body[] = 'Content-Disposition: form-data; name="' . "Resource" . '"; filename="' . $field->ResourceName . '"';
                 $body[] = 'Content-Type: application/octet-stream';
                 $body[] = '';
-                if($field->ResourcePath!= null)
-                    $body[] = file_get_contents($field->ResourcePath);
+                if($field->FilePath!= null)
+                    $body[] = file_get_contents($field->FilePath);
                 else
                     $body[] = $field->Data;
 

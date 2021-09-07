@@ -23,7 +23,6 @@ include_once('BarcodeElement.php');
         */
         public  $TextColor  = null;
         
-        public $FontName;
 
 
         /**
@@ -39,9 +38,10 @@ include_once('BarcodeElement.php');
         * Gets or sets a value indicating if the value should be placed as text below the barcode.
         *
         */
-        public  $ShowText = "null";
+        public $ShowText = "null";
         public $Resource;
-
+        public $TextFont;
+        public $FontName;
 
         /**
         *
@@ -56,7 +56,7 @@ include_once('BarcodeElement.php');
          }
         public function GetFont()
         {
-            return  $this->font;
+            return  $this->TextFont;
         }
         
 

@@ -22,26 +22,13 @@
 
        
 
-
-        /**
-        *
-        * Gets or sets the start page.
-        *
-        */
-        public  $StartPage;
+        public $EndpointName  = "pdf-xmp";
+       
 
 
         /**
         *
-        * Gets or sets the page count.
-        *
-        */
-        public  $PageCount;
-
-
-        /**
-        *
-        * Process the pdf resource to get pdf's information.
+        * Process the pdf resource to get  pdf's xmp data.
         *
         */
         public function Process():XmlResponse

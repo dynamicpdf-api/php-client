@@ -1,6 +1,6 @@
 <?php
 
-    public class FullNameTable 
+    class FullNameTable 
     {
         //private static Encoding objUnicode = Encoding.BigEndianUnicode;
 

@@ -294,6 +294,13 @@ include_once('Font.php');
             return $font;
         }
 
+        public static function FromStream($stream, string $resourceName = null)
+        {
+            $resource = new FontResource($stream, $resourceName);
+            return  Font::CreateFont($resource, $resource->ResourceName);
+        }
+
+
         private static  $timesRoman = null;
         private static  $timesBold = null;
         private static  $timesItalic = null;
@@ -328,10 +335,7 @@ include_once('Font.php');
             return $jsonArray;
         }
       
-        /*public static function FromStream(string $filePath)
-        {
-            return null;
-        }*/
+      
 
         //public static Font FromSystem(string fontName)
         //{

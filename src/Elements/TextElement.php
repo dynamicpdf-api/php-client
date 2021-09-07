@@ -32,7 +32,7 @@
        
          public   $Type  = ElementType::Text;
         
-        public  $FontName;
+        
 
         /**
         *
@@ -67,6 +67,10 @@
             $this->FontName = $this->TextFont->Name;
             $this->Resource = $this->TextFont->Resource;
          }
+
+         public $Resource;
+         public $TextFont;
+         public $FontName;
          public function GetjsonSerializeString()
          {
           

@@ -12,18 +12,15 @@ include_once('ElementPlacement.php');
      abstract class Element
     {
        
-        public function  __construct(string $value, string $placement, float $xOffset, float $yOfset)
+        public function  __construct(string $value =null, string $placement =null, float $xOffset=0, float $yOffset=0)
         {
             $this->InputValue = $value;
             $this->Placement = $placement;
             $this->XOffset = $xOffset;
-            $this->YOffset = $yOfset;
+            $this->YOffset = $yOffset;
         }
 
-       /* public Element(string value) 
-        { 
-            $this->InputValue = value;
-        }*/
+       
 
         public   $Type; 
         public  $Resource=null;
