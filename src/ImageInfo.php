@@ -28,24 +28,7 @@ include_once('PdfInfoResponse.php');
 
         public $EndpointName="image-info";
 
-        /**
-        *
-        * Gets or sets the start page.
-        *
-        */
-        public  $StartPage;
-
-
-        /**
-        *
-        * Gets or sets the page count.
-        *
-        */
-        public $PageCount;
-
        
-
-
         /**
         *
         * Process the image resource to get image's information.

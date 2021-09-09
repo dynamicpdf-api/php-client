@@ -61,7 +61,7 @@ include_once('PageZoom.php');
                 $jsonArray['input'] = $this->Input->GetjsonSerializeString();
 
             if($this->InputID != null)
-                $jsonArray['inputId'] = $this->InputID;
+                $jsonArray['inputID'] = $this->InputID;
 
             if($this->PageOffset != null)
                 $jsonArray['pageOffset'] = $this->PageOffset;

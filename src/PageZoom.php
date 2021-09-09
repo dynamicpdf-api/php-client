@@ -14,7 +14,7 @@ class PageZoom
       * Keep unchanged.
       *
       */
-      public const Retain = "Retain";
+      public const Retain = "retain";
 
 
       /**
@@ -22,7 +22,7 @@ class PageZoom
       * Fit page in window.
       *
       */
-      public const FitPage = "FitPage";
+      public const FitPage = "fitPage";
 
 
       /**
@@ -30,7 +30,7 @@ class PageZoom
       * Fit width of page in window.
       *
       */
-      public const FitWidth = "FitWidth";
+      public const FitWidth = "fitWidth";
 
 
       /**
@@ -38,7 +38,7 @@ class PageZoom
       * Fit height of page in window.
       *
       */
-      public const FitHeight = "FitHeight";
+      public const FitHeight = "fitHeight";
 
 
       /**
@@ -46,7 +46,7 @@ class PageZoom
       * Fit all elements of page in window.
       *
       */
-      public const FitBox = "FitBox";
+      public const FitBox = "fitBox";
 } 
 ?>
 

@@ -730,7 +730,7 @@ use PHPUnit\Framework\TestCase;
             array_push($template->Elements,$pageNumberingElement);
             $pageInput->SetTemplate( $template);
 
-            $outline = new Outline("Outline Page Input");
+            $outline = $pdf->Outlines->Add("Outline Page Input");
             $outline->Color = RgbColor::Red();
             $outline->Style = OutlineStyle::Bold;
             $outline->Expanded = true;
@@ -740,7 +740,7 @@ use PHPUnit\Framework\TestCase;
 
             $outline->Action = $linkTo;
 
-            array_push($pdf->Outlines,$outline);
+            
             array_push($pdf->Inputs,$pageInput);
 
             $resource = new PdfResource($this->inputpath. "DocumentA100.pdf");
@@ -748,14 +748,14 @@ use PHPUnit\Framework\TestCase;
             $pdfInput->Id = "pdf1";
             $pdfInput->SetTemplate( $template);
 
-            $outline1 = new Outline("Outline Pdf Input");
+            $outline1 = $pdf->Outlines->Add("Outline Pdf Input");
             $outline1->Style = OutlineStyle::Italic;
 
             $linkTo1 = new GoToAction($pdfInput);
             $linkTo1->PageZoom = PageZoom::FitHeight;
 
             $outline1->Action = $linkTo1;
-            array_push($pdf->Outlines,$outline1);
+           
             array_push($pdf->Inputs,$pdfInput);
 
             $img = new ImageResource($this->inputpath. "Northwind Logo.gif", "northwind logo.gif");
@@ -765,7 +765,7 @@ use PHPUnit\Framework\TestCase;
             $dlexInput = new DlexInput($dlex, $layoutData);
             $dlexInput->Id = "dlex1";
 
-            $outline2 = new Outline("Outline Dlex Input");
+            $outline2 = $pdf->Outlines->Add("Outline Dlex Input");
             $outline2->Style = OutlineStyle::Regular;
             $outline2->Color = RgbColor::Green();
 
@@ -773,7 +773,7 @@ use PHPUnit\Framework\TestCase;
             $linkTo2->PageZoom = PageZoom::FitHeight;
 
             $outline2->Action = $linkTo2;
-            array_push($pdf->Outlines,$outline2);
+           
             array_push($pdf->Inputs,$dlexInput);
 
             $imageResource = new ImageResource($this->inputpath. "Image1.jpg");
@@ -784,7 +784,7 @@ use PHPUnit\Framework\TestCase;
             $imageInput->BottomMargin = 50;
             $imageInput->Id = "img1";
 
-            $outline3 = new Outline("Outline Image Input");
+            $outline3 = $pdf->Outlines->Add("Outline Image Input");
             $outline3->Style = OutlineStyle::Regular;
             $outline3->Color = RgbColor::Blue();
 
@@ -792,7 +792,7 @@ use PHPUnit\Framework\TestCase;
             $linkTo3->PageZoom = PageZoom::FitHeight;
 
             $outline3->Action = $linkTo3;
-            array_push($pdf->Outlines,$outline3);
+          
             array_push($pdf->Inputs,$imageInput);
 
 

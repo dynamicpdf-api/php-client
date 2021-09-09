@@ -2,14 +2,14 @@
 <?php
 include_once('Action.php');
 include_once('OutlineStyle.php');
-
+include_once('OutlineList.php');
 
     /**
     *
     * Represents an outline.
     *
     */
-    class Outline  implements JsonSerializable
+    class Outline
     {  
 
 
@@ -22,6 +22,7 @@ include_once('OutlineStyle.php');
         */
         public function __construct($input, ?Action $action = null) 
         {
+            $this->Children = new OutlineList();
             if(gettype($input)== "object")
             {
                 $this->FromInputID = $input->Id;
@@ -52,7 +53,7 @@ include_once('OutlineStyle.php');
         * Gets or sets the text of the outline.
         *
         */
-        public $Text = "";
+        public $Text ;
 
 
         /**
@@ -76,7 +77,7 @@ include_once('OutlineStyle.php');
         * Gets or sets a collection of child outlines.
         *
         */
-        public $Children = array();
+        public $Children;
 
 
         /**
@@ -97,15 +98,23 @@ include_once('OutlineStyle.php');
         public $Color;
         
       
+        /// <summary>
+        /// Gets or sets a collection of child outlines.
+        /// </summary>
+        public function GetChildren()
+        {
+            if ($this->Children != null)
+                return $this->Children->Outlines;
+            return null;
+        }
 
-
-       public function jsonSerialize()
+       public function GetjsonSerializeString()
        {
             // {"color":"Red","text":"OutlineA","style":0,"expanded":true}]
 
            $jsonArray=array();
 
-           $jsonArray['type']="a";
+           $jsonArray['type']="Outline";
 
           if($this->Color != null)
           {
@@ -131,9 +140,15 @@ include_once('OutlineStyle.php');
           if($this->Expanded != null)
            $jsonArray['expanded'] = $this->Expanded;
           
-          if($this->Children != null &&  count($this->Children) >0)
-           $jsonArray['children'] = $this->Children;
-          
+          if($this->Children != null &&  count($this->Children->Outlines) >0)
+          {
+            $childrenArray=array();
+            for( $i =0; $i<count($this->Children->Outlines) ;$i++)
+            {
+                array_push($childrenArray,$this->Children->Outlines[$i]->GetjsonSerializeString());
+            }
+           $jsonArray['children'] = $childrenArray;
+          }
           if($this->FromInputID != null)
            $jsonArray['fromInputID'] = $this->FromInputID;
           

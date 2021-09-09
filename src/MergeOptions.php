@@ -72,9 +72,8 @@
 
         /**
         *
-        * Gets or sets a boolean indicating whether to import document's opening action (initial page and zoom 
-        * settings) when merging. 
-        *
+        * Gets or sets a boolean indicating whether to import document's opening action (initial page and zoom settings) when merging.
+        * 
         */
         public  $OpenAction= "null";
 
@@ -121,9 +120,8 @@
 
         /**
         *
-        * Gets or sets the root form field for imported form fields. Useful when merging a PDF repeatedly to have 
-        * a better contorl on the form field names. 
-        *
+        * Gets or sets the root form field for imported form fields. Useful when merging a PDF repeatedly to have a better contorl on the form field names. 
+        * 
         */
         public $RootFormField= "null";
 

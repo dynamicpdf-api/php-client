@@ -5,7 +5,7 @@ include_once('ResourceType.php');
 
     /**
     *
-    * Represents the Layout data resource used to create PDF reports.
+    * Represents the Layout data resource used to create the PDF reports.
     *
     */
     class LayoutDataResource extends Resource

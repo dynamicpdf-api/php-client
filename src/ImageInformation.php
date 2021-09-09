@@ -4,7 +4,7 @@
 
     /**
     *
-    * Represents the image information.
+    * Represents an image information.
     *
     */
     class ImageInformation
@@ -52,7 +52,7 @@
 
         /**
         *
-        * Gets the number Of color components present in the image.
+        * Gets the number of color components present in the image.
         *
         */
         public $NumberOfComponents;

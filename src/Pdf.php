@@ -33,6 +33,7 @@ require_once('PageInput.php');
         */
         public function __construct() 
         {
+            $this->Outlines = new OutlineList();
             $this->instructions = new PdfInstructions();
         }
 
@@ -144,7 +145,7 @@ require_once('PageInput.php');
 
         /**
         *
-        *  Returns a ImageInput object containing the input pdf. 
+        *  Returns an ImageInput object containing the input pdf. 
         *
         * @param  ImageResource $resource The resource of type ImageResource.        *
         */
@@ -265,10 +266,82 @@ require_once('PageInput.php');
         * Gets the outlines.
         *
         */
-        public $Outlines = array();
+        public $Outlines ;
         
 
-        
+        public function GetInstructionsJson()
+        {
+
+
+           /* foreach ($instructions->Inputs as input  )
+            {
+                if ($input->Type == InputType::Page)
+                {
+                    $pageInput = $input;
+                    foreach ($pageInput->Elements as $element)
+                    {
+                        if (element.TextFont != null)
+                        {
+                            instructions.Fonts.Add(element.TextFont);
+                        }
+                    }
+                }
+                if (input.Template != null)
+                {
+                    instructions.Templates.Add(input.Template);
+                    if (input.Template.Elements != null && input.Template.Elements.Count > 0)
+                    {
+                        foreach (Element element in input.Template.Elements)
+                        {
+                            if (element.TextFont != null)
+                            {
+                                instructions.Fonts.Add(element.TextFont);
+                            }
+
+                        }
+                    }
+                }
+            }*/
+
+            foreach ($this->instructions->Inputs as $input) 
+            {
+               if($input->Type == InputType::Page)
+               {
+                   $pageInput = $input;
+                   foreach ($pageInput->Elements as $element)
+                   {
+                       if ($element->TextFont != null)
+                       {
+                           $fontSerializedArray=$element->TextFont->GetjsonSerializeString();
+                           $this->instructions->Fonts[$element->TextFont->Name]=$fontSerializedArray;
+                       }
+                   }
+               }
+
+              
+               if ($input->GetTemplate() != null)
+               {
+                    $template=$input->GetTemplate();
+                    $this->instructions->Templates[$template->Id] = $template;
+                    if($input->GetTemplate()->Elements != null  && count($input->GetTemplate()->Elements) > 0)
+                    {
+                        foreach($input->GetTemplate()->Elements as $element  )
+                        {
+                            if ($element->TextFont != null)
+                            {
+                                $fontSerializedArray=$element->TextFont->GetjsonSerializeString();
+                                  
+                                if(count($fontSerializedArray)>0)
+                                    $this->instructions->Fonts[$element->TextFont->Name]=$fontSerializedArray;
+                            }
+                        }
+                    }
+               }
+            }
+
+            $jsonText = json_encode($this->instructions, JSON_PRETTY_PRINT);
+            return $jsonText;
+        }
        
         public function Process():PdfResponse
         {
@@ -320,8 +393,8 @@ require_once('PageInput.php');
                 }
                 if ($input->GetTemplate() != null)
                 {
-                    //echo("template");
-                        array_push( $this->instructions->Templates,$input->GetTemplate());
+                        $template=$input->GetTemplate();
+                        $this->instructions->Templates[$template->Id] = $template;
                         if($input->GetTemplate()->Elements != null  && count($input->GetTemplate()->Elements) > 0)
                         {
                             foreach($input->GetTemplate()->Elements as $element  )

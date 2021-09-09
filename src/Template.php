@@ -6,7 +6,7 @@
     * Represents a document template.
     *
     */
-    class Template implements JsonSerializable
+    class Template 
     {
 
         /**
@@ -39,8 +39,9 @@
         */
         public  $Elements =  array();
 
-        public function jsonSerialize()
+        public function GetjsonSerializeString()
         {
+
             $elements = array();
         foreach ($this->Elements as $element) 
         {
@@ -49,6 +50,7 @@
             if($str!= null)
             array_push($elements,$str);
         }
+        
            return array(
             "id"=> $this->Id,
             "elements" => $elements

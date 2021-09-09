@@ -2,7 +2,7 @@
 
     /**
     *
-    * Represents an page information.
+    * Represents a page information.
     *
     */
     class PageInformation

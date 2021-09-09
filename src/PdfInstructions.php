@@ -46,9 +46,17 @@
         {
             array_push($fontsJson,$font);
         }
+
+        $templatesJson = array();
+        foreach ($this->Templates as $template) 
+        {
+            array_push($templatesJson,$template->GetjsonSerializeString());
+        }
+       
+
             $jsonArray= array();
 
-             $jsonArray['templates']=$this->Templates;
+             $jsonArray['templates']=$templatesJson;
              $jsonArray['fonts']=$fontsJson;
              $jsonArray['author'] = $this->Author;
              $jsonArray['title'] = $this->Title;
@@ -74,7 +82,7 @@
             
              $jsonArray['inputs']= $inputJsonArray;
              $jsonArray['formFields']=$this->FormFields;
-             $jsonArray['outlines']=$this->Outlines;
+             $jsonArray['outlines']=$this->Outlines->GetjsonSerializeString();
            
         
             return $jsonArray;

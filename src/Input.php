@@ -24,6 +24,7 @@ require_once('Resource.php');
             {
                 $this->ResourceName = $resource;
             }
+            $this->Id = md5(uniqid(rand(), true));
         }
      
  

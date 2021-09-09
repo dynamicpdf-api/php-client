@@ -42,11 +42,11 @@ public function PdfInputUsingFilePath_Outline_Pdfoutput()
     $input->Id = "2";
     array_push($pdf->Inputs,$input);
 
-    $outline = new Outline("OutlineA");
+    $outline = $pdf->Outlines->Add("OutlineA");
     $outline->Color = RgbColor::Red();
     $outline->Style = OutlineStyle::Bold;
     $outline->Expanded = true;
-    array_push($pdf->Outlines,$outline);
+   
 
     $response = $pdf->Process();
 
@@ -90,26 +90,23 @@ public function PdfInputUsingFilePath_OutlineAll_Pdfoutput()
     $mergeOutlineInput->Id = "docA100";
     array_push($pdf->Inputs,$mergeOutlineInput);
 
-    $outline = new Outline("Invoice");
+    $outline = $pdf->Outlines->Add("Invoice");
     $action = new GoToAction($invoiceInput);
     $outline->Action = $action;
 
-    $outline1 = new Outline("Picture");
+    $outline1 = $pdf->Outlines->Add("Picture");
     $action1 = new GoToAction($imageInput);
     $outline1->Action = $action1;
 
-    $outline2 = new Outline("Outlines in Doc A 100");
-    $outline2A = new Outline($mergeOutlineInput);
-    array_push($outline2->Children,$outline2A);
+    $outline2 = $pdf->Outlines->Add("Outlines in Doc A 100");
+    $outline2A = $outline2->Children->AddPdfOutlines($mergeOutlineInput);
+  
 
-    $outline3 = new Outline("DynamicPDF is Cool!");
+    $outline3 = $pdf->Outlines->Add("DynamicPDF is Cool!");
     $action3 = new UrlAction("https://www.dynamicpdf.com");
     $outline3->Action = $action3;
 
-    array_push($pdf->Outlines,$outline);
-    array_push($pdf->Outlines,$outline1);
-    array_push($pdf->Outlines,$outline2);
-    array_push($pdf->Outlines,$outline3);
+   
     $response = $pdf->Process();
 
 
@@ -147,7 +144,7 @@ public function PdfInputUsingFilePath_ChildrenSimplegoto_Pdfoutput()
     $documentA100Input->Id = "document2";
     array_push($pdf->Inputs,$documentA100Input);
 
-    $outline = new Outline("OutlineA");
+    $outline = $pdf->Outlines->Add("OutlineA");
     $outline->Color = RgbColor::Red();
     $outline->Style = OutlineStyle::Bold;
     $outline->Expanded = true;
@@ -158,7 +155,7 @@ public function PdfInputUsingFilePath_ChildrenSimplegoto_Pdfoutput()
 
     $outline->Action = $linkTo;
 
-    $outlineA1 = new Outline("OutlineA1");
+    $outlineA1 = $outline->Children->Add("OutlineA1");
     $outlineA1->Color = RgbColor::Red();
     $outlineA1->Style = OutlineStyle::Bold;
     $outlineA1->Expanded = true;
@@ -168,9 +165,9 @@ public function PdfInputUsingFilePath_ChildrenSimplegoto_Pdfoutput()
     $linkTo1->PageZoom = PageZoom::FitPage;
 
     $outlineA1->Action = $linkTo1;
-    array_push($outline->Children,$outlineA1);
+   
 
-    array_push($pdf->Outlines,$outline);
+   
 
     $response = $pdf->Process();
 
@@ -214,7 +211,7 @@ public function PdfInputUsingFilePath_children_simplegotoOutOfPageIndexLeve1_Exc
     $input1->Id = "document2";
     array_push($pdf->Inputs,$input1);
 
-    $outline = new Outline("OutlineA");
+    $outline = $pdf->Outlines->Add("OutlineA");
     $outline->Color = RgbColor::Red();
     $outline->Style = OutlineStyle::Bold;
     $outline->Expanded = true;
@@ -225,7 +222,7 @@ public function PdfInputUsingFilePath_children_simplegotoOutOfPageIndexLeve1_Exc
 
     $outline->Action = $linkTo;
 
-    $outlineA1 = new Outline("OutlineA1");
+    $outlineA1 = $outline->Children->Add("OutlineA1");
     $outlineA1->Color = RgbColor::Red();
     $outlineA1->Style = OutlineStyle::Bold;
     $outlineA1->Expanded = true;
@@ -235,9 +232,9 @@ public function PdfInputUsingFilePath_children_simplegotoOutOfPageIndexLeve1_Exc
     $linkTo1->PageZoom = PageZoom::FitPage;
 
     $outlineA1->Action = $linkTo1;
-    array_push($outline->Children,$outlineA1);
+   
 
-    array_push($pdf->Outlines,$outline);
+    
 
     $response = $pdf->Process();
 
@@ -271,11 +268,11 @@ public function PdfInputUsingFilePath_OutlineFrominputidFromChildren_Pdfoutput()
     $input2->Id = "docA100";
     array_push($pdf->Inputs,$input2);
 
-    $outline2 = new Outline("Outlines in Doc A 100");
-    $outline2A = new Outline($input2);
-    array_push($outline2->Children,$outline2A);
+    $outline2 = $pdf->Outlines->Add("Outlines in Doc A 100");
+    $outline2A = $outline2->Children->AddPdfOutlines($input2);
+    
 
-    array_push($pdf->Outlines,$outline2);
+    
 
     $response = $pdf->Process();
 
@@ -319,25 +316,22 @@ public function PdfInputUsingFilePath_OutlineFrominputidFromParent_Pdfoutput()
     $input2->Id = "docA100";
     array_push($pdf->Inputs,$input2);
 
-    $outline = new Outline("Invoice");
+    $outline = $pdf->Outlines->Add("Invoice");
     $action = new GoToAction($input);
     $outline->Action = $action;
 
-    $outline1 = new Outline("Picture");
+    $outline1 = $pdf->Outlines->Add("Picture");
     $action1 = new GoToAction($input1);
     $outline1->Action = $action1;
 
-    $outline2 = new Outline($input2);
+    $outline2 = $pdf->Outlines->AddPdfOutlines($input2);
 
-    $outline3 = new Outline("DynamicPDF is Cool!");
+    $outline3 = $pdf->Outlines->Add("DynamicPDF is Cool!");
     $action3 = new UrlAction("https://www.dynamicpdf.com");
     $action3->Url = "https://www.dynamicpdf.com";
     $outline3->Action = $action3;
 
-    array_push($pdf->Outlines,$outline);
-    array_push($pdf->Outlines,$outline1);
-    array_push($pdf->Outlines,$outline2);
-    array_push($pdf->Outlines,$outline3);
+    
     $response = $pdf->Process();
 
 
@@ -374,7 +368,7 @@ public function PdfInputUsingFilePath_Outline_GotoAction_Pdfoutput()
     $input1->Id = "3";
     array_push($pdf->Inputs,$input1);
 
-    $outline = new Outline("OutlineA");
+    $outline = $pdf->Outlines->Add("OutlineA");
     $outline->Color = RgbColor::Red();
     $outline->Style = OutlineStyle::Bold;
     $outline->Expanded = true;
@@ -385,7 +379,7 @@ public function PdfInputUsingFilePath_Outline_GotoAction_Pdfoutput()
 
     $outline->Action = $linkTo;
 
-    array_push($pdf->Outlines,$outline);
+    
 
     $response = $pdf->Process();
 
@@ -419,28 +413,27 @@ public function PdfInputUsingFilePath_Outline_KidsBlankPageGotoAction_Pdfoutput(
     $input->Id = "2";
     array_push($pdf->Inputs,$input);
 
-    $outline = new Outline("OutlineA");
+    $outline = $pdf->Outlines->Add("OutlineA");
     $outline->Color = RgbColor::Red();
     $outline->Style = OutlineStyle::Bold;
     $outline->Expanded = true;
 
-    $outline1 = new Outline("OutlineA1");
+    $outline1 = $outline->Children->Add("OutlineA1");
     $outline1->Color = RgbColor::Blue();
     $linkTo = new GoToAction($input);
     $linkTo->PageOffset = 3;
 
     $outline1->Action = $linkTo;
 
-    $outline2 = new Outline("OutlineA2");
+    $outline2 = $outline->Children->Add("OutlineA2");
     $outline2->Color = RgbColor::Blue();
     $linkTo2 = new GoToAction($input,5);
 
     $outline2->Action = $linkTo2;
 
-    array_push($outline->Children,$outline1);
-    array_push($outline->Children,$outline2);
+    
 
-    array_push($pdf->Outlines,$outline);
+    
 
     $response = $pdf->Process();
 
@@ -474,17 +467,16 @@ public function PdfInputUsingFilePath_OutlineSameLevel_Pdfoutput()
     $input->Id = "invoice";
     array_push($pdf->Inputs,$input);
 
-    $outline = new Outline("Invoice");
+    $outline = $pdf->Outlines->Add("Invoice");
     $action = new GoToAction($input);
     $outline->Action = $action;
 
-    $outline3 = new Outline("DynamicPDF is Cool!");
+    $outline3 = $pdf->Outlines->Add("DynamicPDF is Cool!");
     $action3 = new UrlAction("https://www.dynamicpdf.com");
     $action3->Url = "https://www.dynamicpdf.com";
     $outline3->Action = $action3;
 
-    array_push($pdf->Outlines,$outline);
-    array_push($pdf->Outlines,$outline3);
+   
 
     $response = $pdf->Process();
 
@@ -518,7 +510,7 @@ public function PdfInputUsingFilePath_OutlineSimple_Pdfoutput()
     $input->Id = "document1";
     array_push($pdf->Inputs,$input);
 
-    $outline3 = new Outline("OutlineA");
+    $outline3 = $pdf->Outlines->Add("OutlineA");
     $outline3->Expanded = true;
     $outline3->Style = OutlineStyle::BoldItalic;
     $outline3->Color = new RgbColor(1,0,0);
@@ -526,7 +518,7 @@ public function PdfInputUsingFilePath_OutlineSimple_Pdfoutput()
     $action3->Url = "https://www.dynamicpdf.com";
     $outline3->Action = $action3;
 
-    array_push($pdf->Outlines,$outline3);
+   
     $response = $pdf->Process();
 
 
@@ -559,15 +551,14 @@ public function PdfInputUsingFilePath_OutlineSimpleFromInputId_Pdfoutput()
     $input->Id = "document1";
     array_push($pdf->Inputs,$input);
 
-    $outline3 = new Outline("outlineroot");
+    $outline3 = $pdf->Outlines->Add("outlineroot");
     $outline3->Expanded = true;
     $outline3->Style = OutlineStyle::Italic;
     $outline3->Color = new  RgbColor(1,0,0);
 
-    $outline = new Outline($input);
+    $outline = $pdf->Outlines->AddPdfOutlines($input);
 
-    array_push($pdf->Outlines,$outline3);
-    array_push($pdf->Outlines,$outline);
+    
 
     $response = $pdf->Process();
 
@@ -601,16 +592,16 @@ public function PdfInputUsingFilePath_OutlineSimpleFromInputId_Children_Pdfoutpu
     $input->Id = "document1";
     array_push($pdf->Inputs,$input);
 
-    $outline3 = new Outline("outlineroot");
+    $outline3 = $pdf->Outlines->Add("outlineroot");
     $outline3->Expanded = true;
     $outline3->Style = OutlineStyle::Bold;
     $outline3->Color = RgbColor::Red();
 
-    $outline = new Outline($input);
+    $outline = $outline3->Children->AddPdfOutlines($input);
 
-    array_push($outline3->Children,$outline);
+  
 
-    array_push($pdf->Outlines,$outline3);
+    
 
     $response = $pdf->Process();
 
@@ -648,12 +639,12 @@ public function PdfInputUsingFilePath_Outlines_simplegoto_Pdfoutput()
     $input1->Id = "document2";
     array_push($pdf->Inputs,$input1);
 
-    $outline = new Outline("OutlineA",new GoToAction($input1,-2,PageZoom::FitPage));
+    $outline = $pdf->Outlines->Add("OutlineA",$input1,-2,PageZoom::FitPage);
     $outline->Color = RgbColor::Red();
     $outline->Style = OutlineStyle::Bold;
     $outline->Expanded = true;
 
-    array_push($pdf->Outlines,$outline);
+   
 
     $response = $pdf->Process();
 
@@ -692,7 +683,7 @@ public function PdfInputUsingFilePath_Outlines_simplegoto_mulitiple_inputs_Pdfou
     $input1->Id = "document2";
     array_push($pdf->Inputs,$input1);
 
-    $outline = new Outline("OutlineA");
+    $outline = $pdf->Outlines->Add("OutlineA");
     $outline->Color = RgbColor::Red();
     $outline->Style = OutlineStyle::Bold;
     $outline->Expanded = true;
@@ -703,7 +694,7 @@ public function PdfInputUsingFilePath_Outlines_simplegoto_mulitiple_inputs_Pdfou
 
     $outline->Action = $linkTo;
 
-    $outline2 = new Outline("Outline2A");
+    $outline2 = $outline->Children->Add("Outline2A");
     $outline2->Color = RgbColor::Blue();
     $outline2->Style = OutlineStyle::Bold;
     $outline2->Expanded = true;
@@ -712,9 +703,9 @@ public function PdfInputUsingFilePath_Outlines_simplegoto_mulitiple_inputs_Pdfou
     $linkTo1->PageOffset = 1;
     $linkTo1->PageZoom = PageZoom::FitPage;
     $outline2->Action = $linkTo1;
-    array_push($outline->Children,$outline2);
+   
 
-    $outlineA1 = new Outline("OutlineA1");
+    $outlineA1 = $pdf->Outlines->Add("OutlineA1");
     $outlineA1->Color = RgbColor::Red();
     $outlineA1->Style = OutlineStyle::Bold;
     $outlineA1->Expanded = true;
@@ -725,8 +716,7 @@ public function PdfInputUsingFilePath_Outlines_simplegoto_mulitiple_inputs_Pdfou
 
     $outlineA1->Action = $linkTo2;
 
-    array_push($pdf->Outlines,$outline);
-    array_push($pdf->Outlines,$outlineA1);
+   
 
     $response = $pdf->Process();
 
@@ -760,7 +750,7 @@ public function PdfInputUsingFilePath_Outline_urlaction_Pdfoutput()
 
     array_push($pdf->Inputs,$input);
 
-    $outline3 = new Outline("OutlineA");
+    $outline3 = $pdf->Outlines->Add("OutlineA");
     $outline3->Expanded = true;
     $outline3->Style = OutlineStyle::Bold;
     $outline3->Color = RgbColor::Red();
@@ -768,7 +758,7 @@ public function PdfInputUsingFilePath_Outline_urlaction_Pdfoutput()
     $linkTo = new UrlAction("https://www.dynamicpdf.com/");
     $linkTo->Url = "https://www.dynamicpdf.com/";
 
-    array_push($pdf->Outlines,$outline3);
+   
 
     $response = $pdf->Process();
 
@@ -802,30 +792,29 @@ public function PdfInputUsingFilePath_Outlines_with_children_one_level_Pdfoutput
     $input->Id = "document1";
     array_push($pdf->Inputs,$input);
 
-    $outline = new Outline("Outline1");
+    $outline = $pdf->Outlines->Add("Outline1");
     $outline->Color = RgbColor::Red();
     $outline->Style = OutlineStyle::Bold;
     $outline->Expanded = true;
 
-    $outline1A = new Outline("Outline1A");
+    $outline1A = $outline->Children->Add("Outline1A");
     $outline1A->Color = RgbColor::Blue();
     $outline1A->Style = OutlineStyle::Bold;
     $outline1A->Expanded = true;
-    array_push($outline->Children,$outline1A);
+    
 
-    $outline1 = new Outline("Outline2");
+    $outline1 = $pdf->Outlines->Add("Outline2");
     $outline1->Color = RgbColor::Red();
     $outline1->Style = OutlineStyle::Bold;
     $outline1->Expanded = true;
 
-    $outline2A = new Outline("Outline2A");
+    $outline2A = $outline1->Children->Add("Outline2A");
     $outline2A->Color = RgbColor::Blue();
     $outline2A->Style = OutlineStyle::Bold;
     $outline2A->Expanded = true;
-    array_push($outline1->Children,$outline2A);
+   
 
-    array_push($pdf->Outlines,$outline);
-    array_push($pdf->Outlines,$outline1);
+   
 
     $response = $pdf->Process();
 
@@ -873,69 +862,60 @@ public function PdfInputUsingFilePath_ChildrenFrominputIds_Pdfoutput()
     $input3->Id = "cciti";
     array_push($pdf->Inputs,$input3);
 
-    $outline = new Outline("Outline1");
+    $outline = $pdf->Outlines->Add("Outline1");
     $outline->Color = RgbColor::Red();
     $outline->Style = OutlineStyle::Bold;
     $outline->Expanded = true;
 
-    $outline1A = new Outline("Outline1A");
+    $outline1A = $outline->Children->Add("Outline1A");
     $outline1A->Color = RgbColor::Blue();
     $outline1A->Style = OutlineStyle::Bold;
     $outline1A->Expanded = true;
 
-    $outline1A1 = new Outline("Outline1A1");
+    $outline1A1 = $outline1A->Children->Add("Outline1A1");
     $outline1A1->Color = RgbColor::Green();
     $outline1A1->Style = OutlineStyle::Bold;
     $outline1A1->Expanded = true;
 
-    $outline1A2 = new Outline("Outline1A2");
+    $outline1A2 = $outline1A->Children->Add("Outline1A2");
     $outline1A2->Color = RgbColor::Green();
     $outline1A2->Style = OutlineStyle::Bold;
     $outline1A2->Expanded = true;
     $linkTo = new GoToAction($input3);
     $outline1A2->Action = $linkTo;
 
-    array_push($outline1A->Children,$outline1A1);
-    array_push($outline1A->Children,$outline1A2);
+   
 
-    $outline1B = new Outline("Outline1B");
+    $outline1B = $outline->Children->Add("Outline1B");
     $outline1B->Color = RgbColor::Red();
     $outline1B->Style = OutlineStyle::Bold;
     $outline1B->Expanded = true;
 
-    $outline2 = new Outline("Outline2");
+    $outline2 = $pdf->Outlines->Add("Outline2");
     $outline2->Color = RgbColor::Red();
     $outline2->Style = OutlineStyle::Bold;
     $outline2->Expanded = true;
 
-    $outline2A = new Outline("Outline2A");
+    $outline2A = $outline2->Children->Add("Outline2A");
     $outline2A->Color = RgbColor::Blue();
     $outline2A->Style = OutlineStyle::Bold;
     $outline2A->Expanded = true;
 
-    $outline2A1 = new Outline("Outline2A1");
+    $outline2A1 = $outline2A->Children->Add("Outline2A1");
     $outline2A1->Color = RgbColor::Green();
     $outline2A1->Style = OutlineStyle::Bold;
     $outline2A1->Expanded = true;
 
-    $outline2A2 = new Outline("Outline2A2");
+    $outline2A2 = $outline2A->Children->Add("Outline2A2");
     $outline2A2->Color = RgbColor::Green();
     $outline2A2->Style = OutlineStyle::Bold;
     $outline2A2->Expanded = true;
 
-    $outline2B = new Outline($input1);
+    $outline2B = $outline2->Children->AddPdfOutlines($input1);
 
-    array_push($outline->Children,$outline1A);
-    array_push($outline->Children,$outline1B);
+  
 
-    array_push($outline2A->Children,$outline2A1);
-    array_push($outline2A->Children,$outline2A2);
-
-    array_push($outline2->Children,$outline2A);
-    array_push($outline2->Children,$outline2B);
-
-    array_push($pdf->Outlines,$outline);
-    array_push($pdf->Outlines,$outline2);
+    
 
     $response = $pdf->Process();
 
