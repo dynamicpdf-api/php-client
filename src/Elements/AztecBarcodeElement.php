@@ -1,10 +1,10 @@
 <?php 
 //
-include_once('Element.php');
-include_once('ElementType.php');
-include_once('AztecSymbolSize.php');
-include_once('BarcodeElement.php');
-include_once('Dim2BarcodeElement.php');
+include_once(__DIR__.'./Element.php');
+include_once(__DIR__.'./ElementType.php');
+include_once(__DIR__.'./AztecSymbolSize.php');
+include_once(__DIR__.'./BarcodeElement.php');
+include_once(__DIR__.'./Dim2BarcodeElement.php');
 
 
     /**

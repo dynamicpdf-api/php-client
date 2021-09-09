@@ -1,7 +1,7 @@
 <?php
 
-include_once('FontResource.php');
-include_once('Font.php');
+include_once(__DIR__.'./FontResource.php');
+include_once(__DIR__.'./Font.php');
 
 
      /**

@@ -1,7 +1,7 @@
 <?php
-    include_once('PdfResource.php');
-    include_once('Endpoint.php');
-    include_once('XmlResponse.php');
+    include_once(__DIR__.'./PdfResource.php');
+    include_once(__DIR__.'./Endpoint.php');
+    include_once(__DIR__.'./XmlResponse.php');
 
     class PdfXmp extends Endpoint
     {

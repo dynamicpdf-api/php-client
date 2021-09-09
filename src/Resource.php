@@ -1,6 +1,6 @@
 <?php
 
-include_once('ResourceType.php');
+include_once(__DIR__.'./ResourceType.php');
 
 abstract class Resource
 {

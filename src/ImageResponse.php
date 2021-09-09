@@ -1,6 +1,6 @@
 
 <?php
-include_once('JsonResponse.php');
+include_once(__DIR__.'./JsonResponse.php');
 
     /**
     *

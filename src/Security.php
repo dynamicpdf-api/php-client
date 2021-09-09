@@ -1,7 +1,7 @@
 
 <?php
 
-include_once('SecurityType.php');
+include_once(__DIR__.'./SecurityType.php');
 
 
     /**

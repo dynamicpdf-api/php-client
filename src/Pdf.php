@@ -1,14 +1,14 @@
 <?php
 
 
-require_once('Endpoint.php');
-require_once('PdfInstructions.php');
-require_once('Input.php');
-require_once('PdfInput.php');
-require_once('Resource.php');
-require_once('PdfResource.php');
-require_once('PdfResponse.php');
-require_once('PageInput.php');
+require_once(__DIR__.'./Endpoint.php');
+require_once(__DIR__.'./PdfInstructions.php');
+require_once(__DIR__.'./Input.php');
+require_once(__DIR__.'./PdfInput.php');
+require_once(__DIR__.'./Resource.php');
+require_once(__DIR__.'./PdfResource.php');
+require_once(__DIR__.'./PdfResponse.php');
+require_once(__DIR__.'./PageInput.php');
 //require_once('LayoutDataResource.php');
 
 

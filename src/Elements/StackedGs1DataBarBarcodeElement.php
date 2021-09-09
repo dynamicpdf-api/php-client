@@ -1,7 +1,7 @@
 <?php
     
-    include_once('TextBarcodeElement.php');
-    include_once('ElementType.php');
+    include_once(__DIR__.'./TextBarcodeElement.php');
+    include_once(__DIR__.'./ElementType.php');
 
     /**
     *

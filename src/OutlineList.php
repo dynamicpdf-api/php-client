@@ -1,9 +1,9 @@
 ﻿<?php
 
-include_once('PageZoom.php');
-include_once('GoToAction.php');
-include_once('Outline.php');
-include_once('PdfInput.php');
+include_once(__DIR__.'./PageZoom.php');
+include_once(__DIR__.'./GoToAction.php');
+include_once(__DIR__.'./Outline.php');
+include_once(__DIR__.'./PdfInput.php');
 
     class OutlineList 
     {

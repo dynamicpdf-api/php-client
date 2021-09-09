@@ -1,8 +1,8 @@
 <?php
 
-include_once('BarcodeElement.php');
-include_once('ElementPlacement.php');
-include_once('ValueType.php');
+include_once(__DIR__.'./BarcodeElement.php');
+include_once(__DIR__.'./ElementPlacement.php');
+include_once(__DIR__.'./ValueType.php');
 
 
     /**

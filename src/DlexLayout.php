@@ -1,7 +1,7 @@
 <?php
 {
 
-    include_once('Endpoint.php');
+    include_once(__DIR__.'./Endpoint.php');
 
     class DlexLayout extends Endpoint
     {

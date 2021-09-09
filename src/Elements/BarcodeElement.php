@@ -1,6 +1,6 @@
 <?php
-include_once('Element.php');
-include_once('ElementPlacement.php');
+include_once(__DIR__.'./Element.php');
+include_once(__DIR__.'./ElementPlacement.php');
 
 
     /**

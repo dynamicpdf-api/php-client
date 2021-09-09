@@ -1,9 +1,9 @@
 <?php
-require_once('Input.php');
-require_once('InputType.php');
-require_once('MergeOptions.php');
-require_once('PdfResource.php');
-require_once('MergeOptions.php');
+require_once(__DIR__.'./Input.php');
+require_once(__DIR__.'./InputType.php');
+require_once(__DIR__.'./MergeOptions.php');
+require_once(__DIR__.'./PdfResource.php');
+require_once(__DIR__.'./MergeOptions.php');
 
 
 /**

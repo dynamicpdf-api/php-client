@@ -1,7 +1,7 @@
 
 <?php
-require_once('Resource.php');
-require_once('ResourceType.php');
+require_once(__DIR__.'./Resource.php');
+require_once(__DIR__.'./ResourceType.php');
 
 
     /**

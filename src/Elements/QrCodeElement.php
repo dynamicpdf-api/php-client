@@ -1,6 +1,6 @@
 <?php
-    include_once('Dim2BarcodeElement.php');
-    include_once('ElementType.php');
+    include_once(__DIR__.'./Dim2BarcodeElement.php');
+    include_once(__DIR__.'./ElementType.php');
 
 
     /**

@@ -4,7 +4,7 @@
     {
         //private static Encoding objUnicode = Encoding.BigEndianUnicode;
 
-        private string fullFontName = string.Empty;
+       // private string fullFontName = string.Empty;
 
       
 

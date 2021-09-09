@@ -1,8 +1,8 @@
 <?php
     
-    include_once('Security.php');
-    include_once('FormField.php');
-    include_once('Font.php');
+    include_once(__DIR__.'./Security.php');
+    include_once(__DIR__.'./FormField.php');
+    include_once(__DIR__.'./Font.php');
     
     class PdfInstructions implements JsonSerializable
     {

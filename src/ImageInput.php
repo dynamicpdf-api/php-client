@@ -2,11 +2,11 @@
 
 <?php
 
-include_once('Input.php');
-include_once('ImageResource.php');
-include_once('InputType.php');
-include_once('Align.php');
-include_once('VAlign.php');
+include_once(__DIR__.'./Input.php');
+include_once(__DIR__.'./ImageResource.php');
+include_once(__DIR__.'./InputType.php');
+include_once(__DIR__.'./Align.php');
+include_once(__DIR__.'./VAlign.php');
 
 
      /**

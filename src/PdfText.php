@@ -1,7 +1,7 @@
 <?php
 
-include_once('Endpoint.php');
-include_once('PdfTextResponse.php');
+include_once(__DIR__.'./Endpoint.php');
+include_once(__DIR__.'./PdfTextResponse.php');
 
 
     /**

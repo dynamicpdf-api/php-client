@@ -1,5 +1,5 @@
 <?php
-    include_once('Action.php');
+    include_once(__DIR__.'./Action.php');
 
     /**
     *

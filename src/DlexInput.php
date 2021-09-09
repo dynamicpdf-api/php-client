@@ -1,9 +1,9 @@
 <?php
 
-include_once('Input.php');
-include_once('DlexResource.php');
-include_once('LayoutDataResource.php');
-include_once('InputType.php');
+include_once(__DIR__.'./Input.php');
+include_once(__DIR__.'./DlexResource.php');
+include_once(__DIR__.'./LayoutDataResource.php');
+include_once(__DIR__.'./InputType.php');
 
     /**
     *

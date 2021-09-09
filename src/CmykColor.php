@@ -1,5 +1,5 @@
 <?php
-include_once('Color.php');
+include_once(__DIR__.'./Color.php');
 
 
     /**

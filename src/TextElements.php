@@ -1,6 +1,6 @@
 <?php
      
-     include_once('Element.php');
+     include_once(__DIR__.'./Element.php');
 
      abstract class  TextElements extends Element
     {

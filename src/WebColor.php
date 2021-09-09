@@ -1,6 +1,6 @@
 <?php
 
-include_once('RgbColor.php');
+include_once(__DIR__.'./RgbColor.php');
 
 
     /**
