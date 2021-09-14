@@ -23,7 +23,7 @@ include_once(__DIR__.'./Dim2BarcodeElement.php');
         *
         *  Initializes a new instance of the AztecBarcodeElement class. 
         *
-        * @param  string $value The value of the barcode.
+        * @param  string|array $value The value of the barcode either as string or byte array.
         * @param  string $placement The placement of the barcode on the page.
         * @param  float $xOffset The X coordinate of the barcode.
         * @param  float $yOffset The Y coordinate of the barcode.

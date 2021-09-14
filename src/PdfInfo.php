@@ -18,7 +18,7 @@ include_once(__DIR__.'./PdfInfoResponse.php');
         *
         *  Initializes a new instance of the PdfInfo class. 
         *
-        * @param  PdfResource $resource The resource of type PdfResource.        *
+        * @param  PdfResource $resource The resource of type PdfResource.
         */
         public function __construct(PdfResource $resource)
         {
@@ -31,7 +31,7 @@ include_once(__DIR__.'./PdfInfoResponse.php');
         /**
         *
         * Process the pdf resource to get pdf's information.
-        *
+        * @return PdfInfoResponse Returns collection of PdfInfoResponse.
         */
         public function Process():PdfInfoResponse
         {

@@ -21,7 +21,7 @@ include_once(__DIR__.'./VAlign.php');
         *
         *  Initializes a new instance of the ImageInput class. 
         *
-        * @param  ?ImageResource $resource The ImageResource object to create ImageInput.        *
+        * @param  string|ImageResource $resource The image file path present in cloud resource manager or the ImageResource object to create ImageInput.
         */
         public function __construct( $resource) 
         { 

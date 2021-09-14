@@ -18,8 +18,8 @@ include_once(__DIR__.'./InputType.php');
         * Initializes a new instance of the DlexInput class by posting the DLEX file and the JSON data file from 
         * the client to the API to create the PDF report. 
         *
-        * @param  ?DlexResource $dlexResource The DlexResource, dlex file created as per the desired PDF report layout design.        *
-        * @param  ?LayoutDataResource $layoutData The LayoutDataResource, json data file used to create the PDF report.        *
+        * @param  string|DlexResource $dlex The DLEX file path present in the resource manager or the DlexResource file created as per the desired PDF report layout design.
+        * @param  string|LayoutDataResource $layout The JSON data file path present in the resource manager used to create the PDF report or the LayoutDataResource file used to create the PDF report.
         */
         public function __construct($dlex, $layout) 
         {

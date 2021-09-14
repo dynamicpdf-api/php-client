@@ -18,7 +18,7 @@ class PdfInput extends Input
      *
      * Initializes a new instance of the PdfInput class. 
      *
-     * @param  ?PdfResource $resource The resource of type PdfResource.        *
+     * @param  string|PdfResource $resource The resource path in cloud resource manager or the resource of type PdfResource.
      * @param  ?MergeOptions $options The merge options for the pdf.
      */
     public function __construct($resource, ?MergeOptions $options = null)

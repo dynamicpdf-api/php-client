@@ -12,7 +12,7 @@
         *
         *  Initializes a new instance of the PdfInfo class. 
         *
-        * @param  PdfResource $resource The resource of type PdfResource.        *
+        * @param  PdfResource $resource The resource of type PdfResource.
         */
         public function __construct(PdfResource $resource)
         {
@@ -30,6 +30,7 @@
         *
         * Process the pdf resource to get  pdf's xmp data.
         *
+		* @return XmlResponse Returns collection of XmlResponse.
         */
         public function Process():XmlResponse
         {

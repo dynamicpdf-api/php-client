@@ -14,7 +14,7 @@
         *
         *  Initializes a new instance of the LineStyle class. 
         *
-        * @param  ?array $dashArray The array specifying the line style.
+        * @param  array $dashArray The array specifying the line style.
         * @param  float $dashPhase The phase of the line style.
         */
         public function __construct( $line, float $dashPhase = 0)

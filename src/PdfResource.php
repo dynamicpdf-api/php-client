@@ -16,7 +16,7 @@
         *
         *  Initializes a new instance of the PdfResource class. 
         *
-        * @param  string $filePath The pdf file path.
+        * @param  string|array|stream $filePath The pdf file path or the byte array of the pdf file or the stream of the pdf file.
         * @param  ?string $resourceName The name of the resource.
         */
         public function __construct( $file, ?string $resourceName= null)  

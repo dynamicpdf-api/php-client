@@ -51,6 +51,7 @@ class PageInput extends Input
     *
     * Gets or sets the elements of the page.
     *
+	* @return array Elements of the page.
     */
     public  function GetElements()
     {

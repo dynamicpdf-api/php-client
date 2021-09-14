@@ -97,10 +97,13 @@ include_once(__DIR__.'./OutlineList.php');
         */
         public $Color;
         
-      
-        /// <summary>
-        /// Gets or sets a collection of child outlines.
-        /// </summary>
+              
+		/**
+        *
+        * Gets collection of child outlines.
+        *
+		* @return OutlineList Collection of child outlines.
+        */
         public function GetChildren()
         {
             if ($this->Children != null)

@@ -20,7 +20,7 @@ include_once(__DIR__.'./ElementType.php');
         *
         *  Initializes a new instance of the ImageElement class. 
         *
-        * @param  ?ImageResource $resource ImageResource object containing the image resource.        *
+        * @param  ImageResource|string $resource ImageResource object containing the image resource or the name of the image resource. 
         * @param  ?string $placement The placement of the image on the page.
         * @param  float $xOffset X coordinate of the image.
         * @param  float $yOffset Y coordinate of the image.
@@ -52,6 +52,8 @@ include_once(__DIR__.'./ElementType.php');
         * @param  string $placement The placement of the image on the page.
         * @param  float $xOffset X coordinate of the image.
         * @param  float $yOffset Y coordinate of the image.
+        *
+        * @return ImageElement returns ImageElement object.
         */
         public static function CreateImageElement(string $resourceName, string $placement, float $xOffset = 0, float $yOffset = 0) 
         {

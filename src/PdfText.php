@@ -18,7 +18,7 @@ include_once(__DIR__.'./PdfTextResponse.php');
         *
         *  Initializes a new instance of the PdfText class. 
         *
-        * @param  PdfResource $resource The image resource of type PdfResource.        *
+        * @param  PdfResource $resource The image resource of type PdfResource.
         * @param  int $startPage The start page.
         * @param  int $pageCount The page count.
         */
@@ -53,7 +53,7 @@ include_once(__DIR__.'./PdfTextResponse.php');
         /**
         *
         * Process the pdf resource to get pdf's text.
-        *
+        * @return PdfTextResponse Returns collection of PdfTextResponse.
         */
         public function Process():PdfTextResponse
         {

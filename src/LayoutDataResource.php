@@ -16,18 +16,18 @@ include_once(__DIR__.'./ResourceType.php');
         * Initializes a new instance of the LayoutDataResource class using the layout data object and a resource 
         * name. 
         *
-        * @param  string $layoutData Serializable object data to create PDF report.
+        * @param  object|string $layout Serializable object data to create PDF report or the layout data JSON file path.
         * @param  string $layoutDataResourceName The name for layout data resource.
         */
-        public function __construct( $layoutData= null, string $layoutDataResourceName = null) 
+        public function __construct( $layout= null, string $layoutDataResourceName = null) 
         {
-            if(gettype($layoutData)=="object")
+            if(gettype($layout)=="object")
             {
-                $this->Data =  json_encode($layoutData);
+                $this->Data =  json_encode($layout);
             }
             else
             {
-                $this->Data = Resource::GetFileData($layoutData);
+                $this->Data = Resource::GetFileData($layout);
             }
             if ($layoutDataResourceName == null)
                 $this->LayoutDataResourceName =  md5(uniqid(rand(), true)).".json";

@@ -1,7 +1,7 @@
 <?php
 
 include_once(__DIR__.'./Endpoint.php');
-include_once(__DIR__.'./PdfInfoResponse.php');
+include_once(__DIR__.'./ImageResponse.php');
 
 
     /**
@@ -18,7 +18,7 @@ include_once(__DIR__.'./PdfInfoResponse.php');
         *
         *  Initializes a new instance of the ImageInfo class. 
         *
-        * @param  ImageResource $resource The image resource of type ImageResource.        *
+        * @param  ImageResource $resource The image resource of type ImageResource.
         */
         public function __construct(ImageResource $resource)
         {
@@ -33,8 +33,9 @@ include_once(__DIR__.'./PdfInfoResponse.php');
         *
         * Process the image resource to get image's information.
         *
+        * @return ImageResponse Returns collection of ImageResponse.
         */
-        public function Process():PdfInfoResponse
+        public function Process():ImageResponse
         {
             $client=parent::Init();
 
@@ -64,12 +65,12 @@ include_once(__DIR__.'./PdfInfoResponse.php');
 
             $resCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
 
-            $retObject = new PdfInfoResponse($outData);
+            $retObject = new ImageResponse($outData);
             $retObject->IsSuccessful = false;
             $retObject->StatusCode = $resCode;
             if ($result == true) 
             {
-                if ($retObject !=  null && $retObject->Content!= null ) 
+                if ($retObject !=  null && $retObject->StatusCode== 200 ) 
                 {
                     $retObject->IsSuccessful = true;
                 } 

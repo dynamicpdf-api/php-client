@@ -124,8 +124,10 @@ require_once(__DIR__.'./PageInput.php');
         *
         *  Returns a PdfInput object containing the input pdf. 
         *
-        * @param  PdfResource $resource The resource of type PdfResource.        *
+        * @param  string|PdfResource $resource The resource path in cloud resource manager or the resource of type PdfResource.
         * @param  MergeOptions $options The merge options for the pdf.
+		*
+		* @return PdfInput PdfInput object.
         */
         public function AddPdf( $resource, MergeOptions $options = null)
         {
@@ -145,9 +147,11 @@ require_once(__DIR__.'./PageInput.php');
 
         /**
         *
-        *  Returns an ImageInput object containing the input pdf. 
+        * Returns an ImageInput object containing the input pdf. 
         *
-        * @param  ImageResource $resource The resource of type ImageResource.        *
+        * @param string|ImageResource $resource The resource path in cloud resource manager or the resource of type ImageResource.
+		*
+		* @return ImageInput ImageInput object.
         */
         public function AddImage( $resource)
         {
@@ -172,8 +176,9 @@ require_once(__DIR__.'./PageInput.php');
         *
         *  Returns a DlexInput object containing the input pdf. 
         *
-        * @param  DlexResource $dlexResource The dlex resource of type DlexResource.        *
-        * @param  LayoutDataResource $layoutData The layout data resource of type LayoutDataResource.        *
+        * @param  string|DlexResource $dlexResource The resource path in cloud resource manager or the dlex resource of type DlexResource.
+        * @param  string|LayoutDataResource $layoutData The layout data resource path in cloud resource manager or the layout data resource of type LayoutDataResource.
+		* @return DlexInput DlexInput object.
         */
         public function AddDlex( $dlex,  $layout)
         {
@@ -204,6 +209,7 @@ require_once(__DIR__.'./PageInput.php');
         *
         * @param  ?float $pageWidth The width of the page.
         * @param  ?float $pageHeight The height of the page.
+		* @return PageInput PageInput object.
         */
         public function AddPage(?float $pageWidth =null, ?float $pageHeight= null)
         {
@@ -342,7 +348,11 @@ require_once(__DIR__.'./PageInput.php');
             $jsonText = json_encode($this->instructions, JSON_PRETTY_PRINT);
             return $jsonText;
         }
-       
+        /**
+        * Process to create pdf.
+        * 
+        * @return PdfResponse Returns collection of PdfResponse.
+        */
         public function Process():PdfResponse
         {
             $client=parent::Init();

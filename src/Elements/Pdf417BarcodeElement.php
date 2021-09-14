@@ -20,7 +20,7 @@ include_once(__DIR__.'./Compaction.php');
         *
         *  Initializes a new instance of the Pdf417BarcodeElement class. 
         *
-        * @param  string $value String to be encoded.
+        * @param  string|array $value String to be encoded either as string or byte array.
         * @param  string $placement The placement of the barcode on the page.
         * @param  int $columns Columns of the PDF417 barcode.
         * @param  float $xOffset The X coordinate of the PDF417 barcode.
@@ -32,18 +32,6 @@ include_once(__DIR__.'./Compaction.php');
             $this->Columns=$columns;
         }
 
-
-       /**
-       *
-       *  Initializes a new instance of the Pdf417BarcodeElement class. 
-       *
-       * @param  byte[] $value String to be encoded.
-       * @param  ElementPlacement $placement The placement of the barcode on the page.
-       * @param  int $columns Columns of the PDF417 barcode.
-       * @param  float $xOffset The X coordinate of the PDF417 barcode.
-       * @param  float $yOffset The Y coordinate of the PDF417 barcode.
-       */
-       // public function Pdf417BarcodeElement(byte[] $value, ElementPlacement $placement, int $columns, float $xOffset = 0, float $yOffset= 0): base(value, placement, xOffset, yOffset) { }
 
         
         public  $Type = ElementType::Pdf417Barcode;

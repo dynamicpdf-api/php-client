@@ -20,7 +20,7 @@ include_once(__DIR__.'./PdfInput.php');
         * Adds an Outline object to the outline list.
         * 
         * @param string $text Text of the outline.
-        * @param mixed $input Any of the ImageInput, DlexInput, PdfInput or PageInput objects to create PDF.
+        * @param string|Input $input URL the action launches or any of the ImageInput, DlexInput, PdfInput or PageInput objects to create PDF or null.
         * @param int $pageOffset Page number to navigate.
         * @param PageZoom $pageZoom PageZoom to display the destination.
         * @return Outline The Outline object that is created.

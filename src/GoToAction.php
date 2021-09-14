@@ -20,9 +20,9 @@ include_once(__DIR__.'./PageZoom.php');
         * Initializes a new instance of the GoToAction class using an input to create the PDF, page number, and 
         * a zoom option. 
         *
-        * @param  Input $input Any of the ImageInput, DlexInput, PdfInput or PageInput objects to create PDF.        *
+        * @param  Input $input Any of the ImageInput, DlexInput, PdfInput or PageInput objects to create PDF.
         * @param  int $pageOffset Page number to navigate.
-        * @param  string $pageZoom PageZoom to display the destination.        *
+        * @param  string $pageZoom PageZoom to display the destination.
         */
         public function __construct(Input  $input, int $pageOffset = 0, string $pageZoom = PageZoom::FitPage ) 
         { 

@@ -14,7 +14,7 @@
         * and the JSON data for the PDF report. 
         *
         * @param  string $cloudDlexPath The DLEX file path present in the resource manager.
-        * @param  LayoutDataResource $layoutData The LayoutDataResource, json data file used to create the PDF report.        *
+        * @param  LayoutDataResource $layoutData The LayoutDataResource, json data file used to create the PDF report.
         */
         public function __construct(string $cloudDlexPath, LayoutDataResource $layoutData) 
         {
@@ -37,6 +37,7 @@
         *
         * Process the DLEX and layout data to create PDF report.
         *
+        * @return PdfResponse Returns collection of PdfResponse tasks.
         */
         public function Process():PdfResponse
         {
