@@ -22,6 +22,7 @@ include_once(__DIR__.'./ImageResponse.php');
         */
         public function __construct(ImageResource $resource)
         {
+            parent::__construct();
             $this->resource = $resource;
            
         }
@@ -45,7 +46,7 @@ include_once(__DIR__.'./ImageResponse.php');
 
             $headr[] = 'Content-Type: image/'.substr($this->resource->FileExtension(),1);
             //secho($this->resource->FileExtension());
-            $headr[] = 'Authorization:Bearer '.Endpoint::$DefaultApiKey;
+            $headr[] = 'Authorization:Bearer '.$this->ApiKey;
             curl_setopt($client, CURLOPT_HTTPHEADER,$headr);
             
             curl_setopt($client, CURLOPT_POSTFIELDS,$this->resource->Data);

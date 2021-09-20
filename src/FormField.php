@@ -21,11 +21,7 @@
         public function __construct(string $name, string $value= null)
         {
             $this->Name = $name;
-            if($value!= null)
             $this->Value = $value;
-            else
-            $this->Value = "";
-
         }
 
 

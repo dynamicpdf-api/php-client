@@ -25,9 +25,11 @@ class FormFlattenAndRemoveSamplesTest extends TestCase
 public function PdfInputFilePath_Field_Pdfoutput()
 {
     $Name = "FilePathField";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -80,9 +82,11 @@ public function PdfInputFilePath_Field_Pdfoutput()
 public function PdfInputStream_FormFlattenField_Pdfoutput()
 {
     $Name = "StreamField";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -138,9 +142,11 @@ public function PdfInputStream_FormFlattenField_Pdfoutput()
 public function PdfInputBytes_FormFlattenField_Pdfoutput()
 {
     $Name = "BytesField";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -193,9 +199,11 @@ public function PdfInputBytes_FormFlattenField_Pdfoutput()
 public function PdfInputCloudRoot_FormFlattenField_Pdfoutput()
 {
     $Name = "CloudRootField";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -247,9 +255,11 @@ public function PdfInputCloudRoot_FormFlattenField_Pdfoutput()
 public function PdfInputCloudSubFolder_FormFlattenField_Pdfoutput()
 {
     $Name = "CloudSubFolderField";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -301,9 +311,11 @@ public function PdfInputCloudSubFolder_FormFlattenField_Pdfoutput()
 public function PdfInputFilePath_FormFlattenFieldRemove_Pdfoutput()
 {
     $Name = "FilePathFieldRemove";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -352,9 +364,11 @@ public function PdfInputFilePath_FormFlattenFieldRemove_Pdfoutput()
 public function PdfInputStream_FormFlattenFieldRemove_Pdfoutput()
 {
     $Name = "StreamFieldRemove";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -406,9 +420,11 @@ public function PdfInputStream_FormFlattenFieldRemove_Pdfoutput()
 public function PdfInputBytes_FormFlattenFieldRemove_Pdfoutput()
 {
     $Name = "BytesFieldRemove";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -458,9 +474,11 @@ public function PdfInputBytes_FormFlattenFieldRemove_Pdfoutput()
 public function PdfInputUsingCloudRoot_FormFlattenFieldRemove_Pdfoutput()
 {
     $Name = "CloudRootFieldRemove";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -508,9 +526,11 @@ public function PdfInputUsingCloudRoot_FormFlattenFieldRemove_Pdfoutput()
 public function PdfInputUsingCloudSubFolder_FormFlattenFieldRemove_Pdfoutput()
 {
     $Name = "CloudSubFolderFieldRemove";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -559,9 +579,11 @@ public function PdfInputUsingCloudSubFolder_FormFlattenFieldRemove_Pdfoutput()
 public function PdfInputUsingFilePath_FormFlattenAllFields_Pdfoutput()
 {
     $Name = "FilePathAllFields";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -611,9 +633,11 @@ public function PdfInputUsingFilePath_FormFlattenAllFields_Pdfoutput()
 public function PdfInputUsingStream_FormFlattenAllFields_Pdfoutput()
 {
     $Name = "StreamAllFields";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -665,9 +689,11 @@ public function PdfInputUsingStream_FormFlattenAllFields_Pdfoutput()
 public function PdfInputUsingBytes_FormFlattenAllFields_Pdfoutput()
 {
     $Name = "BytesAllFields";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -717,9 +743,11 @@ public function PdfInputUsingBytes_FormFlattenAllFields_Pdfoutput()
 public function PdfInputUsingCloudRoot_AllFields_Pdfoutput()
 {
     $Name = "CloudRootAllFields";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -768,9 +796,11 @@ public function PdfInputUsingCloudRoot_AllFields_Pdfoutput()
 public function PdfInputUsingCloudSubFolder_AllFields_Pdfoutput()
 {
     $Name = "CloudSubFolderAllFields";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -819,9 +849,11 @@ public function PdfInputUsingCloudSubFolder_AllFields_Pdfoutput()
 public function PdfInputUsingFilePath_RetainSignature_Pdfoutput()
 {
     $Name = "FilePathRetainSignature";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -853,9 +885,11 @@ public function PdfInputUsingFilePath_RetainSignature_Pdfoutput()
 public function PdfInputUsingStream_RetainSignature_Pdfoutput()
 {
     $Name = "StreamRetainSignature";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -890,9 +924,11 @@ public function PdfInputUsingStream_RetainSignature_Pdfoutput()
 public function PdfInputUsingBytes_RetainSignature_Pdfoutput()
 {
     $Name = "BytesRetainSignature";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -924,9 +960,11 @@ public function PdfInputUsingBytes_RetainSignature_Pdfoutput()
 public function PdfInputUsingCloudRoot_RetainSignature_Pdfoutput()
 {
     $Name = "CloudRootRetainSignature";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;

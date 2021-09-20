@@ -1,6 +1,7 @@
 <?php
 
 include_once(__DIR__.'./ResourceType.php');
+include_once(__DIR__.'./EndPointException.php');
 
 abstract class Resource
 {
@@ -22,7 +23,7 @@ abstract class Resource
             }
             else
             {
-                throw new EndpointException("File does not exist.");
+                throw new EndpointException($file." : File does not exist.");
             }
 
         } 

@@ -18,9 +18,10 @@ use PHPUnit\Framework\TestCase;
         /** @test */
         public function ConvertTiffToPDF()
         {
-            $pdf = new Pdf();
             Pdf::$DefaultApiKey = $this->key;
             Pdf::$DefaultBaseUrl = $this->url;
+            $pdf = new Pdf();
+          
 
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;

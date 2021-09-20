@@ -25,9 +25,11 @@ class FormFillingSamplesTest extends TestCase
 public function PdfInputFilePath_PdfOutput()
 {
     $Name = "PdfInputFilePath";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -75,9 +77,11 @@ public function PdfInputFilePath_PdfOutput()
 public function PdfInputStream_PdfOutput()
 {
     $Name = "PdfInputStream";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -128,9 +132,11 @@ public function PdfInputStream_PdfOutput()
 public function PdfInputBytes_PdfOutput()
 {
     $Name = "PdfInputBytes";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -178,9 +184,11 @@ public function PdfInputBytes_PdfOutput()
 public function PdfInputCloudRoot_FormFill_PdfOutput()
 {
     $Name = "PdfInputCloudRoot";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -227,9 +235,11 @@ public function PdfInputCloudRoot_FormFill_PdfOutput()
 public function PdfInputCloudSubFolder_PdfOutput()
 {
     $Name = "PdfInputCloudSubFolder";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -276,9 +286,11 @@ public function PdfInputCloudSubFolder_PdfOutput()
 public function PdfInputFilePath_TextBox_PdfOutput()
 {
     $Name = "TextBox";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -310,9 +322,11 @@ public function PdfInputFilePath_TextBox_PdfOutput()
 public function PdfInputFilePath_ComboBox_PdfOutput()
 {
     $Name = "ComboBox";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -344,9 +358,11 @@ public function PdfInputFilePath_ComboBox_PdfOutput()
 public function PdfInputFilePath_ListBox_PdfOutput()
 {
     $Name = "ListBox";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -378,9 +394,11 @@ public function PdfInputFilePath_ListBox_PdfOutput()
 public function PdfInputFilePath_RadioButton_PdfOutput()
 {
     $Name = "RadioButton";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -412,9 +430,11 @@ public function PdfInputFilePath_RadioButton_PdfOutput()
 public function PdfInputFilePath_CheckBox_PdfOutput()
 {
     $Name = "CheckBox";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -446,9 +466,11 @@ public function PdfInputFilePath_CheckBox_PdfOutput()
 public function PdfInputFilePath_XfaFormFill_Pdfoutput()
 {
     $Name = "Xfa";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -496,9 +518,11 @@ public function PdfInputFilePath_XfaFormFill_Pdfoutput()
 public function PdfInputStream_Xfa_Pdfoutput()
 {
     $Name = "XfaStream";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -550,9 +574,11 @@ public function PdfInputStream_Xfa_Pdfoutput()
 public function PdfInputBytes_Xfa_Pdfoutput()
 {
     $Name = "XfaBytes";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -600,9 +626,11 @@ public function PdfInputBytes_Xfa_Pdfoutput()
 public function PdfInputCloudRoot_Xfa_Pdfoutput()
 {
     $Name = "XfaCloudRoot";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;

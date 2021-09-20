@@ -36,9 +36,10 @@ public function FilePathInputPNE_PdfOutput()
 {
     $Name = "FilePathInputPNE";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -73,9 +74,10 @@ public function StreamInputPNE_PdfOutput()
 {
     $Name = "StreamInputPNE";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -113,9 +115,10 @@ public function BytesInputPNE_PdfOutput()
 {
     $Name = "BytesInputPNE";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -155,9 +158,10 @@ public function CloudRootInputPNE_PdfOutput()
 {
     $Name = "CloudRootInputPNE";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -191,9 +195,10 @@ public function CloudSubFolderInputPNE_PdfOutput()
 {
     $Name = "CloudSubFolderInputPNE";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -227,9 +232,10 @@ public function FilePathInputPNEWithProperties_PdfOutput()
 {
     $Name = "FilePathInputPNEWithProperties";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -273,9 +279,10 @@ public function FilePathInputPNEs_PdfOutput()
 {
     $Name = "FilePathInputPNEs";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -326,9 +333,10 @@ public function StreamInputPNEs_PdfOutput()
 {
     $Name = "StreamInputPNEs";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -388,9 +396,10 @@ public function BytesInputPNEs_PdfOutput()
 {
     $Name = "BytesInputPNEs";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -454,9 +463,10 @@ public function CloudRootInputPNEs_PdfOutput()
 {
     $Name = "CloudRootInputPNEs";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -504,9 +514,10 @@ public function CloudSubFolderInputPNEs_PdfOutput()
 {
     $Name = "CloudSubFolderInputPNEs";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -554,9 +565,10 @@ public function FilePathPNEWithProperties_PdfOutput()
 {
     $Name = "FilePathPNEWithProperties";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -615,9 +627,10 @@ public function FilePathPNEsWithTokens_PdfOutput()
 {
     $Name = "FilePathPNEsWithTokens";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -669,9 +682,10 @@ public function FilePath_PNEsWithTokensAndProperties_PdfOutput()
 {
     $Name = "FilePath_PNEsWithTokensAndProperties";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -739,9 +753,10 @@ public function FilePath_PNEsWithTokens_PdfOutput()
 {
     $Name = "FilePath_PNEsWithTokens";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -807,9 +822,10 @@ public function FilePathPNEsWithTokensAndProperties_PdfOutput()
 {
     $Name = "FilePathPNEsWithTokensAndProperties";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -892,9 +908,10 @@ public function FilePath_PNEWithMultilineAndProperties_PdfOutput()
 {
     $Name = "FilePath_PNEWithMultilineAndProperties";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -935,9 +952,10 @@ public function FilePathPNEAddedToEvenPages_PdfOutput()
 {
     $Name = "FilePathPNEAddedToEvenPages";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -973,9 +991,10 @@ public function Stream_PNEAddedToEvenPages_PdfOutput()
 {
     $Name = "Stream_PNEAddedToEvenPages";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1014,9 +1033,10 @@ public function Bytes_PNEAddedToEvenPages_PdfOutput()
 {
     $Name = "Bytes_PNEAddedToEvenPages";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1056,9 +1076,10 @@ public function CloudRootPNEAddedToEvenPages_PdfOutput()
 {
     $Name = "CloudRootPNEAddedToEvenPages";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1093,9 +1114,10 @@ public function CloudSubFolderPNEAddedToEO_PdfOutput()
 {
     $Name = "CloudSubFolderPNEAddedToEO";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1130,9 +1152,10 @@ public function FilePathPNEWithPropertiesAddedToEO_PdfOutput()
 {
     $Name = "FilePathPNEWithPropertiesAddedToEO";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1173,9 +1196,10 @@ public function FilePathPNEAddedToEO_PdfOutput()
 {
     $Name = "FilePathPNEAddedToEO";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1228,9 +1252,10 @@ public function StreamInputPNEAddedToEO_PdfOutput()
 {
     $Name = "StreamInputPNEAddedToEO";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1292,9 +1317,10 @@ public function BytesInputPNEAddedToEO_PdfOutput()
 {
     $Name = "BytesInputPNEAddedToEO";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1359,9 +1385,10 @@ public function CloudRootPNEAddedToEO_PdfOutput()
 {
     $Name = "CloudRootPNEAddedToEO";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1411,9 +1438,10 @@ public function ColudSubFolderPNEAddedToEO_PdfOutput()
 {
     $Name = "ColudSubFolderPNEAddedToEO";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1463,9 +1491,10 @@ public function FilePathPNEWithPropertiesEO_PdfOutput()
 {
     $Name = "FilePathPNEWithPropertiesEO";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -1526,9 +1555,10 @@ public function PageInputTextAndImageAndPNEWithProperties_PdfOutput()
 {
     $Name = "PageInputTextAndImageAndPNEWithProperties";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;;

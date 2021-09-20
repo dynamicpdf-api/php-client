@@ -22,6 +22,7 @@ include_once(__DIR__.'./PdfInfoResponse.php');
         */
         public function __construct(PdfResource $resource)
         {
+            parent::__construct();
             $this->resource = $resource;
             $this->EndpointName  = "pdf-info";
         }
@@ -42,7 +43,7 @@ include_once(__DIR__.'./PdfInfoResponse.php');
             $headr = array();
 
             $headr[] = 'Content-Type: application/pdf';
-            $headr[] = 'Authorization:Bearer '.Endpoint::$DefaultApiKey;
+            $headr[] = 'Authorization:Bearer '.$this->ApiKey;
             curl_setopt($client, CURLOPT_HTTPHEADER,$headr);
             
 

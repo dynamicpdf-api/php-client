@@ -30,19 +30,14 @@ include_once(__DIR__.'./Font.php');
         {
             $font = new Font();
             $font->Resource = $fontResource;
-
-            if($resourceName != null)
-                $font->ResourceName = $resourceName;
-            else if($fontResource != null)
-                $font->ResourceName = $fontResource->ResourceName;
-            else
-                $font->ResourceName ="";
+            $font->ResourceName = $resourceName;
 
             $font->Name = md5(uniqid(rand(), true));
             return $font;
         }
 
-
+        public  $Name;
+        public  $Resource;
 
         /**
         *
@@ -58,9 +53,7 @@ include_once(__DIR__.'./Font.php');
         *
         */
         public $Subset;
-        public  $Name;
-
-        public  $Resource;
+        
 
         /**
         *

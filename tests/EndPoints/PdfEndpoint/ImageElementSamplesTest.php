@@ -29,9 +29,11 @@ class ImageElementSamplesTest extends TestCase
 public function PdfInputUsingFilePath_WithTemplate_Pdfoutput()
 {
     $Name = "WithTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -66,9 +68,11 @@ public function PdfInputUsingFilePath_WithTemplate_Pdfoutput()
 public function PdfInputUsingFilePath_Templatescale_Pdfoutput()
 {
     $Name = "ScaleWithTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -105,9 +109,11 @@ public function PdfInputUsingFilePath_Templatescale_Pdfoutput()
 public function PdfInputUsingFilePath_TemplateWidth_Pdfoutput()
 {
     $Name = "WidthWithTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -144,9 +150,11 @@ public function PdfInputUsingFilePath_TemplateWidth_Pdfoutput()
 public function PdfInputUsingFilePath_TemplateWithXY_Pdfoutput()
 {
     $Name = "XYWithTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -183,9 +191,11 @@ public function PdfInputUsingFilePath_TemplateWithXY_Pdfoutput()
 public function PdfPageInput_Template_Pdfoutput()
 {
     $Name = "PageTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -219,9 +229,11 @@ public function PdfPageInput_Template_Pdfoutput()
 public function PdfPageInput_Page_Pdfoutput()
 {
     $Name = "PageElement";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -253,9 +265,11 @@ public function PdfPageInput_Page_Pdfoutput()
 public function PdfInputUsingStream_Template_Pdfoutput()
 {
     $Name = "StreamTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -297,9 +311,11 @@ public function PdfInputUsingStream_Template_Pdfoutput()
 public function PdfInputUsingBytes_Template_Pdfoutput()
 {
     $Name = "BytesTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -334,9 +350,11 @@ public function PdfInputUsingBytes_Template_Pdfoutput()
 public function PdfInputUsingCloudRoot_Template_Pdfoutput()
 {
     $Name = "CloudRootTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;

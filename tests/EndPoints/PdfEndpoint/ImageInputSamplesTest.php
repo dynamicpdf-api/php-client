@@ -29,9 +29,11 @@ class ImageInputSamplesTest extends TestCase
 public function FilePathTiffImage_Pdfoutput()
 {
     $Name = "FilePathTiffImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -60,9 +62,11 @@ public function FilePathTiffImage_Pdfoutput()
 public function StreamTiffImage_Pdfoutput()
 {
     $Name = "StreamTiffImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -94,9 +98,11 @@ public function StreamTiffImage_Pdfoutput()
 public function BytesTiffImage_Pdfoutput()
 {
     $Name = "BytesTiffImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -125,9 +131,11 @@ public function BytesTiffImage_Pdfoutput()
 public function ImageInputUsingCloudRoot_TiffImageAddedToInput_Pdfoutput()
 {
    $Name = "CloudRootTiffImage";
-    $pdf = new Pdf();
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
+
+   Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url; 
+   $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -155,9 +163,11 @@ public function ImageInputUsingCloudRoot_TiffImageAddedToInput_Pdfoutput()
 public function FilePathTiffImageWithProperties_Pdfoutput()
 {
     $Name = "FilePathTiffImageWithProperties";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -190,9 +200,11 @@ public function FilePathTiffImageWithProperties_Pdfoutput()
 public function FilePathMulitiTiffImage_Pdfoutput()
 {
     $Name = "FilePathMulitiTiffImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -221,9 +233,11 @@ public function FilePathMulitiTiffImage_Pdfoutput()
 public function StreamMulitiTiffImage_Pdfoutput()
 {
     $Name = "StreamMulitiTiffImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -254,9 +268,11 @@ public function StreamMulitiTiffImage_Pdfoutput()
 public function BytesMulitiTiffImage_Pdfoutput()
 {
     $Name = "BytesMulitiTiffImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -286,9 +302,11 @@ public function BytesMulitiTiffImage_Pdfoutput()
 public function FilePathMulitiTiffImageWithProperties_Pdfoutput()
 {
     $Name = "FilePathMulitiTiffImageWithProperties";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -321,9 +339,11 @@ public function FilePathMulitiTiffImageWithProperties_Pdfoutput()
 public function FilePathPngImage_Pdfoutput()
 {
     $Name = "FilePathPngImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -353,9 +373,11 @@ public function FilePathPngImage_Pdfoutput()
 public function StreamPngImage_Pdfoutput()
 {
     $Name = "StreamPngImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -388,9 +410,11 @@ public function StreamPngImage_Pdfoutput()
 public function BytesPngImage_Pdfoutput()
 {
     $Name = "BytesPngImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -420,9 +444,11 @@ public function BytesPngImage_Pdfoutput()
 public function CloudRootPngImage_Pdfoutput()
 {
     $Name = "CloudRootPngImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -451,9 +477,11 @@ public function CloudRootPngImage_Pdfoutput()
 public function CloudSubFolderPngImage_Pdfoutput()
 {
    $Name = "CloudSubFolderPngImage";
-    $pdf = new Pdf();
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
+
+   Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url; 
+   $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -482,9 +510,11 @@ public function CloudSubFolderPngImage_Pdfoutput()
 public function FilePathPngImageWithProperties_Pdfoutput()
 {
     $Name = "FilePathPngImageWithProperties";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -517,9 +547,11 @@ public function FilePathPngImageWithProperties_Pdfoutput()
 public function FilePathGifImage_Pdfouput()
 {
     $Name = "FilePathGifImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -549,9 +581,11 @@ public function FilePathGifImage_Pdfouput()
 public function StreamGifImage_Pdfouput()
 {
     $Name = "StreamGifImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -587,9 +621,11 @@ public function StreamGifImage_Pdfouput()
 public function BytesGifImage_Pdfouput()
 {
     $Name = "BytesGifImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -618,9 +654,11 @@ public function BytesGifImage_Pdfouput()
 public function CloudRootGifImage_Pdfouput()
 {
    $Name = "CloudRootGifImage";
-    $pdf = new Pdf();
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
+
+   Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url; 
+   $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -649,9 +687,11 @@ public function CloudRootGifImage_Pdfouput()
 public function CloudSubFolderGifImage_Pdfouput()
 {
     $Name = "CloudSubFolderGifImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -684,9 +724,11 @@ public function CloudSubFolderGifImage_Pdfouput()
 public function FilePathGifImageWithProperties_Pdfouput()
 {
     $Name = "FilePathGifImageWithProperties";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -719,9 +761,11 @@ public function FilePathGifImageWithProperties_Pdfouput()
 public function FilePathJpegImage_Pdfoutput()
 {
     $Name = "FilePathJpegImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -750,9 +794,11 @@ public function FilePathJpegImage_Pdfoutput()
 public function StreamJpegImage_Pdfoutput()
 {
     $Name = "StreamJpegImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -784,9 +830,11 @@ public function StreamJpegImage_Pdfoutput()
 public function BytesJpegImage_Pdfoutput()
 {
     $Name = "BytesJpegImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -816,9 +864,11 @@ public function BytesJpegImage_Pdfoutput()
 public function CloudRootJpegImage_Pdfoutput()
 {
    $Name = "CloudRootJpegImage";
-    $pdf = new Pdf();
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
+
+   Pdf::$DefaultApiKey = $this->key;
+    Pdf::$DefaultBaseUrl = $this->url; 
+   $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -847,9 +897,11 @@ public function CloudRootJpegImage_Pdfoutput()
 public function CloudSubFolderJpegImage_Pdfoutput()
 {
     $Name = "CloudSubFolderJpegImage";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -878,9 +930,11 @@ public function CloudSubFolderJpegImage_Pdfoutput()
 public function FilePathJpegImageWithProperties_Pdfoutput()
 {
     $Name = "FilePathJpegImageWithProperties";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -912,9 +966,11 @@ public function FilePathJpegImageWithProperties_Pdfoutput()
 public function FilePathImageWithPropertiesAddedToTemplate_Pdfoutput()
 {
     $Name = "ImageWithPropertiesAddedToTemplate";
-    $pdf = new Pdf();
+
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -955,9 +1011,11 @@ public function FilePathImageWithPropertiesAddedToTemplate_Pdfoutput()
 public function FilePathTiffImage_AddImage_Pdfoutput()
 {
     $Name = "FilePathTiffImage_AddImage";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;

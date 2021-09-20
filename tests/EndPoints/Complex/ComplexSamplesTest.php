@@ -66,11 +66,12 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "PageAndPdf";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+          
 
             $pageInput = new PageInput();
             $element = new TextElement("First Page", ElementPlacement::TopLeft);
@@ -97,12 +98,13 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "SamePageInput";
 
-            $pdf = new Pdf();
-            $pdf->Author = $this->Author;
-            $pdf->Title = $this->Title;
             Pdf::$DefaultApiKey = $this->key;
             Pdf::$DefaultBaseUrl = $this->url;
 
+            $pdf = new Pdf();
+            $pdf->Author = $this->Author;
+            $pdf->Title = $this->Title;
+            
             $pageInput = new PageInput();
             $element = new TextElement("Hello World", ElementPlacement::TopLeft);
 
@@ -126,11 +128,13 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "PageInputWithSameFont";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
+
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+          
 
             $pageInput = new PageInput();
             $element = new TextElement("Hello World", ElementPlacement::TopLeft);
@@ -164,12 +168,13 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "SamePageInputWithImage";
 
-            $pdf = new Pdf();
-            $pdf->Author = $this->Author;
-            $pdf->Title = $this->Title;
             Pdf::$DefaultApiKey = $this->key;
             Pdf::$DefaultBaseUrl = $this->url;
 
+            $pdf = new Pdf();
+            $pdf->Author = $this->Author;
+            $pdf->Title = $this->Title;
+           
             $pageInput = new PageInput();
             $imageResource = new ImageResource($this->inputpath. "Image1.jpg");
             $imageElement = new ImageElement($imageResource, ElementPlacement::TopLeft);
@@ -193,11 +198,13 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "MergeSamePdfInput";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
+
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+           
 
             $resource = new PdfResource($this->inputpath. "DocumentA100.pdf");
             $pdfInput = new PdfInput($resource);
@@ -220,11 +227,13 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "MergeSamePdfAndAppendPage";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
+
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+          
 
             $pageInput = new PageInput();
             $element = new TextElement("First Page", ElementPlacement::TopLeft);
@@ -268,12 +277,13 @@ use PHPUnit\Framework\TestCase;
         public function ImageInput_AddSameImageInput_PdfOutput()
         {
             $Name = "AddSameImageInput";
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
 
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+           
 
             $resource = new ImageResource($this->inputpath. "Image1.jpg");
             $imageInput = new ImageInput($resource);
@@ -296,11 +306,12 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "AddSameImages";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $pageInput = new PageInput();
             $element = new TextElement("Add Same Image Resource", ElementPlacement::TopLeft);
@@ -351,11 +362,12 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "AddSameDlexInput";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $img = new ImageResource($this->inputpath. "Northwind Logo.gif", "northwind logo.gif");
             array_push($pdf->Resources,$img);
@@ -383,11 +395,12 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "AddSameDlex";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $pageInput = new PageInput();
             $element = new TextElement("Hello World", ElementPlacement::TopLeft);
@@ -428,11 +441,12 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "ElemetsWithSecurity";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $aes128Security = new Aes128Security("", "owner");
             $aes128Security->AllowPrint = false;
@@ -480,11 +494,12 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "DifferentElemnts";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $pageInput = new PageInput();
             $textElement = new TextElement("Hello World", ElementPlacement::TopLeft);
@@ -548,11 +563,12 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "DifferentInputs";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $pdfInput = new PdfInput("DocumentA100.pdf");
             $mergeOptions = new MergeOptions();
@@ -592,11 +608,12 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "DifferentBarcode";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $pageInput = new PageInput();
             $textElement = new TextElement("1D Barcodes", ElementPlacement::TopCenter, 0, -20);
@@ -705,11 +722,12 @@ use PHPUnit\Framework\TestCase;
         {
             $Name = "ElementsWithOutlines";
 
+            Pdf::$DefaultApiKey = $this->key;
+            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $pageInput = new PageInput();
             $pageInput->Id = "page1";

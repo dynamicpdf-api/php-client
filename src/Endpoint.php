@@ -11,17 +11,15 @@ abstract class Endpoint
 {
     protected  $enableLogging = false;
   
-    //private array $resources;
-
+   
     function __construct()
     {
-        
+        $this->ApiKey= Endpoint::$DefaultApiKey;
     }
 
-    //internal Endpoint(List<EndPointResource> resources)
-    //{
-    //    this.resources = resources;
-    //}
+    public $Client;
+
+    public   $EndpointName;
 
 
     /**
@@ -45,7 +43,7 @@ abstract class Endpoint
     * Gets or sets base url for the api.
     *
     */
-    public   $BaseUrl="";
+    public   $BaseUrl= "https://api.dynamicpdf.com/v1.0";
 
 
     /**
@@ -53,13 +51,14 @@ abstract class Endpoint
     * Gets or sets api key.
     *
     */
-    public   $ApiKey="";
+    public   $ApiKey;
 
 
          public function  Init()
         {
-            $authorization = Endpoint::$DefaultApiKey;
+            $authorization = $this->ApiKey;
             $headr = array();
+           
             $headr[] = 'Authorization:Bearer '.$authorization;
             $this->Client = curl_init( Endpoint::$DefaultBaseUrl."/".$this->EndpointName);
             curl_setopt($this->Client, CURLOPT_HTTPHEADER, $headr );
@@ -73,13 +72,6 @@ abstract class Endpoint
             return $this->Client;
         }
 
-    public   $EndpointName;
-
-
-    public  $Resources=array();
-
- 
-
-    public $Client;
+  
 }
 ?>

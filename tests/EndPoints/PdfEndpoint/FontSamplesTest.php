@@ -28,10 +28,10 @@ public function PageInput_CoreFont_Pdfoutput()
 {
     $Name = "CoreFont";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultApiKey = "DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -62,9 +62,10 @@ public function PageInput_CoreFont_Pdfoutput()
 public function PageInput_CoreFonts_Pdfoutput()
 {
     $Name = "CoreFonts";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -105,9 +106,10 @@ public function PageInput_CoreFonts_Pdfoutput()
 public function PageInput_TtfFont_Pdfoutput()
 {
     $Name = "TtfFont";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -142,9 +144,10 @@ public function PageInput_TtfFont_Pdfoutput()
 public function PageInput_OtfFont_Pdfoutput()
 {
     $Name = "OtfFont";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -179,9 +182,10 @@ public function PageInput_OtfFont_Pdfoutput()
 public function PageInput_MultipleFonts_Pdfoutput()
 {
     $Name = "MultipleFonts";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -220,9 +224,10 @@ public function PageInput_MultipleFonts_Pdfoutput()
 public function PageInput_Embed_Pdfoutput()
 {
     $Name = "Embed";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -256,9 +261,10 @@ public function PageInput_Embed_Pdfoutput()
 public function PageInput_Subset_Pdfoutput()
 {
     $Name = "Subset";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -294,9 +300,10 @@ public function PageInput_Subset_Pdfoutput()
 public function PdfInput_WithTemplate_Pdfoutput()
 {
     $Name = "WithTemplate";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -333,9 +340,10 @@ public function PdfInput_WithTemplate_Pdfoutput()
 public function PageInput_CloudRoot_Pdfoutput()
 {
 $Name = "CloudRoot";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -370,9 +378,10 @@ $Name = "CloudRoot";
 public function PageInput_CloudSubFolder_Pdfoutput()
 {
     $Name = "CloudSubFolder";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -407,9 +416,10 @@ public function PdfInput_CloudRootWithTemplate_Pdfoutput()
 {
     $Name = "CloudRootWithTemplate";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -448,9 +458,10 @@ public function PdfInput_CloudSubFolderWithTemplate_Pdfoutput()
 {
     $Name = "CloudSubFolderWithTemplate";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -488,9 +499,10 @@ public function PdfInput_CloudSubFolderWithTemplate_Pdfoutput()
 public function PageInput_EmbedSubset_Pdfoutput()
 {
     $Name = "EmbedSubset";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -526,9 +538,10 @@ public function PageInput_EmbedSubset_Pdfoutput()
 public function PageInput_SubsetEmbed_Pdfoutput()
 {
     $Name = "SubsetEmbed";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -565,9 +578,10 @@ public function PageInput_SubsetEmbed_Pdfoutput()
 public function PageInput_CoreFontsHelvetica_Pdfoutput()
 {
     $Name = "CoreFontsHelvetica";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -611,9 +625,10 @@ public function PageInput_CoreFontsCourier_Pdfoutput()
 {
     $Name = "CoreFontsCourier";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -658,9 +673,10 @@ public function PageInput_CoreFontsTimesRoman_Pdfoutput()
 {
     $Name = "CoreFontsTimesRoman";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;

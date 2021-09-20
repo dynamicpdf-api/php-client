@@ -28,9 +28,10 @@ public function SimpleDlex_Pdfoutput()
 {
     $Name = "SimpleDlex_Pdfoutput";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -60,9 +61,10 @@ public function SimpleDlex_Cloud_Pdfoutput()
 {
     $Name = "SimpleDlex_Cloud";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -91,9 +93,10 @@ public function SimpleDlex_CloudData_Pdfoutput()
 {
     $Name = "SimpleDlex_CloudData";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -120,9 +123,10 @@ public function SimpleDlex_CloudData_Pdfoutput()
 public function Template_Pdfoutput()
 {
     $Name = "Template_Pdfoutput";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -158,9 +162,10 @@ public function Template_Pdfoutput()
 public function PagenumberingLabelWithTemplate_Pdfoutput()
 {
     $Name = "PagenumberingLabelWithTemplate";
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -197,9 +202,10 @@ public function SimpleDlex_AddDlex_Pdfoutput()
 {
     $Name = "SimpleDlex_AddDlex";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -228,9 +234,10 @@ public function SimpleDlex_AddDlexCloudResource_Pdfoutput()
 {
     $Name = "SimpleDlex_AddDlexCloud";
 
-    $pdf = new Pdf();
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+
+    $pdf = new Pdf();
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;

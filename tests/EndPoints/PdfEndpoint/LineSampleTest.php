@@ -30,9 +30,11 @@ class LineSampleTest extends TestCase
 public function PageInput_Pdfoutput()
 {
     $Name = "PageInput";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -63,9 +65,11 @@ public function PageInput_Pdfoutput()
 public function PageInputLineStyle_Pdfoutput()
 {
     $Name = "PageInputLineStyle";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -97,9 +101,11 @@ public function PageInputLineStyle_Pdfoutput()
 public function PageInputXYOffset_Pdfoutput()
 {
     $Name = "PageInputWithXYOffset";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -133,9 +139,11 @@ public function PageInputXYOffset_Pdfoutput()
 public function PageInputColor_Pdfoutput()
 {
     $Name = "PageInputWithColor";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -168,9 +176,11 @@ public function PageInputColor_Pdfoutput()
 public function PageInputProperties_Pdfoutput()
 {
     $Name = "PageInputWithProperties";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -206,9 +216,11 @@ public function PageInputProperties_Pdfoutput()
 public function PdfPageInputPropertiesWithTemplate_Pdfoutput()
 {
     $Name = "PageInputPropertiesWithTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -246,9 +258,11 @@ public function PdfPageInputPropertiesWithTemplate_Pdfoutput()
 public function PdfInputUsingFilePath_Template_Pdfoutput()
 {
     $Name = "PdfInputPropertiesWithTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -288,9 +302,11 @@ public function PdfInputUsingFilePath_Template_Pdfoutput()
 public function PdfInputUsingStream_Template_Pdfoutput()
 {
     $Name = "PdfInputStreamPropertiesWithTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;

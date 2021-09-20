@@ -24,6 +24,7 @@ include_once(__DIR__.'./PdfTextResponse.php');
         */
         public function __construct(PdfResource $resource, int $startPage = 1, int $pageCount = 0)
         {
+            parent::__construct();
             $this->resource = $resource;
             $this->StartPage = $startPage;
             $this->PageCount = $pageCount;
@@ -64,7 +65,7 @@ include_once(__DIR__.'./PdfTextResponse.php');
             $headr = array();
 
             $headr[] = 'Content-Type: application/pdf';
-            $headr[] = 'Authorization:Bearer '.Endpoint::$DefaultApiKey;
+            $headr[] = 'Authorization:Bearer '.$this->ApiKey;
             curl_setopt($client, CURLOPT_HTTPHEADER,$headr);
           
 
@@ -90,7 +91,7 @@ include_once(__DIR__.'./PdfTextResponse.php');
             $retObject->StatusCode = $resCode;
             if ($result == true) 
             {
-                if ($retObject !=  null && $retObject->Content!= null && count($retObject->Content)>0) 
+                if ($retObject !=  null &&  $retObject->StatusCode== 200) 
                 {
                     $retObject->IsSuccessful = true;
                 } 

@@ -28,10 +28,12 @@ public function PdfPageInput_NamedColorSample_PdfOutput()
 {
     $Name = "NamedColor";
 
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
 
+    $pdf = new Pdf();
+    
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
@@ -64,10 +66,12 @@ public function PdfPageInput_NamedColorSample_PdfOutput()
 public function PdfPageInput_RGBColorSample_PdfOutput()
 {
     $Name = "RGBColor";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
 
+    $pdf = new Pdf();
+    
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
@@ -98,10 +102,12 @@ public function PdfPageInput_RGBColorSample_PdfOutput()
 public function PdfPageInput_CMYKColorSample_PdfOutput()
 {
     $Name = "CMYKColor";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
 
+    $pdf = new Pdf();
+    
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 
@@ -132,10 +138,12 @@ public function PdfPageInput_CMYKColorSample_PdfOutput()
 public function PdfPageInput_GrayScaleColorSample_PdfOutput()
 {
     $Name = "GrayScale";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
 
+    $pdf = new Pdf();
+    
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
 

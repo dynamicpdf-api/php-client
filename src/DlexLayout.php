@@ -18,6 +18,7 @@
         */
         public function __construct(string $cloudDlexPath, LayoutDataResource $layoutData) 
         {
+            parent::__construct();
             $this->DlexPath = $cloudDlexPath;
             $this->resource = $layoutData;
         }
@@ -91,7 +92,7 @@
             $contentLength = strlen($content);
 
             curl_setopt($client, CURLOPT_HTTPHEADER, 
-                        array('Authorization:Bearer '.Endpoint::$DefaultApiKey,
+                        array('Authorization:Bearer '.$this->ApiKey,
                             'Content-Length: ' . $contentLength,
                             'Expect: 100-continue',
                             'Content-Type: ' . $contentType  ));

@@ -30,9 +30,11 @@ class RectangleSamplesTest extends TestCase
 public function PageInput_Pdfoutput()
 {
     $Name = "PageInput";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -62,9 +64,11 @@ public function PageInput_Pdfoutput()
 public function PageInputPlacement_Pdfoutput()
 {
     $Name = "PageInputPlacement";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -95,9 +99,11 @@ public function PageInputPlacement_Pdfoutput()
 public function PageInputXYOffset_Pdfoutput()
 {
     $Name = "PageInputXYOffset";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -129,9 +135,11 @@ public function PageInputXYOffset_Pdfoutput()
 public function PageInputCornerRadius_Pdfoutput()
 {
     $Name = "PageInputCornerRadius";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -162,9 +170,11 @@ public function PageInputCornerRadius_Pdfoutput()
 public function PageInputtBorderWidth_Pdfoutput()
 {
     $Name = "PageInputtBorderWidth";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -195,9 +205,11 @@ public function PageInputtBorderWidth_Pdfoutput()
 public function PageInputBorderStyle_Pdfoutput()
 {
     $Name = "PageInputBorderStyle";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -228,9 +240,11 @@ public function PageInputBorderStyle_Pdfoutput()
 public function PageInputBorderStyleArray_Pdfoutput()
 {
     $Name = "PageInputBorderStyleArray";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -261,9 +275,11 @@ public function PageInputBorderStyleArray_Pdfoutput()
 public function PageInputBorderColor_Pdfoutput()
 {
     $Name = "PageInputBorderColor";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -294,9 +310,11 @@ public function PageInputBorderColor_Pdfoutput()
 public function PageInputFillColor_Pdfoutput()
 {
     $Name = "PageInputFillColor";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -327,9 +345,11 @@ public function PageInputFillColor_Pdfoutput()
 public function FilePath_PdfOutput()
 {
     $Name = "FilePath";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -362,9 +382,11 @@ public function FilePath_PdfOutput()
 public function Bytes_PdfOutput()
 {
     $Name = "FilePath";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -397,9 +419,11 @@ public function Bytes_PdfOutput()
 public function Stream_PdfOutput()
 {
     $Name = "Stream";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -435,9 +459,11 @@ public function Stream_PdfOutput()
 public function CloudRoot_PdfOutput()
 {
     $Name = "CloudRoot";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -469,9 +495,11 @@ public function CloudRoot_PdfOutput()
 public function CloudSubFolder_PdfOutput()
 {
     $Name = "CloudSubFolder";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -503,9 +531,11 @@ public function CloudSubFolder_PdfOutput()
 public function FilePathEvenOddTemplate_PdfOutput()
 {
     $Name = "FilePathEvenOddTemplateEven";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;

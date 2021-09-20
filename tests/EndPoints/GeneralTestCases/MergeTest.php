@@ -18,9 +18,10 @@
         /** @test */
         public function MergePdfs()
         {
-            $pdf = new Pdf();
             Pdf::$DefaultApiKey = $this->key;
             Pdf::$DefaultBaseUrl = $this->url;
+            $pdf = new Pdf();
+           
 
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;

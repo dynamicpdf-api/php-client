@@ -9,6 +9,7 @@ require_once(__DIR__.'./Resource.php');
 require_once(__DIR__.'./PdfResource.php');
 require_once(__DIR__.'./PdfResponse.php');
 require_once(__DIR__.'./PageInput.php');
+require_once(__DIR__.'./OutlineList.php');
 //require_once('LayoutDataResource.php');
 
 
@@ -33,6 +34,7 @@ require_once(__DIR__.'./PageInput.php');
         */
         public function __construct() 
         {
+            parent::__construct();
             $this->Outlines = new OutlineList();
             $this->instructions = new PdfInstructions();
         }
@@ -490,7 +492,7 @@ require_once(__DIR__.'./PageInput.php');
             $contentLength = strlen($content);
 
             curl_setopt($client, CURLOPT_HTTPHEADER, 
-                        array('Authorization:Bearer '.Endpoint::$DefaultApiKey,
+                        array('Authorization:Bearer '.$this->ApiKey,
                             'Content-Length: ' . $contentLength,
                             'Expect: 100-continue',
                             'Content-Type: ' . $contentType  ));

@@ -26,9 +26,11 @@ class PageInputSamplesTest extends TestCase
 public function PageInput_TextElement_Pdfoutput()
 {
     $Name = "TextElement";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -58,9 +60,11 @@ public function PageInput_TextElement_Pdfoutput()
 public function PageInput_TextElementAddedToPageAndTemplate_Pdfoutput()
 {
     $Name = "TextElementAddedToPageAndTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -97,9 +101,11 @@ public function PageInput_TextElementAddedToPageAndTemplate_Pdfoutput()
 public function PageInput_AddPage_Pdfoutput()
 {
     $Name = "PageInput_AddPage";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -130,9 +136,11 @@ public function PageInput_AddPage_Pdfoutput()
 public function PageInput_AddPageTemplate_Pdfoutput()
 {
     $Name = "PageInput_AddPageTemplate";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -165,9 +173,11 @@ public function PageInput_AddPageTemplate_Pdfoutput()
 public function PageInput_AddPageParameters_Pdfoutput()
 {
     $Name = "AddPageParameters";
-    $pdf = new Pdf();
+    
     Pdf::$DefaultApiKey = $this->key;
     Pdf::$DefaultBaseUrl = $this->url;
+    $pdf = new Pdf();
+    
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
