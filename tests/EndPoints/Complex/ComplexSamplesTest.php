@@ -48,17 +48,17 @@ require_once(__DIR__.'/../../../src/Elements/Gs1DataBarType.php');
 require_once(__DIR__.'/../../../src/Elements/DataMatrixSymbolSize.php');  
 require_once(__DIR__.'/../../../src/Elements/DataMatrixEncodingType.php');
 require_once(__DIR__.'/../../../src/Elements/DataMatrixFunctionCharacter.php');
-          
+require_once(__DIR__.'/../KeyAndUrl.php');    
 use PHPUnit\Framework\TestCase;
 
     class ComplexSamplesTest   extends TestCase
     {
-        private $inputpath =  __DIR__."./../../Resources/";
-        private $outputPath =  __DIR__."./../Output/";
-        private $key="DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
-        private $url = "https://localhost:44397/v1.0"; 
-        private $Author= "test";
-        private $Title ="test";
+        private $inputpath = KeyAndUrl::Inputpath;
+        private $outputPath = KeyAndUrl::OutPutPath;
+        private $key=KeyAndUrl::Key;
+        private $url = KeyAndUrl::Url; 
+        private $Author= KeyAndUrl::Author;
+        private $Title =KeyAndUrl::Title;
 
       
         /** @test */
@@ -163,7 +163,7 @@ use PHPUnit\Framework\TestCase;
             $this->assertEquals($response->IsSuccessful,true);
         }
 
-        /** @test */
+        
         public function PageInput_SamePageInputWithImage_PdfOutput()
         {
             $Name = "SamePageInputWithImage";

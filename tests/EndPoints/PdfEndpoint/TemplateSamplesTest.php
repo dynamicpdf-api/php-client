@@ -15,12 +15,12 @@ use PHPUnit\Framework\TestCase;
 
 class TemplateSamplesTest extends TestCase
  {
-    private $inputpath =  __DIR__."./../../Resources/";
-    private $outPutPath =  __DIR__."./../Output/";
-    private $key="DP.04XCRJfZOpktQAEOlT7o4LmzhsvGDcQcpnpSKI6bwB/ZRZtuMDV42WyS";
-    private $url = "https://localhost:44397/v1.0"; 
-    private $Author= "test";
-    private $Title ="test";
+    private $inputpath = KeyAndUrl::Inputpath;
+    private $outputPath = KeyAndUrl::OutPutPath;
+    private $key=KeyAndUrl::Key;
+    private $url = KeyAndUrl::Url; 
+    private $Author= KeyAndUrl::Author;
+    private $Title =KeyAndUrl::Title;
 
 
 /** @test */
