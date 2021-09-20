@@ -8,14 +8,14 @@ require_once(__DIR__.'/../../../src/Elements/ElementPlacement.php');
 require_once(__DIR__.'/../../../src/Template.php');
 require_once(__DIR__.'/../../../src/Elements/LineElement.php');
 require_once(__DIR__.'/../../../src/LineStyle.php');
-
+require_once(__DIR__.'/../KeyAndUrl.php'); 
 
 use PHPUnit\Framework\TestCase;
 
 class PageInputSamplesTest extends TestCase
  {
     private $inputpath = KeyAndUrl::Inputpath;
-    private $outputPath = KeyAndUrl::OutPutPath;
+    private $outPutPath = KeyAndUrl::OutPutPath;
     private $key=KeyAndUrl::Key;
     private $url = KeyAndUrl::Url; 
     private $Author= KeyAndUrl::Author;

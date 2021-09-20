@@ -10,14 +10,14 @@ require_once(__DIR__.'/../../../src/MergeOptions.php');
 require_once(__DIR__.'/../../../src/Template.php');
 require_once(__DIR__.'/../../../src/Elements/TextElement.php');
 require_once(__DIR__.'/../../../src/Elements/ElementPlacement.php');
-
+require_once(__DIR__.'/../KeyAndUrl.php'); 
 
 use PHPUnit\Framework\TestCase;
 
 class PdfInputSamplesTest extends TestCase
  {
     private $inputpath = KeyAndUrl::Inputpath;
-    private $outputPath = KeyAndUrl::OutPutPath;
+    private $outPutPath = KeyAndUrl::OutPutPath;
     private $key=KeyAndUrl::Key;
     private $url = KeyAndUrl::Url; 
     private $Author= KeyAndUrl::Author;

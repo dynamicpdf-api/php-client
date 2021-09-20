@@ -4,6 +4,7 @@ require_once(__DIR__.'./../../../src/Pdf.php');
 require_once(__DIR__.'./../../../src/ImageResource.php');
 require_once(__DIR__.'./../../../src/ImageInfo.php');
 require_once(__DIR__.'./../../../src/PdfInfoResponse.php');
+require_once(__DIR__.'/../KeyAndUrl.php'); 
 use PHPUnit\Framework\TestCase;
 
     class ImageInfoSamplesTest extends TestCase

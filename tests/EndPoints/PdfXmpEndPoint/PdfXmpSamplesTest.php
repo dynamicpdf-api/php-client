@@ -4,6 +4,7 @@ require_once(__DIR__.'./../../../src/Pdf.php');
 require_once(__DIR__.'./../../../src/PdfResource.php');
 require_once(__DIR__.'./../../../src/PdfXmp.php');
 require_once(__DIR__.'./../../../src/XmlResponse.php');
+require_once(__DIR__.'/../KeyAndUrl.php'); 
 
 use PHPUnit\Framework\TestCase;
 

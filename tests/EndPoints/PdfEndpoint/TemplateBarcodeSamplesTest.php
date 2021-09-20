@@ -35,14 +35,14 @@ require_once(__DIR__.'/../../../src/Elements/Iata25BarcodeElement.php');
 require_once(__DIR__.'/../../../src/Font.php');
 require_once(__DIR__.'/../../../src/Elements/MsiBarcodeElement.php');
 require_once(__DIR__.'/../../../src/Elements/MsiBarcodeCheckDigitMode.php');
-
+require_once(__DIR__.'/../KeyAndUrl.php'); 
 
 use PHPUnit\Framework\TestCase;
 
 class TemplateBarcodeSamplesTest extends TestCase
  {
     private $inputpath = KeyAndUrl::Inputpath;
-    private $outputPath = KeyAndUrl::OutPutPath;
+    private $outPutPath = KeyAndUrl::OutPutPath;
     private $key=KeyAndUrl::Key;
     private $url = KeyAndUrl::Url; 
     private $Author= KeyAndUrl::Author;

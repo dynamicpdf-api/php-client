@@ -5,7 +5,7 @@ require_once(__DIR__.'/../../../src/DlexResource.php');
 require_once(__DIR__.'/../../../src/LayoutDataResource.php');
 require_once(__DIR__.'/../../../src/DlexLayout.php');
 require_once(__DIR__.'/InvoiceData.php');
-
+require_once(__DIR__.'/../KeyAndUrl.php');  
 use PHPUnit\Framework\TestCase;
 
     class DlexLayoutSamplesTest extends TestCase

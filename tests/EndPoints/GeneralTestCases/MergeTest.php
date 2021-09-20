@@ -3,13 +3,14 @@
     require_once(__DIR__.'/../../../src/PdfResource.php');
     require_once(__DIR__.'/../../../src/PdfInput.php');
     require_once(__DIR__.'/../../../src/PdfResponse.php');
-    
+    require_once(__DIR__.'/../KeyAndUrl.php');  
+
     use PHPUnit\Framework\TestCase;
 
     class MergeTest extends TestCase
     {
         private $inputpath = KeyAndUrl::Inputpath;
-        private $outputPath = KeyAndUrl::OutPutPath;
+        private $outPutPath = KeyAndUrl::OutPutPath;
         private $key=KeyAndUrl::Key;
         private $url = KeyAndUrl::Url; 
         private $Author= KeyAndUrl::Author;

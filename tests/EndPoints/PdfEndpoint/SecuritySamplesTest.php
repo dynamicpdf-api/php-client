@@ -11,14 +11,14 @@ require_once(__DIR__.'/../../../src/PageInput.php');
 require_once(__DIR__.'/../../../src/EncryptDocumentComponents.php');
 require_once(__DIR__.'/../../../src/Aes128Security.php');
 require_once(__DIR__.'/../../../src/RC4128Security.php');
-
+require_once(__DIR__.'/../KeyAndUrl.php'); 
 
 use PHPUnit\Framework\TestCase;
 
 class SecuritySamplesTest extends TestCase
  {
     private $inputpath = KeyAndUrl::Inputpath;
-    private $outputPath = KeyAndUrl::OutPutPath;
+    private $outPutPath = KeyAndUrl::OutPutPath;
     private $key=KeyAndUrl::Key;
     private $url = KeyAndUrl::Url; 
     private $Author= KeyAndUrl::Author;
