@@ -27,9 +27,9 @@ public function PageInput_TextElement_Pdfoutput()
 {
     $Name = "TextElement";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -61,9 +61,9 @@ public function PageInput_TextElementAddedToPageAndTemplate_Pdfoutput()
 {
     $Name = "TextElementAddedToPageAndTemplate";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -102,9 +102,9 @@ public function PageInput_AddPage_Pdfoutput()
 {
     $Name = "PageInput_AddPage";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -137,9 +137,9 @@ public function PageInput_AddPageTemplate_Pdfoutput()
 {
     $Name = "PageInput_AddPageTemplate";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -174,9 +174,9 @@ public function PageInput_AddPageParameters_Pdfoutput()
 {
     $Name = "AddPageParameters";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;

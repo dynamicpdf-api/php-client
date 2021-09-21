@@ -55,9 +55,9 @@ public function FilePathInputAztecBarcode_Pdfoutput()
     $Name = "FilePathInputAztecBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -96,9 +96,9 @@ public function FilePathInputAztecBarcodeSize_Pdfoutput()
     $Name = "FilePathInputAztecBarcodeSize";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -138,9 +138,9 @@ public function FilePathAztecBarcodeElementError_Pdfoutput()
     $Name = "FilePathAztecBarcodeElementError";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -180,9 +180,9 @@ public function FilePathAztecBarcodeElementTilde_Pdfoutput()
     $Name = "FilePathAztecBarcodeElementTild";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -224,9 +224,9 @@ public function FilePathAztecBarcodeElementReader_Pdfoutput()
     $Name = "FilePathAztecBarcodeElementReader";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -268,9 +268,9 @@ public function FilePath_AztecBarcodeElementXDimension_Pdfoutput()
     $Name = "FilePath_AztecBarcodeElementXDimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -312,9 +312,9 @@ public function FilePathAztecBarcodeElementColor_Pdfoutput()
     $Name = "FilePathAztecBarcodeElementColor";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -355,9 +355,9 @@ public function FilePathAztecBarcodeElementProperties_Pdfoutput()
     $Name = "FilePathAztecBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -405,9 +405,9 @@ public function BytesAztecBarcodeElementProperties_Pdfoutput()
     $Name = "BytesAztecBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -460,9 +460,9 @@ public function StreamAztecBarcodeElementProperties_Pdfoutput()
     $Name = "StreamAztecBarcodeElementProperties_Pdfoutput";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -513,9 +513,9 @@ public function CloudRootAztecBarcodeElementProperties_Pdfoutput()
     $Name = "CloudRootAztecBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -562,9 +562,9 @@ public function PageInputAztecBarcodeElementProperties_Pdfoutput()
     $Name = "PageInputAztecBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -611,9 +611,9 @@ public function PageInputAztecBarcodeElementPropertiesAddedToPage_Pdfoutput()
     $Name = "PageInputAztecBarcodeElementPropertiesAddedToPage";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -656,9 +656,9 @@ public function PageInputAztecBarcodeAddedToPageAndPdf_Pdfoutput()
     $Name = "PageInputAztecBarcodeAddedToPageAndPdf";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -717,9 +717,9 @@ public function FilePathAztecBarcodeElementByteArray_Pdfoutput()
     $Name = "FilePathAztecBarcodeElementByteArray";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -757,9 +757,9 @@ public function FilePathAztecBarcodeElementPageByteArray_Pdfoutput()
     $Name = "FilePathAztecBarcodeElementPageByteArray";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -799,9 +799,9 @@ public function FilePathAztecBarcodeElementPageXY_Pdfoutput()
     $Name = "FilePathAztecBarcodeElementPageXY";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -841,9 +841,9 @@ public function FilePathDataMatrixBarcodeElement_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElement";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -886,9 +886,9 @@ public function FilePathDataMatrixBarcodeElementXDimension_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElementXDimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -927,9 +927,9 @@ public function FilePathDataMatrixBarcodeElementColor_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElementColor";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -968,9 +968,9 @@ public function FilePathDataMatrixBarcodeElementPlacement_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElementPlacement";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1009,9 +1009,9 @@ public function FilePathDataMatrixBarcodeElementTilde_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElementTilde";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1050,9 +1050,9 @@ public function FilePathDataMatrixBarcodeElementSymbolSize_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElementSymbolSize";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1090,9 +1090,9 @@ public function FilePathDataMatrixBarcodeElementEncodingType_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElementEncodingType";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1130,9 +1130,9 @@ public function FilePathDataMatrixBarcodeElementFucntionChar_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElementFucntionChar";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1171,9 +1171,9 @@ public function FilePathDataMatrixBarcodeElementEnums_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElementEnums";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1212,9 +1212,9 @@ public function FilePathDataMatrixBarcodeElementProperties_Pdfoutput()
     $Name = "FilePathDataMatrixBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1257,9 +1257,9 @@ public function BytesDataMatrixBarcodeElementProperties_Pdfoutput()
     $Name = "BytesDataMatrixBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1307,9 +1307,9 @@ public function StreamDataMatrixBarcodeElementProperties_Pdfoutput()
     $Name = "StreamDataMatrixBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1355,9 +1355,9 @@ public function CloudRootDataMatrixBarcodeElementProperties_Pdfoutput()
     $Name = "CloudRootDataMatrixBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1403,9 +1403,9 @@ public function FilePathPdf417BarcodeElement_Pdfoutput()
     $Name = "FilePathPdf417BarcodeElement";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1443,9 +1443,9 @@ public function FilePathPdf417BarcodeElementTilde_Pdfoutput()
     $Name = "FilePathPdf417BarcodeElementTilde";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1484,9 +1484,9 @@ public function FilePathPdf417BarcodeElementCompaction_Pdfoutput()
     $Name = "FilePathPdf417BarcodeElementCompaction";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1527,9 +1527,9 @@ public function FilePathPdf417BarcodeElementErrorCorrection_Pdfoutput()
     $Name = "FilePathPdf417BarcodeElementErrorCorrection";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1569,9 +1569,9 @@ public function FilePathPdf417BarcodeElementCompactPdf417_Pdfoutput()
     $Name = "FilePathPdf417BarcodeElementCompactPdf41";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1611,9 +1611,9 @@ public function FilePathPdf417BarcodeElementYDimension_Pdfoutput()
     $Name = "FilePathPdf417BarcodeElementYDimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1653,9 +1653,9 @@ public function FilePathPdf417BarcodeElementProperties_Pdfoutput()
     $Name = "FilePathPdf417BarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1705,9 +1705,9 @@ public function StreamPdf417BarcodeElementProperties_Pdfoutput()
    $Name = "StreamPdf417BarcodeElementProperties";
 
     
-   Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
-   $pdf = new Pdf();
+    $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1760,9 +1760,9 @@ public function BytesPdf417BarcodeElementProperties_Pdfoutput()
     $Name = "BytesPdf417BarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1817,9 +1817,9 @@ public function CloudRootPdf417BarcodeElementProperties_Pdfoutput()
     $Name = "CloudRootPdf417BarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1868,9 +1868,9 @@ public function FilePathPdf417BarcodeElementByteArray_Pdfoutput()
    $Name = "FilePathPdf417BarcodeElementByteArray";
 
     
-   Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
    $pdf = new Pdf();
+   $pdf->ApiKey = $this->key;
+   $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1908,9 +1908,9 @@ public function FilePathQrcodeBarcodeElement_PdfOutput()
     $Name = "FilePathQrcodeBarcodeElement";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1948,9 +1948,9 @@ public function FilePathQrcodeBarcodeElementVersion_PdfOutput()
     $Name = "FilePathQrcodeBarcodeElementVersion";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1989,9 +1989,9 @@ public function FilePathQrcodeBarcodeElementFnc1_PdfOutput()
     $Name = "FilePathQrcodeBarcodeElementFnc1";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2030,9 +2030,9 @@ public function FilePathQrcodeBarcodeElementProperties_PdfOutput()
     $Name = "FilePathQrcodeBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2073,9 +2073,9 @@ public function BytesQrcodeBarcodeElementProperties_PdfOutput()
     $Name = "BytesQrcodeBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2121,9 +2121,9 @@ public function StreamQrcodeBarcodeElementProperties_PdfOutput()
     $Name = "StreamQrcodeBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2167,9 +2167,9 @@ public function CloudRootQrcodeBarcodeElementProperties_PdfOutput()
     $Name = "CloudRootQrcodeBarcodeElementProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2209,9 +2209,9 @@ public function FilePathQrcodeBarcodeElementByteArray_PdfOutput()
     $Name = "FilePathQrcodeBarcodeElementByteArray";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2249,9 +2249,9 @@ public function FilePathCode128Barcode_PdfOutput()
     $Name = "FilePathCode128Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2287,9 +2287,9 @@ public function BytesCode128Barcode_PdfOutput()
     $Name = "BytesCode128Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2330,9 +2330,9 @@ public function StreamCode128Barcode_PdfOutput()
     $Name = "StreamCode128Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2372,9 +2372,9 @@ public function CloudRootCode128Barcode_PdfOutput()
     $Name = "CloudRootCode128Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2409,9 +2409,9 @@ public function CloudSubFolderCode128Barcode_PdfOutput()
     $Name = "CloudSubFolderCode128Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2446,9 +2446,9 @@ public function FilePathCode128BarcodeWithOptionalParameter_PdfOutput()
     $Name = "FilePathCode128BarcodeWithOptionalParameter";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2484,9 +2484,9 @@ public function FilePathCode128BarcodeWithHeightXY_PdfOutput()
     $Name = "FilePathCode128BarcodeWithHeightXY";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2525,9 +2525,9 @@ public function FilePathCode128BarcodeColorXdimension_PdfOutput()
     $Name = "FilePathCode128BarcodeColorXdimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2566,9 +2566,9 @@ public function FilePathCode128BarcodeTextProperties_PdfOutput()
     $Name = "FilePathCode128BarcodeTextProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2608,9 +2608,9 @@ public function FilePathCode128BarcodePlacement_PdfOutput()
     $Name = "FilePathCode128BarcodePlacement";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2647,9 +2647,9 @@ public function FilePathCode128BarcodeProcessTilde_PdfOutput()
     $Name = "FilePathCode128BarcodeProcessTilde";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2687,9 +2687,9 @@ public function FilePathCode128BarcodeUccEan128_PdfOutput()
     $Name = "FilePathCode128BarcodeUccEan128";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2727,9 +2727,9 @@ public function FilePathCode128BarcodeEvenPages_PdfOutput()
     $Name = "FilePathCode128BarcodeEvenPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2767,9 +2767,9 @@ public function FilePathCode128BarcodeOddPages_PdfOutput()
     $Name = "FilePathCode128BarcodeOddPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2807,9 +2807,9 @@ public function PageInputCode128Barcode_PdfOutput()
     $Name = "PageInputCode128Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2843,9 +2843,9 @@ public function PageInputWithTemplateCode128Barcode_PdfOutput()
     $Name = "PageInputWithTemplateCode128Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2882,9 +2882,9 @@ public function FilePathCode39Barcode_PdfOutput()
     $Name = "FilePathCode39Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2920,9 +2920,9 @@ public function BytesCode39Barcode_PdfOutput()
     $Name = "BytesCode39Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -2963,9 +2963,9 @@ public function StreamCode39Barcode_PdfOutput()
     $Name = "StreamCode39Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3005,9 +3005,9 @@ public function CloudRootCode39Barcode_PdfOutput()
     $Name = "CloudRootCode39Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3042,9 +3042,9 @@ public function CloudSubFolderCode39Barcode_PdfOutput()
     $Name = "CloudSubFolderCode39Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3079,9 +3079,9 @@ public function FilePathCode39BarcodeOptionalParameter_PdfOutput()
     $Name = "FilePathCode39BarcodeOptionalParameter";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3117,9 +3117,9 @@ public function FilePathCode39BarcodeHeightXY_PdfOutput()
     $Name = "FilePathCode39BarcodeHeightXY";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3158,9 +3158,9 @@ public function FilePathCode39BarcodeColorXdimension_PdfOutput()
     $Name = "FilePathCode39BarcodeColorXdimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3199,9 +3199,9 @@ public function FilePathCode39BarcodeTextProperties_PdfOutput()
     $Name = "FilePathCode39BarcodeTextProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3241,9 +3241,9 @@ public function FilePathCode39BarcodeEvenPages_PdfOutput()
     $Name = "FilePathCode39BarcodeEvenPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3280,9 +3280,9 @@ public function FilePathCode39BarcodeOddPages_PdfOutput()
     $Name = "FilePathCode39BarcodeOddPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3319,9 +3319,9 @@ public function PageInputCode39Barcode_PdfOutput()
     $Name = "PageInputCode39Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3355,9 +3355,9 @@ public function PageInputTemplateCode39Barcode_PdfOutput()
     $Name = "PageInputTemplateCode39Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3394,9 +3394,9 @@ public function FilePathCode39BarcodeExtended_PdfOutput()
     $Name = "FilePathCode39BarcodeExtended";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3433,9 +3433,9 @@ public function FilePathCode25Barcode_PdfOutput()
     $Name = "FilePathCode25Barcod";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3471,9 +3471,9 @@ public function BytesCode25Barcode_PdfOutput()
     $Name = "BytesCode25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3514,9 +3514,9 @@ public function StreamCode25Barcode_PdfOutput()
     $Name = "StreamCode25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3556,9 +3556,9 @@ public function CloudRootCode25Barcode_PdfOutput()
     $Name = "CloudRootCode25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3593,9 +3593,9 @@ public function CloudSubFolderCode25Barcode_PdfOutput()
     $Name = "CloudSubFolderCode25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3630,9 +3630,9 @@ public function FilePathCode25BarcodeOptionalParameter_PdfOutput()
     $Name = "FilePathCode25BarcodeOptionalParameter";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3668,9 +3668,9 @@ public function FilePathCode25BarcodeHeightXY_PdfOutput()
     $Name = "FilePathCode25BarcodeHeightXY";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3709,9 +3709,9 @@ public function FilePathCode25BarcodeColorXdimension_PdfOutput()
     $Name = "FilePathCode25BarcodeColorXdimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3750,9 +3750,9 @@ public function FilePathCode25BarcodeTextProperties_PdfOutput()
     $Name = "FilePathCode25BarcodeTextProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3791,9 +3791,9 @@ public function FilePathCode25BarcodeEvenPages_PdfOutput()
     $Name = "FilePathCode25BarcodeEvenPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3830,9 +3830,9 @@ public function FilePathCode25BarcodeOddPages_PdfOutput()
     $Name = "FilePathCode25BarcodeOddPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3869,9 +3869,9 @@ public function PageInputCode25Barcode_PdfOutput()
     $Name = "PageInputCode25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3905,9 +3905,9 @@ public function PageInputTemplateCode25Barcode_PdfOutput()
     $Name = "PageInputTemplateCode25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3944,9 +3944,9 @@ public function FilePathCode93Barcode_PdfOutput()
     $Name = "FilePathCode93Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -3982,9 +3982,9 @@ public function BytesCode93Barcode_PdfOutput()
     $Name = "BytesCode93Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4025,9 +4025,9 @@ public function StreamCode93Barcode_PdfOutput()
     $Name = "StreamCode93Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4067,9 +4067,9 @@ public function CloudRootCode93Barcode_PdfOutput()
     $Name = "CloudRootCode93Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4104,9 +4104,9 @@ public function CloudSubFolderCode93Barcode_PdfOutput()
     $Name = "CloudSubFolderCode93Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4141,9 +4141,9 @@ public function FilePathCode93BarcodeOptionalParameter_PdfOutput()
     $Name = "FilePathCode93BarcodeOptionalParameter";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4179,9 +4179,9 @@ public function FilePathCode93BarcodeHeightXY_PdfOutput()
     $Name = "FilePathCode93BarcodeHeightXY";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4221,9 +4221,9 @@ public function FilePathCode93BarcodeColorXdimension_PdfOutput()
     $Name = "FilePathCode93BarcodeColorXdimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4262,9 +4262,9 @@ public function FilePathCode93BarcodeTextProperties_PdfOutput()
     $Name = "FilePathCode93BarcodeTextProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4304,9 +4304,9 @@ public function FilePathCode93BarcodeEvenPages_PdfOutput()
     $Name = "FilePathCode93BarcodeEvenPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4343,9 +4343,9 @@ public function FilePathCode93BarcodeOddPages_PdfOutput()
     $Name = "FilePathCode93BarcodeOddPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4382,9 +4382,9 @@ public function PageInputCode93Barcode_PdfOutput()
     $Name = "PageInputCode93Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4418,9 +4418,9 @@ public function PageInputTemplateCode93Barcode_PdfOutput()
     $Name = "PageInputTemplateCode93Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4457,9 +4457,9 @@ public function FilePathCode93BarcodeExtended_PdfOutput()
     $Name = "FilePathCode93BarcodeExtended";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4495,9 +4495,9 @@ public function FilePathCode11Barcode_PdfOutput()
     $Name = "FilePathCode11Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4533,9 +4533,9 @@ public function BytesCode11Barcode_PdfOutput()
     $Name = "BytesCode11Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4576,9 +4576,9 @@ public function StreamCode11Barcode_PdfOutput()
     $Name = "StreamCode11Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4618,9 +4618,9 @@ public function CloudRootCode11Barcode_PdfOutput()
     $Name = "CloudRootCode11Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4655,9 +4655,9 @@ public function CloudSubFolderCode11Barcode_PdfOutput()
     $Name = "CloudSubFolderCode11Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4692,9 +4692,9 @@ public function FilePathCode11BarcodeOptionalParameter_PdfOutput()
     $Name = "FilePathCode11BarcodeOptionalParameter";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4730,9 +4730,9 @@ public function FilePathCode11BarcodeHeightXY_PdfOutput()
     $Name = "FilePathCode11BarcodeHeightXY";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4771,9 +4771,9 @@ public function FilePathCode11BarcodeColorXdimension_PdfOutput()
     $Name = "FilePathCode11BarcodeColorXdimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4812,9 +4812,9 @@ public function FilePathCode11BarcodeTextProperties_PdfOutput()
     $Name = "FilePathCode11BarcodeTextProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4854,9 +4854,9 @@ public function FilePathCode11BarcodeEvenPages_PdfOutput()
     $Name = "FilePathCode11BarcodeEvenPage";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4893,9 +4893,9 @@ public function FilePathCode11BarcodeOddPages_PdfOutput()
     $Name = "FilePathCode11BarcodeOddPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4932,9 +4932,9 @@ public function PageInputCode11Barcode_PdfOutput()
     $Name = "PageInputCode11Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -4969,9 +4969,9 @@ public function PdfInputTemplateCode11Barcode_PdfOutput()
     $Name = "PdfInputTemplateCode11Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5008,9 +5008,9 @@ public function FilePathGs1DataBarBarcode_PdfOutput()
     $Name = "FilePathGs1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5046,9 +5046,9 @@ public function BytesGs1DataBarBarcode_PdfOutput()
     $Name = "BytesGs1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5089,9 +5089,9 @@ public function StreamGs1DataBarBarcode_PdfOutput()
     $Name = "StreamGs1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5131,9 +5131,9 @@ public function CloudRootGs1DataBarBarcode_PdfOutput()
     $Name = "CloudRootGs1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5168,9 +5168,9 @@ public function CloudSubFolderGs1DataBarBarcode_PdfOutput()
     $Name = "CloudSubFolderGs1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5205,9 +5205,9 @@ public function FilePathGs1DataBarBarcodeOptionalParameter_PdfOutput()
     $Name = "FilePathGs1DataBarBarcodeOptionalParameter";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5243,9 +5243,9 @@ public function FilePathGs1DataBarBarcodeHeightXY_PdfOutput()
     $Name = "FilePathGs1DataBarBarcodeHeightXY";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5285,9 +5285,9 @@ public function FilePathGs1DataBarBarcodeColorXdimension_PdfOutput()
     $Name = "FilePathGs1DataBarBarcodeColorXdimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5326,9 +5326,9 @@ public function FilePathGs1DataBarBarcodeTextProperties_PdfOutput()
     $Name = "FilePathGs1DataBarBarcodeTextProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5367,9 +5367,9 @@ public function FilePathGs1DataBarBarcodeEvenPages_PdfOutput()
     $Name = "FilePathGs1DataBarBarcodeEvenPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5406,9 +5406,9 @@ public function FilePathGs1DataBarBarcodeOddPages_PdfOutput()
     $Name = "FilePathGs1DataBarBarcodeOddPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5445,9 +5445,9 @@ public function PageInputGs1DataBarBarcode_PdfOutput()
     $Name = "PageInputGs1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5481,9 +5481,9 @@ public function PageInputTamplateGs1DataBarBarcode_PdfOutput()
     $Name = "PageInputTamplateGs1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5520,9 +5520,9 @@ public function FilePathStackedGS1DataBarBarcode_PdfOutput()
     $Name = "FilePathStackedGS1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5558,9 +5558,9 @@ public function BytesStackedGS1DataBarBarcode_PdfOutput()
     $Name = "BytesStackedGS1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5601,9 +5601,9 @@ public function StreamStackedGS1DataBarBarcode_PdfOutput()
     $Name = "StreamStackedGS1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5643,9 +5643,9 @@ public function CloudRootStackedGS1DataBarBarcode_PdfOutput()
     $Name = "CloudRootStackedGS1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5680,9 +5680,9 @@ public function CloudSubFolderStackedGS1DataBarBarcode_PdfOutput()
     $Name = "CloudSubFolderStackedGS1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5717,9 +5717,9 @@ public function FilePathStackedGS1DataBarBarcodeOptionalParameter_PdfOutput()
     $Name = "FilePathStackedGS1DataBarBarcodeOptionalParameter";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5755,9 +5755,9 @@ public function FilePathStackedGS1DataBarBarcodeRowheightXY_PdfOutput()
     $Name = "FilePathStackedGS1DataBarBarcodeRowheightXY";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5796,9 +5796,9 @@ public function FilePathStackedGS1DataBarBarcodeColorXdimension_PdfOutput()
     $Name = "FilePathStackedGS1DataBarBarcodeColorXdimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5837,9 +5837,9 @@ public function FilePathStackedGS1DataBarBarcodeTextProperties_PdfOutput()
     $Name = "FilePathStackedGS1DataBarBarcodeTextProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5879,9 +5879,9 @@ public function FilePathStackedGS1DataBarBarcodeEvenPages_PdfOutput()
     $Name = "FilePathStackedGS1DataBarBarcodeEvenPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5918,9 +5918,9 @@ public function FilePathStackedGS1DataBarBarcodeOddPages_PdfOutput()
     $Name = "FilePathStackedGS1DataBarBarcodeOddPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5957,9 +5957,9 @@ public function PageInputStackedGS1DataBarBarcode_PdfOutput()
     $Name = "PageInputStackedGS1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -5993,9 +5993,9 @@ public function PageInputTemplateStackedGS1DataBarBarcode_PdfOutput()
     $Name = "PageInputTemplateStackedGS1DataBarBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6033,9 +6033,9 @@ public function FilePathIata25Barcode_PdfOutput()
     $Name = "FilePathIata25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6071,9 +6071,9 @@ public function BytesIata25Barcode_PdfOutput()
     $Name = "BytesIata25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6114,9 +6114,9 @@ public function StreamIata25Barcode_PdfOutput()
     $Name = "StreamIata25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6156,9 +6156,9 @@ public function PdfInputCloudRoot_Iata25Barcode_PdfOutput()
     $Name = "PdfInputCloudRoot_Iata25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6193,9 +6193,9 @@ public function CloudSubFolderIata25Barcode_PdfOutput()
     $Name = "CloudSubFolderIata25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6230,9 +6230,9 @@ public function FilePathIata25BarcodeOptionalParameter_PdfOutput()
     $Name = "FilePathIata25BarcodeOptionalParameter";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6268,9 +6268,9 @@ public function FilePathIata25BarcodeHeightXY_PdfOutput()
     $Name = "FilePathIata25BarcodeHeightXY";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6309,9 +6309,9 @@ public function FilePathIata25BarcodeColorXdimension_PdfOutput()
     $Name = "FilePathIata25BarcodeColorXdimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6350,9 +6350,9 @@ public function FilePathIata25BarcodeTextProperties_PdfOutput()
     $Name = "FilePathIata25BarcodeTextProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6392,9 +6392,9 @@ public function FilePathIata25BarcodeIncludeCheckDigit_PdfOutput()
     $Name = "FilePathIata25BarcodeIncludeCheckDigit";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6431,9 +6431,9 @@ public function FilePathIata25BarcodeEvenPages_PdfOutput()
     $Name = "FilePathIata25BarcodeEvenPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6470,9 +6470,9 @@ public function FilePathIata25BarcodeOddPages_PdfOutput()
     $Name = "FilePathIata25BarcodeOddPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6509,9 +6509,9 @@ public function PageInputIata25Barcode_PdfOutput()
     $Name = "PageInputIata25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6545,9 +6545,9 @@ public function PageInputWithTemplateIata25Barcode_PdfOutput()
     $Name = "PageInputWithTemplateIata25Barcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6584,9 +6584,9 @@ public function FilePathMsiBarcode_PdfOutput()
     $Name = "FilePathMsiBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6622,9 +6622,9 @@ public function BytesMsiBarcode_PdfOutput()
     $Name = "BytesMsiBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6665,9 +6665,9 @@ public function StreamMsiBarcode_PdfOutput()
     $Name = "StreamMsiBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6707,9 +6707,9 @@ public function CloudRootMsiBarcode_PdfOutput()
     $Name = "CloudRootMsiBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6744,9 +6744,9 @@ public function CloudSubFolderMsiBarcode_PdfOutput()
     $Name = "CloudSubFolderMsiBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6781,9 +6781,9 @@ public function FilePathMsiBarcodeOptionalParameter_PdfOutput()
     $Name = "FilePathMsiBarcodeOptionalParameter";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6820,9 +6820,9 @@ public function FilePathMsiBarcodeHeightXYAppendcheckdigit_PdfOutput()
     $Name = "FilePathMsiBarcodeHeightXYAppendcheckdigit";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6862,9 +6862,9 @@ public function FilePathMsiBarcodeColorXdimension_PdfOutput()
     $Name = "FilePathMsiBarcodeColorXdimension";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6904,9 +6904,9 @@ public function FilePathMsiBarcodeTextProperties_PdfOutput()
     $Name = "FilePathMsiBarcodeTextProperties";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6946,9 +6946,9 @@ public function FilePathMsiBarcodeAppendCheckDigit_PdfOutput()
     $Name = "FilePathMsiBarcodeEvenPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -6986,9 +6986,9 @@ public function FilePathMsiBarcodeEvenPages_PdfOutput()
     $Name = "FilePathMsiBarcodeEvenPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -7026,9 +7026,9 @@ public function FilePathMsiBarcodeOddPages_PdfOutput()
     $Name = "FilePathMsiBarcodeOddPages";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -7066,9 +7066,9 @@ public function PageInputMsiBarcode_PdfOutput()
     $Name = "PageInputMsiBarcode";
 
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;

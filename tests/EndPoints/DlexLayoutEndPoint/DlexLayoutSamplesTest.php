@@ -23,12 +23,12 @@ use PHPUnit\Framework\TestCase;
         public  function  DlexLayout()
         {
             $Name = "Simple";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
 
             $layoutData = new LayoutDataResource($this->inputpath."SimpleReportData.json");
 
             $dlexEndpoint = new DlexLayout("SimpleReportWithCoverPage.dlex", $layoutData);
+            $dlexEndpoint->ApiKey = $this->key;
+            $dlexEndpoint->BaseUrl = $this->url;
 
             $response = $dlexEndpoint->Process();
 
@@ -46,13 +46,12 @@ use PHPUnit\Framework\TestCase;
         public function ContactListDlex_Pdfoutput()
         {
             $Name = "ContactListDlex";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
-
+ 
             $layoutData = new LayoutDataResource($this->inputpath."ContactList.json");
 
             $dlexEndpoint = new DlexLayout("ContactList.dlex", $layoutData);
-
+            $dlexEndpoint->ApiKey = $this->key;
+            $dlexEndpoint->BaseUrl = $this->url;
 
             $response = $dlexEndpoint->Process();
 
@@ -67,13 +66,12 @@ use PHPUnit\Framework\TestCase;
         public function ContentGroupSubReport_Pdfoutput()
         {
             $Name = "ContentGroupSubReport";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
-
+  
             $layoutData = new LayoutDataResource($this->inputpath."ContentGroupSubReportData.json");
 
             $dlexEndpoint = new DlexLayout("Resources/ReportWriter/ContentGroup/ContentGroupSubReport.dlex", $layoutData);
-
+            $dlexEndpoint->ApiKey = $this->key;
+            $dlexEndpoint->BaseUrl = $this->url;
 
             $response = $dlexEndpoint->Process();
 
@@ -88,13 +86,12 @@ use PHPUnit\Framework\TestCase;
         public function AllReportElements_Pdfoutput()
         {
             $Name = "AllReportElements";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
 
             $layoutData = new LayoutDataResource($this->inputpath."AllReportElementsData.json");
 
             $dlexEndpoint = new DlexLayout("Resources/ReportWriter/AllReportElements.dlex", $layoutData);
-
+            $dlexEndpoint->ApiKey = $this->key;
+            $dlexEndpoint->BaseUrl = $this->url;
 
             $response = $dlexEndpoint->Process();
 
@@ -109,13 +106,12 @@ use PHPUnit\Framework\TestCase;
         public function ContentGroup_Pdfoutput()
         {
             $Name = "ContentGroup";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
 
             $layoutData = new LayoutDataResource($this->inputpath."ContentGroupData.json");
 
             $dlexEndpoint = new DlexLayout("Resources/ReportWriter/ContentGroup.dlex", $layoutData);
-
+            $dlexEndpoint->ApiKey = $this->key;
+            $dlexEndpoint->BaseUrl = $this->url;
 
             $response = $dlexEndpoint->Process();
 
@@ -130,13 +126,12 @@ use PHPUnit\Framework\TestCase;
         public function Invoice_Pdfoutput()
         {
             $Name = "Invoice";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
 
             $layoutData = new LayoutDataResource($this->inputpath."InvoiceReportData.json");
 
             $dlexEndpoint = new DlexLayout("Resources/ReportWriter/Invoice.dlex", $layoutData);
-
+            $dlexEndpoint->ApiKey = $this->key;
+            $dlexEndpoint->BaseUrl = $this->url;
 
             $response = $dlexEndpoint->Process();
 
@@ -151,14 +146,14 @@ use PHPUnit\Framework\TestCase;
         public function InvoiceData_Pdfoutput()
         {
             $Name = "InvoiceData";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
 
             $invoiceData = new InvoiceData();
             $invoiceLinqData = $invoiceData->Order11077;
 
             $layoutDataResource = new LayoutDataResource($invoiceLinqData);
             $dlexEndpoint = new DlexLayout("InvoiceOrderId.dlex", $layoutDataResource);
+            $dlexEndpoint->ApiKey = $this->key;
+            $dlexEndpoint->BaseUrl = $this->url;
 
             $response = $dlexEndpoint->Process();
 

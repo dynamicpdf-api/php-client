@@ -21,12 +21,13 @@ use PHPUnit\Framework\TestCase;
         public function AllFormFields_JsonOutput()
         {
             $Name = "AllFormFields";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
 
             $resource = new PdfResource($this->inputpath."AllFormFields.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -40,12 +41,13 @@ use PHPUnit\Framework\TestCase;
         public function Button_JsonOutput()
         {
             $Name = "Button";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
 
             $resource = new PdfResource($this->inputpath."Button.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -60,12 +62,14 @@ use PHPUnit\Framework\TestCase;
         public function Checkbox_JsonOutput()
         {
             $Name = "Checkbox";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."Checkbox.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -80,12 +84,14 @@ use PHPUnit\Framework\TestCase;
         public function Combo_JsonOutput()
         {
             $Name = "Combo";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."Checkbox.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -100,12 +106,14 @@ use PHPUnit\Framework\TestCase;
         public function ComboExport_JsonOutput()
         {
             $Name = "ComboExport";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."ComboExport.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -120,12 +128,14 @@ use PHPUnit\Framework\TestCase;
         public function ComboExport1_JsonOutput()
         {
             $Name = "ComboExport1";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."ComboExport1.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -140,12 +150,14 @@ use PHPUnit\Framework\TestCase;
         public function ComboExport2_JsonOutput()
         {
             $Name = "ComboExport2";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."ComboExport2.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -160,12 +172,14 @@ use PHPUnit\Framework\TestCase;
         public function ListBoxMultiSelect_JsonOutput()
         {
             $Name = "ListBoxMultiSelect";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."ListBoxMultiSelect.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -180,12 +194,14 @@ use PHPUnit\Framework\TestCase;
         public function ListBoxSingleSelect_JsonOutput()
         {
             $Name = "ListBoxSingleSelect";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."ListBoxSingleSelect.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -200,12 +216,14 @@ use PHPUnit\Framework\TestCase;
         public function ListMultiSelectExport1_JsonOutput()
         {
             $Name = "ListMultiSelectExport1";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."ListMultiSelectExport1.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -220,12 +238,14 @@ use PHPUnit\Framework\TestCase;
         public function ListMultiSelectExport2_JsonOutput()
         {
             $Name = "ListMultiSelectExport2";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."ListMultiSelectExport2.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -240,12 +260,14 @@ use PHPUnit\Framework\TestCase;
         public function PushButton_JsonOutput()
         {
             $Name = "PushButton";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."PushButton.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -260,12 +282,14 @@ use PHPUnit\Framework\TestCase;
         public function Radio_JsonOutput()
         {
             $Name = "Radio";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."Radio.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -280,12 +304,14 @@ use PHPUnit\Framework\TestCase;
         public function Signature_JsonOutput()
         {
             $Name = "Signature";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."Signature.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -300,12 +326,14 @@ use PHPUnit\Framework\TestCase;
         public function SignatureNoSign_JsonOutput()
         {
             $Name = "SignatureNoSign";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."SignatureNoSign.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -320,12 +348,14 @@ use PHPUnit\Framework\TestCase;
         public function TextField_JsonOutput()
         {
             $Name = "TextField";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."TextField.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)
@@ -340,12 +370,14 @@ use PHPUnit\Framework\TestCase;
         public function TextField2_JsonOutput()
         {
             $Name = "TextField2";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             
             $resource = new PdfResource($this->inputpath."TextField2.pdf");
 
             $pdfInfo = new PdfInfo($resource);
+            $pdfInfo->ApiKey = $this->key;
+            $pdfInfo->BaseUrl = $this->url;
+
             $response = $pdfInfo->Process();
             
             if ($response->IsSuccessful)

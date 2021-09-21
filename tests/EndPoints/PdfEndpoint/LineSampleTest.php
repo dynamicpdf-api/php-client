@@ -30,9 +30,9 @@ public function PageInput_Pdfoutput()
 {
     $Name = "PageInput";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
 
     $pdf->Author = $this->Author;
@@ -65,9 +65,9 @@ public function PageInputLineStyle_Pdfoutput()
 {
     $Name = "PageInputLineStyle";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
 
     $pdf->Author = $this->Author;
@@ -101,9 +101,9 @@ public function PageInputXYOffset_Pdfoutput()
 {
     $Name = "PageInputWithXYOffset";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
 
     $pdf->Author = $this->Author;
@@ -139,9 +139,9 @@ public function PageInputColor_Pdfoutput()
 {
     $Name = "PageInputWithColor";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
 
     $pdf->Author = $this->Author;
@@ -176,9 +176,9 @@ public function PageInputProperties_Pdfoutput()
 {
     $Name = "PageInputWithProperties";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
 
     $pdf->Author = $this->Author;
@@ -216,9 +216,9 @@ public function PdfPageInputPropertiesWithTemplate_Pdfoutput()
 {
     $Name = "PageInputPropertiesWithTemplate";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
 
     $pdf->Author = $this->Author;
@@ -258,9 +258,9 @@ public function PdfInputUsingFilePath_Template_Pdfoutput()
 {
     $Name = "PdfInputPropertiesWithTemplate";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
 
     $pdf->Author = $this->Author;
@@ -302,9 +302,9 @@ public function PdfInputUsingStream_Template_Pdfoutput()
 {
     $Name = "PdfInputStreamPropertiesWithTemplate";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
 
     $pdf->Author = $this->Author;

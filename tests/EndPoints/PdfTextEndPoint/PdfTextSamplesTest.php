@@ -18,11 +18,13 @@ use PHPUnit\Framework\TestCase;
         public function TextExtraction()
         {
             $Name = "TextExtraction";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             $resource = new PdfResource($this->inputpath."Test_Textmarker_Serienbrief(2).pdf");
 
             $text = new PdfText($resource);
+            $text->ApiKey = $this->key;
+            $text->BaseUrl = $this->url;
+
             $response = $text->Process();
 
             if ($response->IsSuccessful)
@@ -36,11 +38,13 @@ use PHPUnit\Framework\TestCase;
         public function TextExtractionWithSinglePage()
         {
             $Name = "SinglePage";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             $resource = new PdfResource($this->inputpath."Test_Textmarker_Serienbrief(2).pdf");
 
             $text = new PdfText($resource);
+            $text->ApiKey = $this->key;
+            $text->BaseUrl = $this->url;
+
             $text->StartPage = 5;
             $text->PageCount = 1;
             $response = $text->Process();
@@ -56,10 +60,12 @@ use PHPUnit\Framework\TestCase;
         public function TextExtractionWithMultipage()
         {
             $Name = "MultiPage";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             $resource = new PdfResource($this->inputpath."Test_Textmarker_Serienbrief(2).pdf");
             $text = new PdfText($resource);
+            $text->ApiKey = $this->key;
+            $text->BaseUrl = $this->url;
+
             $text->StartPage = 2;
             $text->PageCount = 3;
             
@@ -77,11 +83,13 @@ use PHPUnit\Framework\TestCase;
         public function TextExtractionCJKFonts()
         {
             $Name = "CJKFonts";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             $resource = new PdfResource($this->inputpath."pdf_font-zhcn.pdf");
 
             $text = new PdfText($resource);
+            $text->ApiKey = $this->key;
+            $text->BaseUrl = $this->url;
+
             $response = $text->Process();
 
             if ($response->IsSuccessful)
@@ -95,11 +103,13 @@ use PHPUnit\Framework\TestCase;
         public function TextExtractionSpecialChars()
         {
             $Name = "SpecialChars";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             $resource = new PdfResource($this->inputpath."Input.pdf");
 
             $text = new PdfText($resource);
+            $text->ApiKey = $this->key;
+            $text->BaseUrl = $this->url;
+
             $response = $text->Process();
             if ($response->IsSuccessful)
             {
@@ -112,11 +122,13 @@ use PHPUnit\Framework\TestCase;
         public function TextExtractionArabic()
         {
             $Name = "Arabic";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
             $resource = new PdfResource($this->inputpath."Arabic.pdf");
 
             $text = new PdfText($resource);
+            $text->ApiKey = $this->key;
+            $text->BaseUrl = $this->url;
+
             $response = $text->Process();
             if ($response->IsSuccessful)
             {

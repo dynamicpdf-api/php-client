@@ -22,11 +22,12 @@ use PHPUnit\Framework\TestCase;
         public   function XmpSingleResource()
         {
             $Name = "XmpSingelResource";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $resource = new PdfResource($this->inputpath."bab6c782-2e85-4c6a-b248-9518a06549e900000.pdf");
             $xmp = new PdfXmp($resource);
+            $xmp->ApiKey = $this->key;
+            $xmp->BaseUrl = $this->url;
 
             $response = $xmp->Process();
 
@@ -42,12 +43,14 @@ use PHPUnit\Framework\TestCase;
         public  function XmpSingleResource1()
         {
             $Name = "XmpSingleResource1";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $resource = new PdfResource($this->inputpath."aaa_crash.pdf");
 
             $xmp = new PdfXmp($resource);
+            $xmp->ApiKey = $this->key;
+            $xmp->BaseUrl = $this->url;
+            
             $response = $xmp->Process();
 
             if ($response->IsSuccessful)
@@ -61,8 +64,7 @@ use PHPUnit\Framework\TestCase;
         public  function XmpMulitipleResource()
         {
             $Name = "XmpMulitipleResource";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
 
             $pdfs = array( "aaa_crash.pdf", "bab6c782-2e85-4c6a-b248-9518a06549e900000.pdf", "COR-GEN-2455447-1-A-1.pdf", "Waiver TX AF.PDF" );
 
@@ -70,6 +72,8 @@ use PHPUnit\Framework\TestCase;
             {
                 $resource = new PdfResource($this->inputpath.$pdfs[$i]);
                 $xmp = new PdfXmp($resource);
+                $xmp->ApiKey = $this->key;
+                $xmp->BaseUrl = $this->url;
 
                 $response = $xmp->Process();
 

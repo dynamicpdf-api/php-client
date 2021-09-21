@@ -29,10 +29,9 @@ public function SimpleDlex_Pdfoutput()
 {
     $Name = "SimpleDlex_Pdfoutput";
 
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
-
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -62,10 +61,9 @@ public function SimpleDlex_Cloud_Pdfoutput()
 {
     $Name = "SimpleDlex_Cloud";
 
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
-
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -94,10 +92,9 @@ public function SimpleDlex_CloudData_Pdfoutput()
 {
     $Name = "SimpleDlex_CloudData";
 
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
-
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -124,10 +121,9 @@ public function SimpleDlex_CloudData_Pdfoutput()
 public function Template_Pdfoutput()
 {
     $Name = "Template_Pdfoutput";
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
-
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -163,10 +159,9 @@ public function Template_Pdfoutput()
 public function PagenumberingLabelWithTemplate_Pdfoutput()
 {
     $Name = "PagenumberingLabelWithTemplate";
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
-
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -203,10 +198,9 @@ public function SimpleDlex_AddDlex_Pdfoutput()
 {
     $Name = "SimpleDlex_AddDlex";
 
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
-
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;
@@ -235,10 +229,9 @@ public function SimpleDlex_AddDlexCloudResource_Pdfoutput()
 {
     $Name = "SimpleDlex_AddDlexCloud";
 
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
-
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
 
     $pdf->Author = $this->Author;
     $pdf->Title = $this->Title;

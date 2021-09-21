@@ -40,6 +40,8 @@ include_once(__DIR__.'./ImageResponse.php');
         {
             $client=parent::Init();
 
+            curl_setopt($client, CURLOPT_URL, $this->BaseUrl."/".$this->EndpointName);
+
             $errCode=json_last_error();
             
             $headr = array();

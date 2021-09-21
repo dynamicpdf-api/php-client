@@ -30,9 +30,9 @@ public function PdfInputFilePathAes256Security_PdfOutput()
 {
     $Name = "PdfInputFilePathAes256Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -66,9 +66,9 @@ public function PdfInputBytesAes256Security_PdfOutput()
 {
     $Name = "PdfInputBytesAes256Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -106,9 +106,9 @@ public function PdfInputStream_Aes256Security_PdfOutput()
 {
     $Name = "PdfInputStreamAes256Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -145,9 +145,9 @@ public function PdfInputCloudRoot_Aes256Security_PdfOutput()
 {
     $Name = "PdfInputCloudRootAes256Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -180,9 +180,9 @@ public function PdfInputSubFolder_Aes256Security_PdfOutput()
 {
     $Name = "PdfInputCloudSubFolderAes256Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -215,9 +215,9 @@ public function PageInput_Aes256Security_PdfOutput()
 {
     $Name = "PageInputAes256Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -250,9 +250,9 @@ public function PdfInpuAes256SecurityOwnerPassword_PdfOutput()
 {
     $Name = "PdfInputAes256SecurityOwnerPassword";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -286,9 +286,9 @@ public function PdfInputAes256SecurityAllowFormFillingAndOtherProperties_PdfOutp
 {
     $Name = "PdfInputAes256SecurityFormFilling";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -325,9 +325,9 @@ public function PdfInputAes256SecurityAllowPrintAndOtherProperties_PdfOutput()
 {
     $Name = "PdfInputAes256SecurityAllowPrint";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -364,9 +364,9 @@ public function PdfInputFilePath_Aes256SecurityOwnerUserPassword_PdfOutput()
 {
     $Name = "PdfInputAes256SecurityOwnerUserPassword";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -405,9 +405,9 @@ public function PdfInput_Aes256SecurityDocumentComponentsAll_PdfOutput()
 {
     $Name = "PdfInputAes256SecurityDocumentComponentsAll";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -442,9 +442,9 @@ public function PdfInputUsingFilePath_Aes256SecurityDocumentComponentsAllExceptM
 {
     $Name = "PdfInputAes256SecurityDocumentComponentsAllExceptMetadata";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -479,9 +479,9 @@ public function PdfInputUsingFilePath_Aes256SecurityWithoutPassword_PdfOutput()
 {
     $Name = "PdfInputAes256SecurityWithoutPassword";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -516,9 +516,9 @@ public function PdfInputUsingFilePath_Aes128Security_PdfOutput()
 {
     $Name = "PdfInputFilePathAes128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -552,9 +552,9 @@ public function PdfInputUsingBytes_Aes128Security_PdfOutput()
 {
     $Name = "PdfInputBytesPathAes128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -593,9 +593,9 @@ public function PdfInputUsingStream_Aes128Security_PdfOutput()
 {
     $Name = "PdfInputStreamPathAes128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -632,9 +632,9 @@ public function PdfInputUsingCloudRoot_Aes128Security_PdfOutput()
 {
     $Name = "PdfInputCloudRootPathAes128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -667,9 +667,9 @@ public function PdfInputUsingCloudSubFolder_Aes128Security_PdfOutput()
 {
     $Name = "PdfInputCloudSubFolderPathAes128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -703,9 +703,9 @@ public function PageInput_Aes128Security_PdfOutput()
 {
     $Name = "PageInputAes128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -738,9 +738,9 @@ public function PdfInputUsingFilePath_Aes128SecurityOwnerPassword_PdfOutput()
 {
     $Name = "PdfInputAes128SecurityOwnerPassword";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -774,9 +774,9 @@ public function PdfInputUsingFilePath_Aes128SecurityAllowFormFillingAndOtherProp
 {
     $Name = "PdfInputAes128SecurityAllowFormFillingAndOtherProperties";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -815,9 +815,9 @@ public function PdfInputUsingFilePath_Aes128SecurityAllowPrintAndOtherProperties
 {
     $Name = "PdfInputAes128SecurityAllowFormFillingAndOtherProperties";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -854,9 +854,9 @@ public function PdfInputUsingFilePath_Aes128SecurityUserOwnerPassword_PdfOutput(
 {
     $Name = "PdfInputAes128SecurityUserOwnerPassword";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -895,9 +895,9 @@ public function PdfInputUsingFilePath_Aes128SecurityDocumentComponentsAll_PdfOut
 {
     $Name = "PdfInputAes128SecurityDocumentComponentsAll";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -932,9 +932,9 @@ public function PdfInputUsingFilePath_Aes128SecurityDocumentComponentsAllExceptM
 {
     $Name = "PdfInputAes128SecurityDocumentComponentsAllExceptMetadata";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -969,9 +969,9 @@ public function PdfInputUsingFilePath_Aes128SecurityWithoutPassword_PdfOutput()
 {
     $Name = "PdfInputAes128SecurityWithoutPassword";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1005,9 +1005,9 @@ public function PdfInputUsingFilePath_RC4128Security_PdfOutput()
 {
     $Name = "PdfInputRC4128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1041,9 +1041,9 @@ public function PdfInputUsingBytes_RC4128Security_PdfOutput()
 {
     $Name = "PdfInputBytesRC4128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1082,9 +1082,9 @@ public function PdfInputUsingStream_RC4128Security_PdfOutput()
 {
     $Name = "PdfInputStreamRC4128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1121,9 +1121,9 @@ public function PdfInputUsingCloudRoot_RC4128Security_PdfOutput()
 {
     $Name = "PdfInputCloudRootRC4128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1156,9 +1156,9 @@ public function PdfInputUsingCloudSubFolder_RC4128Security_PdfOutput()
 {
     $Name = "PdfInputCloudSubFolderRC4128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1191,9 +1191,9 @@ public function PageInput_RC4128Security_PdfOutput()
 {
     $Name = "PageInputRC4128Security";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1226,9 +1226,9 @@ public function PdfInputUsingFilePath_RC4128SecurityOwnerPassword_PdfOutput()
 {
     $Name = "PdfInputRC4128SecurityOwnerPassword";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1264,9 +1264,9 @@ public function PdfInputUsingFilePath_RC4128SecurityAllowFormFillingAndOtherProp
 {
     $Name = "PdfInputRC4128SecurityAllowFormFillingAndOtherProperties";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1303,9 +1303,9 @@ public function PdfInputUsingFilePath_RC4128SecurityAllowPrintAndOtherProperties
 {
     $Name = "PdfInputRC4128SecurityAllowPrintAndOtherProperties";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1343,9 +1343,9 @@ public function PdfInputUsingFilePath_RC4128SecurityOwnerUserPassword_PdfOutput(
 {
     $Name = "PdfInputRC4128SecurityOwnerUserPassword";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1385,9 +1385,9 @@ public function PdfInputUsingFilePath_RC4128SecurityEncryptMetadata_PdfOutput()
 {
     $Name = "PdfInputRC4128SecurityEncryptMetadata";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1422,9 +1422,9 @@ public function PdfInputUsingFilePath_RC4128SecurityEncryptExceptMetadata_PdfOut
 {
     $Name = "PdfInputRC4128SecurityEncryptExceptMetadata";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;

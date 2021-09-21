@@ -37,6 +37,7 @@ include_once(__DIR__.'./PdfInfoResponse.php');
         public function Process():PdfInfoResponse
         {
             $client=parent::Init();
+            curl_setopt($client, CURLOPT_URL, $this->BaseUrl."/".$this->EndpointName);
 
             $errCode=json_last_error();
             
@@ -69,7 +70,7 @@ include_once(__DIR__.'./PdfInfoResponse.php');
             $retObject->StatusCode = $resCode;
             if ($result == true) 
             {
-                if ($retObject !=  null && $retObject->Content!= null ) 
+               if ($retObject !=  null &&  $retObject->StatusCode== 200)
                 {
                     $retObject->IsSuccessful = true;
                 } 

@@ -28,9 +28,9 @@ use PHPUnit\Framework\TestCase;
         /** @test */
         public function EncryptPDF()
         {
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
             $pdf = new Pdf();
+            $pdf->ApiKey = $this->key;
+            $pdf->BaseUrl = $this->url;
            
         
             $pdf->Author = $this->Author;
@@ -66,8 +66,8 @@ use PHPUnit\Framework\TestCase;
         public function EncryptExistingPDF()
         {
             $pdf = new Pdf();
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            $pdf->ApiKey = $this->key;
+            $pdf->BaseUrl = $this->url;
         
             $pdf->Author = $this->Author;
             $pdf->Title = $this->Title;

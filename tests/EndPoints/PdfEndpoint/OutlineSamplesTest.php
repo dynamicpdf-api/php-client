@@ -31,9 +31,9 @@ public function PdfInputUsingFilePath_Outline_Pdfoutput()
 {
     $Name = "PdfInputFilePathOutline";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -71,9 +71,9 @@ public function PdfInputUsingFilePath_OutlineAll_Pdfoutput()
 {
     $Name = "PdfInputFilePathOutlineAll";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -132,9 +132,9 @@ public function PdfInputUsingFilePath_ChildrenSimplegoto_Pdfoutput()
 {
     $Name = "PdfInputFilePathOutlineChildrenGoto";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -196,9 +196,9 @@ public function PdfInputUsingFilePath_children_simplegotoOutOfPageIndexLeve1_Exc
 {
     $Name = "PdfInputFilePathOutlineOutOfPageIndex";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -265,9 +265,9 @@ public function PdfInputUsingFilePath_OutlineFrominputidFromChildren_Pdfoutput()
 {
     $Name = "OutlineFrominputidFromChildren";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -305,9 +305,9 @@ public function PdfInputUsingFilePath_OutlineFrominputidFromParent_Pdfoutput()
 {
     $Name = "OutlineFrominputidFromParent";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -365,9 +365,9 @@ public function PdfInputUsingFilePath_Outline_GotoAction_Pdfoutput()
 {
     $Name = "OutlineGoToAction";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -416,9 +416,9 @@ public function PdfInputUsingFilePath_Outline_KidsBlankPageGotoAction_Pdfoutput(
 {
     $Name = "OutlineKidsGoToAction";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -472,9 +472,9 @@ public function PdfInputUsingFilePath_OutlineSameLevel_Pdfoutput()
 {
     $Name = "OutlineSameLevel";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -517,9 +517,9 @@ public function PdfInputUsingFilePath_OutlineSimple_Pdfoutput()
 {
     $Name = "OutlineSameLevel";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -560,9 +560,9 @@ public function PdfInputUsingFilePath_OutlineSimpleFromInputId_Pdfoutput()
 {
     $Name = "OutlineSimpleFromInputId";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -603,9 +603,9 @@ public function PdfInputUsingFilePath_OutlineSimpleFromInputId_Children_Pdfoutpu
 {
     $Name = "OutlineSimpleFromInputIdChildren";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -648,9 +648,9 @@ public function PdfInputUsingFilePath_Outlines_simplegoto_Pdfoutput()
 {
     $Name = "OutlineSimpleGoTo";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -693,9 +693,9 @@ public function PdfInputUsingFilePath_Outlines_simplegoto_mulitiple_inputs_Pdfou
 {
     $Name = "OutlineSimpleGoToMultipleInputs";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -767,9 +767,9 @@ public function PdfInputUsingFilePath_Outline_urlaction_Pdfoutput()
 {
     $Name = "OutlineUrlAction";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -811,9 +811,9 @@ public function PdfInputUsingFilePath_Outlines_with_children_one_level_Pdfoutput
 {
     $Name = "OutlineChildOneLevel";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -869,9 +869,9 @@ public function PdfInputUsingFilePath_ChildrenFrominputIds_Pdfoutput()
 {
     $Name = "OutlineChildFromInputIds";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;

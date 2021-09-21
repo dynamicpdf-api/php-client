@@ -29,9 +29,9 @@ public function FilePath_PdfOutput()
 {
     $Name = "FilePath";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -62,9 +62,9 @@ public function Bytes_PdfOutput()
 {
     $Name = "Bytes";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -95,9 +95,9 @@ public function Stream_PdfOutput()
 {
     $Name = "Stream";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -131,9 +131,9 @@ public function CloudRoot_PdfOutput()
 {
     $Name = "CloudRoot";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -163,9 +163,9 @@ public function CloudSubFolder_PdfOutput()
 {
     $Name = "CloudSubFolder";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -195,9 +195,9 @@ public function FilePathPdfInputs_PdfOutput()
 {
     $Name = "FilePathInputs";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -237,9 +237,9 @@ public function BytesPdfInputs_PdfOutput()
 {
     $Name = "BytesInputs";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -279,9 +279,9 @@ public function StreamPdfInputs_PdfOutput()
 {
     $Name = "StreamInputs";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -329,9 +329,9 @@ public function CloudRootPdfInputs_PdfOutput()
 {
     $Name = "CloudRootPdfInputs";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -368,9 +368,9 @@ public function CloudSubFolderPdfInputs_PdfOutput()
 {
     $Name = "CloudSubFolderPdfInputs";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -407,9 +407,9 @@ public function FilePathMergeMultipleDocuments_PdfOutput()
 {
     $Name = "FilePathMergeMultipleDocuments";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -450,9 +450,9 @@ public function BytesMergeMultipleDocuments_PdfOutput()
 {
     $Name = "BytesPathMergeMultipleDocuments";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -493,9 +493,9 @@ public function StreamMergeMultipleDocuments_PdfOutput()
 {
     $Name = "StreamPathMergeMultipleDocuments";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -544,9 +544,9 @@ public function CloudRootMergeMultipleDocuments_PdfOutput()
 {
     $Name = "CloudRootMergeMultipleDocuments";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -584,9 +584,9 @@ public function CloudSubFolderMergeMultipleDocuments_PdfOutput()
 {
     $Name = "CloudSubFolderMergeMultipleDocuments";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -624,9 +624,9 @@ public function FilePathSimpleMerge_PdfOutput()
 {
     $Name = "FilePathSimpleMerge";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -657,9 +657,9 @@ public function FilePathMergeStartPageAndPageCount_PdfOutput()
 {
     $Name = "FilePathSimpleMergePpty";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -692,9 +692,9 @@ public function FilePathMergeWithSameInput_PdfOutput()
 {
     $Name = "FilePathMergeWithSameInput";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -733,9 +733,9 @@ public function FilePathMergeOptions_PdfOutput()
 {
     $Name = "FilePathMergeOptions";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -769,9 +769,9 @@ public function FilePathMergeOptionsWithMultipleDocuments_PdfOutput()
 {
     $Name = "FilePathMergeOptionsWithMultipleDocuments";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -820,9 +820,9 @@ public function FilePathMergeOptionsDocumentInfo_PdfOutput()
 {
     $Name = "FilePathMergeOptionsDocumentInfo";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -857,9 +857,9 @@ public function FilePathMergeOptionsDocumentJavaScript_PdfOutput()
 {
     $Name = "FilePathMergeOptionsDocumentJavaScript";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -894,9 +894,9 @@ public function FilePathMergeOptionsDocumentProperties_PdfOutput()
 {
     $Name = "FilePathMergeOptionsDocumentProperties";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -931,9 +931,9 @@ public function FilePathMergeOptionsEmbeddedFiles_PdfOutput()
 {
     $Name = "FilePathMergeOptionsEmbeddedFiles";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -968,9 +968,9 @@ public function FilePathMergeOptionsFormFields_PdfOutput()
 {
     $Name = "FilePathMergeOptionsFormFields";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1005,9 +1005,9 @@ public function FilePathMergeOptionsFormsXfaData_PdfOutput()
 {
     $Name = "FilePathMergeOptionsFormsXfaData";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1042,9 +1042,9 @@ public function FilePathMergeOptionsLogicalStructure_PdfOutput()
 {
     $Name = "FilePathMergeOptionsLogicalStructure";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1079,9 +1079,9 @@ public function FilePathMergeOptionsOpenAction_PdfOutput()
 {
     $Name = "FilePathMergeOptionsOpenAction";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1116,9 +1116,9 @@ public function FilePathMergeOptionsOptionalContentInfo_PdfOutput()
 {
     $Name = "FilePathMergeOptionsOptionalContentInfo";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1153,9 +1153,9 @@ public function FilePathMergeOptionsOutlines_PdfOutput()
 {
     $Name = "FilePathMergeOptionsOutlines";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1190,9 +1190,9 @@ public function FilePathMergeOptionsOutputIntent_PdfOutput()
 {
     $Name = "FilePathMergeOptionsOutputIntent";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1227,9 +1227,9 @@ public function FilePathMergeOptionsPageAnnotations_PdfOutput()
 {
     $Name = "FilePathMergeOptionsPageAnnotations";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1264,9 +1264,9 @@ public function FilePathMergeOptionsPageLabelsAndSections_PdfOutput()
 {
     $Name = "FilePathMergeOptionsPageLabelsAndSections";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1301,9 +1301,9 @@ public function FilePathMergeOptionsRootFormField_PdfOutput()
 {
     $Name = "FilePathMergeOptionsRootFormField";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1338,9 +1338,9 @@ public function FilePathMergeOptionsXmpMetadata_PdfOutput()
 {
     $Name = "FilePathMergeOptionsXmpMetadata";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1375,9 +1375,9 @@ public function FilePathMergeOptionsAllTrue_PdfOutput()
 {
     $Name = "FilePathMergeOptionsAllTrue";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1426,9 +1426,9 @@ public function FilePathMergeOptionsAllFalse_PdfOutput()
 {
     $Name = "FilePathMergeOptionsAllFalse";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1477,9 +1477,9 @@ public function FilePathMergeOptionsWithTemplateAllPages_PdfOutput()
 {
     $Name = "FilePathMergeOptionsWithTemplateAllPages";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1533,9 +1533,9 @@ public function FilePathMergeOptionsWithTemplateEvenPages_PdfOutput()
 {
     $Name = "FilePathMergeOptionsWithTemplateEvenPages";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1592,9 +1592,9 @@ public function FilePathMergeOptionsWithTemplateOddPages_PdfOutput()
 {
     $Name = "FilePathMergeOptionsWithTemplateOddPages";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1651,9 +1651,9 @@ public function FilePathMergeOptionsWithTemplates_PdfOutput()
 {
     $Name = "FilePathMergeOptionsWithTemplates";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1717,9 +1717,9 @@ public function FilePath_AddPdf_PdfOutput()
 {
     $Name = "FilePath_AddPdf";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1749,9 +1749,9 @@ public function FilePath_AddPdfParameters_PdfOutput()
 {
     $Name = "FilePath_AddPdfParameters";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -1783,9 +1783,9 @@ public function Cloud_AddPdf_PdfOutput()
 {
     $Name = "Cloud_AddPdf";
     
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;

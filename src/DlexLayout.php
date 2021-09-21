@@ -44,6 +44,8 @@
         {
             $client=parent::Init();
 
+            curl_setopt($client, CURLOPT_URL, $this->BaseUrl."/".$this->EndpointName);
+
             $errCode=json_last_error();
             //echo($this->resource->Data);
             /*------------------------------------------------------------------------------------------------------*/
@@ -109,7 +111,7 @@
             $retObject = new PdfResponse();
             $retObject->IsSuccessful = false;
             $retObject->StatusCode = $resCode;
-            if ($result == true) 
+            if ($retObject !=  null &&  $retObject->StatusCode== 200)
             {
                 if (strncmp($outData, '%PDF', 4) == 0) 
                     {

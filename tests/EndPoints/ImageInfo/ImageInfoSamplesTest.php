@@ -22,12 +22,14 @@ use PHPUnit\Framework\TestCase;
         public function Tiff_JsonOutput()
         {
             $Name = "Tiff";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."Output.tiff");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -41,12 +43,14 @@ use PHPUnit\Framework\TestCase;
         public function Group4Fax_JsonOutput()
         {
             $Name = "Group4Fax";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."CCITT_1.tif");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -60,12 +64,14 @@ use PHPUnit\Framework\TestCase;
         public function Gif_JsonOutput()
         {
             $Name = "Gif";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."Northwind Logo.gif");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -79,12 +85,14 @@ use PHPUnit\Framework\TestCase;
         public function Png_JsonOutput()
         {
             $Name = "Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."170x220_T.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -98,12 +106,14 @@ use PHPUnit\Framework\TestCase;
         public function Bmp_JsonOutput()
         {
             $Name = "Bmp";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."Earth2.bmp");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -117,12 +127,14 @@ use PHPUnit\Framework\TestCase;
         public function Jpg_JsonOutput()
         {
             $Name = "Jpg";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."Image1.jpg");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -136,8 +148,7 @@ use PHPUnit\Framework\TestCase;
         public function MultipleFormats_JsonOutput()
         {
             $Name = "MultipleFormat";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $images =array ( "Output.tiff", "Northwind Logo.gif", "CCITT_1.tif", "170x220_T.png", "Image1.jpg", "Earth2.bmp" );  
 
@@ -146,6 +157,9 @@ use PHPUnit\Framework\TestCase;
                 $resource = new ImageResource($this->inputpath.$images[$i]);
 
                 $pdfEndPoint = new ImageInfo($resource);
+                $pdfEndPoint->ApiKey = $this->key;
+                $pdfEndPoint->BaseUrl = $this->url;
+
                 $response = $pdfEndPoint->Process();
 
                 if ($response->IsSuccessful)
@@ -161,12 +175,14 @@ use PHPUnit\Framework\TestCase;
         public function Group3Fax_JsonOutput()
         {
             $Name = "Group3Fax";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."FaxTest.tif");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -180,12 +196,14 @@ use PHPUnit\Framework\TestCase;
         public function JpegTiff_JsonOutput()
         {
             $Name = "JpegTiff";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."2 page Color.tif");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -199,12 +217,14 @@ use PHPUnit\Framework\TestCase;
         public function LzwTiff_JsonOutput()
         {
             $Name = "LzwTiff";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."2.tif");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -218,12 +238,14 @@ use PHPUnit\Framework\TestCase;
         public function UnCompressedTiff_JsonOutput()
         {
             $Name = "UnCompressedTiff";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."16UnCompressedCMYKMM.tif");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -237,12 +259,14 @@ use PHPUnit\Framework\TestCase;
         public function Indexed_Bmp_JsonOutput()
         {
             $Name = "Indexed_Bmp";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."3_rescale_indexed.bmp");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -256,12 +280,14 @@ use PHPUnit\Framework\TestCase;
         public function _2Bpp_Png_JsonOutput()
         {
             $Name = "2Bpp_Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."121_2bpp.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -275,12 +301,14 @@ use PHPUnit\Framework\TestCase;
         public function _4Bpp_Png_JsonOutput()
         {
             $Name = "4Bpp_Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."4bpp.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -294,12 +322,14 @@ use PHPUnit\Framework\TestCase;
         public function Rgba_Png_JsonOutput()
         {
             $Name = "Rgba_Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."Animated_PNG_example_bouncing_beach_ball.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -313,12 +343,14 @@ use PHPUnit\Framework\TestCase;
         public function Interlaced_Png_JsonOutput()
         {
             $Name = "Interlaced_Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."cat.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -332,12 +364,14 @@ use PHPUnit\Framework\TestCase;
         public function GrayScale_Png_JsonOutput()
         {
             $Name = "GrayScale_Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."error.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -351,12 +385,14 @@ use PHPUnit\Framework\TestCase;
         public function GrayScaleAlpha_Png_JsonOutput()
         {
             $Name = "GrayScaleAlpha_Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."gray8a.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -370,12 +406,14 @@ use PHPUnit\Framework\TestCase;
         public function GrayScaleAlpha16Bit_Png_JsonOutput()
         {
             $Name = "GrayScaleAlpha16Bit_Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."gray16a.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -389,12 +427,14 @@ use PHPUnit\Framework\TestCase;
         public function Rgba16Bit_Png_JsonOutput()
         {
             $Name = "Rgba16Bit_Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+
 
             $resource = new ImageResource($this->inputpath."rgba16.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)
@@ -408,12 +448,15 @@ use PHPUnit\Framework\TestCase;
         public function Indexed_Png_JsonOutput()
         {
             $Name = "Indexed_Png";
-            Pdf::$DefaultApiKey = $this->key;
-            Pdf::$DefaultBaseUrl = $this->url;
+            
+
 
             $resource = new ImageResource($this->inputpath."png2.png");
 
             $pdfEndPoint = new ImageInfo($resource);
+            $pdfEndPoint->ApiKey = $this->key;
+            $pdfEndPoint->BaseUrl = $this->url;
+
             $response = $pdfEndPoint->Process();
 
             if ($response->IsSuccessful)

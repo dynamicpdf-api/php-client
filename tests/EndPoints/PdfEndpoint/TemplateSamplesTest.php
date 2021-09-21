@@ -28,9 +28,9 @@ public function FilePathInputTextElement_Pdfoutput()
 {
     $Name = "FilePathInputTextElement";
 
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -67,9 +67,9 @@ public function StreamInputTextElement_Pdfoutput()
 {
    $Name = "StreamInputTextElement";
 
-   Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url; 
    $pdf = new Pdf();
+   $pdf->ApiKey = $this->key;
+   $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -108,9 +108,9 @@ public function BytesTextElement_Pdfoutput()
 {
     $Name = "BytesInputTextElement";
 
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -151,9 +151,9 @@ public function CloudRootTextElement_Pdfoutput()
 {
     $Name = "CloudRootInputTextElement";
 
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
@@ -189,9 +189,9 @@ public function CloudSubFolderTextElement_Pdfoutput()
 {
     $Name = "CloudSubFolderInputTextElement";
 
-    Pdf::$DefaultApiKey = $this->key;
-    Pdf::$DefaultBaseUrl = $this->url;
     $pdf = new Pdf();
+    $pdf->ApiKey = $this->key;
+    $pdf->BaseUrl = $this->url;
     
 
     $pdf->Author = $this->Author;
