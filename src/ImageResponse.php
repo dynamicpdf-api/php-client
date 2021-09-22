@@ -1,38 +1,36 @@
 
 <?php
-include_once(__DIR__.'./JsonResponse.php');
+include_once __DIR__ . './JsonResponse.php';
+
+/**
+ *
+ * Represents an image response.
+ *
+ */
+class ImageResponse extends JsonResponse
+{
 
     /**
-    *
-    * Represents an image response.
-    *
-    */
-    class ImageResponse extends JsonResponse
+     *
+     *  Initializes a new instance of the ImageResponse class.
+     *
+     * @param  string $jsonContent The image content of the response.
+     */
+    public function __consruct(?string $jsonContent = null)
     {
-
-        /**
-        *
-        *  Initializes a new instance of the ImageResponse class. 
-        *
-        * @param  string $jsonContent The image content of the response.
-        */
-        public function __consruct(?string $jsonContent = null)
-        {
-            if($jsonContent != null)
-            {
+        if ($jsonContent != null) {
             parent::__construct($jsonContent);
             $this->Content = json_decode($jsonContent);
-            }
         }
-
-
-        /**
-        *
-        *  Gets or sets a collection of ImageInformation. 
-        *
-        */
-        public $Content;
- 
     }
+
+    /**
+     *
+     *  Gets or sets a collection of ImageInformation.
+     *
+     */
+    public $Content;
+
+}
 ?>
 

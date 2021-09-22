@@ -1,44 +1,40 @@
 <?php
-require_once(__DIR__.'/../../../src/Pdf.php');
-require_once(__DIR__.'/../../../src/ImageResource.php');
-require_once(__DIR__.'/../../../src/ImageInput.php');
-require_once(__DIR__.'/../../../src/PdfResponse.php');
-require_once(__DIR__.'/../KeyAndUrl.php');  
+require_once __DIR__ . '/../../../src/Pdf.php';
+require_once __DIR__ . '/../../../src/ImageResource.php';
+require_once __DIR__ . '/../../../src/ImageInput.php';
+require_once __DIR__ . '/../../../src/PdfResponse.php';
+require_once __DIR__ . '/../TestParameters.php';
 
 use PHPUnit\Framework\TestCase;
 
-    class ImageToPdfTest extends TestCase
+class ImageToPdfTest extends TestCase
+{
+    private $inputpath = TestParameters::Inputpath;
+    private $outPutPath = TestParameters::OutPutPath;
+    private $key = TestParameters::Key;
+    private $url = TestParameters::Url;
+    private $Author = TestParameters::Author;
+    private $Title = TestParameters::Title;
+
+    /** @test */
+    public function ConvertTiffToPDF()
     {
-        private $inputpath = KeyAndUrl::Inputpath;
-        private $outPutPath = KeyAndUrl::OutPutPath;
-        private $key=KeyAndUrl::Key;
-        private $url = KeyAndUrl::Url; 
-        private $Author= KeyAndUrl::Author;
-        private $Title =KeyAndUrl::Title;
+        $pdf = new Pdf();
+        $pdf->ApiKey = $this->key;
+        $pdf->BaseUrl = $this->url;
 
-        /** @test */
-        public function ConvertTiffToPDF()
-        {
-            $pdf = new Pdf();
-            $pdf->ApiKey = $this->key;
-            $pdf->BaseUrl = $this->url;
-          
+        $pdf->Author = $this->Author;
+        $pdf->Title = $this->Title;
 
-            $pdf->Author = $this->Author;
-            $pdf->Title = $this->Title;
+        $resource = new ImageResource($this->inputpath . "fw9_13.tif");
+        $input = new ImageInput($resource);
+        array_push($pdf->Inputs, $input);
 
-            $resource = new ImageResource($this->inputpath."fw9_13.tif");
-            $input = new ImageInput($resource);
-            array_push($pdf->Inputs,$input);
+        $response = $pdf->Process();
 
-            $response = $pdf->Process();
-
-
-            if ($response->IsSuccessful)
-            {
-                file_put_contents($this->outPutPath."Output.pdf", $response->Content);
-            }
-            $this->assertEquals($response->IsSuccessful,true);
+        if ($response->IsSuccessful) {
+            file_put_contents($this->outPutPath . "Output.pdf", $response->Content);
         }
+        $this->assertEquals($response->IsSuccessful, true);
     }
-?>
+}

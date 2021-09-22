@@ -1,12 +1,11 @@
 <?php
-include_once(__DIR__.'./Resource.php');
-include_once(__DIR__.'./ResourceType.php');
-include_once(__DIR__.'./EndPointException.php');
-
+include_once __DIR__ . './Resource.php';
+include_once __DIR__ . './ResourceType.php';
+include_once __DIR__ . './EndPointException.php';
 
 /**
  *
- *  Represents an image resource used to create an ImageInput object to create PDF from images. 
+ *  Represents an image resource used to create an ImageInput object to create PDF from images.
  *
  */
 class ImageResource extends Resource
@@ -14,7 +13,7 @@ class ImageResource extends Resource
 
     /**
      *
-     *  Initializes a new instance of the ImageResource class. 
+     *  Initializes a new instance of the ImageResource class.
      *
      * @param  string|array|stream $filePath The image file path or the byte array of the image file or the stream of the image file.
      * @param  string $resourceName The name of the resource.
@@ -25,36 +24,28 @@ class ImageResource extends Resource
         $this->Type = ResourceType::Image;
     }
 
-    public $Type  = ResourceType::Image;
+    public $Type = ResourceType::Image;
 
     public $MimeType;
 
-    public  function  FileExtension()
+    public function FileExtension()
     {
-        $fileHeader =  substr($this->Data, 0, 16);
+        $fileHeader = substr($this->Data, 0, 16);
         $byteArray = array();
-        for ($i = 0; $i < strlen($fileHeader); $i++) 
-        {
+        for ($i = 0; $i < strlen($fileHeader); $i++) {
             $byteArray[$i] = ord($fileHeader[$i]);
         }
 
-        if (ImageResource::IsPngImage($byteArray)) 
-        {
+        if (ImageResource::IsPngImage($byteArray)) {
             $this->MimeType = "image/png";
             return ".png";
-        } 
-        else if (ImageResource::IsJpegImage($byteArray)) 
-        {
+        } else if (ImageResource::IsJpegImage($byteArray)) {
             $this->MimeType = "image/jpeg";
             return ".jpeg";
-        } 
-        else if (ImageResource::IsGifImage($byteArray)) 
-        {
+        } else if (ImageResource::IsGifImage($byteArray)) {
             $this->MimeType = "image/gif";
             return ".gif";
-        } 
-        else if (ImageResource::IsTiffImage($byteArray)) 
-        {
+        } else if (ImageResource::IsTiffImage($byteArray)) {
             $this->MimeType = "image/tiff";
             return ".tiff";
         } else if (ImageResource::IsJpeg2000Image($byteArray)) {
@@ -103,7 +94,6 @@ class ImageResource extends Resource
     public function GetjsonSerializeString()
     {
 
-
         $inputjson = array();
         $inputjson['type'] = "image";
         $inputjson['align'] = 1;
@@ -113,9 +103,9 @@ class ImageResource extends Resource
         return $inputjson;
 
         /* return    array (
-            "type"=>"image",
-            "align"=>1,
-            "vAlign"=>1,
-            "resourceName"=>$this->ResourceName);*/
+    "type"=>"image",
+    "align"=>1,
+    "vAlign"=>1,
+    "resourceName"=>$this->ResourceName);*/
     }
 }

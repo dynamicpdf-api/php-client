@@ -7,7 +7,7 @@ require_once(__DIR__.'/../../../src/PdfInput.php');
 require_once(__DIR__.'/../../../src/Template.php');
 require_once(__DIR__.'/../../../src/Elements/TextElement.php');
 require_once(__DIR__.'/../../../src/Elements/ElementPlacement.php');
-require_once(__DIR__.'/../KeyAndUrl.php'); 
+require_once(__DIR__.'/../TestParameters.php'); 
 
 
 
@@ -15,12 +15,12 @@ use PHPUnit\Framework\TestCase;
 
 class TemplateSamplesTest extends TestCase
  {
-    private $inputpath = KeyAndUrl::Inputpath;
-    private $outPutPath = KeyAndUrl::OutPutPath;
-    private $key=KeyAndUrl::Key;
-    private $url = KeyAndUrl::Url; 
-    private $Author= KeyAndUrl::Author;
-    private $Title =KeyAndUrl::Title;
+    private $inputpath = TestParameters::Inputpath;
+    private $outPutPath = TestParameters::OutPutPath;
+    private $key=TestParameters::Key;
+    private $url = TestParameters::Url; 
+    private $Author= TestParameters::Author;
+    private $Title =TestParameters::Title;
 
 
 /** @test */

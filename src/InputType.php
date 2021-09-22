@@ -1,44 +1,38 @@
 <?php
 
-
 /**
-*
-* Specifies an input type.
-*
-*/
+ *
+ * Specifies an input type.
+ *
+ */
 class InputType
-{ 
+{
 
-      /**
-      *
-      * Pdf input.
-      *
-      */
-      public const Pdf = "Pdf";
+    /**
+     *
+     * Pdf input.
+     *
+     */
+    public const Pdf = "Pdf";
 
+    /**
+     *
+     * Image input.
+     *
+     */
+    public const Image = "Image";
 
-      /**
-      *
-      * Image input.
-      *
-      */
-      public const Image = "Image";
+    /**
+     *
+     * Dlex input.
+     *
+     */
+    public const Dlex = "Dlex";
 
-
-      /**
-      *
-      * Dlex input.
-      *
-      */
-      public const Dlex = "Dlex";
-
-
-      /**
-      *
-      * Page input.
-      *
-      */
-      public const Page = "Page";
-} 
-?>
-
+    /**
+     *
+     * Page input.
+     *
+     */
+    public const Page = "Page";
+}

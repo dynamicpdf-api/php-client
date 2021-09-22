@@ -1,34 +1,31 @@
 <?php
 
-
 /**
-*
-* Specifies vertical alignment.
-*
-*/
+ *
+ * Specifies vertical alignment.
+ *
+ */
 class VAlign
-{ 
+{
 
-      /**
-      *
-      * Align top.
-      *
-      */
-      public const Top = "top";
+    /**
+     *
+     * Align top.
+     *
+     */
+    public const Top = "top";
 
-      /**
-      *
-      * Align center. This is default.
-      *
-      */
-      public const Center = "center";
+    /**
+     *
+     * Align center. This is default.
+     *
+     */
+    public const Center = "center";
 
-      /**
-      *
-      * Align bottom.
-      *
-      */
-      public const Bottom = "bottom";
-} 
-?>
-
+    /**
+     *
+     * Align bottom.
+     *
+     */
+    public const Bottom = "bottom";
+}

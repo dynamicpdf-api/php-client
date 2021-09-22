@@ -1,52 +1,45 @@
 <?php
 
-
 /**
-*
-* Specifies resouce type.
-*
-*/
+ *
+ * Specifies resouce type.
+ *
+ */
 class ResourceType
-{ 
+{
 
-      /**
-      *
-      * Image resource.
-      *
-      */
-      public const Image = "Image";
+    /**
+     *
+     * Image resource.
+     *
+     */
+    public const Image = "Image";
 
+    /**
+     *
+     * Pdf resource.
+     *
+     */
+    public const Pdf = "Pdf";
 
-      /**
-      *
-      * Pdf resource.
-      *
-      */
-      public const Pdf = "Pdf";
+    /**
+     *
+     * LayoutData resource.
+     *
+     */
+    public const LayoutData = "LayoutData";
 
+    /**
+     *
+     * Dlex resource.
+     *
+     */
+    public const Dlex = "Dlex";
 
-      /**
-      *
-      * LayoutData resource.
-      *
-      */
-      public const LayoutData = "LayoutData";
-
-
-      /**
-      *
-      * Dlex resource.
-      *
-      */
-      public const Dlex = "Dlex";
-
-
-      /**
-      *
-      * Font resource.
-      *
-      */
-      public const Font = "Font";
-} 
-?>
-
+    /**
+     *
+     * Font resource.
+     *
+     */
+    public const Font = "Font";
+}

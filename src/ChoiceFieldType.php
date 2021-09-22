@@ -1,25 +1,24 @@
 <?php
 
+/**
+ *
+ * Specifies type of the Choice Field.
+ *
+ */
+class ChoiceFieldType
+{
+
     /**
-    *
-    * Specifies type of the Choice Field.
-    *
-    */
-    class ChoiceFieldType
-    {
+     *
+     * Represents a List box.
+     *
+     */
+    public const ListBox = "listBox";
 
-        /**
-        *
-        * Represents a List box.
-        *
-        */
-        public const ListBox = "listBox";
-
-        /**
-        *
-        * Represents a Combo box.
-        *
-        */
-        public const ComboBox = "comboBox";
-    }
-?>
+    /**
+     *
+     * Represents a Combo box.
+     *
+     */
+    public const ComboBox = "comboBox";
+}

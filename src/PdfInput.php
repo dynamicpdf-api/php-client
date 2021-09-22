@@ -1,10 +1,9 @@
 <?php
-require_once(__DIR__.'./Input.php');
-require_once(__DIR__.'./InputType.php');
-require_once(__DIR__.'./MergeOptions.php');
-require_once(__DIR__.'./PdfResource.php');
-require_once(__DIR__.'./MergeOptions.php');
-
+require_once __DIR__ . './Input.php';
+require_once __DIR__ . './InputType.php';
+require_once __DIR__ . './MergeOptions.php';
+require_once __DIR__ . './PdfResource.php';
+require_once __DIR__ . './MergeOptions.php';
 
 /**
  *
@@ -16,7 +15,7 @@ class PdfInput extends Input
 
     /**
      *
-     * Initializes a new instance of the PdfInput class. 
+     * Initializes a new instance of the PdfInput class.
      *
      * @param  string|PdfResource $resource The resource path in cloud resource manager or the resource of type PdfResource.
      * @param  ?MergeOptions $options The merge options for the pdf.
@@ -27,66 +26,60 @@ class PdfInput extends Input
         $this->MergeOptions = $options;
     }
 
-   
-    public   $Type = InputType::Pdf;
-
+    public $Type = InputType::Pdf;
 
     /**
      *
-     *  Gets or sets the merge options MergeOptions. 
+     *  Gets or sets the merge options MergeOptions.
      *
      */
-    public  $MergeOptions;
-
+    public $MergeOptions;
 
     /**
      *
      * Gets or sets the start page.
      *
      */
-    public  $StartPage;
-
+    public $StartPage;
 
     /**
      *
      * Gets or sets the page count.
      *
      */
-    public  $PageCount;
+    public $PageCount;
 
     public function GetjsonSerializeString()
     {
         $template = $this->GetTemplate();
         $jsonArray = array();
 
-
         $jsonArray['type'] = "pdf";
-
 
         if ($this->MergeOptions != null) {
             $MergeOptionsArray = $this->MergeOptions->GetjsonSerializeString();
-            if (count($MergeOptionsArray) > 0)
-                $jsonArray['mergeOptions'] =  $MergeOptionsArray;
+            if (count($MergeOptionsArray) > 0) {
+                $jsonArray['mergeOptions'] = $MergeOptionsArray;
+            }
+
         }
 
-
-        if ($this->StartPage != null)
+        if ($this->StartPage != null) {
             $jsonArray['startPage'] = $this->StartPage;
+        }
 
-        if ($this->PageCount != null)
+        if ($this->PageCount != null) {
             $jsonArray['pageCount'] = $this->PageCount;
-
+        }
 
         //---------------------------------------------------
 
         $jsonArray['templateId'] = $this->TemplateId;
 
-
         $jsonArray['resourceName'] = $this->ResourceName;
-
 
         $jsonArray['id'] = $this->Id;
 
-        return  $jsonArray;
+        return $jsonArray;
     }
 }

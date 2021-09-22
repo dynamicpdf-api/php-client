@@ -1,6 +1,6 @@
 ﻿<?php
 
-    class KeyAndUrl
+    class TestParameters
       { 
      
         public const Inputpath =  __DIR__."./../Resources/";
