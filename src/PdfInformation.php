@@ -64,7 +64,7 @@
         * Gets the collection of PageInformation.
         *
         */
-        public Pages = array();
+        public $Pages = array();
 
 
         /**

@@ -56,11 +56,8 @@ abstract class Input
         return $this->template;
     }
 
-    /*public function jsonSerialize()
-{
-return array(
-'type' => $this->Type,
-'resourceName' => $Resources,
-);
-}*/
+    public function GetjsonSerializeString()
+    {
+        
+    }
 }

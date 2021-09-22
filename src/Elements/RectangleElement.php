@@ -71,7 +71,7 @@ include_once(__DIR__.'./ElementType.php');
         *  Gets or sets the LineStyle object used to specify the border style of the rectangle. 
         *
         */
-        public  $BorderStyle= 0;
+        public  $BorderStyle;
 
 
         /**
@@ -79,7 +79,7 @@ include_once(__DIR__.'./ElementType.php');
         *  Gets or sets the Color object to use for the border of the rectangle. 
         *
         */
-        public  $BorderColor = 0;
+        public  $BorderColor ;
 
 
         /**
@@ -90,7 +90,7 @@ include_once(__DIR__.'./ElementType.php');
         * Basic). 
         *
         */
-        public  $FillColor = 0;
+        public  $FillColor ;
         public function GetjsonSerializeString()
         {
             //"width":100.0,"height":50.0,"cornerRadius":0.0,"placement":"topCenter","xOffset":0.0,"yOffset":0.0
