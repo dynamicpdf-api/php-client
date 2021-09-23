@@ -1,2 +1,6 @@
 vendor/
 .vscode
+Resources
+tests/Resources/
+tests/EndPoints/Output
+tests/EndPoints/TestParameters.php
