@@ -1,7 +1,6 @@
 <?php
 namespace DynamicPDF\Api;
 
-
 include_once __DIR__ . './JsonResponse.php';
 
 /**
@@ -34,5 +33,3 @@ class ImageResponse extends JsonResponse
     public $Content;
 
 }
-?>
-

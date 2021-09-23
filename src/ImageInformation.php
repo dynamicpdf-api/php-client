@@ -1,7 +1,6 @@
 <?php
 namespace DynamicPDF\Api;
 
-
 /**
  *
  * Represents an image information.
@@ -66,5 +65,3 @@ class ImageInformation
      */
     public $ColorSpace;
 }
-?>
-

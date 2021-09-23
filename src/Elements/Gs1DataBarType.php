@@ -1,38 +1,32 @@
 <?php
 namespace DynamicPDF\Api\Elements;
 
-
-
 /**
-*
-* Represents GS1 DataBar types.
-*
-*/
+ *
+ * Represents GS1 DataBar types.
+ *
+ */
 class Gs1DataBarType
-{ 
+{
 
-      /**
-      *
-      * Omnidirectional GS1 DataBar type.
-      *
-      */
-      public const Omnidirectional = "omnidirectional";
+    /**
+     *
+     * Omnidirectional GS1 DataBar type.
+     *
+     */
+    public const Omnidirectional = "omnidirectional";
 
+    /**
+     *
+     * Limited GS1 DataBar type.
+     *
+     */
+    public const Limited = "limited";
 
-      /**
-      *
-      * Limited GS1 DataBar type.
-      *
-      */
-      public const Limited = "limited";
-
-
-      /**
-      *
-      * Expanded GS1 DataBar type.
-      *
-      */
-      public const Expanded = "expanded";
-} 
-?>
-
+    /**
+     *
+     * Expanded GS1 DataBar type.
+     *
+     */
+    public const Expanded = "expanded";
+}

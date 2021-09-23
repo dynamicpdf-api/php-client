@@ -1,7 +1,6 @@
 <?php
 namespace DynamicPDF\Api\Elements;
 
-
 include_once __DIR__ . './TextBarcodeElement.php';
 include_once __DIR__ . './ElementPlacement.php';
 include_once __DIR__ . './ElementType.php';
@@ -104,5 +103,3 @@ class Code11BarcodeElement extends TextBarcodeElement
         return $jsonArray;
     }
 }
-?>
-

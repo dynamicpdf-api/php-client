@@ -1,7 +1,6 @@
 <?php
 namespace DynamicPDF\Api;
 
-
 /**
  *
  * Represents different options for merging PDF documents.
@@ -188,5 +187,3 @@ class MergeOptions
 
     }
 }
-?>
-

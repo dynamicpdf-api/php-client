@@ -1,7 +1,6 @@
 <?php
 namespace DynamicPDF\Api;
 
-
 include_once __DIR__ . './SecurityType.php';
 include_once __DIR__ . './EncryptDocumentComponents.php';
 include_once __DIR__ . './Security.php';
@@ -95,5 +94,3 @@ class Aes128Security extends Security
         return $jsonArray;
     }
 }
-?>
-

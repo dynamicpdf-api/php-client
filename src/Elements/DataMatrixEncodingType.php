@@ -1,93 +1,81 @@
 <?php
 namespace DynamicPDF\Api\Elements;
 
-
 /**
-*
-* Specifies EncodingType for Datamatrix barcodes.
-*
-*/
+ *
+ * Specifies EncodingType for Datamatrix barcodes.
+ *
+ */
 class DataMatrixEncodingType
-{ 
+{
 
-      /**
-      *
-      * Calculates Encoding based on Value.
-      *
-      */
-      public const Auto = "auto";
+    /**
+     *
+     * Calculates Encoding based on Value.
+     *
+     */
+    public const Auto = "auto";
 
+    /**
+     *
+     * Calculates ASCII Encoding based on Value.
+     *
+     */
+    public const AutoAscii = "autoAscii";
 
-      /**
-      *
-      * Calculates ASCII Encoding based on Value.
-      *
-      */
-      public const AutoAscii = "autoAscii";
+    /**
+     *
+     * ASCII Encoding.
+     *
+     */
+    public const Ascii = "ascii";
 
+    /**
+     *
+     * Extended ASCII Encoding.
+     *
+     */
+    public const ExtendedAscii = "extendedAscii";
 
-      /**
-      *
-      * ASCII Encoding.
-      *
-      */
-      public const Ascii = "ascii";
+    /**
+     *
+     * Double digit Encoding.
+     *
+     */
+    public const DoubleDigit = "doubleDigit";
 
+    /**
+     *
+     * C40 Encoding.
+     *
+     */
+    public const C40 = "c40";
 
-      /**
-      *
-      * Extended ASCII Encoding.
-      *
-      */
-      public const ExtendedAscii = "extendedAscii";
+    /**
+     *
+     * Text Encoding.
+     *
+     */
+    public const Text = "text";
 
+    /**
+     *
+     * ANSI X12 Encoding.
+     *
+     */
+    public const AnsiX12 = "ansiX12";
 
-      /**
-      *
-      * Double digit Encoding.
-      *
-      */
-      public const DoubleDigit = "doubleDigit";
+    /**
+     *
+     * EDIFACT Encoding.
+     *
+     */
+    public const Edifact = "edifact";
 
-
-      /**
-      *
-      * C40 Encoding.
-      *
-      */
-      public const C40 = "c40";
-
-
-      /**
-      *
-      * Text Encoding.
-      *
-      */
-      public const Text = "text";
-
-
-      /**
-      *
-      * ANSI X12 Encoding.
-      *
-      */
-      public const AnsiX12 = "ansiX12";
-
-
-      /**
-      *
-      * EDIFACT Encoding.
-      *
-      */
-      public const Edifact = "edifact";
-
-
-      /**
-      *
-      * Base256 Encoding.
-      *
-      */
-      public const Base256 = "base256";
-} 
-?>
-
+    /**
+     *
+     * Base256 Encoding.
+     *
+     */
+    public const Base256 = "base256";
+}

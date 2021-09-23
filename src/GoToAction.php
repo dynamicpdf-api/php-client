@@ -1,7 +1,6 @@
 <?php
 namespace DynamicPDF\Api;
 
-
 include_once __DIR__ . './Action.php';
 include_once __DIR__ . './Input.php';
 include_once __DIR__ . './PageZoom.php';
@@ -24,7 +23,7 @@ class GoToAction extends Action
      * @param  int $pageOffset Page number to navigate.
      * @param  string $pageZoom PageZoom to display the destination.
      */
-    public function __construct( $input, int $pageOffset = 0, string $pageZoom = PageZoom::FitPage)
+    public function __construct($input, int $pageOffset = 0, string $pageZoom = PageZoom::FitPage)
     {
         $this->Input = $input;
         $this->InputID = $input->Id;
@@ -73,6 +72,3 @@ class GoToAction extends Action
         return $jsonArray;
     }
 }
-
-?>
-

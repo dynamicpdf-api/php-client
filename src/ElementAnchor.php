@@ -1,7 +1,6 @@
 <?php
 namespace DynamicPDF\Api;
 
-
 class ElementAnchor
 {
     public const TopLeft = 'TopLeft';
@@ -11,4 +10,3 @@ class ElementAnchor
     public const BottomCenter = 'BottomCenter';
     public const BottomRight = 'BottomRight';
 }
-?>
