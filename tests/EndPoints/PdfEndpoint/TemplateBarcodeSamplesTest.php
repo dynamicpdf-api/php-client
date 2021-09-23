@@ -1,4 +1,5 @@
-﻿<?php
+<?php
+namespace DynamicPDF\Api;
 
 require_once __DIR__ . '/../../../src/Pdf.php';
 require_once __DIR__ . '/../../../src/PdfResource.php';
@@ -36,7 +37,30 @@ require_once __DIR__ . '/../../../src/Elements/MsiBarcodeCheckDigitMode.php';
 require_once __DIR__ . '/../TestParameters.php';
 
 use PHPUnit\Framework\TestCase;
-
+use DynamicPDF\Api\Elements\AztecSymbolSize;
+use DynamicPDF\Api\Elements\ElementPlacement;
+use DynamicPDF\Api\Elements\Compaction;
+use DynamicPDF\Api\Elements\ErrorCorrection;
+use DynamicPDF\Api\Elements\QrCodeFnc1;
+use DynamicPDF\Api\Elements\MsiBarcodeCheckDigitMode;
+use DynamicPDF\Api\Elements\Code128BarcodeElement;
+use DynamicPDF\Api\Elements\AztecBarcodeElement;
+use DynamicPDF\Api\Elements\Code39BarcodeElement;
+use DynamicPDF\Api\Elements\Code25BarcodeElement;
+use DynamicPDF\Api\Elements\Code93BarcodeElement;
+use DynamicPDF\Api\Elements\Code11BarcodeElement;
+use DynamicPDF\Api\Elements\Gs1DataBarBarcodeElement;
+use DynamicPDF\Api\Elements\StackedGs1DataBarBarcodeElement;
+use DynamicPDF\Api\Elements\Iata25BarcodeElement;
+use DynamicPDF\Api\Elements\MsiBarcodeElement;
+use DynamicPDF\Api\Elements\Pdf417BarcodeElement;
+use DynamicPDF\Api\Elements\DataMatrixBarcodeElement;
+use DynamicPDF\Api\Elements\QrCodeElement;
+use DynamicPDF\Api\Elements\StackedGs1DataBarType;
+use DynamicPDF\Api\Elements\Gs1DataBarType;
+use DynamicPDF\Api\Elements\DataMatrixSymbolSize;
+use DynamicPDF\Api\Elements\DataMatrixEncodingType;
+use DynamicPDF\Api\Elements\DataMatrixFunctionCharacter;
 class TemplateBarcodeSamplesTest extends TestCase
 {
     private $inputpath = TestParameters::Inputpath;

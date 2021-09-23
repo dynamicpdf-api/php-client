@@ -1,4 +1,7 @@
-﻿<?php
+<?php
+namespace DynamicPDF\Api;
+
+namespace DynamicPDF\Api;
 
     class TestParameters
       { 

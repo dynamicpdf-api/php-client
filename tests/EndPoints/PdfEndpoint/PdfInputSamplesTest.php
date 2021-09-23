@@ -1,4 +1,5 @@
-﻿<?php
+<?php
+namespace DynamicPDF\Api;
 
 require_once __DIR__ . '/../../../src/Pdf.php';
 require_once __DIR__ . '/../../../src/PdfResource.php';
@@ -11,6 +12,8 @@ require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
 require_once __DIR__ . '/../TestParameters.php';
 
 use PHPUnit\Framework\TestCase;
+use DynamicPDF\Api\Elements\TextElement;
+use DynamicPDF\Api\Elements\ElementPlacement;
 
 class PdfInputSamplesTest extends TestCase
 {

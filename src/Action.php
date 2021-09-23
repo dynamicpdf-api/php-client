@@ -1,4 +1,6 @@
 <?php
+namespace DynamicPDF\Api;
+
 
 
     /**
@@ -18,7 +20,7 @@
 
         public function GetjsonSerializeString()
         {
-            
+            return  array();
         }
     }
 ?>

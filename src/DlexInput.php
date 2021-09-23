@@ -1,4 +1,6 @@
 <?php
+namespace DynamicPDF\Api;
+
 
 include_once __DIR__ . './Input.php';
 include_once __DIR__ . './DlexResource.php';

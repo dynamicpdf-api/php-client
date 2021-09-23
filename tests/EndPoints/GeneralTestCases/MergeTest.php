@@ -1,4 +1,6 @@
 <?php
+namespace DynamicPDF\Api;
+
 require_once __DIR__ . '/../../../src/Pdf.php';
 require_once __DIR__ . '/../../../src/PdfResource.php';
 require_once __DIR__ . '/../../../src/PdfInput.php';

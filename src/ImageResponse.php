@@ -1,5 +1,7 @@
-
 <?php
+namespace DynamicPDF\Api;
+
+
 include_once __DIR__ . './JsonResponse.php';
 
 /**

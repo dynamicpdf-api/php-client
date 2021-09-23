@@ -1,4 +1,7 @@
 <?php
+namespace DynamicPDF\Api;
+
+use JsonSerializable;
 
 include_once __DIR__ . './Security.php';
 include_once __DIR__ . './FormField.php';
@@ -9,7 +12,7 @@ class PdfInstructions implements JsonSerializable
     public $FormFields = array();
     public $Templates = array();
     public $Fonts = array();
-    public $Outlines = array();
+    public $Outlines ;
     public $Inputs = array();
 
     public $Author = "CeteSoftware";

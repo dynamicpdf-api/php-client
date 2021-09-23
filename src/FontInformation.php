@@ -1,4 +1,7 @@
 <?php
+namespace DynamicPDF\Api;
+
+
 class FontInformation
 {
 

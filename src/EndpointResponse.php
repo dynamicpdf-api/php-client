@@ -1,4 +1,7 @@
 <?php
+namespace DynamicPDF\Api;
+
+
 abstract class EndpointResponse
 {
     //public ResponseStatus Status { get; private set; } = ResponseStatus.Pass;

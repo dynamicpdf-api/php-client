@@ -1,5 +1,7 @@
-
 <?php
+namespace DynamicPDF\Api;
+
+
 include_once __DIR__ . './Action.php';
 include_once __DIR__ . './OutlineStyle.php';
 include_once __DIR__ . './OutlineList.php';

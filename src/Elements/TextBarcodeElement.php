@@ -1,7 +1,10 @@
 <?php
+namespace DynamicPDF\Api\Elements;
+
 
 include_once(__DIR__.'./BarcodeElement.php');
 
+use DynamicPDF\Api\Font;
 
     /**
     *

@@ -1,4 +1,5 @@
-﻿<?php
+<?php
+namespace DynamicPDF\Api;
 
 require_once __DIR__ . '/../../../src/Pdf.php';
 require_once __DIR__ . '/../../../src/ImageResource.php';
@@ -12,6 +13,8 @@ require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
 require_once __DIR__ . '/../TestParameters.php';
 
 use PHPUnit\Framework\TestCase;
+use DynamicPDF\Api\Elements\ElementPlacement;
+use DynamicPDF\Api\Elements\PageNumberingElement;
 
 class ImageInputSamplesTest extends TestCase
 {

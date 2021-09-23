@@ -1,5 +1,6 @@
-
 <?php
+namespace DynamicPDF\Api;
+
 
 class ElementAnchor
 {

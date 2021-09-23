@@ -1,6 +1,7 @@
-
 <?php
+namespace DynamicPDF\Api;
 
+use JsonSerializable;
 /**
  *
  * Represents a form field in the PDF document.

@@ -1,6 +1,10 @@
 <?php
+namespace DynamicPDF\Api\Elements;
+
+
 include_once __DIR__ . './Element.php';
 include_once __DIR__ . './ElementPlacement.php';
+
 
 /**
  *

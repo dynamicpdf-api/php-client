@@ -1,5 +1,7 @@
-
 <?php
+namespace DynamicPDF\Api;
+
+
 include_once __DIR__ . './SecurityType.php';
 include_once __DIR__ . './EncryptDocumentComponents.php';
 include_once __DIR__ . './Security.php';

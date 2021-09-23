@@ -1,9 +1,12 @@
-﻿<?php
+<?php
+namespace DynamicPDF\Api;
 
 include_once __DIR__ . './PageZoom.php';
 include_once __DIR__ . './GoToAction.php';
 include_once __DIR__ . './Outline.php';
 include_once __DIR__ . './PdfInput.php';
+
+
 
 class OutlineList
 {

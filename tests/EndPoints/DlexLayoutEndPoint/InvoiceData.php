@@ -1,4 +1,6 @@
-﻿<?php
+<?php
+namespace DynamicPDF\Api;
+
 class InvoiceData
 {
     public function __construct()
