@@ -1,18 +1,18 @@
 <?php
 namespace DynamicPDF\Api;
-
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PdfResource.php';
-require_once __DIR__ . '/../../../src/PdfInput.php';
-require_once __DIR__ . '/../../../src/Outline.php';
-require_once __DIR__ . '/../../../src/OutlineStyle.php';
-require_once __DIR__ . '/../../../src/ImageResource.php';
-require_once __DIR__ . '/../../../src/ImageInput.php';
-require_once __DIR__ . '/../../../src/GoToAction.php';
-require_once __DIR__ . '/../../../src/UrlAction.php';
-require_once __DIR__ . '/../../../src/PageZoom.php';
-require_once __DIR__ . '/../../../src/RgbColor.php';
 require_once __DIR__ . '/../TestParameters.php';
+
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PdfResource;
+use DynamicPDF\Api\PdfInput;
+use DynamicPDF\Api\Outline;
+use DynamicPDF\Api\OutlineStyle;
+use DynamicPDF\Api\ImageResource;
+use DynamicPDF\Api\ImageInput;
+use DynamicPDF\Api\GoToAction;
+use DynamicPDF\Api\UrlAction;
+use DynamicPDF\Api\PageZoom;
+use DynamicPDF\Api\RgbColor;
 
 use PHPUnit\Framework\TestCase;
 

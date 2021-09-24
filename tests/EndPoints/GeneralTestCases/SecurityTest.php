@@ -1,24 +1,23 @@
 <?php
 namespace DynamicPDF\Api;
 
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PdfResource.php';
-require_once __DIR__ . '/../../../src/PdfInput.php';
-require_once __DIR__ . '/../../../src/Aes256Security.php';
-require_once __DIR__ . '/../../../src/PdfResponse.php';
-require_once __DIR__ . '/../../../src/PageInput.php';
-require_once __DIR__ . '/../../../src/Aes128Security.php';
-require_once __DIR__ . '/../../../src/RC4128Security.php';
-require_once __DIR__ . '/../../../src/Elements/TextElement.php';
-require_once __DIR__ . '/../../../src/ImageResource.php';
-require_once __DIR__ . '/../../../src/Elements/ImageElement.php';
-require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
-require_once __DIR__ . '/../TestParameters.php';
-
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PdfResource;
+use DynamicPDF\Api\PdfInput;
+use DynamicPDF\Api\Aes256Security;
+use DynamicPDF\Api\PdfResponse;
+use DynamicPDF\Api\PageInput;
+use DynamicPDF\Api\Aes128Security;
+use DynamicPDF\Api\RC4128Security;
+use DynamicPDF\Api\ImageResource;
 use PHPUnit\Framework\TestCase;
 use DynamicPDF\Api\Elements\TextElement;
 use DynamicPDF\Api\Elements\ElementPlacement;
 use DynamicPDF\Api\Elements\ImageElement;
+
+require_once __DIR__ . '/../TestParameters.php';
+
+
 
 class SecurityTest extends TestCase
 {

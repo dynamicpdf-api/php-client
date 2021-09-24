@@ -1,16 +1,14 @@
 <?php
 namespace DynamicPDF\Api;
-
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PdfResource.php';
-require_once __DIR__ . '/../../../src/PdfInput.php';
-require_once __DIR__ . '/../../../src/Template.php';
-require_once __DIR__ . '/../../../src/Elements/TextElement.php';
-require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
 require_once __DIR__ . '/../TestParameters.php';
 
-use DynamicPDF\Api\Elements\ElementPlacement;
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PdfResource;
+use DynamicPDF\Api\PdfInput;
+use DynamicPDF\Api\Template;
 use DynamicPDF\Api\Elements\TextElement;
+use DynamicPDF\Api\Elements\ElementPlacement;
+
 use PHPUnit\Framework\TestCase;
 
 class TemplateSamplesTest extends TestCase

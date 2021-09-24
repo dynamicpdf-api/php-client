@@ -1,19 +1,21 @@
 <?php
 namespace DynamicPDF\Api;
 
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PageInput.php';
-require_once __DIR__ . '/../../../src/Template.php';
-require_once __DIR__ . '/../../../src/Elements/TextElement.php';
-require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
-require_once __DIR__ . '/../../../src/RgbColor.php';
-require_once __DIR__ . '/../../../src/CmykColor.php';
-require_once __DIR__ . '/../../../src/Grayscale.php';
-require_once __DIR__ . '/../TestParameters.php';
-
-use PHPUnit\Framework\TestCase;
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PageInput;
+use DynamicPDF\Api\Template;
 use DynamicPDF\Api\Elements\TextElement;
 use DynamicPDF\Api\Elements\ElementPlacement;
+use DynamicPDF\Api\RgbColor;
+use DynamicPDF\Api\CmykColor;
+use DynamicPDF\Api\Grayscale;
+
+use PHPUnit\Framework\TestCase;
+
+
+require_once __DIR__ . '/../TestParameters.php';
+
+
 
 
 class ColorPatternSamplesTest extends TestCase

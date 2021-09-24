@@ -1,27 +1,24 @@
 <?php
 namespace DynamicPDF\Api;
 
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PdfResource.php';
-require_once __DIR__ . '/../../../src/PdfInput.php';
-require_once __DIR__ . '/../../../src/Template.php';
-require_once __DIR__ . '/../../../src/Elements/PageNumberingElement.php';
-require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PdfResource;
+use DynamicPDF\Api\PdfInput;
+use DynamicPDF\Api\Template;
+use DynamicPDF\Api\Elements\PageNumberingElement;
+use DynamicPDF\Api\Elements\ElementPlacement;
 
-require_once __DIR__ . '/../../../src/Font.php';
-require_once __DIR__ . '/../../../src/RgbColor.php';
-require_once __DIR__ . '/../../../src/PageInput.php';
-require_once __DIR__ . '/../../../src/Elements/TextElement.php';
-require_once __DIR__ . '/../../../src/ImageResource.php';
-require_once __DIR__ . '/../../../src/ImageInput.php';
-require_once __DIR__ . '/../../../src/Align.php';
-require_once __DIR__ . '/../../../src/VAlign.php';
+use DynamicPDF\Api\Font;
+use DynamicPDF\Api\RgbColor;
+use DynamicPDF\Api\PageInput;
+use DynamicPDF\Api\Elements\TextElement;
+use DynamicPDF\Api\ImageResource;
+use DynamicPDF\Api\ImageInput;
+use DynamicPDF\Api\Align;
+use DynamicPDF\Api\VAlign;
 require_once __DIR__ . '/../TestParameters.php';
 
 use PHPUnit\Framework\TestCase;
-use DynamicPDF\Api\Elements\TextElement;
-use DynamicPDF\Api\Elements\ElementPlacement;
-use DynamicPDF\Api\Elements\PageNumberingElement;
 
 class TemplatePagenumberingSamplesTest extends TestCase
 {

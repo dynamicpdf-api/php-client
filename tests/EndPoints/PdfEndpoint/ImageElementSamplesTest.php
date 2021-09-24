@@ -1,15 +1,15 @@
 <?php
 namespace DynamicPDF\Api;
 
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PdfResource.php';
-require_once __DIR__ . '/../../../src/PdfInput.php';
-require_once __DIR__ . '/../../../src/Template.php';
-require_once __DIR__ . '/../../../src/ImageResource.php';
-require_once __DIR__ . '/../../../src/Elements/ImageElement.php';
-require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
-require_once __DIR__ . '/../../../src/PageInput.php';
 require_once __DIR__ . '/../TestParameters.php';
+
+
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PdfResource;
+use DynamicPDF\Api\PdfInput;
+use DynamicPDF\Api\Template;
+use DynamicPDF\Api\ImageResource;
+use DynamicPDF\Api\PageInput;
 
 use PHPUnit\Framework\TestCase;
 use DynamicPDF\Api\Elements\ElementPlacement;

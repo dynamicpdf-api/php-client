@@ -1,20 +1,20 @@
 <?php
 namespace DynamicPDF\Api;
-
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/ImageResource.php';
-require_once __DIR__ . '/../../../src/ImageInput.php';
-
-require_once __DIR__ . '/../../../src/Align.php';
-require_once __DIR__ . '/../../../src/VAlign.php';
-require_once __DIR__ . '/../../../src/Template.php';
-require_once __DIR__ . '/../../../src/Elements/PageNumberingElement.php';
-require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
 require_once __DIR__ . '/../TestParameters.php';
 
-use PHPUnit\Framework\TestCase;
-use DynamicPDF\Api\Elements\ElementPlacement;
+
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\ImageResource;
+use DynamicPDF\Api\ImageInput;
+
+use DynamicPDF\Api\Align;
+use DynamicPDF\Api\VAlign;
+use DynamicPDF\Api\Template;
 use DynamicPDF\Api\Elements\PageNumberingElement;
+use DynamicPDF\Api\Elements\ElementPlacement;
+
+use PHPUnit\Framework\TestCase;
+
 
 class ImageInputSamplesTest extends TestCase
 {

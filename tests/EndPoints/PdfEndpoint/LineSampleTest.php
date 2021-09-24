@@ -1,20 +1,21 @@
 <?php
 namespace DynamicPDF\Api;
 
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PageInput.php';
-require_once __DIR__ . '/../../../src/Elements/LineElement.php';
-require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
-require_once __DIR__ . '/../../../src/LineStyle.php';
-require_once __DIR__ . '/../../../src/RgbColor.php';
-require_once __DIR__ . '/../../../src/Template.php';
-require_once __DIR__ . '/../../../src/PdfResource.php';
-require_once __DIR__ . '/../../../src/PdfInput.php';
-require_once __DIR__ . '/../TestParameters.php';
-
-use PHPUnit\Framework\TestCase;
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PageInput;
+use DynamicPDF\Api\LineStyle;
+use DynamicPDF\Api\RgbColor;
+use DynamicPDF\Api\Template;
+use DynamicPDF\Api\PdfResource;
+use DynamicPDF\Api\PdfInput;
 use DynamicPDF\Api\Elements\ElementPlacement;
 use DynamicPDF\Api\Elements\LineElement;
+
+use PHPUnit\Framework\TestCase;
+
+require_once __DIR__ . '/../TestParameters.php';
+
+
 
 class LineSampleTest extends TestCase
 {

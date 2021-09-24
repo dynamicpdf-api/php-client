@@ -1,6 +1,8 @@
 <?php
 namespace DynamicPDF\Api;
 
+require __DIR__ . '/../../../../../vendor/autoload.php';
+
 class TestParameters
 {
 

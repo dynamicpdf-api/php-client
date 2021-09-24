@@ -1,66 +1,43 @@
 <?php
 namespace DynamicPDF\Api;
 
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PdfResource.php';
-require_once __DIR__ . '/../../../src/PdfInput.php';
-require_once __DIR__ . '/../../../src/Template.php';
-require_once __DIR__ . '/../../../src/Elements/AztecBarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
-require_once __DIR__ . '/../../../src/Elements/AztecSymbolSize.php';
-
-require_once __DIR__ . '/../../../src/PageInput.php';
-require_once __DIR__ . '/../../../src/Elements/ValueType.php';
-require_once __DIR__ . '/../../../src/Elements/DataMatrixBarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/DataMatrixSymbolSize.php';
-require_once __DIR__ . '/../../../src/Elements/DataMatrixEncodingType.php';
-require_once __DIR__ . '/../../../src/Elements/DataMatrixFunctionCharacter.php';
-require_once __DIR__ . '/../../../src/Elements/Pdf417BarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/Compaction.php';
-require_once __DIR__ . '/../../../src/Elements/ErrorCorrection.php';
-require_once __DIR__ . '/../../../src/Elements/QrCodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/QrCodeFnc1.php';
-require_once __DIR__ . '/../../../src/Elements/Code128BarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/Code39BarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/Code25BarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/Code93BarcodeElement.php';
-require_once __DIR__ . '/../../../src/WebColor.php';
-require_once __DIR__ . '/../../../src/Elements/Code11BarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/Gs1DataBarBarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/Gs1DataBarType.php';
-require_once __DIR__ . '/../../../src/Elements/StackedGs1DataBarBarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/StackedGs1DataBarType.php';
-require_once __DIR__ . '/../../../src/Elements/Iata25BarcodeElement.php';
-require_once __DIR__ . '/../../../src/Font.php';
-require_once __DIR__ . '/../../../src/Elements/MsiBarcodeElement.php';
-require_once __DIR__ . '/../../../src/Elements/MsiBarcodeCheckDigitMode.php';
-require_once __DIR__ . '/../TestParameters.php';
-
-use PHPUnit\Framework\TestCase;
-use DynamicPDF\Api\Elements\AztecSymbolSize;
-use DynamicPDF\Api\Elements\ElementPlacement;
-use DynamicPDF\Api\Elements\Compaction;
-use DynamicPDF\Api\Elements\ErrorCorrection;
-use DynamicPDF\Api\Elements\QrCodeFnc1;
-use DynamicPDF\Api\Elements\MsiBarcodeCheckDigitMode;
-use DynamicPDF\Api\Elements\Code128BarcodeElement;
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PdfResource;
+use DynamicPDF\Api\PdfInput;
+use DynamicPDF\Api\Template;
 use DynamicPDF\Api\Elements\AztecBarcodeElement;
-use DynamicPDF\Api\Elements\Code39BarcodeElement;
-use DynamicPDF\Api\Elements\Code25BarcodeElement;
-use DynamicPDF\Api\Elements\Code93BarcodeElement;
-use DynamicPDF\Api\Elements\Code11BarcodeElement;
-use DynamicPDF\Api\Elements\Gs1DataBarBarcodeElement;
-use DynamicPDF\Api\Elements\StackedGs1DataBarBarcodeElement;
-use DynamicPDF\Api\Elements\Iata25BarcodeElement;
-use DynamicPDF\Api\Elements\MsiBarcodeElement;
-use DynamicPDF\Api\Elements\Pdf417BarcodeElement;
+use DynamicPDF\Api\Elements\ElementPlacement;
+use DynamicPDF\Api\Elements\AztecSymbolSize;
+
+use DynamicPDF\Api\PageInput;
+use DynamicPDF\Api\Elements\ValueType;
 use DynamicPDF\Api\Elements\DataMatrixBarcodeElement;
-use DynamicPDF\Api\Elements\QrCodeElement;
-use DynamicPDF\Api\Elements\StackedGs1DataBarType;
-use DynamicPDF\Api\Elements\Gs1DataBarType;
 use DynamicPDF\Api\Elements\DataMatrixSymbolSize;
 use DynamicPDF\Api\Elements\DataMatrixEncodingType;
 use DynamicPDF\Api\Elements\DataMatrixFunctionCharacter;
+use DynamicPDF\Api\Elements\Pdf417BarcodeElement;
+use DynamicPDF\Api\Elements\Compaction;
+use DynamicPDF\Api\Elements\ErrorCorrection;
+use DynamicPDF\Api\Elements\QrCodeElement;
+use DynamicPDF\Api\Elements\QrCodeFnc1;
+use DynamicPDF\Api\Elements\Code128BarcodeElement;
+use DynamicPDF\Api\Elements\Code39BarcodeElement;
+use DynamicPDF\Api\Elements\Code25BarcodeElement;
+use DynamicPDF\Api\Elements\Code93BarcodeElement;
+use DynamicPDF\Api\WebColor;
+use DynamicPDF\Api\Elements\Code11BarcodeElement;
+use DynamicPDF\Api\Elements\Gs1DataBarBarcodeElement;
+use DynamicPDF\Api\Elements\Gs1DataBarType;
+use DynamicPDF\Api\Elements\StackedGs1DataBarBarcodeElement;
+use DynamicPDF\Api\Elements\StackedGs1DataBarType;
+use DynamicPDF\Api\Elements\Iata25BarcodeElement;
+use DynamicPDF\Api\Font;
+use DynamicPDF\Api\Elements\MsiBarcodeElement;
+use DynamicPDF\Api\Elements\MsiBarcodeCheckDigitMode;
+require_once __DIR__ . '/../TestParameters.php';
+
+use PHPUnit\Framework\TestCase;
+
 class TemplateBarcodeSamplesTest extends TestCase
 {
     private $inputpath = TestParameters::Inputpath;

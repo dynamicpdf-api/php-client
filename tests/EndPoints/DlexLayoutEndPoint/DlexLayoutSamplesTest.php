@@ -1,12 +1,14 @@
 <?php
 namespace DynamicPDF\Api;
 
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/DlexResource.php';
-require_once __DIR__ . '/../../../src/LayoutDataResource.php';
-require_once __DIR__ . '/../../../src/DlexLayout.php';
 require_once __DIR__ . '/InvoiceData.php';
 require_once __DIR__ . '/../TestParameters.php';
+
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\DlexResource;
+use DynamicPDF\Api\LayoutDataResource;
+use DynamicPDF\Api\DlexLayout;
+
 use PHPUnit\Framework\TestCase;
 
 

@@ -1,10 +1,10 @@
 <?php
 namespace DynamicPDF\Api;
 
-require_once __DIR__ . './../../../src/Pdf.php';
-require_once __DIR__ . './../../../src/ImageResource.php';
-require_once __DIR__ . './../../../src/ImageInfo.php';
-require_once __DIR__ . './../../../src/PdfInfoResponse.php';
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\ImageResource;
+use DynamicPDF\Api\ImageInfo;
+use DynamicPDF\Api\PdfInfoResponse;
 require_once __DIR__ . '/../TestParameters.php';
 use PHPUnit\Framework\TestCase;
 

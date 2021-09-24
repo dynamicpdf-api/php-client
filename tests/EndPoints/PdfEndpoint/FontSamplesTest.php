@@ -1,19 +1,17 @@
 <?php
 namespace DynamicPDF\Api;
-
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PageInput.php';
-require_once __DIR__ . '/../../../src/Elements/TextElement.php';
-require_once __DIR__ . '/../../../src/Elements/ElementPlacement.php';
-require_once __DIR__ . '/../../../src/Font.php';
-require_once __DIR__ . '/../../../src/PdfResource.php';
-require_once __DIR__ . '/../../../src/PdfInput.php';
-require_once __DIR__ . '/../../../src/Template.php';
 require_once __DIR__ . '/../TestParameters.php';
 
-use PHPUnit\Framework\TestCase;
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PageInput;
 use DynamicPDF\Api\Elements\TextElement;
 use DynamicPDF\Api\Elements\ElementPlacement;
+use DynamicPDF\Api\Font;
+use DynamicPDF\Api\PdfResource;
+use DynamicPDF\Api\PdfInput;
+use DynamicPDF\Api\Template;
+
+use PHPUnit\Framework\TestCase;
 
 class FontSamplesTest extends TestCase
 {

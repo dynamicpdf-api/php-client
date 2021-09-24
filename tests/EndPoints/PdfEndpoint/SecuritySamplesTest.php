@@ -1,16 +1,16 @@
 <?php
 namespace DynamicPDF\Api;
-
-require_once __DIR__ . '/../../../src/Pdf.php';
-require_once __DIR__ . '/../../../src/PdfResource.php';
-require_once __DIR__ . '/../../../src/PdfInput.php';
-require_once __DIR__ . '/../../../src/Aes256Security.php';
-
-require_once __DIR__ . '/../../../src/PageInput.php';
-require_once __DIR__ . '/../../../src/EncryptDocumentComponents.php';
-require_once __DIR__ . '/../../../src/Aes128Security.php';
-require_once __DIR__ . '/../../../src/RC4128Security.php';
 require_once __DIR__ . '/../TestParameters.php';
+
+use DynamicPDF\Api\Pdf;
+use DynamicPDF\Api\PdfResource;
+use DynamicPDF\Api\PdfInput;
+use DynamicPDF\Api\Aes256Security;
+
+use DynamicPDF\Api\PageInput;
+use DynamicPDF\Api\EncryptDocumentComponents;
+use DynamicPDF\Api\Aes128Security;
+use DynamicPDF\Api\RC4128Security;
 
 use PHPUnit\Framework\TestCase;
 
