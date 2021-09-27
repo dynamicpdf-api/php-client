@@ -13,4 +13,3 @@ class TestParameters
   public const Author = "test";
   public const Title = "test";
 };
-`
