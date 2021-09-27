@@ -1,8 +1,7 @@
 <?php
-namespace DynamicPDF\Api;
+
 
 require_once __DIR__ . '/../TestParameters.php';
-
 
 use DynamicPDF\Api\Pdf;
 use DynamicPDF\Api\PdfResource;
@@ -45,6 +44,7 @@ use DynamicPDF\Api\PageZoom;
 use PHPUnit\Framework\TestCase;
 use DynamicPDF\Api\Elements\StackedGs1DataBarType;
 use DynamicPDF\Api\Elements\Gs1DataBarType;
+
 
 
 

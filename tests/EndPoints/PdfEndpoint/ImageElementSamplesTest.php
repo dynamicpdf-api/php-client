@@ -1,5 +1,5 @@
 <?php
-namespace DynamicPDF\Api;
+
 
 require_once __DIR__ . '/../TestParameters.php';
 

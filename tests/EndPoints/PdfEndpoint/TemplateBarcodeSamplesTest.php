@@ -1,5 +1,5 @@
 <?php
-namespace DynamicPDF\Api;
+
 
 use DynamicPDF\Api\Pdf;
 use DynamicPDF\Api\PdfResource;
@@ -8,7 +8,7 @@ use DynamicPDF\Api\Template;
 use DynamicPDF\Api\Elements\AztecBarcodeElement;
 use DynamicPDF\Api\Elements\ElementPlacement;
 use DynamicPDF\Api\Elements\AztecSymbolSize;
-
+use DynamicPDF\Api\RgbColor;
 use DynamicPDF\Api\PageInput;
 use DynamicPDF\Api\Elements\ValueType;
 use DynamicPDF\Api\Elements\DataMatrixBarcodeElement;

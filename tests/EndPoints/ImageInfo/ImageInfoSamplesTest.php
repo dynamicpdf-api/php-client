@@ -1,5 +1,5 @@
 <?php
-namespace DynamicPDF\Api;
+
 
 use DynamicPDF\Api\Pdf;
 use DynamicPDF\Api\ImageResource;

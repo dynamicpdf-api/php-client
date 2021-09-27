@@ -1,7 +1,7 @@
 <?php
-namespace DynamicPDF\Api;
 
-require __DIR__ . '/../../../../../vendor/autoload.php';
+
+require __DIR__ . '/../../vendor/autoload.php';
 
 class TestParameters
 {
@@ -13,3 +13,4 @@ class TestParameters
   public const Author = "test";
   public const Title = "test";
 };
+`

@@ -1,5 +1,5 @@
 <?php
-namespace DynamicPDF\Api;
+
 
 class InvoiceData
 {
