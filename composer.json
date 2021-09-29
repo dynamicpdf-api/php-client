@@ -13,7 +13,7 @@
     ],
     "homepage": "https://cloud.dynamicpdf.com/",
     "require": {
-        "php": ">=7.3, <=8.0",
+        "php": ">=7.3",
         "ext-curl": "*",
         "ext-fileinfo": "*"
     },
@@ -24,11 +24,6 @@
         }
     },
     "minimum-stability": "dev",
-    "archive": {
-        "exclude": [
-            "tests"
-        ]
-    },
     "authors": [
         {
             "name": "DynamicPDF API",
