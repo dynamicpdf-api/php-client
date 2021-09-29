@@ -16,7 +16,7 @@ abstract class Action
 
     }
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         return array();
     }

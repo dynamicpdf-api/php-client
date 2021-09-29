@@ -69,7 +69,7 @@ class PageNumberingElement extends Element
         $this->Resource = $this->TextFont->Resource;
     }
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
 

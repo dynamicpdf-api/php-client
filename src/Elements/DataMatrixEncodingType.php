@@ -3,7 +3,7 @@ namespace DynamicPDF\Api\Elements;
 
 /**
  *
- * Specifies EncodingType for Datamatrix barcodes.
+ * Specifies EncodingType for DataMatrix Barcode.
  *
  */
 class DataMatrixEncodingType

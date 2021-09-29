@@ -52,12 +52,12 @@ class OutlineList
 
     public $Outlines;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
 
         for ($i = 0; $i < count($this->Outlines); $i++) {
-            array_push($jsonArray, $this->Outlines[$i]->GetjsonSerializeString());
+            array_push($jsonArray, $this->Outlines[$i]->GetJsonSerializeString());
         }
 
         return $jsonArray;

@@ -39,7 +39,7 @@ class DlexResource extends Resource
      */
     public $LayoutDataResourceName;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $inputjson = array();
         $inputjson['type'] = 'dlex';

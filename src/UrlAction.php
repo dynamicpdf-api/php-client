@@ -30,7 +30,7 @@ class UrlAction extends Action
      */
     public $Url;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
 

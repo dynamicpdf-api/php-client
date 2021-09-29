@@ -94,7 +94,7 @@ class ImageResource extends Resource
     {
         return $header[0] == 0x42 && $header[1] == 0x4D;
     }
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $inputjson = array();

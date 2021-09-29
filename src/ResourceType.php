@@ -4,7 +4,7 @@ namespace DynamicPDF\Api;
 
 /**
  *
- * Specifies resouce type.
+ * Specifies resource type.
  *
  */
 class ResourceType

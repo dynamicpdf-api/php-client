@@ -69,7 +69,7 @@ class LineElement extends Element
      */
     public $LineStyle;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
         $jsonArray["type"] = "line";

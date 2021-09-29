@@ -53,11 +53,11 @@ class PageInput extends Input
     {
         return $this->Elements;
     }
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonElement = array();
         foreach ($this->Elements as $element) {
-            array_push($jsonElement, $element->GetjsonSerializeString());
+            array_push($jsonElement, $element->GetJsonSerializeString());
         }
 
         $jsonArray = array();

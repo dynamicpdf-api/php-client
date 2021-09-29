@@ -34,7 +34,7 @@ class PdfResource extends Resource
     }
     // public  ?string $ResourcePath ;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $inputjson = array();
         $inputjson['type'] = $this->Type;

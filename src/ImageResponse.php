@@ -17,7 +17,7 @@ class ImageResponse extends JsonResponse
      *
      * @param  string $jsonContent The image content of the response.
      */
-    public function __consruct(?string $jsonContent = null)
+    public function __construct(?string $jsonContent = null)
     {
         if ($jsonContent != null) {
             parent::__construct($jsonContent);

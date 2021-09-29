@@ -32,10 +32,10 @@ class ImageInformation
 
     /**
      *
-     * Gets the horizondalDpi of the image.
+     * Gets the horizontalDpi of the image.
      *
      */
-    public $HorizondalDpi;
+    public $HorizontalDpi;
 
     /**
      *

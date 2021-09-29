@@ -15,7 +15,7 @@ class Response
      * Gets the boolean, indicating the response's status.
      *
      */
-    public $IsSuccesful;
+    public $IsSuccessful;
 
     /**
      *

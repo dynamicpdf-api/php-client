@@ -18,7 +18,7 @@ class PdfInstructions implements JsonSerializable
     public $Author = "CeteSoftware";
     public $Title = "";
     public $Subject = "";
-    public $Creator = "DynmaicPDF Cloud Api";
+    public $Creator = "DynamicPDF Cloud Api";
     public $Keywords = "";
     public $Security = null;
     public $FlattenAllFormFields;
@@ -29,7 +29,7 @@ class PdfInstructions implements JsonSerializable
         $this->Author = "CeteSoftware";
         $this->Title = "";
         $this->Subject = "";
-        $this->Creator = "DynmaicPDF Cloud Api";
+        $this->Creator = "DynamicPDF Cloud Api";
         $this->Keywords = "";
     }
     public function jsonSerialize()
@@ -37,7 +37,7 @@ class PdfInstructions implements JsonSerializable
         $inputJsonArray = array();
 
         foreach ($this->Inputs as $input) {
-            array_push($inputJsonArray, $input->GetjsonSerializeString());
+            array_push($inputJsonArray, $input->GetJsonSerializeString());
         }
 
         $fontsJson = array();
@@ -47,7 +47,7 @@ class PdfInstructions implements JsonSerializable
 
         $templatesJson = array();
         foreach ($this->Templates as $template) {
-            array_push($templatesJson, $template->GetjsonSerializeString());
+            array_push($templatesJson, $template->GetJsonSerializeString());
         }
 
         $jsonArray = array();
@@ -70,7 +70,7 @@ class PdfInstructions implements JsonSerializable
         }
 
         if ($this->Security != null) {
-            $jsonArray['security'] = $this->Security->GetjsonSerializeString();
+            $jsonArray['security'] = $this->Security->GetJsonSerializeString();
         }
 
         if ($this->FlattenAllFormFields != null) {
@@ -83,7 +83,7 @@ class PdfInstructions implements JsonSerializable
 
         $jsonArray['inputs'] = $inputJsonArray;
         $jsonArray['formFields'] = $this->FormFields;
-        $jsonArray['outlines'] = $this->Outlines->GetjsonSerializeString();
+        $jsonArray['outlines'] = $this->Outlines->GetJsonSerializeString();
 
         return $jsonArray;
 

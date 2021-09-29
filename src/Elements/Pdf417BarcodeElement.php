@@ -80,7 +80,7 @@ class Pdf417BarcodeElement extends Dim2BarcodeElement
      */
     public $Compaction;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $jsonArray = array();

@@ -11,7 +11,7 @@ include_once __DIR__ . './Security.php';
  * Represents AES 256 bit PDF document security.
  *
  * AES 256 bit PDF security is compatible with PDF version 1.5 and higher. This class is FIPS compliant
- * when used in applications targetting .NET framework v3.5 or higher. Adobe Acrobat Reader version X or
+ * when used in applications targeting .NET framework v3.5 or higher. Adobe Acrobat Reader version X or
  * higher is needed to open these documents.
  *
  */
@@ -41,7 +41,7 @@ class Aes256Security extends Security
      */
     public $DocumentComponents;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $jsonArray = array();

@@ -67,7 +67,7 @@ class ElementType
 
     /**
      *
-     * GS1 databar barcode element.
+     * GS1 DataBar barcode element.
      *
      */
     public const Gs1DataBarBarcode = "Gs1DataBarBarcode";
@@ -88,7 +88,7 @@ class ElementType
 
     /**
      *
-     * Stacked GS1 databar barcode element.
+     * Stacked GS1 DataBar barcode element.
      *
      */
     public const StackedGs1DataBarBarcode = "StackedGs1DataBarBarcode";

@@ -85,7 +85,7 @@ class RectangleElement extends Element
      *
      */
     public $FillColor;
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         //"width":100.0,"height":50.0,"cornerRadius":0.0,"placement":"topCenter","xOffset":0.0,"yOffset":0.0
         $jsonArray = array();

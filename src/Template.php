@@ -40,12 +40,12 @@ class Template
      */
     public $Elements = array();
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $elements = array();
         foreach ($this->Elements as $element) {
-            $str = $element->GetjsonSerializeString();
+            $str = $element->GetJsonSerializeString();
 
             if ($str != null) {
                 array_push($elements, $str);

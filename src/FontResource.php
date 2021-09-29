@@ -35,7 +35,7 @@ class FontResource extends Resource
         }
 
     }
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $inputjson = array();

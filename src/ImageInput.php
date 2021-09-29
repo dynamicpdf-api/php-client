@@ -126,7 +126,7 @@ class ImageInput extends Input
      */
     public $PageCount;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
 

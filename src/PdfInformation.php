@@ -3,7 +3,7 @@ namespace DynamicPDF\Api;
 
 /**
  *
- * Represents the pdf inforamtion.
+ * Represents the pdf information.
  *
  */
 class PdfInformation

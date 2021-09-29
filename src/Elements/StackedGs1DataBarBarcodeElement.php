@@ -52,7 +52,7 @@ class StackedGs1DataBarBarcodeElement extends TextBarcodeElement
      */
     public $RowHeight;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
 

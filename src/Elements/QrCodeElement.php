@@ -8,7 +8,7 @@ include_once __DIR__ . './ElementType.php';
  *
  * Represents a QR code barcode element.
  *
- * With some of the .Net runtimes (example: .Net Core 2.0), the Kanchi encoding will give the error "No
+ * With some of the .Net runtime (example: .Net Core 2.0), the Kanchi encoding will give the error "No
  * data is available for encoding 932. For information on defining a custom encoding, see the documentation
  * for the Encoding.RegisterProvider method.".
  *
@@ -46,7 +46,7 @@ class QrCodeElement extends Dim2BarcodeElement
      */
     public $Version;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $jsonArray = array();

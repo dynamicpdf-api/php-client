@@ -3,7 +3,7 @@ namespace DynamicPDF\Api\Elements;
 
 /**
  *
- * Specifies the symbol size of a Datamatrix barcode.
+ * Specifies the symbol size of a DataMatrix Barcode.
  *
  */
 class DataMatrixSymbolSize

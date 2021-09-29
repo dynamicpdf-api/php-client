@@ -69,7 +69,7 @@ class TextElement extends Element
     public $Resource;
     public $TextFont;
     public $FontName;
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $jsonArray = array();

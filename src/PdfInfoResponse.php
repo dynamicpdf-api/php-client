@@ -6,7 +6,7 @@ include_once __DIR__ . './JsonResponse.php';
 
 /**
  *
- * Represents the pdf inforamtion response.
+ * Represents the pdf information response.
  *
  */
 class PdfInfoResponse extends JsonResponse

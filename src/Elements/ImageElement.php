@@ -94,7 +94,7 @@ class ImageElement extends Element
 
     //{"type":"image","resourceName":"d37ca3c8-96dc-4772-abf3-d6417be534f1.gif","placement":"topCenter","xOffset":0.0,"yOffset":0.0}]}
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
         $jsonArray["type"] = "image";

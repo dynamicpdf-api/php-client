@@ -3,7 +3,7 @@ namespace DynamicPDF\Api\Elements;
 
 /**
  *
- * Specifies the Function Character for a Datamatrix barcode.
+ * Specifies the Function Character for a DataMatrix Barcode.
  *
  */
 class DataMatrixFunctionCharacter

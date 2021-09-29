@@ -39,7 +39,7 @@ class RC4128Security extends Security
      *
      */
     public $EncryptMetadata;
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $jsonArray = array();

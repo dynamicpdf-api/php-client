@@ -66,7 +66,7 @@ class Code128BarcodeElement extends TextBarcodeElement
      */
     public $ProcessTilde = false;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
 

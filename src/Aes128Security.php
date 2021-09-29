@@ -40,7 +40,7 @@ class Aes128Security extends Security
      */
     public $DocumentComponents;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $jsonArray = array();

@@ -58,7 +58,7 @@ class LayoutDataResource extends Resource
      */
     public $LayoutDataResourceName;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         return null;
     }

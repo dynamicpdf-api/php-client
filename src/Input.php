@@ -58,7 +58,7 @@ abstract class Input
         return $this->template;
     }
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         
     }

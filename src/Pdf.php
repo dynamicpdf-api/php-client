@@ -262,7 +262,7 @@ class Pdf extends Endpoint
                 $pageInput = $input;
                 foreach ($pageInput->Elements as $element) {
                     if ($element->TextFont != null) {
-                        $fontSerializedArray = $element->TextFont->GetjsonSerializeString();
+                        $fontSerializedArray = $element->TextFont->GetJsonSerializeString();
                         $this->instructions->Fonts[$element->TextFont->Name] = $fontSerializedArray;
                     }
                 }
@@ -274,7 +274,7 @@ class Pdf extends Endpoint
                 if ($input->GetTemplate()->Elements != null && count($input->GetTemplate()->Elements) > 0) {
                     foreach ($input->GetTemplate()->Elements as $element) {
                         if ($element->TextFont != null) {
-                            $fontSerializedArray = $element->TextFont->GetjsonSerializeString();
+                            $fontSerializedArray = $element->TextFont->GetJsonSerializeString();
 
                             if (count($fontSerializedArray) > 0) {
                                 $this->instructions->Fonts[$element->TextFont->Name] = $fontSerializedArray;
@@ -325,7 +325,7 @@ class Pdf extends Endpoint
                         $this->Resources[$element->Resource->ResourceName] = $element->Resource;
                     }
                     if ($element->TextFont != null) {
-                        $fontSerializedArray = $element->TextFont->GetjsonSerializeString();
+                        $fontSerializedArray = $element->TextFont->GetJsonSerializeString();
                         //array_push($this->instructions->Fonts, $fontSerializedArray);
                         $this->instructions->Fonts[$element->TextFont->Name] = $fontSerializedArray;
                     }
@@ -350,7 +350,7 @@ class Pdf extends Endpoint
                         }
                         if ($element->TextFont != null) {
                             //echo("font");
-                            $fontSerializedArray = $element->TextFont->GetjsonSerializeString();
+                            $fontSerializedArray = $element->TextFont->GetJsonSerializeString();
 
                             if (count($fontSerializedArray) > 0) {
                                 $this->instructions->Fonts[$element->TextFont->Name] = $fontSerializedArray;

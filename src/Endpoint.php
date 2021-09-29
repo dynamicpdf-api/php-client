@@ -15,6 +15,7 @@ abstract class Endpoint
     public function __construct()
     {
         $this->ApiKey = Endpoint::$DefaultApiKey;
+        $this->BaseUrl = Endpoint::$DefaultBaseUrl;
     }
 
     public $Client;

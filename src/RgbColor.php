@@ -333,7 +333,7 @@ class RgbColor extends Color
      * Gets the color dark green.
      *
      */
-    public static function DarkGreengreen()
+    public static function DarkGreen()
     {return RgbColor::CreateRgbColor("DarkGreen");}
 
     /**
@@ -1192,7 +1192,7 @@ class RgbColor extends Color
     public static function YellowGreen()
     {return RgbColor::CreateRgbColor("YellowGreen");}
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         //$jsonArray=array();
 

@@ -49,12 +49,12 @@ class GoToAction extends Action
      */
     public $PageZoom;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
 
         if ($this->Input != null) {
-            $jsonArray['input'] = $this->Input->GetjsonSerializeString();
+            $jsonArray['input'] = $this->Input->GetJsonSerializeString();
         }
 
         if ($this->InputID != null) {

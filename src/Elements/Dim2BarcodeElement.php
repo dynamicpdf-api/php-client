@@ -7,7 +7,7 @@ include_once __DIR__ . './ValueType.php';
 
 /**
  *
- * The base class for 2 dimensional barcodes (Aztec, Pdf417, DataMatrixBarcode and QrCode).
+ * The base class for 2 dimensional barcode (Aztec, Pdf417, DataMatrixBarcode and QrCode).
  *
  */
 abstract class Dim2BarcodeElement extends BarcodeElement

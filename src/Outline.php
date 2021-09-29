@@ -98,7 +98,7 @@ class Outline
         return null;
     }
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         // {"color":"Red","text":"OutlineA","style":0,"expanded":true}]
 
@@ -107,7 +107,7 @@ class Outline
         $jsonArray['type'] = "Outline";
 
         if ($this->Color != null) {
-            $colorString = $this->Color->GetjsonSerializeString();
+            $colorString = $this->Color->GetJsonSerializeString();
             if ($colorString != null) {
                 $jsonArray['color'] = $colorString;
             }
@@ -119,7 +119,7 @@ class Outline
         }
 
         if ($this->Action != null) {
-            $ActionJsonArray = $this->Action->GetjsonSerializeString();
+            $ActionJsonArray = $this->Action->GetJsonSerializeString();
 
             if (count($ActionJsonArray) > 0) {
                 $jsonArray['linkTo'] = $ActionJsonArray;
@@ -138,7 +138,7 @@ class Outline
         if ($this->Children != null && count($this->Children->Outlines) > 0) {
             $childrenArray = array();
             for ($i = 0; $i < count($this->Children->Outlines); $i++) {
-                array_push($childrenArray, $this->Children->Outlines[$i]->GetjsonSerializeString());
+                array_push($childrenArray, $this->Children->Outlines[$i]->GetJsonSerializeString());
             }
             $jsonArray['children'] = $childrenArray;
         }

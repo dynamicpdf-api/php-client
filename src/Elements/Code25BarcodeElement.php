@@ -39,7 +39,7 @@ class Code25BarcodeElement extends TextBarcodeElement
      *
      */
     public $Height;
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
 

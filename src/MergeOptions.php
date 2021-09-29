@@ -118,7 +118,7 @@ class MergeOptions
      */
     public $XmpMetadata = "null";
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
         $jsonArray = array();

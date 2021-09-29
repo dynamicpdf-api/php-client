@@ -306,7 +306,7 @@ class Font
     private static $zapfDingbats = null;
     private $data = array();
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
         if ($this->Name != null) {

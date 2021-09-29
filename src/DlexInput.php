@@ -52,7 +52,7 @@ class DlexInput extends Input
      */
     public $LayoutDataResourceName;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $jsonArray = array();
         $jsonArray['type'] = 'dlex';
@@ -73,6 +73,5 @@ class DlexInput extends Input
 
         return $jsonArray;
 
-        return $jsonArray;
     }
 }

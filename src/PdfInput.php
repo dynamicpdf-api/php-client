@@ -52,7 +52,7 @@ class PdfInput extends Input
      */
     public $PageCount;
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
         $template = $this->GetTemplate();
         $jsonArray = array();
@@ -60,7 +60,7 @@ class PdfInput extends Input
         $jsonArray['type'] = "pdf";
 
         if ($this->MergeOptions != null) {
-            $MergeOptionsArray = $this->MergeOptions->GetjsonSerializeString();
+            $MergeOptionsArray = $this->MergeOptions->GetJsonSerializeString();
             if (count($MergeOptionsArray) > 0) {
                 $jsonArray['mergeOptions'] = $MergeOptionsArray;
             }

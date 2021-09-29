@@ -90,7 +90,7 @@ class LineStyle
     public static function None()
     {return new LineStyle("none");}
 
-    public function GetjsonSerializeString()
+    public function GetJsonSerializeString()
     {
 
     }
