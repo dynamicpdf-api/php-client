@@ -31,7 +31,7 @@ class TextElement extends Element
         $this->Text = $value;
     }
 
-    public $Type = ElementType::Text;
+    public $_Type = ElementType::Text;
 
     /**
      *
@@ -61,14 +61,14 @@ class TextElement extends Element
      */
     public function Font(Font $value)
     {
-        $this->TextFont = $value;
-        $this->FontName = $this->TextFont->Name;
-        $this->Resource = $this->TextFont->Resource;
+        $this->_TextFont = $value;
+        $this->_FontName = $this->_TextFont->_Name;
+        $this->_Resource = $this->_TextFont->_Resource;
     }
 
-    public $Resource;
-    public $TextFont;
-    public $FontName;
+    public $_Resource;
+    public $_TextFont;
+    public $_FontName;
     public function GetJsonSerializeString()
     {
 
@@ -76,14 +76,14 @@ class TextElement extends Element
 
         $jsonArray["type"] = "text";
 
-        if ($this->FontName != null) {
-            $jsonArray["font"] = $this->FontName;
+        if ($this->_FontName != null) {
+            $jsonArray["font"] = $this->_FontName;
         }
 
         $jsonArray["text"] = $this->Text;
 
-        if (($this->Color != null) && ($this->Color->ColorString != null)) {
-            $jsonArray["color"] = $this->Color->ColorString;
+        if (($this->Color != null) && ($this->Color->_ColorString != null)) {
+            $jsonArray["color"] = $this->Color->_ColorString;
         }
 
         if ($this->FontSize != null) {

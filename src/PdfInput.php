@@ -29,7 +29,7 @@ class PdfInput extends Input
         $this->MergeOptions = $options;
     }
 
-    public $Type = InputType::Pdf;
+    public $_Type = InputType::Pdf;
 
     /**
      *
@@ -77,7 +77,7 @@ class PdfInput extends Input
 
         //---------------------------------------------------
 
-        $jsonArray['templateId'] = $this->TemplateId;
+        $jsonArray['templateId'] = $this->_TemplateId;
 
         $jsonArray['resourceName'] = $this->ResourceName;
 

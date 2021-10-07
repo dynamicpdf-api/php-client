@@ -31,7 +31,7 @@ class RC4128Security extends Security
         parent::__construct($userPassword, $ownerPassword);
     }
 
-    public $Type = SecurityType::RC4128;
+    public $_Type = SecurityType::RC4128;
 
     /**
      *

@@ -23,7 +23,7 @@ class DlexLayout extends Endpoint
         $this->resource = $layoutData;
     }
 
-    public $EndpointName = "dlex-layout";
+    public $_EndpointName = "dlex-layout";
 
     /**
      *
@@ -42,7 +42,7 @@ class DlexLayout extends Endpoint
     {
         $client = parent::Init();
 
-        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->EndpointName);
+        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->_EndpointName);
 
         $errCode = json_last_error();
         //echo($this->resource->Data);
@@ -70,7 +70,7 @@ class DlexLayout extends Endpoint
         {
             $body[] = '--' . $boundary;
             $body[] = 'Content-Disposition: form-data; name="' . "LayoutData" . '"; filename="' . $this->resource->LayoutDataResourceName . '"';
-            $body[] = 'Content-Type: ' . $this->resource->MimeType;
+            $body[] = 'Content-Type: ' . $this->resource->_MimeType;
             $body[] = '';
             $body[] = $this->resource->Data;
 

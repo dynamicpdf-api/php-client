@@ -23,12 +23,12 @@ class PdfResource extends Resource
     public function __construct($file, ?string $resourceName = null)
     {
         parent::__construct($file, $resourceName);
-        $this->MimeType = "application/pdf";
+        $this->_MimeType = "application/pdf";
     }
 
-    public $Type = ResourceType::Pdf;
+    public $_Type = ResourceType::Pdf;
 
-    public function FileExtension()
+    public function _FileExtension()
     {
         return ".pdf";
     }

@@ -35,7 +35,7 @@ class Pdf extends Endpoint
         $this->instructions = new PdfInstructions();
     }
 
-    public $EndpointName = "pdf";
+    public $_EndpointName = "pdf";
 
     /**
      *
@@ -227,57 +227,29 @@ class Pdf extends Endpoint
     public function GetInstructionsJson()
     {
 
-        /* foreach ($instructions->Inputs as input  )
-        {
-        if ($input->Type == InputType::Page)
-        {
-        $pageInput = $input;
-        foreach ($pageInput->Elements as $element)
-        {
-        if (element.TextFont != null)
-        {
-        instructions.Fonts.Add(element.TextFont);
-        }
-        }
-        }
-        if (input.Template != null)
-        {
-        instructions.Templates.Add(input.Template);
-        if (input.Template.Elements != null && input.Template.Elements.Count > 0)
-        {
-        foreach (Element element in input.Template.Elements)
-        {
-        if (element.TextFont != null)
-        {
-        instructions.Fonts.Add(element.TextFont);
-        }
+  
 
-        }
-        }
-        }
-        }*/
-
-        foreach ($this->instructions->Inputs as $input) {
+        foreach ($this->instructions->_Inputs as $input) {
             if ($input->Type == InputType::Page) {
                 $pageInput = $input;
                 foreach ($pageInput->Elements as $element) {
-                    if ($element->TextFont != null) {
-                        $fontSerializedArray = $element->TextFont->GetJsonSerializeString();
-                        $this->instructions->Fonts[$element->TextFont->Name] = $fontSerializedArray;
+                    if ($element->_TextFont != null) {
+                        $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
+                        $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                     }
                 }
             }
 
             if ($input->GetTemplate() != null) {
                 $template = $input->GetTemplate();
-                $this->instructions->Templates[$template->Id] = $template;
+                $this->instructions->_Templates[$template->Id] = $template;
                 if ($input->GetTemplate()->Elements != null && count($input->GetTemplate()->Elements) > 0) {
                     foreach ($input->GetTemplate()->Elements as $element) {
-                        if ($element->TextFont != null) {
-                            $fontSerializedArray = $element->TextFont->GetJsonSerializeString();
+                        if ($element->_TextFont != null) {
+                            $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
 
                             if (count($fontSerializedArray) > 0) {
-                                $this->instructions->Fonts[$element->TextFont->Name] = $fontSerializedArray;
+                                $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                             }
 
                         }
@@ -298,42 +270,42 @@ class Pdf extends Endpoint
     {
         $client = parent::Init();
 
-        $this->instructions->Author = $this->Author;
-        $this->instructions->Title = $this->Title;
-        $this->instructions->Subject = $this->Subject;
-        $this->instructions->Creator = $this->Creator;
-        $this->instructions->Keywords = $this->Keywords;
-        $this->instructions->Security = $this->Security;
-        $this->instructions->FlattenAllFormFields = $this->FlattenAllFormFields;
-        $this->instructions->RetainSignatureFormFields = $this->RetainSignatureFormFields;
-        $this->instructions->Inputs = $this->Inputs;
-        $this->instructions->Templates = $this->Templates;
-        $this->instructions->Fonts = $this->Fonts;
-        $this->instructions->FormFields = $this->FormFields;
-        $this->instructions->Outlines = $this->Outlines;
+        $this->instructions->_Author = $this->Author;
+        $this->instructions->_Title = $this->Title;
+        $this->instructions->_Subject = $this->Subject;
+        $this->instructions->_Creator = $this->Creator;
+        $this->instructions->_Keywords = $this->Keywords;
+        $this->instructions->_Security = $this->Security;
+        $this->instructions->_FlattenAllFormFields = $this->FlattenAllFormFields;
+        $this->instructions->_RetainSignatureFormFields = $this->RetainSignatureFormFields;
+        $this->instructions->_Inputs = $this->Inputs;
+        $this->instructions->_Templates = $this->Templates;
+        $this->instructions->_Fonts = $this->Fonts;
+        $this->instructions->_FormFields = $this->FormFields;
+        $this->instructions->_Outlines = $this->Outlines;
         //$this->Instructions->FormFields = $this->FormFields;
 
-        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->EndpointName);
+        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->_EndpointName);
 
         // $resources = array();
-        foreach ($this->instructions->Inputs as $input) {
-            if ($input->Type == InputType::Page) {
+        foreach ($this->instructions->_Inputs as $input) {
+            if ($input->_Type == InputType::Page) {
                 $pageInput = $input;
                 foreach ($pageInput->Elements as $element) {
-                    if ($element->Resource != null) {
-                        //array_push($this->Resources,$element->Resource);
-                        $this->Resources[$element->Resource->ResourceName] = $element->Resource;
+                    if ($element->_Resource != null) {
+                        
+                        $this->Resources[$element->_Resource->ResourceName] = $element->_Resource;
                     }
-                    if ($element->TextFont != null) {
-                        $fontSerializedArray = $element->TextFont->GetJsonSerializeString();
+                    if ($element->_TextFont != null) {
+                        $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
                         //array_push($this->instructions->Fonts, $fontSerializedArray);
-                        $this->instructions->Fonts[$element->TextFont->Name] = $fontSerializedArray;
+                        $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                     }
                 }
 
             }
 
-            foreach ($input->Resources as $resource) {
+            foreach ($input->_Resources as $resource) {
                 if ($resource != null) {
                     $this->Resources[$resource->ResourceName] = $resource;
                 }
@@ -341,19 +313,19 @@ class Pdf extends Endpoint
             }
             if ($input->GetTemplate() != null) {
                 $template = $input->GetTemplate();
-                $this->instructions->Templates[$template->Id] = $template;
+                $this->instructions->_Templates[$template->Id] = $template;
                 if ($input->GetTemplate()->Elements != null && count($input->GetTemplate()->Elements) > 0) {
                     foreach ($input->GetTemplate()->Elements as $element) {
                         //echo("element");
-                        if ($element->Resource != null) {
-                            $this->Resources[$element->Resource->ResourceName] = $element->Resource;
+                        if ($element->_Resource != null) {
+                            $this->Resources[$element->_Resource->ResourceName] = $element->_Resource;
                         }
-                        if ($element->TextFont != null) {
+                        if ($element->_TextFont != null) {
                             //echo("font");
-                            $fontSerializedArray = $element->TextFont->GetJsonSerializeString();
+                            $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
 
                             if (count($fontSerializedArray) > 0) {
-                                $this->instructions->Fonts[$element->TextFont->Name] = $fontSerializedArray;
+                                $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                             }
 
                         }
@@ -372,7 +344,7 @@ class Pdf extends Endpoint
 
         // echo( $data_string."\n\n");
 
-        if ($this->instructions->Inputs == null) {
+        if ($this->instructions->_Inputs == null) {
             throw new EndPointException("Minimum one input required.");
         }
 
@@ -406,8 +378,8 @@ class Pdf extends Endpoint
             $body[] = 'Content-Disposition: form-data; name="' . "Resource" . '"; filename="' . $field->ResourceName . '"';
             $body[] = 'Content-Type: application/octet-stream';
             $body[] = '';
-            if ($field->FilePath != null) {
-                $body[] = file_get_contents($field->FilePath);
+            if ($field->_FilePath != null) {
+                $body[] = file_get_contents($field->_FilePath);
             } else {
                 $body[] = $field->Data;
             }

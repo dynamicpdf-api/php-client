@@ -14,16 +14,16 @@ abstract class Element
 
     public function __construct(string $value = null, string $placement = null, float $xOffset = 0, float $yOffset = 0)
     {
-        $this->InputValue = $value;
+        $this->_InputValue = $value;
         $this->Placement = $placement;
         $this->XOffset = $xOffset;
         $this->YOffset = $yOffset;
     }
 
-    public $Type;
-    public $Resource = null;
-    public $InputValue;
-    public $TextFont;
+    public $_Type;
+    public $_Resource = null;
+    public $_InputValue;
+    public $_TextFont;
 
     /**
      *

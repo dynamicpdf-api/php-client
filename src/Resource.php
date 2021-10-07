@@ -16,7 +16,7 @@ abstract class Resource
             } else if (gettype($file) == "string") {
                 if (file_exists($file)) {
                     $this->FilePath = $file;
-                    $this->Data = Resource::GetFileData($file);
+                    $this->Data = Resource::_GetFileData($file);
                 } else {
                     throw new EndpointException($file . " : File does not exist.");
                 }
@@ -26,19 +26,19 @@ abstract class Resource
             }
 
             if ($resourceName == null) {
-                $this->ResourceName = md5(uniqid(rand(), true)) . $this->FileExtension();
+                $this->ResourceName = md5(uniqid(rand(), true)) . $this->_FileExtension();
             }
             // bin2hex(decbin(rand(0,65536))).$this->FileExtension();
             else {
                 $this->ResourceName = $resourceName;
             }
 
-            $this->MimeType = "";
+            $this->_MimeType = "";
         }
 
     }
 
-    public $Data;
+    public $_Data;
 
     /**
      *
@@ -46,21 +46,21 @@ abstract class Resource
      *
      */
     public $ResourceName;
-    public $Name;
-    public $Type;
-    public $MimeType = "";
+    public $_Name;
+    public $_Type;
+    public $_MimeType = "";
 
-    public $FilePath;
+    public $_FilePath;
 
-    public static function GetUTF8FileData(string $filePath)
+    public static function _GetUTF8FileData(string $filePath)
     {
-        $data = Resource::GetFileData($filePath);
+        $data = Resource::_GetFileData($filePath);
         return utf8_encode($data);
     }
 
-    abstract public function FileExtension();
+    abstract public function _FileExtension();
 
-    public static function GetFileData(string $filePath)
+    public static function _GetFileData(string $filePath)
     {
         $length = filesize($filePath);
         $file = fopen($filePath, "r");

@@ -34,13 +34,13 @@ class LineStyle
             if ($dashPhase != 0) {
                 $strLineStyle = $strLineStyle . sprintf("%.2f", $dashPhase);
             }
-            $this->LineStyleString = $strLineStyle;
+            $this->_LineStyleString = $strLineStyle;
         } else {
-            $this->LineStyleString = $line;
+            $this->_LineStyleString = $line;
         }
     }
 
-    public $LineStyleString;
+    public $_LineStyleString;
 
     /**
      *

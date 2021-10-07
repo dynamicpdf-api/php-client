@@ -34,7 +34,7 @@ class CmykColor extends Color
             throw new EndpointException("CMYK values must be from 0.0 to 1.0.");
         }
 
-        $this->ColorString = "cmyk(" . $cyan . "," . $magenta . "," . $yellow . "," . $black . ")";
+        $this->_ColorString = "cmyk(" . $cyan . "," . $magenta . "," . $yellow . "," . $black . ")";
         $this->cyan = $cyan;
         $this->magenta = $magenta;
         $this->yellow = $yellow;
@@ -58,6 +58,6 @@ class CmykColor extends Color
     public function White()
     {return new CmykColor(0, 0, 0, 0);}
 
-    public $ColorString = null;
+    public $_ColorString = null;
 
 }

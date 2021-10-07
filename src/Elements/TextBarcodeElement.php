@@ -37,9 +37,9 @@ abstract class TextBarcodeElement extends BarcodeElement
      *
      */
     public $ShowText = "null";
-    public $Resource;
-    public $TextFont;
-    public $FontName;
+    public $_Resource;
+    public $_TextFont;
+    public $_FontName;
 
     /**
      *
@@ -48,13 +48,13 @@ abstract class TextBarcodeElement extends BarcodeElement
      */
     public function Font(Font $value)
     {
-        $this->TextFont = $value;
-        $this->FontName = $this->TextFont->Name;
-        $this->Resource = $this->TextFont->Resource;
+        $this->_TextFont = $value;
+        $this->_FontName = $this->_TextFont->_Name;
+        $this->_Resource = $this->_TextFont->_Resource;
     }
     public function GetFont()
     {
-        return $this->TextFont;
+        return $this->_TextFont;
     }
 
 }

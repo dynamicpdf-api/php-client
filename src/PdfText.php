@@ -30,7 +30,7 @@ class PdfText extends Endpoint
         $this->PageCount = $pageCount;
     }
 
-    public $EndpointName = "pdf-text";
+    public $_EndpointName = "pdf-text";
 
     /**
      *
@@ -66,7 +66,7 @@ class PdfText extends Endpoint
         curl_setopt($client, CURLOPT_POSTFIELDS, $this->resource->Data);
 
         $params = array('startPage' => $this->StartPage, 'pageCount' => $this->PageCount);
-        $url = $this->BaseUrl . "/" . $this->EndpointName . '?' . http_build_query($params);
+        $url = $this->BaseUrl . "/" . $this->_EndpointName . '?' . http_build_query($params);
         curl_setopt($client, CURLOPT_URL, $url);
 
         curl_setopt($client, CURLOPT_BINARYTRANSFER, 1);

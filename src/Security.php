@@ -17,7 +17,7 @@ class Security
         $this->OwnerPassword = $ownerPwd;
     }
 
-    public $Type;
+    public $_Type;
 
     /**
      *

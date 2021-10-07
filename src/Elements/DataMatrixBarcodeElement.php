@@ -32,12 +32,12 @@ class DataMatrixBarcodeElement extends Dim2BarcodeElement
     public function __construct($value, string $placement, float $xOffset = 0, float $yOffset = 0, string $symbolSize = DataMatrixSymbolSize::Auto, string $encodingType = DataMatrixEncodingType::Auto, string $functionCharacter = DataMatrixFunctionCharacter::None)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);
-        $this->DataMatrixSymbolSize = $symbolSize;
-        $this->DataMatrixEncodingType = $encodingType;
-        $this->DataMatrixFunctionCharacter = $functionCharacter;
+        $this->_DataMatrixSymbolSize = $symbolSize;
+        $this->_DataMatrixEncodingType = $encodingType;
+        $this->_DataMatrixFunctionCharacter = $functionCharacter;
     }
 
-    public $Type = ElementType::DataMatrixBarcode;
+    public $_Type = ElementType::DataMatrixBarcode;
 
     /**
      *
@@ -50,9 +50,9 @@ class DataMatrixBarcodeElement extends Dim2BarcodeElement
      *
      */
     public $ProcessTilde = false;
-    public $DataMatrixSymbolSize;
-    public $DataMatrixEncodingType;
-    public $DataMatrixFunctionCharacter;
+    public $_DataMatrixSymbolSize;
+    public $_DataMatrixEncodingType;
+    public $_DataMatrixFunctionCharacter;
 
     public function GetJsonSerializeString()
     {
@@ -64,28 +64,28 @@ class DataMatrixBarcodeElement extends Dim2BarcodeElement
         //if($this->ProcessTilde != null)
         $jsonArray['processTilde'] = $this->ProcessTilde;
 
-        if ($this->DataMatrixSymbolSize != null) {
-            $jsonArray['dataMatrixSymbolSize'] = $this->DataMatrixSymbolSize;
+        if ($this->_DataMatrixSymbolSize != null) {
+            $jsonArray['dataMatrixSymbolSize'] = $this->_DataMatrixSymbolSize;
         }
 
-        if ($this->DataMatrixEncodingType != null) {
-            $jsonArray['dataMatrixEncodingType'] = $this->DataMatrixEncodingType;
+        if ($this->_DataMatrixEncodingType != null) {
+            $jsonArray['dataMatrixEncodingType'] = $this->_DataMatrixEncodingType;
         }
 
-        if ($this->DataMatrixFunctionCharacter != null) {
-            $jsonArray['dataMatrixFunctionCharacter'] = $this->DataMatrixFunctionCharacter;
+        if ($this->_DataMatrixFunctionCharacter != null) {
+            $jsonArray['dataMatrixFunctionCharacter'] = $this->_DataMatrixFunctionCharacter;
         }
 
         //--------------Dim2BarcodeElement------------------------------
 
-        if ($this->ValueType != null) {
-            $jsonArray['valueType'] = $this->ValueType;
+        if ($this->_ValueType != null) {
+            $jsonArray['valueType'] = $this->_ValueType;
         }
 
         //----------------barcodeElement--------------------------------
 
-        if (($this->Color != null) && ($this->Color->ColorString != null)) {
-            $jsonArray['color'] = $this->Color->ColorString;
+        if (($this->Color != null) && ($this->Color->_ColorString != null)) {
+            $jsonArray['color'] = $this->Color->_ColorString;
         }
 
         if ($this->XDimension != null) {

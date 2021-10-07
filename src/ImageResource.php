@@ -27,11 +27,11 @@ class ImageResource extends Resource
         $this->Type = ResourceType::Image;
     }
 
-    public $Type = ResourceType::Image;
+    public $_Type = ResourceType::Image;
 
-    public $MimeType;
+    public $_MimeType;
 
-    public function FileExtension()
+    public function _FileExtension()
     {
         $fileHeader = substr($this->Data, 0, 16);
         $byteArray = array();
@@ -40,22 +40,22 @@ class ImageResource extends Resource
         }
 
         if (ImageResource::IsPngImage($byteArray)) {
-            $this->MimeType = "image/png";
+            $this->_MimeType = "image/png";
             return ".png";
         } else if (ImageResource::IsJpegImage($byteArray)) {
-            $this->MimeType = "image/jpeg";
+            $this->_MimeType = "image/jpeg";
             return ".jpeg";
         } else if (ImageResource::IsGifImage($byteArray)) {
-            $this->MimeType = "image/gif";
+            $this->_MimeType = "image/gif";
             return ".gif";
         } else if (ImageResource::IsTiffImage($byteArray)) {
-            $this->MimeType = "image/tiff";
+            $this->_MimeType = "image/tiff";
             return ".tiff";
         } else if (ImageResource::IsJpeg2000Image($byteArray)) {
-            $this->MimeType = "image/jpeg";
+            $this->_MimeType = "image/jpeg";
             return ".jpeg";
         } else if (ImageResource::IsValidBitmapImage($byteArray)) {
-            $this->MimeType = "image/bmp";
+            $this->_MimeType = "image/bmp";
             return ".bmp";
         } else {
             //print_r ($fileHeader);

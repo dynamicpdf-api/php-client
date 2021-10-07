@@ -9,44 +9,44 @@ include_once __DIR__ . './Font.php';
 
 class PdfInstructions implements JsonSerializable
 {
-    public $FormFields = array();
-    public $Templates = array();
-    public $Fonts = array();
-    public $Outlines ;
-    public $Inputs = array();
+    public $_FormFields = array();
+    public $_Templates = array();
+    public $_Fonts = array();
+    public $_Outlines ;
+    public $_Inputs = array();
 
-    public $Author = "CeteSoftware";
-    public $Title = "";
-    public $Subject = "";
-    public $Creator = "DynamicPDF Cloud Api";
-    public $Keywords = "";
-    public $Security = null;
-    public $FlattenAllFormFields;
-    public $RetainSignatureFormFields;
+    public $_Author = "CeteSoftware";
+    public $_Title = "";
+    public $_Subject = "";
+    public $_Creator = "DynamicPDF Cloud Api";
+    public $_Keywords = "";
+    public $_Security = null;
+    public $_FlattenAllFormFields;
+    public $_RetainSignatureFormFields;
 
     public function __construct()
     {
-        $this->Author = "CeteSoftware";
-        $this->Title = "";
-        $this->Subject = "";
-        $this->Creator = "DynamicPDF Cloud Api";
-        $this->Keywords = "";
+        $this->_Author = "CeteSoftware";
+        $this->_Title = "";
+        $this->_Subject = "";
+        $this->_Creator = "DynamicPDF Cloud Api";
+        $this->_Keywords = "";
     }
     public function jsonSerialize()
     {
         $inputJsonArray = array();
 
-        foreach ($this->Inputs as $input) {
+        foreach ($this->_Inputs as $input) {
             array_push($inputJsonArray, $input->GetJsonSerializeString());
         }
 
         $fontsJson = array();
-        foreach ($this->Fonts as $font) {
+        foreach ($this->_Fonts as $font) {
             array_push($fontsJson, $font);
         }
 
         $templatesJson = array();
-        foreach ($this->Templates as $template) {
+        foreach ($this->_Templates as $template) {
             array_push($templatesJson, $template->GetJsonSerializeString());
         }
 
@@ -54,36 +54,36 @@ class PdfInstructions implements JsonSerializable
 
         $jsonArray['templates'] = $templatesJson;
         $jsonArray['fonts'] = $fontsJson;
-        $jsonArray['author'] = $this->Author;
-        $jsonArray['title'] = $this->Title;
+        $jsonArray['author'] = $this->_Author;
+        $jsonArray['title'] = $this->_Title;
 
-        if ($this->Subject != null) {
-            $jsonArray['subject'] = $this->Subject;
+        if ($this->_Subject != null) {
+            $jsonArray['subject'] = $this->_Subject;
         }
 
-        if ($this->Creator != null) {
-            $jsonArray['creator'] = $this->Creator;
+        if ($this->_Creator != null) {
+            $jsonArray['creator'] = $this->_Creator;
         }
 
-        if ($this->Keywords != null) {
-            $jsonArray['keywords'] = $this->Keywords;
+        if ($this->_Keywords != null) {
+            $jsonArray['keywords'] = $this->_Keywords;
         }
 
-        if ($this->Security != null) {
-            $jsonArray['security'] = $this->Security->GetJsonSerializeString();
+        if ($this->_Security != null) {
+            $jsonArray['security'] = $this->_Security->GetJsonSerializeString();
         }
 
-        if ($this->FlattenAllFormFields != null) {
-            $jsonArray['flattenAllFormFields'] = $this->FlattenAllFormFields;
+        if ($this->_FlattenAllFormFields != null) {
+            $jsonArray['flattenAllFormFields'] = $this->_FlattenAllFormFields;
         }
 
-        if ($this->RetainSignatureFormFields != null) {
-            $jsonArray['retainSignatureFormFields'] = $this->RetainSignatureFormFields;
+        if ($this->_RetainSignatureFormFields != null) {
+            $jsonArray['retainSignatureFormFields'] = $this->_RetainSignatureFormFields;
         }
 
         $jsonArray['inputs'] = $inputJsonArray;
-        $jsonArray['formFields'] = $this->FormFields;
-        $jsonArray['outlines'] = $this->Outlines->GetJsonSerializeString();
+        $jsonArray['formFields'] = $this->_FormFields;
+        $jsonArray['outlines'] = $this->_Outlines->GetJsonSerializeString();
 
         return $jsonArray;
 

@@ -26,7 +26,7 @@ class LayoutDataResource extends Resource
         if (gettype($layout) == "object") {
             $this->Data = json_encode($layout);
         } else {
-            $this->Data = Resource::GetFileData($layout);
+            $this->Data = Resource::_GetFileData($layout);
         }
         if ($layoutDataResourceName == null) {
             $this->LayoutDataResourceName = md5(uniqid(rand(), true)) . ".json";
@@ -34,22 +34,22 @@ class LayoutDataResource extends Resource
             $this->LayoutDataResourceName = $layoutDataResourceName;
         }
 
-        $this->MimeType = "application/json";
-        $this->Type = ResourceType::LayoutData;
+        $this->_MimeType = "application/json";
+        $this->_Type = ResourceType::LayoutData;
         $this->ResourceName = $this->LayoutDataResourceName;
 
     }
 
-    public $Type = ResourceType::LayoutData;
+    public $_Type = ResourceType::LayoutData;
 
-    public function FileExtension()
+    public function _FileExtension()
     {
         return ".json";
     }
 
-    public $FileExtension = ".json";
+    //public $_FileExtension = ".json";
 
-    public $MimeType = "application/json";
+    public $_MimeType = "application/json";
 
     /**
      *

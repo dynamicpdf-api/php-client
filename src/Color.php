@@ -9,5 +9,5 @@ namespace DynamicPDF\Api;
  */
 abstract class Color
 {
-    public $ColorString = null;
+    public $_ColorString = null;
 }

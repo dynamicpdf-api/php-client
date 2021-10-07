@@ -27,7 +27,7 @@ class ImageInfo extends Endpoint
 
     }
 
-    public $EndpointName = "image-info";
+    public $_EndpointName = "image-info";
 
     /**
      *
@@ -39,13 +39,13 @@ class ImageInfo extends Endpoint
     {
         $client = parent::Init();
 
-        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->EndpointName);
+        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->_EndpointName);
 
         $errCode = json_last_error();
 
         $headr = array();
 
-        $headr[] = 'Content-Type: image/' . substr($this->resource->FileExtension(), 1);
+        $headr[] = 'Content-Type: image/' . substr($this->resource->_FileExtension(), 1);
         //secho($this->resource->FileExtension());
         $headr[] = 'Authorization:Bearer ' . $this->ApiKey;
         curl_setopt($client, CURLOPT_HTTPHEADER, $headr);
@@ -53,7 +53,7 @@ class ImageInfo extends Endpoint
         curl_setopt($client, CURLOPT_POSTFIELDS, $this->resource->Data);
 
         //$params = array('startPage' => $this->StartPage,'pageCount' => $this->PageCount);
-        //$url = Endpoint::$DefaultBaseUrl."/".$this->EndpointName . '?' . http_build_query($params);
+        //$url = Endpoint::$DefaultBaseUrl."/".$this->_EndpointName . '?' . http_build_query($params);
         //curl_setopt($client, CURLOPT_URL, $url);
 
         curl_setopt($client, CURLOPT_BINARYTRANSFER, 1);

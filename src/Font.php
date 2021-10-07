@@ -23,21 +23,21 @@ class Font
     public function __construct(?string $cloudResourceName = null)
     {
         $this->ResourceName = $cloudResourceName;
-        $this->Name = md5(uniqid(rand(), true));
+        $this->_Name = md5(uniqid(rand(), true));
     }
 
     public static function CreateFont(FontResource $fontResource = null, string $resourceName = null)
     {
         $font = new Font();
-        $font->Resource = $fontResource;
+        $font->_Resource = $fontResource;
         $font->ResourceName = $resourceName;
 
-        $font->Name = md5(uniqid(rand(), true));
+        $font->_Name = md5(uniqid(rand(), true));
         return $font;
     }
 
-    public $Name;
-    public $Resource;
+    public $_Name;
+    public $_Resource;
 
     /**
      *
@@ -71,7 +71,7 @@ class Font
             Font::$timesRoman = new Font();
         }
 
-        Font::$timesRoman->Name = "timesRoman";
+        Font::$timesRoman->_Name = "timesRoman";
         return Font::$timesRoman;
     }
 
@@ -86,7 +86,7 @@ class Font
             Font::$timesBold = new Font();
         }
 
-        Font::$timesBold->Name = "timesBold";
+        Font::$timesBold->_Name = "timesBold";
         return Font::$timesBold;
     }
 
@@ -101,7 +101,7 @@ class Font
             Font::$timesItalic = new Font();
         }
 
-        Font::$timesItalic->Name = "timesItalic";
+        Font::$timesItalic->_Name = "timesItalic";
         return Font::$timesItalic;
     }
 
@@ -116,7 +116,7 @@ class Font
             Font::$timesBoldItalic = new Font();
         }
 
-        Font::$timesBoldItalic->Name = "timesBoldItalic";
+        Font::$timesBoldItalic->_Name = "timesBoldItalic";
         return Font::$timesBoldItalic;
     }
 
@@ -131,7 +131,7 @@ class Font
             Font::$helvetica = new Font();
         }
 
-        Font::$helvetica->Name = "helvetica";
+        Font::$helvetica->_Name = "helvetica";
         return Font::$helvetica;
     }
 
@@ -146,7 +146,7 @@ class Font
             Font::$helveticaBold = new Font();
         }
 
-        Font::$helveticaBold->Name = "helveticaBold";
+        Font::$helveticaBold->_Name = "helveticaBold";
         return Font::$helveticaBold;
     }
 
@@ -161,7 +161,7 @@ class Font
             Font::$helveticaOblique = new Font();
         }
 
-        Font::$helveticaOblique->Name = "helveticaOblique";
+        Font::$helveticaOblique->_Name = "helveticaOblique";
         return Font::$helveticaOblique;
     }
 
@@ -176,7 +176,7 @@ class Font
             Font::$helveticaBoldOblique = new Font();
         }
 
-        Font::$helveticaBoldOblique->Name = "helveticaBoldOblique";
+        Font::$helveticaBoldOblique->_Name = "helveticaBoldOblique";
         return Font::$helveticaBoldOblique;
     }
 
@@ -191,7 +191,7 @@ class Font
             Font::$courier = new Font();
         }
 
-        Font::$courier->Name = "courier";
+        Font::$courier->_Name = "courier";
         return Font::$courier;
     }
 
@@ -206,7 +206,7 @@ class Font
             Font::$courierBold = new Font();
         }
 
-        Font::$courierBold->Name = "courierBold";
+        Font::$courierBold->_Name = "courierBold";
         return Font::$courierBold;
     }
 
@@ -221,7 +221,7 @@ class Font
             Font::$courierOblique = new Font();
         }
 
-        Font::$courierOblique->Name = "courierOblique";
+        Font::$courierOblique->_Name = "courierOblique";
         return Font::$courierOblique;
     }
 
@@ -236,7 +236,7 @@ class Font
             Font::$courierBoldOblique = new Font();
         }
 
-        Font::$courierBoldOblique->Name = "courierBoldOblique";
+        Font::$courierBoldOblique->_Name = "courierBoldOblique";
         return Font::$courierBoldOblique;
     }
 
@@ -250,7 +250,7 @@ class Font
         Font::$symbol = new Font();
     }
 
-        Font::$symbol->Name = "symbol";
+        Font::$symbol->_Name = "symbol";
         return Font::$symbol;
 
     }
@@ -266,7 +266,7 @@ class Font
             Font::$zapfDingbats = new Font();
         }
 
-        Font::$zapfDingbats->Name = "zapfDingbats";
+        Font::$zapfDingbats->_Name = "zapfDingbats";
         return Font::$zapfDingbats;
     }
 
@@ -309,8 +309,8 @@ class Font
     public function GetJsonSerializeString()
     {
         $jsonArray = array();
-        if ($this->Name != null) {
-            $jsonArray["name"] = $this->Name;
+        if ($this->_Name != null) {
+            $jsonArray["name"] = $this->_Name;
         }
 
         if ($this->Embed != null) {

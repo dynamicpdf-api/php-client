@@ -31,7 +31,7 @@ class Code25BarcodeElement extends TextBarcodeElement
         $this->Height = $height;
     }
 
-    public $Type = ElementType::Code25Barcode;
+    public $_Type = ElementType::Code25Barcode;
 
     /**
      *
@@ -50,12 +50,12 @@ class Code25BarcodeElement extends TextBarcodeElement
         }
 
         //----------------TextBarcodeElement---------------------------------
-        if ($this->FontName != null) {
-            $jsonArray['font'] = $this->FontName;
+        if ($this->_FontName != null) {
+            $jsonArray['font'] = $this->_FontName;
         }
 
-        if (($this->TextColor != null) && ($this->TextColor->ColorString != null)) {
-            $jsonArray['textColor'] = $this->TextColor->ColorString;
+        if (($this->TextColor != null) && ($this->TextColor->_ColorString != null)) {
+            $jsonArray['textColor'] = $this->TextColor->_ColorString;
         }
 
         if ($this->FontSize != null) {
@@ -68,8 +68,8 @@ class Code25BarcodeElement extends TextBarcodeElement
 
         //----------------barcodeElement--------------------------------
 
-        if (($this->Color != null) && ($this->Color->ColorString != null)) {
-            $jsonArray['color'] = $this->Color->ColorString;
+        if (($this->Color != null) && ($this->Color->_ColorString != null)) {
+            $jsonArray['color'] = $this->Color->_ColorString;
         }
 
         if ($this->XDimension != null) {

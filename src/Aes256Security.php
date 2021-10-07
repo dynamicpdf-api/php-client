@@ -31,7 +31,7 @@ class Aes256Security extends Security
         parent::__construct($userPassword, $ownerPassword);
     }
 
-    public $Type = SecurityType::Aes256;
+    public $_Type = SecurityType::Aes256;
 
     /**
      *

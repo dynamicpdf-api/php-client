@@ -30,7 +30,7 @@ class Iata25BarcodeElement extends TextBarcodeElement
         parent::__construct($value, $placement, $xOffset, $yOffset);
     }
 
-    public $Type = ElementType::Iata25Barcode;
+    public $_Type = ElementType::Iata25Barcode;
 
     /**
      *
@@ -60,12 +60,12 @@ class Iata25BarcodeElement extends TextBarcodeElement
         }
 
         //----------------TextBarcodeElement---------------------------------
-        if ($this->FontName != null) {
-            $jsonArray['font'] = $this->FontName;
+        if ($this->_FontName != null) {
+            $jsonArray['font'] = $this->_FontName;
         }
 
-        if (($this->TextColor != null) && ($this->TextColor->ColorString != null)) {
-            $jsonArray['textColor'] = $this->TextColor->ColorString;
+        if (($this->TextColor != null) && ($this->TextColor->_ColorString != null)) {
+            $jsonArray['textColor'] = $this->TextColor->_ColorString;
         }
 
         if ($this->FontSize != null) {
@@ -78,8 +78,8 @@ class Iata25BarcodeElement extends TextBarcodeElement
 
         //----------------barcodeElement--------------------------------
 
-        if (($this->Color != null) && ($this->Color->ColorString != null)) {
-            $jsonArray['color'] = $this->Color->ColorString;
+        if (($this->Color != null) && ($this->Color->_ColorString != null)) {
+            $jsonArray['color'] = $this->Color->_ColorString;
         }
 
         if ($this->XDimension != null) {

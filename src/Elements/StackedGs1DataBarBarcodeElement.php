@@ -28,13 +28,13 @@ class StackedGs1DataBarBarcodeElement extends TextBarcodeElement
     public function __construct(string $value, string $placement, string $stackedGs1DataBarType, float $rowHeight, float $xOffset = 0, float $yOffset = 0)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);
-        $this->StackedGs1DataBarType = $stackedGs1DataBarType;
+        $this->_StackedGs1DataBarType = $stackedGs1DataBarType;
         $this->RowHeight = $rowHeight;
     }
 
-    public $Type = ElementType::StackedGs1DataBarBarcode;
+    public $_Type = ElementType::StackedGs1DataBarBarcode;
 
-    public $StackedGs1DataBarType;
+    public $_StackedGs1DataBarType;
 
     /**
      *
@@ -58,8 +58,8 @@ class StackedGs1DataBarBarcodeElement extends TextBarcodeElement
 
         $jsonArray["type"] = "stackedGs1DataBarBarcode";
 
-        if ($this->StackedGs1DataBarType != null) {
-            $jsonArray['stackedGs1DataBarType'] = $this->StackedGs1DataBarType;
+        if ($this->_StackedGs1DataBarType != null) {
+            $jsonArray['stackedGs1DataBarType'] = $this->_StackedGs1DataBarType;
         }
 
         if ($this->ExpandedStackedSegmentCount != null) {
@@ -71,12 +71,12 @@ class StackedGs1DataBarBarcodeElement extends TextBarcodeElement
         }
 
         //----------------TextBarcodeElement---------------------------------
-        if ($this->FontName != null) {
-            $jsonArray['font'] = $this->FontName;
+        if ($this->_FontName != null) {
+            $jsonArray['font'] = $this->_FontName;
         }
 
-        if (($this->TextColor != null) && ($this->TextColor->ColorString != null)) {
-            $jsonArray['textColor'] = $this->TextColor->ColorString;
+        if (($this->TextColor != null) && ($this->TextColor->_ColorString != null)) {
+            $jsonArray['textColor'] = $this->TextColor->_ColorString;
         }
 
         if ($this->FontSize != null) {
@@ -89,8 +89,8 @@ class StackedGs1DataBarBarcodeElement extends TextBarcodeElement
 
         //----------------barcodeElement--------------------------------
 
-        if (($this->Color != null) && ($this->Color->ColorString != null)) {
-            $jsonArray['color'] = $this->Color->ColorString;
+        if (($this->Color != null) && ($this->Color->_ColorString != null)) {
+            $jsonArray['color'] = $this->Color->_ColorString;
         }
 
         if ($this->XDimension != null) {

@@ -18,9 +18,9 @@ abstract class Endpoint
         $this->BaseUrl = Endpoint::$DefaultBaseUrl;
     }
 
-    public $Client;
+    public $_Client;
 
-    public $EndpointName;
+    public $_EndpointName;
 
     /**
      *
@@ -56,16 +56,16 @@ abstract class Endpoint
         $headr = array();
 
         $headr[] = 'Authorization:Bearer ' . $authorization;
-        $this->Client = curl_init(Endpoint::$DefaultBaseUrl . "/" . $this->EndpointName);
-        curl_setopt($this->Client, CURLOPT_HTTPHEADER, $headr);
-        curl_setopt($this->Client, CURLOPT_VERBOSE, false);
-        curl_setopt($this->Client, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($this->Client, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($this->Client, CURLOPT_SAFE_UPLOAD, true);
-        //curl_setopt($this->Client, CURLOPT_CUSTOMREQUEST, 'POST');
-        curl_setopt($this->Client, CURLOPT_POST, true);
-        curl_setopt($this->Client, CURLOPT_RETURNTRANSFER, false);
-        return $this->Client;
+        $this->_Client = curl_init(Endpoint::$DefaultBaseUrl . "/" . $this->_EndpointName);
+        curl_setopt($this->_Client, CURLOPT_HTTPHEADER, $headr);
+        curl_setopt($this->_Client, CURLOPT_VERBOSE, false);
+        curl_setopt($this->_Client, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($this->_Client, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($this->_Client, CURLOPT_SAFE_UPLOAD, true);
+        
+        curl_setopt($this->_Client, CURLOPT_POST, true);
+        curl_setopt($this->_Client, CURLOPT_RETURNTRANSFER, false);
+        return $this->_Client;
     }
 
 }

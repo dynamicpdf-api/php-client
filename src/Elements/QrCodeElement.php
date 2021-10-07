@@ -30,7 +30,7 @@ class QrCodeElement extends Dim2BarcodeElement
         parent::__construct($value, $placement, $xOffset, $yOffset);
     }
 
-    public $Type = ElementType::QrCode;
+    public $_Type = ElementType::QrCode;
 
     /**
      *
@@ -63,14 +63,14 @@ class QrCodeElement extends Dim2BarcodeElement
 
         //--------------Dim2BarcodeElement------------------------------
 
-        if ($this->ValueType != null) {
-            $jsonArray['valueType'] = $this->ValueType;
+        if ($this->_ValueType != null) {
+            $jsonArray['valueType'] = $this->_ValueType;
         }
 
         //----------------barcodeElement--------------------------------
 
-        if (($this->Color != null) && ($this->Color->ColorString != null)) {
-            $jsonArray['color'] = $this->Color->ColorString;
+        if (($this->Color != null) && ($this->Color->_ColorString != null)) {
+            $jsonArray['color'] = $this->Color->_ColorString;
         }
 
         if ($this->XDimension != null) {

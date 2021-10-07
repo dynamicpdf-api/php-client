@@ -30,7 +30,7 @@ class LineElement extends Element
         $this->Y2Offset = $y2Offset;
     }
 
-    public $Type = ElementType::Line;
+    public $_Type = ElementType::Line;
 
     /**
      *
@@ -74,8 +74,8 @@ class LineElement extends Element
         $jsonArray = array();
         $jsonArray["type"] = "line";
 
-        if (($this->Color != null) && ($this->Color->ColorString != null)) {
-            $jsonArray['color'] = $this->Color->ColorString;
+        if (($this->Color != null) && ($this->Color->_ColorString != null)) {
+            $jsonArray['color'] = $this->Color->_ColorString;
         }
 
         if ($this->X1Offset != null) {
@@ -98,8 +98,8 @@ class LineElement extends Element
             $jsonArray['width'] = $this->Width;
         }
 
-        if (($this->LineStyle != null) && ($this->LineStyle->LineStyleString != null)) {
-            $jsonArray['lineStyle'] = $this->LineStyle->LineStyleString;
+        if (($this->LineStyle != null) && ($this->LineStyle->_LineStyleString != null)) {
+            $jsonArray['lineStyle'] = $this->LineStyle->_LineStyleString;
         }
 
         // ---------------------------------

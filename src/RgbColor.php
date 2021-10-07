@@ -35,18 +35,18 @@ class RgbColor extends Color
         $this->red = $red;
         $this->green = $green;
         $this->blue = $blue;
-        $this->ColorString = "rgb(" . $red . "," . $green . "," . $blue . ")";
+        $this->_ColorString = "rgb(" . $red . "," . $green . "," . $blue . ")";
 
     }
 
     public static function CreateRgbColor(?string $colorString = null)
     {
         $rgbColor = new RgbColor();
-        $rgbColor->ColorString = $colorString;
+        $rgbColor->_ColorString = $colorString;
         return $rgbColor;
     }
 
-    public $ColorString;
+    public $_ColorString;
 
     /**
      *
@@ -1196,8 +1196,8 @@ class RgbColor extends Color
     {
         //$jsonArray=array();
 
-        if ($this->ColorString != null) {
-            return $this->ColorString;
+        if ($this->_ColorString != null) {
+            return $this->_ColorString;
         } else {
             return "rgb(" . $this->red . "," . $this->green . "," . $this->blue . ")";
         }

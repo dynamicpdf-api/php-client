@@ -19,6 +19,6 @@ class WebColor extends RgbColor
      * @param  string $webHexString The hexadecimal string representing the color.
      */
     public function __construct(string $webHexString)
-    {$this->ColorString = $webHexString;}
+    {$this->_ColorString = $webHexString;}
 
 }

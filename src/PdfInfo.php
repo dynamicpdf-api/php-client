@@ -24,10 +24,10 @@ class PdfInfo extends Endpoint
     {
         parent::__construct();
         $this->resource = $resource;
-        $this->EndpointName = "pdf-info";
+        $this->_EndpointName = "pdf-info";
     }
 
-    public $EndpointName = "pdf-info";
+    public $_EndpointName = "pdf-info";
 
     /**
      *
@@ -37,7 +37,7 @@ class PdfInfo extends Endpoint
     public function Process(): PdfInfoResponse
     {
         $client = parent::Init();
-        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->EndpointName);
+        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->_EndpointName);
 
         $errCode = json_last_error();
 

@@ -24,14 +24,14 @@ class Grayscale extends Color
     {
 
         $this->grayLevel = $grayLevel;
-        $this->ColorString = "gray(" . $grayLevel . ")";
+        $this->_ColorString = "gray(" . $grayLevel . ")";
 
     }
 
     public static function CreateGrayscale(string $colorString = null)
     {
         $grayscale = new Grayscale();
-        $grayscale->ColorString = $colorString;
+        $grayscale->_ColorString = $colorString;
         return $grayscale;
     }
 

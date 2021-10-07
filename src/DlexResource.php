@@ -24,13 +24,13 @@ class DlexResource extends Resource
         parent::__construct($dlex, $resourceName);
     }
 
-    public $Type = ResourceType::Dlex;
-    public function FileExtension()
+    public $_Type = ResourceType::Dlex;
+    public function _FileExtension()
     {
         return ".dlex";
     }
 
-    public $MimeType = "application/xml";
+    public $_MimeType = "application/xml";
 
     /**
      *

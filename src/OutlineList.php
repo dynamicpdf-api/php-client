@@ -13,7 +13,7 @@ class OutlineList
 
     public function __construct()
     {
-        $this->Outlines = array();
+        $this->_Outlines = array();
     }
 
     /**
@@ -32,32 +32,32 @@ class OutlineList
             $linkTo->PageOffset = $pageOffset;
             $linkTo->PageZoom = $pageZoom;
             $outline = new Outline($text, $linkTo);
-            array_push($this->Outlines, $outline);
+            array_push($this->_Outlines, $outline);
             return $outline;
         } else if (gettype($input) == "string") {
             $outline = new Outline($text, new UrlAction($input));
-            array_push($this->Outlines, $outline);
+            array_push($this->_Outlines, $outline);
             return $outline;
         } else if ($input == null) {
             $outline = new Outline($text);
-            array_push($this->Outlines, $outline);
+            array_push($this->_Outlines, $outline);
             return $outline;
         }
     }
 
     public function AddPdfOutlines(PdfInput $pdfInput)
     {
-        array_push($this->Outlines, new Outline($pdfInput));
+        array_push($this->_Outlines, new Outline($pdfInput));
     }
 
-    public $Outlines;
+    public $_Outlines;
 
     public function GetJsonSerializeString()
     {
         $jsonArray = array();
 
-        for ($i = 0; $i < count($this->Outlines); $i++) {
-            array_push($jsonArray, $this->Outlines[$i]->GetJsonSerializeString());
+        for ($i = 0; $i < count($this->_Outlines); $i++) {
+            array_push($jsonArray, $this->_Outlines[$i]->GetJsonSerializeString());
         }
 
         return $jsonArray;

@@ -26,7 +26,7 @@ class ImageInput extends Input
         parent::__construct($resource);
     }
 
-    public $Type = InputType::Image;
+    public $_Type = InputType::Image;
 
     /**
      *
@@ -189,8 +189,8 @@ class ImageInput extends Input
         }
 
         //---------------------------------------------------
-        if ($this->TemplateId != null) {
-            $jsonArray['templateId'] = $this->TemplateId;
+        if ($this->_TemplateId != null) {
+            $jsonArray['templateId'] = $this->_TemplateId;
         }
 
         if ($this->ResourceName != null) {

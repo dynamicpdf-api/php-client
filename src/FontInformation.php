@@ -7,12 +7,12 @@ class FontInformation
 
     public function __construct(string $fontName, string $filePath)
     {
-        $this->FontName = $fontName;
-        $this->FilePath = $filePath;
+        $this->_FontName = $fontName;
+        $this->_FilePath = $filePath;
     }
 
-    public $FontName;
+    public $_FontName;
 
-    public $FilePath;
+    public $_FilePath;
 
 }

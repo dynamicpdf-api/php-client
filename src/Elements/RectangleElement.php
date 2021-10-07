@@ -30,7 +30,7 @@ class RectangleElement extends Element
         $this->Height = $height;
     }
 
-    public $Type = ElementType::Rectangle;
+    public $_Type = ElementType::Rectangle;
 
     /**
      *
@@ -107,16 +107,16 @@ class RectangleElement extends Element
             $jsonArray["cornerRadius"] = $this->CornerRadius;
         }
 
-        if (($this->FillColor != null) && ($this->FillColor->ColorString != null)) {
-            $jsonArray["fillColor"] = $this->FillColor->ColorString;
+        if (($this->FillColor != null) && ($this->FillColor->_ColorString != null)) {
+            $jsonArray["fillColor"] = $this->FillColor->_ColorString;
         }
 
-        if (($this->BorderStyle != null) && ($this->BorderStyle->LineStyleString != null)) {
-            $jsonArray["borderStyle"] = $this->BorderStyle->LineStyleString;
+        if (($this->BorderStyle != null) && ($this->BorderStyle->_LineStyleString != null)) {
+            $jsonArray["borderStyle"] = $this->BorderStyle->_LineStyleString;
         }
 
-        if (($this->BorderColor != null) && ($this->BorderColor->ColorString != null)) {
-            $jsonArray["borderColor"] = $this->BorderColor->ColorString;
+        if (($this->BorderColor != null) && ($this->BorderColor->_ColorString != null)) {
+            $jsonArray["borderColor"] = $this->BorderColor->_ColorString;
         }
 
         // ---------------------------------

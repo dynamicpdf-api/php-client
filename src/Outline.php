@@ -24,7 +24,7 @@ class Outline
     {
         $this->Children = new OutlineList();
         if (gettype($input) == "object") {
-            $this->FromInputID = $input->Id;
+            $this->_FromInputID = $input->Id;
             if ($input->MergeOptions == null) {
                 $input->MergeOptions = new MergeOptions();
                 $input->MergeOptions->Outlines = false;
@@ -37,7 +37,7 @@ class Outline
         }
     }
 
-    public $ColorName;
+    public $_ColorName;
 
     /**
      *
@@ -74,7 +74,7 @@ class Outline
      */
     public $Action;
 
-    public $FromInputID;
+    public $_FromInputID;
 
     /**
      *
@@ -89,10 +89,10 @@ class Outline
      *
      * @return OutlineList Collection of child outlines.
      */
-    public function GetChildren()
+    public function _GetChildren()
     {
         if ($this->Children != null) {
-            return $this->Children->Outlines;
+            return $this->Children->_Outlines;
         }
 
         return null;
@@ -135,15 +135,15 @@ class Outline
             $jsonArray['expanded'] = $this->Expanded;
         }
 
-        if ($this->Children != null && count($this->Children->Outlines) > 0) {
+        if ($this->Children != null && count($this->Children->_Outlines) > 0) {
             $childrenArray = array();
-            for ($i = 0; $i < count($this->Children->Outlines); $i++) {
-                array_push($childrenArray, $this->Children->Outlines[$i]->GetJsonSerializeString());
+            for ($i = 0; $i < count($this->Children->_Outlines); $i++) {
+                array_push($childrenArray, $this->Children->_Outlines[$i]->GetJsonSerializeString());
             }
             $jsonArray['children'] = $childrenArray;
         }
-        if ($this->FromInputID != null) {
-            $jsonArray['fromInputID'] = $this->FromInputID;
+        if ($this->_FromInputID != null) {
+            $jsonArray['fromInputID'] = $this->_FromInputID;
         }
 
         return $jsonArray;

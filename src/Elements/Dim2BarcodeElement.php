@@ -17,7 +17,7 @@ abstract class Dim2BarcodeElement extends BarcodeElement
         if (gettype($value) == "string") {
             parent::__construct($value, $placement, $xOffset, $yOffset);
         } else {
-            $this->ValueType = ValueType::Base64EncodedBytes;
+            $this->_ValueType = ValueType::Base64EncodedBytes;
             $this->Value = base64_encode(implode(array_map("chr", $value)));
             $this->Placement = $placement;
             $this->XOffset = $xOffset;
@@ -30,6 +30,6 @@ abstract class Dim2BarcodeElement extends BarcodeElement
 
     }*/
 
-    public $ValueType = ValueType::String;
+    public $_ValueType = ValueType::String;
 
 }

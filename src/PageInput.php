@@ -25,7 +25,7 @@ class PageInput extends Input
         $this->PageHeight = $pageHeight;
     }
 
-    public $Type = InputType::Page;
+    public $_Type = InputType::Page;
 
     /**
      *
@@ -75,8 +75,8 @@ class PageInput extends Input
         $jsonArray['elements'] = $jsonElement;
 
         //---------------------------------------------------
-        if ($this->TemplateId != null) {
-            $jsonArray['templateId'] = $this->TemplateId;
+        if ($this->_TemplateId != null) {
+            $jsonArray['templateId'] = $this->_TemplateId;
         }
 
         if ($this->ResourceName != null) {

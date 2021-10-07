@@ -25,15 +25,15 @@ class GoToAction extends Action
      */
     public function __construct($input, int $pageOffset = 0, string $pageZoom = PageZoom::FitPage)
     {
-        $this->Input = $input;
-        $this->InputID = $input->Id;
+        $this->_Input = $input;
+        $this->_InputID = $input->Id;
         $this->PageOffset = $pageOffset;
         $this->PageZoom = $pageZoom;
     }
 
-    public $Input;
+    public $_Input;
 
-    public $InputID;
+    public $_InputID;
 
     /**
      *
@@ -53,12 +53,12 @@ class GoToAction extends Action
     {
         $jsonArray = array();
 
-        if ($this->Input != null) {
-            $jsonArray['input'] = $this->Input->GetJsonSerializeString();
+        if ($this->_Input != null) {
+            $jsonArray['input'] = $this->_Input->GetJsonSerializeString();
         }
 
-        if ($this->InputID != null) {
-            $jsonArray['inputID'] = $this->InputID;
+        if ($this->_InputID != null) {
+            $jsonArray['inputID'] = $this->_InputID;
         }
 
         if ($this->PageOffset != null) {

@@ -30,12 +30,12 @@ class DlexInput extends Input
             $this->LayoutDataResourceName = $layout->LayoutDataResourceName;
             //$dlex->LayoutDataResourceName=$this->LayoutDataResourceName ;
 
-            array_push($this->Resources, $layout);
-            array_push($this->Resources, $dlex);
+            array_push($this->_Resources, $layout);
+            array_push($this->_Resources, $dlex);
         } else if ((gettype($dlex) == "string") && (gettype($layout) == "object")) {
             $this->ResourceName = $dlex;
             $this->LayoutDataResourceName = $layout->LayoutDataResourceName;
-            array_push($this->Resources, $layout);
+            array_push($this->_Resources, $layout);
         } else if ((gettype($dlex) == "string") && (gettype($layout) == "string")) {
             //parent::__construct();
             $this->ResourceName = $dlex;
@@ -43,7 +43,7 @@ class DlexInput extends Input
         }
     }
 
-    public $Type = InputType::Dlex;
+    public $_Type = InputType::Dlex;
 
     /**
      *
@@ -59,8 +59,8 @@ class DlexInput extends Input
         $jsonArray['layoutDataResourceName'] = $this->LayoutDataResourceName;
 
         //---------------------------------------------------
-        if ($this->TemplateId != null) {
-            $jsonArray['templateId'] = $this->TemplateId;
+        if ($this->_TemplateId != null) {
+            $jsonArray['templateId'] = $this->_TemplateId;
         }
 
         if ($this->ResourceName != null) {

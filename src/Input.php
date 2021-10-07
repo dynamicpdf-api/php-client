@@ -17,7 +17,7 @@ abstract class Input
     public function __construct($resource)
     {
         if (gettype($resource) == "object") {
-            array_push($this->Resources, $resource);
+            array_push($this->_Resources, $resource);
             $this->ResourceName = $resource->ResourceName;
         } else {
             $this->ResourceName = $resource;
@@ -25,9 +25,9 @@ abstract class Input
         $this->Id = md5(uniqid(rand(), true));
     }
 
-    public $Type;
-    public $TemplateId;
-    public $Resources = array();
+    public $_Type;
+    public $_TemplateId;
+    public $_Resources = array();
 
     /**
      *
@@ -51,7 +51,7 @@ abstract class Input
     public function SetTemplate(Template $template)
     {
         $this->template = $template;
-        $this->TemplateId = $template->Id;
+        $this->_TemplateId = $template->Id;
     }
     public function GetTemplate(): ?Template
     {

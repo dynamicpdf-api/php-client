@@ -20,10 +20,10 @@ class PdfXmp extends Endpoint
     {
         parent::__construct();
         $this->resource = $resource;
-        $this->EndpointName = "pdf-xmp";
+        $this->_EndpointName = "pdf-xmp";
     }
 
-    public $EndpointName = "pdf-xmp";
+    public $_EndpointName = "pdf-xmp";
 
     /**
      *
@@ -34,7 +34,7 @@ class PdfXmp extends Endpoint
     public function Process(): XmlResponse
     {
         $client = parent::Init();
-        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->EndpointName);
+        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->_EndpointName);
 
         $errCode = json_last_error();
 

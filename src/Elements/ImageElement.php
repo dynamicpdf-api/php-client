@@ -27,11 +27,11 @@ class ImageElement extends Element
     {
         if (gettype($resource) == "object") {
             //parent::__construct() ;
-            $this->Resource = $resource;
-            $this->ResourceName = $resource->ResourceName;
+            $this->_Resource = $resource;
+            $this->_ResourceName = $resource->ResourceName;
 
         } else {
-            $this->ResourceName = $resource;
+            $this->_ResourceName = $resource;
         }
         $this->Placement = $placement;
         $this->XOffset = $xOffset;
@@ -52,17 +52,17 @@ class ImageElement extends Element
     public static function CreateImageElement(string $resourceName, string $placement, float $xOffset = 0, float $yOffset = 0)
     {
         $imageElement = new ImageElement(null, null);
-        $imageElement->ResourceName = $resourceName;
+        $imageElement->_ResourceName = $resourceName;
         $imageElement->Placement = $placement;
         $imageElement->XOffset = $xOffset;
         $imageElement->YOffset = $yOffset;
         return $imageElement;
     }
 
-    public $Type = ElementType::Image;
-    public $Resource;
+    public $_Type = ElementType::Image;
+    public $_Resource;
 
-    public $ResourceName;
+    public $_ResourceName;
 
     /**
      *
@@ -99,8 +99,8 @@ class ImageElement extends Element
         $jsonArray = array();
         $jsonArray["type"] = "image";
 
-        if ($this->ResourceName != null) {
-            $jsonArray['resourceName'] = $this->ResourceName;
+        if ($this->_ResourceName != null) {
+            $jsonArray['resourceName'] = $this->_ResourceName;
         }
 
         if ($this->ScaleX != null) {
