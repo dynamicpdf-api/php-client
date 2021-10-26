@@ -21,7 +21,7 @@ require_once __DIR__ . './OutlineList.php';
 class Pdf extends Endpoint
 {
     public $instructions;
-    public $JsonData;
+    
 
     /**
      *
@@ -230,7 +230,7 @@ class Pdf extends Endpoint
   
 
         foreach ($this->instructions->_Inputs as $input) {
-            if ($input->Type == InputType::Page) {
+            if ($input->_Type == InputType::Page) {
                 $pageInput = $input;
                 foreach ($pageInput->Elements as $element) {
                     if ($element->_TextFont != null) {
@@ -340,7 +340,7 @@ class Pdf extends Endpoint
         $errCode = json_last_error();
         // echo ($errCode);
         // if(isset($debugMode))
-        $this->jsonData = $data_string;
+        
 
         // echo( $data_string."\n\n");
 
