@@ -138,7 +138,9 @@ class Outline
         if ($this->Children != null && count($this->Children->_Outlines) > 0) {
             $childrenArray = array();
             for ($i = 0; $i < count($this->Children->_Outlines); $i++) {
-                array_push($childrenArray, $this->Children->_Outlines[$i]->GetJsonSerializeString());
+                if ($this->Children->_Outlines[$i] != null) {
+                    array_push($childrenArray, $this->Children->_Outlines[$i]->GetJsonSerializeString());
+                }
             }
             $jsonArray['children'] = $childrenArray;
         }

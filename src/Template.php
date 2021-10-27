@@ -1,7 +1,6 @@
 <?php
 namespace DynamicPDF\Api;
 
-
 /**
  *
  * Represents a document template.
@@ -45,7 +44,9 @@ class Template
 
         $elements = array();
         foreach ($this->Elements as $element) {
-            $str = $element->GetJsonSerializeString();
+            if ($element != null) {
+                $str = $element->GetJsonSerializeString();
+            }
 
             if ($str != null) {
                 array_push($elements, $str);

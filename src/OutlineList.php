@@ -6,8 +6,6 @@ include_once __DIR__ . './GoToAction.php';
 include_once __DIR__ . './Outline.php';
 include_once __DIR__ . './PdfInput.php';
 
-
-
 class OutlineList
 {
 
@@ -57,7 +55,9 @@ class OutlineList
         $jsonArray = array();
 
         for ($i = 0; $i < count($this->_Outlines); $i++) {
-            array_push($jsonArray, $this->_Outlines[$i]->GetJsonSerializeString());
+            if ($this->_Outlines[$i] != null) {
+                array_push($jsonArray, $this->_Outlines[$i]->GetJsonSerializeString());
+            }
         }
 
         return $jsonArray;

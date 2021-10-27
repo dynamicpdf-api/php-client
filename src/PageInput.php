@@ -1,7 +1,6 @@
 <?php
 namespace DynamicPDF\Api;
 
-
 include_once __DIR__ . './InputType.php';
 
 /**
@@ -57,7 +56,9 @@ class PageInput extends Input
     {
         $jsonElement = array();
         foreach ($this->Elements as $element) {
-            array_push($jsonElement, $element->GetJsonSerializeString());
+            if ($element != null) {
+                array_push($jsonElement, $element->GetJsonSerializeString());
+            }
         }
 
         $jsonArray = array();

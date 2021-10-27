@@ -37,7 +37,9 @@ class PdfInstructions implements JsonSerializable
         $inputJsonArray = array();
 
         foreach ($this->_Inputs as $input) {
+            if($input != null){
             array_push($inputJsonArray, $input->GetJsonSerializeString());
+            }
         }
 
         $fontsJson = array();
@@ -47,7 +49,9 @@ class PdfInstructions implements JsonSerializable
 
         $templatesJson = array();
         foreach ($this->_Templates as $template) {
+            if($template != null){
             array_push($templatesJson, $template->GetJsonSerializeString());
+            }
         }
 
         $jsonArray = array();
@@ -83,6 +87,8 @@ class PdfInstructions implements JsonSerializable
 
         $jsonArray['inputs'] = $inputJsonArray;
         $jsonArray['formFields'] = $this->_FormFields;
+
+        if($this->_Outlines != null)
         $jsonArray['outlines'] = $this->_Outlines->GetJsonSerializeString();
 
         return $jsonArray;
