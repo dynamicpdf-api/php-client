@@ -67,7 +67,7 @@ class ImageInfo extends Endpoint
         $retObject->IsSuccessful = false;
         $retObject->StatusCode = $resCode;
         if ($result == true) {
-            if ($retObject != null && $retObject->StatusCode == 200) {
+            if ($retObject != null ) {
                 $retObject->IsSuccessful = true;
             } elseif ($outData != null && trim($outData)[0] == '{') {
                 $retObject->ErrorJson = $outData;

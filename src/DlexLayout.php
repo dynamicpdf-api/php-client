@@ -104,7 +104,7 @@ class DlexLayout extends Endpoint
         $retObject = new PdfResponse();
         $retObject->IsSuccessful = false;
         $retObject->StatusCode = $resCode;
-        if ($retObject != null && $retObject->StatusCode == 200) {
+        if ($retObject != null) {
             if (strncmp($outData, '%PDF', 4) == 0) {
                 $retObject->IsSuccessful = true;
                 $retObject->Content = $outData;
