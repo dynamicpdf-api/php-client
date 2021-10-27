@@ -25,10 +25,7 @@ abstract class Dim2BarcodeElement extends BarcodeElement
         }
     }
 
-    /* public Dim2BarcodeElement(byte[] value, ElementPlacement placement, float xOffset, float yOffset)
-    {
-
-    }*/
+   
 
     public $_ValueType = ValueType::String;
 

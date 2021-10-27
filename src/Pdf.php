@@ -11,7 +11,7 @@ require_once __DIR__ . './PdfResource.php';
 require_once __DIR__ . './PdfResponse.php';
 require_once __DIR__ . './PageInput.php';
 require_once __DIR__ . './OutlineList.php';
-//require_once('LayoutDataResource.php');
+
 
 /**
  *
@@ -287,7 +287,7 @@ class Pdf extends Endpoint
 
         curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->_EndpointName);
 
-        // $resources = array();
+      
         foreach ($this->instructions->_Inputs as $input) {
             if ($input->_Type == InputType::Page) {
                 $pageInput = $input;
@@ -298,7 +298,7 @@ class Pdf extends Endpoint
                     }
                     if ($element->_TextFont != null) {
                         $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
-                        //array_push($this->instructions->Fonts, $fontSerializedArray);
+                        
                         $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                     }
                 }
@@ -316,12 +316,12 @@ class Pdf extends Endpoint
                 $this->instructions->_Templates[$template->Id] = $template;
                 if ($input->GetTemplate()->Elements != null && count($input->GetTemplate()->Elements) > 0) {
                     foreach ($input->GetTemplate()->Elements as $element) {
-                        //echo("element");
+                      
                         if ($element->_Resource != null) {
                             $this->Resources[$element->_Resource->ResourceName] = $element->_Resource;
                         }
                         if ($element->_TextFont != null) {
-                            //echo("font");
+                          
                             $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
 
                             if (count($fontSerializedArray) > 0) {
@@ -338,11 +338,7 @@ class Pdf extends Endpoint
         $data_string = json_encode($this->instructions, JSON_PRETTY_PRINT);
 
         $errCode = json_last_error();
-        // echo ($errCode);
-        // if(isset($debugMode))
-        
-
-        // echo( $data_string."\n\n");
+      
 
         if ($this->instructions->_Inputs == null) {
             throw new EndPointException("Minimum one input required.");
@@ -415,7 +411,7 @@ class Pdf extends Endpoint
 
                 $retObject = new PdfResponse($outData);
                 $retObject->IsSuccessful = true;
-                //$retObject->PdfContent = $outData;
+                
             } elseif (trim($outData)[0] == '{') {
                 $retObject->ErrorJson = $outData;
                 if ($retObject->StatusCode == 400) {

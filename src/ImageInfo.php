@@ -46,15 +46,13 @@ class ImageInfo extends Endpoint
         $headr = array();
 
         $headr[] = 'Content-Type: image/' . substr($this->resource->_FileExtension(), 1);
-        //secho($this->resource->FileExtension());
+        
         $headr[] = 'Authorization:Bearer ' . $this->ApiKey;
         curl_setopt($client, CURLOPT_HTTPHEADER, $headr);
 
         curl_setopt($client, CURLOPT_POSTFIELDS, $this->resource->Data);
 
-        //$params = array('startPage' => $this->StartPage,'pageCount' => $this->PageCount);
-        //$url = Endpoint::$DefaultBaseUrl."/".$this->_EndpointName . '?' . http_build_query($params);
-        //curl_setopt($client, CURLOPT_URL, $url);
+      
 
         curl_setopt($client, CURLOPT_BINARYTRANSFER, 1);
 

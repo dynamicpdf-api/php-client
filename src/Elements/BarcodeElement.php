@@ -13,7 +13,7 @@ include_once __DIR__ . './ElementPlacement.php';
  */
 abstract class BarcodeElement extends Element
 {
-    //public BarcodeElement() { }
+    
     public function __construct(string $value, string $placement, float $xOffset, float $yOffset)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);

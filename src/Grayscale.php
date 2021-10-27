@@ -51,18 +51,5 @@ class Grayscale extends Color
     public static function White()
     {return new Grayscale(1);}
 
-    /*  internal override string ColorString
-{
-get
-{
-if (colorString != null)
-return colorString;
-else
-return "gray(" + grayLevel.ToString()  + ")";
-}
-set
-{
-colorString = value;
-}
-}*/
+  
 }

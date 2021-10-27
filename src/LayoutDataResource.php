@@ -47,7 +47,7 @@ class LayoutDataResource extends Resource
         return ".json";
     }
 
-    //public $_FileExtension = ".json";
+    
 
     public $_MimeType = "application/json";
 

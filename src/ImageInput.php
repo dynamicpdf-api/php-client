@@ -204,6 +204,6 @@ class ImageInput extends Input
         return $jsonArray;
     }
 
-    // internal override InputResourceType InputResourceType { get; } = InputResourceType.Upload;
+   
 
 }

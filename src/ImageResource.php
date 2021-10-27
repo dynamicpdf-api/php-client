@@ -58,7 +58,7 @@ class ImageResource extends Resource
             $this->_MimeType = "image/bmp";
             return ".bmp";
         } else {
-            //print_r ($fileHeader);
+            
             throw new EndPointException("Not supported image type or invalid image.");
         }
     }
@@ -105,10 +105,6 @@ class ImageResource extends Resource
         $inputjson['resourceName'] = $this->ResourceName;
         return $inputjson;
 
-        /* return    array (
-    "type"=>"image",
-    "align"=>1,
-    "vAlign"=>1,
-    "resourceName"=>$this->ResourceName);*/
+        
     }
 }
