@@ -27,7 +27,7 @@ abstract class Endpoint
      * Gets or sets default base url.
      *
      */
-    public static $DefaultBaseUrl = "https://api.dynamicpdf.com/v1.0";
+    public static $DefaultBaseUrl = "https://api.dynamicpdf.com";
 
     /**
      *
@@ -41,7 +41,7 @@ abstract class Endpoint
      * Gets or sets base url for the api.
      *
      */
-    public $BaseUrl = "https://api.dynamicpdf.com/v1.0";
+    public $BaseUrl = "https://api.dynamicpdf.com";
 
     /**
      *

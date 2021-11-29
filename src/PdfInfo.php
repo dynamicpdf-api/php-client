@@ -37,7 +37,9 @@ class PdfInfo extends Endpoint
     public function Process(): PdfInfoResponse
     {
         $client = parent::Init();
-        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->_EndpointName);
+
+        $endPointUrl = rtrim($this->BaseUrl,"\0\t\n\x0B\r \\/") . "/v1.0/" . $this->_EndpointName;
+        curl_setopt($client, CURLOPT_URL, $endPointUrl);
 
         $errCode = json_last_error();
 
@@ -70,7 +72,7 @@ class PdfInfo extends Endpoint
                 $retObject->IsSuccessful = true;
             } elseif (trim($outData)[0] == '{') {
                 $retObject->ErrorJson = $outData;
-                if ($retObject->StatusCode == 400) {
+                if ($retObject->StatusCode >= 400) {
                     $retObject->ErrorMessage = json_decode($outData)->message;
                 }
             }

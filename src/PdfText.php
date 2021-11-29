@@ -66,7 +66,8 @@ class PdfText extends Endpoint
         curl_setopt($client, CURLOPT_POSTFIELDS, $this->resource->Data);
 
         $params = array('startPage' => $this->StartPage, 'pageCount' => $this->PageCount);
-        $url = $this->BaseUrl . "/" . $this->_EndpointName . '?' . http_build_query($params);
+        $endPointUrl = rtrim($this->BaseUrl,"\0\t\n\x0B\r \\/") . "/v1.0/" . $this->_EndpointName;
+        $url = $endPointUrl . '?' . http_build_query($params);
         curl_setopt($client, CURLOPT_URL, $url);
 
         curl_setopt($client, CURLOPT_BINARYTRANSFER, 1);
@@ -86,7 +87,7 @@ class PdfText extends Endpoint
                 $retObject->IsSuccessful = true;
             } elseif (trim($outData)[0] == '{') {
                 $retObject->ErrorJson = $outData;
-                if ($retObject->StatusCode == 400) {
+                if ($retObject->StatusCode >= 400) {
                     $retObject->ErrorMessage = json_decode($outData)->message;
                 }
             }

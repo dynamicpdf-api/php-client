@@ -285,8 +285,8 @@ class Pdf extends Endpoint
         $this->instructions->_Outlines = $this->Outlines;
         //$this->Instructions->FormFields = $this->FormFields;
 
-        curl_setopt($client, CURLOPT_URL, $this->BaseUrl . "/" . $this->_EndpointName);
-
+        $endPointUrl = rtrim($this->BaseUrl,"\0\t\n\x0B\r \\/") . "/v1.0/" . $this->_EndpointName;
+        curl_setopt($client, CURLOPT_URL, $endPointUrl);
       
         foreach ($this->instructions->_Inputs as $input) {
             if ($input->_Type == InputType::Page) {
@@ -414,7 +414,7 @@ class Pdf extends Endpoint
                 
             } elseif (trim($outData)[0] == '{') {
                 $retObject->ErrorJson = $outData;
-                if ($retObject->StatusCode == 400) {
+                if ($retObject->StatusCode >= 400) {
                     $retObject->ErrorMessage = json_decode($outData)->message;
                 }
             }
