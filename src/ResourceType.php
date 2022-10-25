@@ -44,4 +44,11 @@ class ResourceType
      *
      */
     public const Font = "Font";
+
+    /**
+     *
+     * Html resource.
+     *
+     */
+    public const Html = "Html";
 }
