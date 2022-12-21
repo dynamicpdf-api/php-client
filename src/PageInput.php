@@ -17,11 +17,22 @@ class PageInput extends Input
      *
      * @param  float $pageWidth The width of the page.
      * @param  float $pageHeight The height of the page.
+     * @param  float $margin The margins of the page.
      */
-    public function __construct(?float $pageWidth = null, ?float $pageHeight = null)
+    public function __construct(?float $pageWidth = null, ?float $pageHeight = null, ?float $margin = null)
     {
-        $this->PageWidth = $pageWidth;
-        $this->PageHeight = $pageHeight;
+        if($pageHeight != null && $pageWidth != null){
+            $this->PageWidth = $pageWidth;
+            $this->PageHeight = $pageHeight;
+        }
+        if($margin != null){
+            $this->TopMargin = $margin;
+            $this->BottomMargin = $margin;
+            $this->RightMargin = $margin;
+            $this->LeftMargin = $margin;
+        }
+
+        $this->Id = md5(uniqid(rand(), true));
     }
 
     public $_Type = InputType::Page;
@@ -40,7 +51,66 @@ class PageInput extends Input
      */
     public $PageHeight;
 
+    /**
+     *
+     *  Gets or sets the Top Margin.
+     *
+     */
+    public $TopMargin;
+
+    /**
+     *
+     *  Gets or sets the Bottom Margin.
+     *
+     */
+    public $BottomMargin;
+
+    /**
+     *
+     *  Gets or sets the Right Margin.
+     *
+     */
+    public $RightMargin;
+
+    /**
+     *
+     *  Gets or sets the Left Margin.
+     *
+     */
+    public $LeftMargin;
+
     public $Elements = array();
+
+
+    /**
+     *
+     * Sets the Page width and Height accourding to PageSize.
+     * @param PageSize $pageSize for Output Page.
+     * @param PageOrientation $pageOrientation for the output Page.
+     */
+    public function PageSize($pageSize, $pageOrientation = PageOrientation::Portrait, $margin = null)
+    {
+        $unitConverter = new UnitConverter();
+        list($_smaller,$_larger) = $unitConverter->getPaperSize($pageSize);
+
+        if($pageOrientation == PageOrientation::Portrait)
+        {
+            $this->PageWidth = $_smaller;
+            $this->PageHeight = $_larger;
+        }
+        else{
+            $this->PageWidth = $_larger;
+            $this->PageHeight = $_smaller;
+        }
+
+        if($margin != null){
+            $this->TopMargin = $margin;
+            $this->BottomMargin = $margin;
+            $this->RightMargin = $margin;
+            $this->LeftMargin = $margin;
+        }
+
+    }
 
     /**
      *
@@ -72,10 +142,25 @@ class PageInput extends Input
         if ($this->PageHeight != null) {
             $jsonArray['pageHeight'] = $this->PageHeight;
         }
+        
+        if ($this->TopMargin != null) {
+            $jsonArray['topMargin'] = $this->TopMargin;
+        }
+
+        if ($this->BottomMargin != null) {
+            $jsonArray['bottomMargin'] = $this->BottomMargin;
+        }
+
+        if ($this->RightMargin != null) {
+            $jsonArray['rightMargin'] = $this->RightMargin;
+        }
+
+        if ($this->LeftMargin != null) {
+            $jsonArray['leftMargin'] = $this->LeftMargin;
+        }
 
         $jsonArray['elements'] = $jsonElement;
 
-        //---------------------------------------------------
         if ($this->_TemplateId != null) {
             $jsonArray['templateId'] = $this->_TemplateId;
         }

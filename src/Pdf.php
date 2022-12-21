@@ -191,6 +191,23 @@ class Pdf extends Endpoint
 
     /**
      *
+     *  Returns a HtmlInput object containing the html string or HtmlResource.
+     *
+     * @param  string|HtmlResource $resource The Html string or the HtmlResource object to create HtmlInput.
+     * @param  string $basePath The basepath option for the url.
+     * @param  PageSize $pageSize The Page Size for PDF page
+     * @param  PageOrientation $orientation The Page orientation of the PDF page
+     * @return HtmlInput HtmlInput object.
+     */
+    public function AddHtml($resource, string $basePath = null, $pageSize = PageSize::Letter, $orientation = PageOrientation::Portrait, ?float $margin = null)
+    {
+        $input = new HtmlInput($resource, $basePath, $pageSize, $orientation, $margin);
+        array_push($this->Inputs, $input);
+        return $input;
+    }
+
+    /**
+     *
      * Gets the inputs.
      *
      */
