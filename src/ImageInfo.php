@@ -2,8 +2,8 @@
 namespace DynamicPDF\Api;
 
 
-include_once __DIR__ . './Endpoint.php';
-include_once __DIR__ . './ImageResponse.php';
+include_once __DIR__ . '/Endpoint.php';
+include_once __DIR__ . '/ImageResponse.php';
 
 /**
  *

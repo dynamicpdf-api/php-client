@@ -2,8 +2,8 @@
 namespace DynamicPDF\Api;
 
 
-include_once __DIR__ . './EndpointException.php';
-include_once __DIR__ . './Color.php';
+include_once __DIR__ . '/EndpointException.php';
+include_once __DIR__ . '/Color.php';
 
 /**
  *

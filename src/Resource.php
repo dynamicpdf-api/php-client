@@ -1,9 +1,10 @@
 <?php
+
 namespace DynamicPDF\Api;
 
 
-include_once __DIR__ . './ResourceType.php';
-include_once __DIR__ . './EndPointException.php';
+include_once __DIR__ . '/ResourceType.php';
+include_once __DIR__ . '/EndPointException.php';
 
 abstract class Resource
 {
@@ -20,7 +21,6 @@ abstract class Resource
                 } else {
                     throw new EndpointException($file . " : File does not exist.");
                 }
-
             } else {
                 $this->Data = stream_get_contents($file, -1);
             }
@@ -35,7 +35,28 @@ abstract class Resource
 
             $this->_MimeType = "";
         }
+    }
 
+    public function __set(string $name, mixed $value): void
+    {
+        switch ($name) {
+            case "Data":
+                $this->_Data = $value;
+                break;
+            case "FilePath":
+                $this->_FilePath = $value;
+                break;
+        }
+    }
+
+    public function __get(string $name): mixed
+    {
+        switch ($name) {
+            case "Data":
+                return $this->_Data;
+            case "FilePath":
+                return $this->_FilePath;
+        }
     }
 
     public $_Data;

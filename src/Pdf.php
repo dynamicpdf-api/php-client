@@ -2,15 +2,15 @@
 namespace DynamicPDF\Api;
 
 
-require_once __DIR__ . './Endpoint.php';
-require_once __DIR__ . './PdfInstructions.php';
-require_once __DIR__ . './Input.php';
-require_once __DIR__ . './PdfInput.php';
-require_once __DIR__ . './Resource.php';
-require_once __DIR__ . './PdfResource.php';
-require_once __DIR__ . './PdfResponse.php';
-require_once __DIR__ . './PageInput.php';
-require_once __DIR__ . './OutlineList.php';
+require_once __DIR__ . '/Endpoint.php';
+require_once __DIR__ . '/PdfInstructions.php';
+require_once __DIR__ . '/Input.php';
+require_once __DIR__ . '/PdfInput.php';
+require_once __DIR__ . '/Resource.php';
+require_once __DIR__ . '/PdfResource.php';
+require_once __DIR__ . '/PdfResponse.php';
+require_once __DIR__ . '/PageInput.php';
+require_once __DIR__ . '/OutlineList.php';
 
 
 /**

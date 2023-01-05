@@ -2,8 +2,8 @@
 namespace DynamicPDF\Api;
 
 
-include_once __DIR__ . './FontResource.php';
-include_once __DIR__ . './Font.php';
+include_once __DIR__ . '/FontResource.php';
+include_once __DIR__ . '/Font.php';
 
 /**
  *

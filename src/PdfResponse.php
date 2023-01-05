@@ -2,7 +2,7 @@
 namespace DynamicPDF\Api;
 
 
-require_once __DIR__ . './Response.php';
+require_once __DIR__ . '/Response.php';
 
 /**
  *

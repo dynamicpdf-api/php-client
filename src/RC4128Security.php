@@ -2,8 +2,8 @@
 namespace DynamicPDF\Api;
 
 
-include_once __DIR__ . './Security.php';
-include_once __DIR__ . './SecurityType.php';
+include_once __DIR__ . '/Security.php';
+include_once __DIR__ . '/SecurityType.php';
 
 /**
  *

@@ -2,7 +2,7 @@
 namespace DynamicPDF\Api;
 
 
-include_once __DIR__ . './RgbColor.php';
+include_once __DIR__ . '/RgbColor.php';
 
 /**
  *

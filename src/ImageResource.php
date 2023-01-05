@@ -2,9 +2,9 @@
 namespace DynamicPDF\Api;
 
 
-include_once __DIR__ . './Resource.php';
-include_once __DIR__ . './ResourceType.php';
-include_once __DIR__ . './EndPointException.php';
+include_once __DIR__ . '/Resource.php';
+include_once __DIR__ . '/ResourceType.php';
+include_once __DIR__ . '/EndPointException.php';
 
 /**
  *
