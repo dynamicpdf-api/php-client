@@ -1,10 +1,10 @@
 <?php
 namespace DynamicPDF\Api;
 
-include_once __DIR__ . './Input.php';
-include_once __DIR__ . './HtmlResource.php';
-include_once __DIR__ . './InputType.php';
-include_once __DIR__ . './UnitConverter.php';
+include_once  __DIR__ . '/Input.php';
+include_once  __DIR__ . '/HtmlResource.php';
+include_once  __DIR__ . '/InputType.php';
+include_once  __DIR__ . '/UnitConverter.php';
 
 /**
  *
