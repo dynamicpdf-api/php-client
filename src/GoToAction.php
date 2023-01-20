@@ -1,9 +1,9 @@
 <?php
 namespace DynamicPDF\Api;
 
-include_once __DIR__ . './Action.php';
-include_once __DIR__ . './Input.php';
-include_once __DIR__ . './PageZoom.php';
+include_once __DIR__ . '/Action.php';
+include_once __DIR__ . '/Input.php';
+include_once __DIR__ . '/PageZoom.php';
 
 /**
  *

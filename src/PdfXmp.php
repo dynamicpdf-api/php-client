@@ -2,9 +2,9 @@
 namespace DynamicPDF\Api;
 
 
-include_once __DIR__ . './PdfResource.php';
-include_once __DIR__ . './Endpoint.php';
-include_once __DIR__ . './XmlResponse.php';
+include_once __DIR__ . '/PdfResource.php';
+include_once __DIR__ . '/Endpoint.php';
+include_once __DIR__ . '/XmlResponse.php';
 
 class PdfXmp extends Endpoint
 {

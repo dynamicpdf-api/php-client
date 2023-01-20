@@ -1,10 +1,10 @@
 <?php
 namespace DynamicPDF\Api\Elements;
 
-include_once __DIR__ . './Dim2BarcodeElement.php';
-include_once __DIR__ . './ErrorCorrection.php';
-include_once __DIR__ . './ElementType.php';
-include_once __DIR__ . './Compaction.php';
+include_once __DIR__ . '/Dim2BarcodeElement.php';
+include_once __DIR__ . '/ErrorCorrection.php';
+include_once __DIR__ . '/ElementType.php';
+include_once __DIR__ . '/Compaction.php';
 
 /**
  *

@@ -1,4 +1,5 @@
 <?php
+
 namespace DynamicPDF\Api;
 
 use JsonSerializable;
@@ -52,7 +53,7 @@ class FormField implements JsonSerializable
      */
     public $Remove = null;
 
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $output = array();
         $output['name'] = $this->Name;
@@ -71,6 +72,5 @@ class FormField implements JsonSerializable
         }
 
         return $output;
-
     }
 }

@@ -38,4 +38,11 @@ class InputType
      *
      */
     public const Page = "Page";
+
+    /**
+     *
+     * Html input.
+     *
+     */
+    public const Html = "Html";
 }

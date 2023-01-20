@@ -1,9 +1,9 @@
 <?php
 namespace DynamicPDF\Api\Elements;
 
-include_once __DIR__ . './BarcodeElement.php';
-include_once __DIR__ . './ElementPlacement.php';
-include_once __DIR__ . './ValueType.php';
+include_once __DIR__ . '/BarcodeElement.php';
+include_once __DIR__ . '/ElementPlacement.php';
+include_once __DIR__ . '/ValueType.php';
 
 /**
  *

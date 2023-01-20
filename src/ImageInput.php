@@ -1,11 +1,11 @@
 <?php
 namespace DynamicPDF\Api;
 
-include_once __DIR__ . './Input.php';
-include_once __DIR__ . './ImageResource.php';
-include_once __DIR__ . './InputType.php';
-include_once __DIR__ . './Align.php';
-include_once __DIR__ . './VAlign.php';
+include_once __DIR__ . '/Input.php';
+include_once __DIR__ . '/ImageResource.php';
+include_once __DIR__ . '/InputType.php';
+include_once __DIR__ . '/Align.php';
+include_once __DIR__ . '/VAlign.php';
 
 /**
  *

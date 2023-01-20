@@ -1,18 +1,19 @@
 <?php
+
 namespace DynamicPDF\Api;
 
 use JsonSerializable;
 
-include_once __DIR__ . './Security.php';
-include_once __DIR__ . './FormField.php';
-include_once __DIR__ . './Font.php';
+include_once __DIR__ . '/Security.php';
+include_once __DIR__ . '/FormField.php';
+include_once __DIR__ . '/Font.php';
 
 class PdfInstructions implements JsonSerializable
 {
     public $_FormFields = array();
     public $_Templates = array();
     public $_Fonts = array();
-    public $_Outlines ;
+    public $_Outlines;
     public $_Inputs = array();
 
     public $_Author = "CeteSoftware";
@@ -32,13 +33,13 @@ class PdfInstructions implements JsonSerializable
         $this->_Creator = "DynamicPDF Cloud Api";
         $this->_Keywords = "";
     }
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $inputJsonArray = array();
 
         foreach ($this->_Inputs as $input) {
-            if($input != null){
-            array_push($inputJsonArray, $input->GetJsonSerializeString());
+            if ($input != null) {
+                array_push($inputJsonArray, $input->GetJsonSerializeString());
             }
         }
 
@@ -49,8 +50,8 @@ class PdfInstructions implements JsonSerializable
 
         $templatesJson = array();
         foreach ($this->_Templates as $template) {
-            if($template != null){
-            array_push($templatesJson, $template->GetJsonSerializeString());
+            if ($template != null) {
+                array_push($templatesJson, $template->GetJsonSerializeString());
             }
         }
 
@@ -88,10 +89,9 @@ class PdfInstructions implements JsonSerializable
         $jsonArray['inputs'] = $inputJsonArray;
         $jsonArray['formFields'] = $this->_FormFields;
 
-        if($this->_Outlines != null)
-        $jsonArray['outlines'] = $this->_Outlines->GetJsonSerializeString();
+        if ($this->_Outlines != null)
+            $jsonArray['outlines'] = $this->_Outlines->GetJsonSerializeString();
 
         return $jsonArray;
-
     }
 }

@@ -3,9 +3,9 @@ namespace DynamicPDF\Api\Elements;
 
 use DynamicPDF\Api\Font;
 
-include_once __DIR__ . './Element.php';
-include_once __DIR__ . './ElementType.php';
-include_once __DIR__ . './../Font.php';
+include_once __DIR__ . '/Element.php';
+include_once __DIR__ . '/ElementType.php';
+include_once __DIR__ . '/../Font.php';
 /**
  *
  * Represents a page numbering label page element.
