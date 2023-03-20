@@ -1,4 +1,5 @@
 <?php
+
 namespace DynamicPDF\Api;
 
 
@@ -42,7 +43,7 @@ class DlexLayout extends Endpoint
     {
         $client = parent::Init();
 
-        $endPointUrl = rtrim($this->BaseUrl,"\0\t\n\x0B\r \\/") . "/v1.0/" . $this->_EndpointName;
+        $endPointUrl = rtrim($this->BaseUrl, "\0\t\n\x0B\r \\/") . "/v1.0/" . $this->_EndpointName;
         curl_setopt($client, CURLOPT_URL, $endPointUrl);
 
         $errCode = json_last_error();
@@ -63,7 +64,7 @@ class DlexLayout extends Endpoint
         }
 
         $boundary = '----------------------------' .
-        substr(hash($hashAlgo, 'sample Text ' . microtime()), 0, 12);
+            substr(hash($hashAlgo, 'sample Text ' . microtime()), 0, 12);
 
         $crlf = "\r\n";
 
@@ -87,11 +88,16 @@ class DlexLayout extends Endpoint
         $content = join($crlf, $body);
         $contentLength = strlen($content);
 
-        curl_setopt($client, CURLOPT_HTTPHEADER,
-            array('Authorization:Bearer ' . $this->ApiKey,
+        curl_setopt(
+            $client,
+            CURLOPT_HTTPHEADER,
+            array(
+                'Authorization:Bearer ' . $this->ApiKey,
                 'Content-Length: ' . $contentLength,
                 'Expect: 100-continue',
-                'Content-Type: ' . $contentType));
+                'Content-Type: ' . $contentType
+            )
+        );
 
         curl_setopt($client, CURLOPT_POSTFIELDS, $content);
 
@@ -100,21 +106,18 @@ class DlexLayout extends Endpoint
         $outData = ob_get_contents();
         ob_end_clean();
 
-        $resCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
-
         $retObject = new PdfResponse();
         $retObject->IsSuccessful = false;
-        $retObject->StatusCode = $resCode;
-        if ($retObject != null) {
-            if (strncmp($outData, '%PDF', 4) == 0) {
-                $retObject->IsSuccessful = true;
-                $retObject->Content = $outData;
-            } elseif (trim($outData)[0] == '{') {
-                $retObject->ErrorJson = $outData;
-                if ($retObject->StatusCode >= 400) {
-                    $retObject->ErrorMessage = json_decode($outData)->message;
-                }
-            }
+        $retObject->StatusCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
+
+        if ($result && strncmp($outData, '%PDF', 4) == 0) {
+            $retObject->IsSuccessful = true;
+            $retObject->Content = $outData;
+        } elseif (trim($outData)[0] == '{') {
+            $retObject->ErrorJson = $outData;
+            $errObj = json_decode($outData);
+            $retObject->ErrorMessage = $errObj->message ?? $errObj->title ?? null;
+            $retObject->ErrorId = $errObj->id ?? $errObj->traceId ?? null;
         }
 
         curl_close($client);

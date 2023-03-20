@@ -76,7 +76,7 @@ abstract class Resource
     public static function _GetUTF8FileData(string $filePath)
     {
         $data = Resource::_GetFileData($filePath);
-        return utf8_encode($data);
+        return mb_convert_encoding($data, "UTF-8");
     }
 
     abstract public function _FileExtension();

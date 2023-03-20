@@ -1,4 +1,5 @@
 <?php
+
 namespace DynamicPDF\Api;
 
 
@@ -21,7 +22,7 @@ require_once __DIR__ . '/OutlineList.php';
 class Pdf extends Endpoint
 {
     public $instructions;
-    
+
 
     /**
      *
@@ -244,7 +245,7 @@ class Pdf extends Endpoint
     public function GetInstructionsJson()
     {
 
-  
+
 
         foreach ($this->instructions->_Inputs as $input) {
             if ($input->_Type == InputType::Page) {
@@ -268,7 +269,6 @@ class Pdf extends Endpoint
                             if (count($fontSerializedArray) > 0) {
                                 $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                             }
-
                         }
                     }
                 }
@@ -302,51 +302,47 @@ class Pdf extends Endpoint
         $this->instructions->_Outlines = $this->Outlines;
         //$this->Instructions->FormFields = $this->FormFields;
 
-        $endPointUrl = rtrim($this->BaseUrl,"\0\t\n\x0B\r \\/") . "/v1.0/" . $this->_EndpointName;
+        $endPointUrl = rtrim($this->BaseUrl, "\0\t\n\x0B\r \\/") . "/v1.0/" . $this->_EndpointName;
         curl_setopt($client, CURLOPT_URL, $endPointUrl);
-      
+
         foreach ($this->instructions->_Inputs as $input) {
             if ($input->_Type == InputType::Page) {
                 $pageInput = $input;
                 foreach ($pageInput->Elements as $element) {
                     if ($element->_Resource != null) {
-                        
+
                         $this->Resources[$element->_Resource->ResourceName] = $element->_Resource;
                     }
                     if ($element->_TextFont != null) {
                         $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
-                        
+
                         $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                     }
                 }
-
             }
 
             foreach ($input->_Resources as $resource) {
                 if ($resource != null) {
                     $this->Resources[$resource->ResourceName] = $resource;
                 }
-
             }
             if ($input->GetTemplate() != null) {
                 $template = $input->GetTemplate();
                 $this->instructions->_Templates[$template->Id] = $template;
                 if ($input->GetTemplate()->Elements != null && count($input->GetTemplate()->Elements) > 0) {
                     foreach ($input->GetTemplate()->Elements as $element) {
-                      
+
                         if ($element->_Resource != null) {
                             $this->Resources[$element->_Resource->ResourceName] = $element->_Resource;
                         }
                         if ($element->_TextFont != null) {
-                          
+
                             $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
 
                             if (count($fontSerializedArray) > 0) {
                                 $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                             }
-
                         }
-
                     }
                 }
             }
@@ -355,13 +351,13 @@ class Pdf extends Endpoint
         $data_string = json_encode($this->instructions, JSON_PRETTY_PRINT);
 
         $errCode = json_last_error();
-      
+
 
         if ($this->instructions->_Inputs == null) {
             throw new EndPointException("Minimum one input required.");
         }
 
-/*------------------------------------------------------------------------------------------------------*/
+        /*------------------------------------------------------------------------------------------------------*/
         $body = array();
         $algos = hash_algos();
         $hashAlgo = null;
@@ -377,7 +373,7 @@ class Pdf extends Endpoint
         }
 
         $boundary = '----------------------------' .
-        substr(hash($hashAlgo, 'sample Text ' . microtime()), 0, 12);
+            substr(hash($hashAlgo, 'sample Text ' . microtime()), 0, 12);
 
         $crlf = "\r\n";
         $body[] = '--' . $boundary;
@@ -396,7 +392,6 @@ class Pdf extends Endpoint
             } else {
                 $body[] = $field->Data;
             }
-
         }
         $body[] = '--' . $boundary . '--';
         $body[] = '';
@@ -404,11 +399,16 @@ class Pdf extends Endpoint
         $content = join($crlf, $body);
         $contentLength = strlen($content);
 
-        curl_setopt($client, CURLOPT_HTTPHEADER,
-            array('Authorization:Bearer ' . $this->ApiKey,
+        curl_setopt(
+            $client,
+            CURLOPT_HTTPHEADER,
+            array(
+                'Authorization:Bearer ' . $this->ApiKey,
                 'Content-Length: ' . $contentLength,
                 'Expect: 100-continue',
-                'Content-Type: ' . $contentType));
+                'Content-Type: ' . $contentType
+            )
+        );
 
         curl_setopt($client, CURLOPT_POSTFIELDS, $content);
 
@@ -417,29 +417,22 @@ class Pdf extends Endpoint
         $outData = ob_get_contents();
         ob_end_clean();
 
-        $resCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
-
         $retObject = new PdfResponse();
         $retObject->IsSuccessful = false;
-        $retObject->StatusCode = $resCode;
+        $retObject->StatusCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
 
-        if ($retObject != null && $retObject->StatusCode == 200) {
-            if (strncmp($outData, '%PDF', 4) == 0) {
-
-                $retObject = new PdfResponse($outData);
-                $retObject->IsSuccessful = true;
-                
-            } elseif (trim($outData)[0] == '{') {
-                $retObject->ErrorJson = $outData;
-                if ($retObject->StatusCode >= 400) {
-                    $retObject->ErrorMessage = json_decode($outData)->message;
-                }
-            }
+        if ($result && strncmp($outData, '%PDF', 4) == 0) {
+            $retObject->IsSuccessful = true;
+            $retObject->Content = $outData;
+        } elseif (trim($outData)[0] == '{') {
+            $retObject->ErrorJson = $outData;
+            $errObj = json_decode($outData);
+            $retObject->ErrorMessage = $errObj->message ?? $errObj->title ?? null;
+            $retObject->ErrorId = $errObj->id ?? $errObj->traceId ?? null;
         }
 
         curl_close($client);
 
         return $retObject;
     }
-
 }
