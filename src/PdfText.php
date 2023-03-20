@@ -1,4 +1,5 @@
 <?php
+
 namespace DynamicPDF\Api;
 
 
@@ -66,7 +67,7 @@ class PdfText extends Endpoint
         curl_setopt($client, CURLOPT_POSTFIELDS, $this->resource->Data);
 
         $params = array('startPage' => $this->StartPage, 'pageCount' => $this->PageCount);
-        $endPointUrl = rtrim($this->BaseUrl,"\0\t\n\x0B\r \\/") . "/v1.0/" . $this->_EndpointName;
+        $endPointUrl = rtrim($this->BaseUrl, "\0\t\n\x0B\r \\/") . "/v1.0/" . $this->_EndpointName;
         $url = $endPointUrl . '?' . http_build_query($params);
         curl_setopt($client, CURLOPT_URL, $url);
 
@@ -77,20 +78,18 @@ class PdfText extends Endpoint
         $outData = ob_get_contents();
         ob_end_clean();
 
-        $resCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
-
-        $retObject = new PdfTextResponse($outData);
+        $retObject = new PdfTextResponse();
         $retObject->IsSuccessful = false;
-        $retObject->StatusCode = $resCode;
-        if ($result == true) {
-            if ($retObject != null ) {
-                $retObject->IsSuccessful = true;
-            } elseif (trim($outData)[0] == '{') {
-                $retObject->ErrorJson = $outData;
-                if ($retObject->StatusCode >= 400) {
-                    $retObject->ErrorMessage = json_decode($outData)->message;
-                }
-            }
+        $retObject->StatusCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
+
+        if ($result == true && $retObject->StatusCode == 200) {
+            $retObject->IsSuccessful = true;
+            $retObject->JsonContent = $retObject->Content = $outData;
+        } else {
+            $retObject->ErrorJson = $outData;
+            $errObj = json_decode($outData);
+            $retObject->ErrorMessage = $errObj->message ?? $errObj->title ?? null;
+            $retObject->ErrorId = $errObj->id ?? $errObj->traceId ?? null;
         }
 
         curl_close($client);

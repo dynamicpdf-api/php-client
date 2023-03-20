@@ -1,4 +1,5 @@
 <?php
+
 namespace DynamicPDF\Api;
 
 
@@ -18,7 +19,7 @@ class PdfTextResponse extends JsonResponse
      *
      * @param  string $jsonContent The json content
      */
-    public function __construct(string $jsonContent)
+    public function __construct(string $jsonContent = "")
     {
         parent::__construct($jsonContent);
         $this->Content = json_decode($jsonContent);
@@ -30,5 +31,4 @@ class PdfTextResponse extends JsonResponse
      *
      */
     public $Content = array();
-
 }
