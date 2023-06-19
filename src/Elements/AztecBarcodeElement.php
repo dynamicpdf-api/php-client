@@ -28,7 +28,7 @@ class AztecBarcodeElement extends Dim2BarcodeElement
      * @param  float $xOffset The X coordinate of the barcode.
      * @param  float $yOffset The Y coordinate of the barcode.
      */
-    public function __construct($value, string $placement, float $xOffset = 0, float $yOffset = 0)
+    public function __construct($value, string $placement = ElementPlacement::TopLeft, float $xOffset = 0, float $yOffset = 0)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);
     }

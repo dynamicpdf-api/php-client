@@ -81,6 +81,8 @@ class PageInput extends Input
 
     public $Elements = array();
 
+    private static $DefaultPageHeight = 792.0;
+    private static $DefaultPagewidth = 612.0;
 
     /**
      *
@@ -138,9 +140,15 @@ class PageInput extends Input
         if ($this->PageWidth != null) {
             $jsonArray['pageWidth'] = $this->PageWidth;
         }
+        else{
+            $jsonArray['pageWidth'] = PageInput::$DefaultPagewidth;
+        }
 
         if ($this->PageHeight != null) {
             $jsonArray['pageHeight'] = $this->PageHeight;
+        }
+        else{
+            $jsonArray['pageHeight'] = PageInput::$DefaultPageHeight;
         }
         
         if ($this->TopMargin != null) {

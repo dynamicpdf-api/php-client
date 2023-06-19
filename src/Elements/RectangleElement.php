@@ -23,7 +23,7 @@ class RectangleElement extends Element
      * @param  float $width Width of the rectangle.
      * @param  float $height Height of the rectangle.
      */
-    public function __construct(string $placement, float $width, float $height)
+    public function __construct(string $placement = ElementPlacement::TopLeft, float $width, float $height)
     {
         $this->Placement = $placement;
         $this->Width = $width;

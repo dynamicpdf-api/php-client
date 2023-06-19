@@ -290,6 +290,31 @@ class Font
         return Font::CreateFont($resource, $resource->ResourceName);
     }
 
+    private static function GetGoogleFontText(string $name, int $weight, bool $italic) :string
+    {
+        return "google(\"" + $name + "\"," + $weight  + "," + $italic + ")";
+    }
+
+       
+    /**
+    * Gets the font from the google.
+    *  
+    *  @param $fontName The name of the google font.
+    *  @param $bold If true font weight will be taken as 700 otherwise 400.
+    *  @param $italic The italic property of the font.
+    *  @return The font object. 
+    */
+    public static function Google(string $fontName, bool $bold = false, bool $italic = false):Font
+    {
+        $font = new Font();
+        if($bold)
+        $font->Name = Font.GetGoogleFontText($fontName, 700, $italic);
+        else
+        $font->Name = Font.GetGoogleFontText($fontName, 400, $italic);
+        return $font;
+    }
+
+        
     private static $timesRoman = null;
     private static $timesBold = null;
     private static $timesItalic = null;

@@ -29,7 +29,7 @@ class DataMatrixBarcodeElement extends Dim2BarcodeElement
      * @param  string $encodingType The encoding type of the barcode.
      * @param  string $functionCharacter The function character of the barcode.
      */
-    public function __construct($value, string $placement, float $xOffset = 0, float $yOffset = 0, string $symbolSize = DataMatrixSymbolSize::Auto, string $encodingType = DataMatrixEncodingType::Auto, string $functionCharacter = DataMatrixFunctionCharacter::None)
+    public function __construct($value, string $placement = ElementPlacement::TopLeft, float $xOffset = 0, float $yOffset = 0, string $symbolSize = DataMatrixSymbolSize::Auto, string $encodingType = DataMatrixEncodingType::Auto, string $functionCharacter = DataMatrixFunctionCharacter::None)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);
         $this->_DataMatrixSymbolSize = $symbolSize;
