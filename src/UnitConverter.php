@@ -3,122 +3,119 @@ namespace DynamicPDF\Api;
 
 class UnitConverter
 {
-    private $_smaller;
 
-    private $_larger;
-
-    public function getPaperSize($size)
+    public static function getPaperSize($size): array
     {
         switch ($size) {
             case PageSize::Letter:
-                $this->_smaller = $this->InchesToPoints(8.5);
-                $this->_larger = $this->InchesToPoints(11);
+                $smaller = UnitConverter::InchesToPoints(8.5);
+                $larger = UnitConverter::InchesToPoints(11);
                 break;
             case PageSize::Legal:
-                $this->_smaller = $this->InchesToPoints(8.5);
-                $this->_larger = $this->InchesToPoints(14);
+                $smaller = UnitConverter::InchesToPoints(8.5);
+                $larger = UnitConverter::InchesToPoints(14);
                 break;
             case PageSize::Executive:
-                $this->_smaller = $this->InchesToPoints(7.25);
-                $this->_larger = $this->InchesToPoints(10.5);
+                $smaller = UnitConverter::InchesToPoints(7.25);
+                $larger = UnitConverter::InchesToPoints(10.5);
                 break;
             case PageSize::Tabloid:
-                $this->_smaller = $this->InchesToPoints(11);
-                $this->_larger = $this->InchesToPoints(17);
+                $smaller = UnitConverter::InchesToPoints(11);
+                $larger = UnitConverter::InchesToPoints(17);
                 break;
             case PageSize::Envelope10:
-                $this->_smaller = $this->InchesToPoints(4.125);
-                $this->_larger = $this->InchesToPoints(9.5);
+                $smaller = UnitConverter::InchesToPoints(4.125);
+                $larger = UnitConverter::InchesToPoints(9.5);
                 break;
             case PageSize::EnvelopeMonarch:
-                $this->_smaller = $this->InchesToPoints(3.875);
-                $this->_larger = $this->InchesToPoints(7.5);
+                $smaller = UnitConverter::InchesToPoints(3.875);
+                $larger = UnitConverter::InchesToPoints(7.5);
                 break;
             case PageSize::Folio:
-                $this->_smaller = $this->InchesToPoints(8.5);
-                $this->_larger = $this->InchesToPoints(13);
+                $smaller = UnitConverter::InchesToPoints(8.5);
+                $larger = UnitConverter::InchesToPoints(13);
                 break;
             case PageSize::Statement:
-                $this->_smaller = $this->InchesToPoints(5.5);
-                $this->_larger = $this->InchesToPoints(8.5);
+                $smaller = UnitConverter::InchesToPoints(5.5);
+                $larger = UnitConverter::InchesToPoints(8.5);
                 break;
             case PageSize::A4:
-                $this->_smaller = $this->MillimetersToPoints(210);
-                $this->_larger = $this->MillimetersToPoints(297);
+                $smaller = UnitConverter::MillimetersToPoints(210);
+                $larger = UnitConverter::MillimetersToPoints(297);
                 break;
             case PageSize::A5:
-                $this->_smaller = $this->MillimetersToPoints(148);
-                $this->_larger = $this->MillimetersToPoints(210);
+                $smaller = UnitConverter::MillimetersToPoints(148);
+                $larger = UnitConverter::MillimetersToPoints(210);
                 break;
             case PageSize::B4:
-                $this->_smaller = $this->MillimetersToPoints(250);
-                $this->_larger = $this->MillimetersToPoints(353);
+                $smaller = UnitConverter::MillimetersToPoints(250);
+                $larger = UnitConverter::MillimetersToPoints(353);
                 break;
             case PageSize::B5:
-                $this->_smaller = $this->MillimetersToPoints(176);
-                $this->_larger = $this->MillimetersToPoints(250);
+                $smaller = UnitConverter::MillimetersToPoints(176);
+                $larger = UnitConverter::MillimetersToPoints(250);
                 break;
             case PageSize::A3:
-                $this->_smaller = $this->MillimetersToPoints(297);
-                $this->_larger = $this->MillimetersToPoints(420);
+                $smaller = UnitConverter::MillimetersToPoints(297);
+                $larger = UnitConverter::MillimetersToPoints(420);
                 break;
             case PageSize::B3:
-                $this->_smaller = $this->MillimetersToPoints(353);
-                $this->_larger = $this->MillimetersToPoints(500);
+                $smaller = UnitConverter::MillimetersToPoints(353);
+                $larger = UnitConverter::MillimetersToPoints(500);
                 break;
             case PageSize::A6:
-                $this->_smaller = $this->MillimetersToPoints(105);
-                $this->_larger = $this->MillimetersToPoints(148);
+                $smaller = UnitConverter::MillimetersToPoints(105);
+                $larger = UnitConverter::MillimetersToPoints(148);
                 break;
             case PageSize::B5JIS:
-                $this->_smaller = $this->MillimetersToPoints(182);
-                $this->_larger = $this->MillimetersToPoints(257);
+                $smaller = UnitConverter::MillimetersToPoints(182);
+                $larger = UnitConverter::MillimetersToPoints(257);
                 break;
             case PageSize::EnvelopeDL:
-                $this->_smaller = $this->MillimetersToPoints(110);
-                $this->_larger = $this->MillimetersToPoints(220);
+                $smaller = UnitConverter::MillimetersToPoints(110);
+                $larger = UnitConverter::MillimetersToPoints(220);
                 break;
             case PageSize::EnvelopeC5:
-                $this->_smaller = $this->MillimetersToPoints(162);
-                $this->_larger = $this->MillimetersToPoints(229);
+                $smaller = UnitConverter::MillimetersToPoints(162);
+                $larger = UnitConverter::MillimetersToPoints(229);
                 break;
             case PageSize::EnvelopeB5:
-                $this->_smaller = $this->MillimetersToPoints(176);
-                $this->_larger = $this->MillimetersToPoints(250);
+                $smaller = UnitConverter::MillimetersToPoints(176);
+                $larger = UnitConverter::MillimetersToPoints(250);
                 break;
             case PageSize::PRC16K:
-                $this->_smaller = $this->MillimetersToPoints(146);
-                $this->_larger = $this->MillimetersToPoints(215);
+                $smaller = UnitConverter::MillimetersToPoints(146);
+                $larger = UnitConverter::MillimetersToPoints(215);
                 break;
             case PageSize::PRC32K:
-                $this->_smaller = $this->MillimetersToPoints(97);
-                $this->_larger = $this->MillimetersToPoints(151);
+                $smaller = UnitConverter::MillimetersToPoints(97);
+                $larger = UnitConverter::MillimetersToPoints(151);
                 break;
             case PageSize::Quatro:
-                $this->_smaller = $this->MillimetersToPoints(215);
-                $this->_larger = $this->MillimetersToPoints(275);
+                $smaller = UnitConverter::MillimetersToPoints(215);
+                $larger = UnitConverter::MillimetersToPoints(275);
                 break;
             case PageSize::DoublePostcard:
-                $this->_smaller = $this->MillimetersToPoints(148.0);
-                $this->_larger = $this->MillimetersToPoints(200.0);
+                $smaller = UnitConverter::MillimetersToPoints(148.0);
+                $larger = UnitConverter::MillimetersToPoints(200.0);
                 break;
             case PageSize::Postcard:
-                $this->_smaller = $this->InchesToPoints(3.94);
-                $this->_larger = $this->InchesToPoints(5.83);
+                $smaller = UnitConverter::InchesToPoints(3.94);
+                $larger = UnitConverter::InchesToPoints(5.83);
                 break;
             default:
-                $this->_smaller = $this->InchesToPoints(8.5);
-                $this->_larger = $this->InchesToPoints(11);
+                $smaller = UnitConverter::InchesToPoints(8.5);
+                $larger = UnitConverter::InchesToPoints(11);
         }
-        return array($this->_smaller,$this->_larger);
+        return array($smaller, $larger);
     }
 
-    private function InchesToPoints($size)
+    private static function InchesToPoints($size)
     {
         return $size * 72.0;
     }
 
-    private function MillimetersToPoints($size)
+    private static function MillimetersToPoints($size)
     {
         return $size * 2.8346456692913385826771653543307;
     }

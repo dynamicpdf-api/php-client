@@ -292,9 +292,26 @@ class Font
 
     private static function GetGoogleFontText(string $name, int $weight, bool $italic) :string
     {
-        return "google(\"" + $name + "\"," + $weight  + "," + $italic + ")";
+        if($italic)
+        return $name + ":" + $weight  + "italic" ;
+        else
+        return  $name + ":" + $weight  ;
     }
 
+        /**  
+        * Gets the font from the google.
+        *  
+        * @param string $fontName The name of the google font. 
+        * @param int $weight The weight of the font. 
+        * @param bool $italic The italic property of the font. 
+        * @return Font The font object. 
+        */
+        public static function Google(string $fontName, int $weight = 400, bool $italic = false)
+        {            
+            $font = new Font();
+            $font->_Name = Font::GetGoogleFontText($fontName, $weight, $italic);
+            return $font;
+        }
        
     /**
     * Gets the font from the google.
@@ -302,15 +319,15 @@ class Font
     *  @param $fontName The name of the google font.
     *  @param $bold If true font weight will be taken as 700 otherwise 400.
     *  @param $italic The italic property of the font.
-    *  @return The font object. 
+    *  @return Font The font object. 
     */
-    public static function Google(string $fontName, bool $bold = false, bool $italic = false):Font
+    public static function GoogleFont(string $fontName, bool $bold = false, bool $italic = false):Font
     {
         $font = new Font();
         if($bold)
-        $font->Name = Font.GetGoogleFontText($fontName, 700, $italic);
+        $font->_Name = Font::GetGoogleFontText($fontName, 700, $italic);
         else
-        $font->Name = Font.GetGoogleFontText($fontName, 400, $italic);
+        $font->_Name = Font::GetGoogleFontText($fontName, 400, $italic);
         return $font;
     }
 

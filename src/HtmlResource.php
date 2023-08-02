@@ -13,7 +13,7 @@ include_once  __DIR__ . '/EndPointException.php';
  */
 class HtmlResource extends Resource
 {
-     /**
+    /**
      *
      *  Initializes a new instance of the HtmlResource class.
      *

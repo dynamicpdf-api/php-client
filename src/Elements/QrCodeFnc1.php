@@ -14,19 +14,22 @@ class QrCodeFnc1
      * FNC1 None.
      *
      */
-    public const Gs1 = "gs1";
+    public const None = "none";
+
 
     /**
      *
      * FNC1 Gs1.
      *
      */
-    public const Industry = "industry";
+    public const Gs1 = "gs1";
+
 
     /**
      *
      * FNC1 Industry.
      *
      */
-    public const None = "none";
+    public const Industry = "industry";
+
 }

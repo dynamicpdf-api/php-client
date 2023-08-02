@@ -38,8 +38,6 @@ class LineElement extends Element
      *
      */
     public $Color = null;
-    public $X1Offset = 0;
-    public $Y1Offset = 0;
 
     /**
      *

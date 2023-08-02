@@ -21,10 +21,9 @@ class PageInput extends Input
      */
     public function __construct(?float $pageWidth = null, ?float $pageHeight = null, ?float $margin = null)
     {
-        if($pageHeight != null && $pageWidth != null){
             $this->PageWidth = $pageWidth;
             $this->PageHeight = $pageHeight;
-        }
+        
         if($margin != null){
             $this->TopMargin = $margin;
             $this->BottomMargin = $margin;
@@ -84,35 +83,67 @@ class PageInput extends Input
     private static $DefaultPageHeight = 792.0;
     private static $DefaultPagewidth = 612.0;
 
+
     /**
      *
-     * Sets the Page width and Height accourding to PageSize.
-     * @param PageSize $pageSize for Output Page.
-     * @param PageOrientation $pageOrientation for the output Page.
+     * Sets the page size.
+     * @param PageSize $value for Output Page.
      */
-    public function PageSize($pageSize, $pageOrientation = PageOrientation::Portrait, $margin = null)
+    public function SetPageSize($value)
     {
-        $unitConverter = new UnitConverter();
-        list($_smaller,$_larger) = $unitConverter->getPaperSize($pageSize);
+        $this->_pageSize = $value;
+        list($_smaller, $_larger) = UnitConverter::getPaperSize($value);
 
-        if($pageOrientation == PageOrientation::Portrait)
-        {
+        if ($this->_pageOrientation == PageOrientation::Portrait) {
             $this->PageWidth = $_smaller;
             $this->PageHeight = $_larger;
-        }
-        else{
+        } else {
             $this->PageWidth = $_larger;
             $this->PageHeight = $_smaller;
         }
+    }
 
-        if($margin != null){
-            $this->TopMargin = $margin;
-            $this->BottomMargin = $margin;
-            $this->RightMargin = $margin;
-            $this->LeftMargin = $margin;
+
+    public function GetPageSize()
+    {
+        return $this->_pageSize;
+    }
+
+    /**
+     *
+     * Gets or sets page orientation.
+     * @param PageOrientation $value for the output Page.
+     */
+    public function SetPageOrientation($value)
+    {
+
+        $this->_pageOrientation = $value;
+
+        if ($this->PageWidth > $this->PageHeight) {
+            $_smaller = $this->PageHeight;
+            $_larger = $this->PageWidth;
+        } else {
+            $_smaller = $this->PageWidth;
+            $_larger = $this->PageHeight;
+        }
+        if ($this->_pageOrientation == PageOrientation::Portrait) {
+            $this->PageHeight = $_larger;
+            $this->PageWidth = $_smaller;
+        } else {
+            $this->PageHeight = $_smaller;
+            $this->PageWidth = $_larger;
         }
 
     }
+
+    public function GetPageOrientation()
+    {
+        return $this->_pageOrientation;
+    }
+
+    private $_pageSize;
+    private $_pageOrientation;
+
 
     /**
      *

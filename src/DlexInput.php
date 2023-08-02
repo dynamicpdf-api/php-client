@@ -28,18 +28,24 @@ class DlexInput extends Input
         if ((gettype($dlex) == "object") && (gettype($layout) == "object")) {
             $this->ResourceName = $dlex->ResourceName;
             $this->LayoutDataResourceName = $layout->LayoutDataResourceName;
-            //$dlex->LayoutDataResourceName=$this->LayoutDataResourceName ;
-
             array_push($this->_Resources, $layout);
+            array_push($this->_Resources, $dlex);
+        } else if ((gettype($dlex) == "object") && (gettype($layout) == "string")) {
+            $this->ResourceName = $dlex->ResourceName;
+            $layoutDataResource = new LayoutDataResource($layout);
+            $this->LayoutDataResourceName =  $layoutDataResource->LayoutDataResourceName;
+
+            array_push($this->_Resources, $layoutDataResource);
             array_push($this->_Resources, $dlex);
         } else if ((gettype($dlex) == "string") && (gettype($layout) == "object")) {
             $this->ResourceName = $dlex;
             $this->LayoutDataResourceName = $layout->LayoutDataResourceName;
             array_push($this->_Resources, $layout);
         } else if ((gettype($dlex) == "string") && (gettype($layout) == "string")) {
-            //parent::__construct();
             $this->ResourceName = $dlex;
-            $this->LayoutDataResourceName = $layout;
+            $layoutDataResource = new LayoutDataResource($layout);
+            $this->LayoutDataResourceName = $layoutDataResource->LayoutDataResourceName;
+            array_push($this->_Resources, $layoutDataResource);
         }
     }
 

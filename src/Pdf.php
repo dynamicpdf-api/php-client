@@ -1,5 +1,4 @@
 <?php
-
 namespace DynamicPDF\Api;
 
 
@@ -37,6 +36,41 @@ class Pdf extends Endpoint
     }
 
     public $_EndpointName = "pdf";
+
+    /**
+     * 
+     * Adds additional resource to the endpoint.
+     *  
+     * <param name="resourcePath">The resource file path.</param>
+     * <param name="resourceName">The name of the resource
+     */
+    public function AddAdditionalResource(string $resource, AdditionalResourceType $additionalResourceType, string $resourceName = null)
+    {
+        if (gettype($resource) == "string") {
+            if ($resourceName == null)
+                $resourceName = basename($resource);
+            $additionalResource = new AdditionalResource($resource, $resourceName);
+            array_push($this->Resources, $additionalResource);
+        } else {
+            $type = ResourceType::Pdf;
+            switch ($additionalResourceType) {
+                case AdditionalResourceType::Font:
+                    $type = ResourceType::Font;
+                    break;
+                case AdditionalResourceType::Image:
+                    $type = ResourceType::Image;
+                    break;
+                case AdditionalResourceType::Pdf:
+                    $type = ResourceType::Pdf;
+                    break;
+                case AdditionalResourceType::Html:
+                    $type = ResourceType::Html;
+                    break;
+            }
+            $additionalResource = new AdditionalResource($resource, $resourceName, $type);
+            array_push($this->Resources, $additionalResource);
+        }
+    }
 
     /**
      *
@@ -113,7 +147,7 @@ class Pdf extends Endpoint
     public function AddPdf($resource, MergeOptions $options = null)
     {
         if (gettype($resource) == "object") {
-            $input = new PdfInput($resource, $options);
+            $input = new PdfInput($resource);
             array_push($this->Inputs, $input);
             return $input;
         } else {
@@ -142,6 +176,27 @@ class Pdf extends Endpoint
             array_push($this->Inputs, $input);
             return $input;
         }
+    }
+
+    /**
+     *
+     * Returns an HtmlInput object containing the input pdf.
+     *
+     * @param string|HtmlResource $resource The HTML input string or the resource of type HtmlResource.
+     * @param  string $basePath The basepath option for the url.
+     * @param  string $pageSize The Page Size for PDF page
+     * @param  string $orientation The Page orientation of the PDF page
+     * @return HtmlInput HtmlInput object.
+     */
+    public function AddHtml($html, string $basepath = null, $size = PageSize::A4, $orientation = PageOrientation::Portrait, ?float $margins = null)
+    {
+        $resource = $html;
+        if (gettype($resource) == "string") {
+            $resource = new HtmlResource($html);
+        }
+        $input = new HtmlInput($resource, $basepath, $size, $orientation, $margins);
+        array_push($this->Inputs, $input);
+        return $input;
     }
 
     /**
@@ -192,23 +247,6 @@ class Pdf extends Endpoint
 
     /**
      *
-     *  Returns a HtmlInput object containing the html string or HtmlResource.
-     *
-     * @param  string|HtmlResource $resource The Html string or the HtmlResource object to create HtmlInput.
-     * @param  string $basePath The basepath option for the url.
-     * @param  PageSize $pageSize The Page Size for PDF page
-     * @param  PageOrientation $orientation The Page orientation of the PDF page
-     * @return HtmlInput HtmlInput object.
-     */
-    public function AddHtml($resource, string $basePath = null, $pageSize = PageSize::Letter, $orientation = PageOrientation::Portrait, ?float $margin = null)
-    {
-        $input = new HtmlInput($resource, $basePath, $pageSize, $orientation, $margin);
-        array_push($this->Inputs, $input);
-        return $input;
-    }
-
-    /**
-     *
      * Gets the inputs.
      *
      */
@@ -242,10 +280,10 @@ class Pdf extends Endpoint
      */
     public $Outlines;
 
-    public function GetInstructionsJson(bool $indented =false)
+    public function GetInstructionsJson(bool $indented = false)
     {
 
-        $tembInstructions =new PdfInstructions();
+        $tembInstructions = new PdfInstructions();
         $tembInstructions->_Author = $this->Author;
         $tembInstructions->_Title = $this->Title;
         $tembInstructions->_Subject = $this->Subject;
@@ -261,7 +299,7 @@ class Pdf extends Endpoint
         $tembInstructions->_Outlines = $this->Outlines;
         //$this->Instructions->FormFields = $this->FormFields;
 
-       
+
         foreach ($tembInstructions->_Inputs as $input) {
             if ($input->_Type == InputType::Page) {
                 $pageInput = $input;
@@ -304,8 +342,8 @@ class Pdf extends Endpoint
                 }
             }
         }
-        $jsonText ="";
-        if($indented == true)
+        $jsonText = "";
+        if ($indented == true)
             $jsonText = json_encode($tembInstructions, JSON_PRETTY_PRINT);
         else
             $jsonText = json_encode($tembInstructions);
@@ -383,7 +421,7 @@ class Pdf extends Endpoint
         }
 
         $data_string = json_encode($this->instructions);
-       
+
         $errCode = json_last_error();
 
 
