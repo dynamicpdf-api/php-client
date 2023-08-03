@@ -76,14 +76,6 @@ class LineElement extends Element
             $jsonArray['color'] = $this->Color->_ColorString;
         }
 
-        if ($this->X1Offset != null) {
-            $jsonArray['x1Offset'] = $this->X1Offset;
-        }
-
-        if ($this->Y1Offset != null) {
-            $jsonArray['y1Offset'] = $this->Y1Offset;
-        }
-
         if ($this->X2Offset != null) {
             $jsonArray['x2Offset'] = $this->X2Offset;
         }

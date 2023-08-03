@@ -87,7 +87,7 @@ class PageInput extends Input
     /**
      *
      * Sets the page size.
-     * @param PageSize $value for Output Page.
+     * @param string $value for Output Page.
      */
     public function SetPageSize($value)
     {
@@ -112,7 +112,7 @@ class PageInput extends Input
     /**
      *
      * Gets or sets page orientation.
-     * @param PageOrientation $value for the output Page.
+     * @param string $value for the output Page.
      */
     public function SetPageOrientation($value)
     {

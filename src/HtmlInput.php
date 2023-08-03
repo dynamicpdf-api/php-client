@@ -43,8 +43,6 @@ class HtmlInput extends Input
 
     public $_Type = InputType::Html;
 
-    public $_ResourceName;
-    
     /**
      *
      *  Gets or sets the BasePath Option.
@@ -97,7 +95,7 @@ class HtmlInput extends Input
     /**
      *
      * Sets the page size.
-     * @param PageSize $value for Output Page.
+     * @param string $value for Output Page.
      */
     public function SetPageSize($value)
     {
@@ -123,7 +121,7 @@ class HtmlInput extends Input
     /**
      *
      * Gets or sets page orientation.
-     * @param PageOrientation $value for the output Page.
+     * @param string $value for the output Page.
      */
     public function SetPageOrientation($value)
     {
@@ -161,8 +159,8 @@ class HtmlInput extends Input
 
         $jsonArray["type"] = "html";
 
-        if ($this->_ResourceName != null) {
-            $jsonArray['resourceName'] = $this->_ResourceName;
+        if ($this->ResourceName != null) {
+            $jsonArray['resourceName'] = $this->ResourceName;
         }
 
         if ($this->BasePath != null) {
