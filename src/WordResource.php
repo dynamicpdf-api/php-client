@@ -35,6 +35,12 @@ class WordResource extends Resource
 
     public function _FileExtension()
     {
+        $fileHeader = substr($this->_Data, 0, 16);
+        $byteArray = array();
+        for ($i = 0; $i < strlen($fileHeader); $i++) {
+            $byteArray[$i] = ord($fileHeader[$i]);
+        }
+
         $inputFileExtension = "";
         if ($this->isNullOrWhiteSpace($this->ResourceName) == false) {
             if ($this->hasExtension(trim($this->ResourceName)) == true)
@@ -49,13 +55,13 @@ class WordResource extends Resource
         } else
             throw new EndpointException("Invalid file path or resource name.");
 
-        if ($inputFileExtension == ".doc") {
+        if ($inputFileExtension == "doc") {
             $_MimeType = "application/msword";
             return ".doc";
-        } else if ($inputFileExtension == ".docx" && $this->Data[0] == 0x50 && $this->Data[1] == 0x4b) {
+        } else if ($inputFileExtension == "docx" && $byteArray[0] == 0x50 && $byteArray[1] == 0x4b) {
             $_MimeType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
             return ".docx";
-        } else if ($inputFileExtension == ".odt" && $this->Data[0] == 0x50 && $this->Data[1] == 0x4b) {
+        } else if ($inputFileExtension == "odt" && $byteArray[0] == 0x50 && $byteArray[1] == 0x4b) {
             $_MimeType = "application/vnd.oasis.opendocument.text";
             return ".odt";
         } else {

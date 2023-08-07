@@ -27,13 +27,13 @@ class TextReplace
         }
 
         /** 
-        * Gets or sets the find text value. This string will be replaced with <see cref="ReplaceText"/> during conversion.
+        * Gets or sets the find text value. This string will be replaced with ReplaceText during conversion.
         * 
         */
         public $Text;
 
         /** 
-        * Gets or sets replace text value. This string will replace the <see cref="Text"/> during conversion.
+        * Gets or sets replace text value. This string will replace the Text during conversion.
         * 
         */
         public $ReplaceText;
@@ -43,5 +43,17 @@ class TextReplace
         * 
         */
         public $MatchCase  = false;
+        public function GetJsonSerializeString()
+        {
+            $jsonArray = array();
 
+            $jsonArray['text'] = $this->Text;
+
+            $jsonArray['replaceText'] = $this->ReplaceText;
+
+            $jsonArray['matchCase'] = $this->MatchCase;
+           
+            return $jsonArray;
+        }
+    
 }

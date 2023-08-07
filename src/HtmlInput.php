@@ -20,10 +20,13 @@ class HtmlInput extends Input
      *
      * @param  string|HtmlResource $resource The Html string or the HtmlResource object to create HtmlInput.
      * @param  string $basePath The basepath option for the url.
+     * @param  string $pageSize The page size of the output PDF.
+     * @param  string $orientation The page orientation of the output PDF.
+     * @param  float $margin The page margins of the output PDF.
      */
     public function __construct($resource, string $basePath = null, $pageSize = PageSize::Letter, $orientation = PageOrientation::Portrait, $margin = null)
     {
-       parent::__construct($resource);
+        parent::__construct($resource);
 
         $this->SetPageSize($pageSize);
         $this->SetPageOrientation($orientation);
@@ -112,7 +115,10 @@ class HtmlInput extends Input
         }
     }
 
-
+    /**
+     *
+     * Gets the page size.
+     */
     public function GetPageSize()
     {
         return $this->_pageSize;
@@ -120,7 +126,7 @@ class HtmlInput extends Input
 
     /**
      *
-     * Gets or sets page orientation.
+     * Sets the page orientation.
      * @param string $value for the output Page.
      */
     public function SetPageOrientation($value)
@@ -145,6 +151,10 @@ class HtmlInput extends Input
 
     }
 
+    /**
+     *
+     * Gets the page orientation.
+     */
     public function GetPageOrientation()
     {
         return $this->_pageOrientation;

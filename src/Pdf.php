@@ -41,8 +41,9 @@ class Pdf extends Endpoint
      * 
      * Adds additional resource to the endpoint.
      *  
-     * <param name="resourcePath">The resource file path.</param>
-     * <param name="resourceName">The name of the resource
+     * @param string $resource The resource file path.
+     * @param AdditionalResourceType $additionalResourceType The name of the resource.
+     * @param string The name of the resource.
      */
     public function AddAdditionalResource(string $resource, AdditionalResourceType $additionalResourceType, string $resourceName = null)
     {

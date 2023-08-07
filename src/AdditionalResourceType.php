@@ -3,7 +3,6 @@ namespace DynamicPDF\Api;
 
 /**
  *
- * <summary>
  * Specifies additional resource type.
  */
 class AdditionalResourceType

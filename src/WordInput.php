@@ -8,7 +8,7 @@ include_once __DIR__ . '/InputType.php';
 include_once __DIR__ . '/UnitConverter.php';
 include_once __DIR__ . '/PageSize.php';
 include_once __DIR__ . '/Input.php';
-include_once __DIR__ . '/OutputSize.php';
+
 /**
  *
  * Represents a Word input.
@@ -19,18 +19,19 @@ class WordInput extends Input
 
     /** 
      * 
-     * Initializes a new instance of the <see cref="WordInput"/> class.
+     * Initializes a new instance of the WordInput class.
      * 
      * param name="resource" The resource of type WordResource
      * param name="size"The page size of the output PDF.
      * param name="orientation"The page orientation of the output PDF.
      * param name="margins"The page margins of the output PDF.
      */
-    public function __construct(WordResource $resource, PageSize $size = PageSize . Letter, PageOrientation $orientation = PageOrientation . Portrait, float $margins = null)
+    public function __construct(WordResource $resource, $size = PageSize::Letter, $orientation = PageOrientation::Portrait, float $margins = null)
     {
-        parent::__construct($resource);
-        $this->SetPageSize($size);
         $this->SetPageOrientation($orientation);
+        $this->SetPageSize($size);
+
+        parent::__construct($resource);
 
         if ($margins != null) {
             $this->TopMargin = $margins;
@@ -42,9 +43,6 @@ class WordInput extends Input
 
 
     public $_Type = InputType::Word;
-
-    public $TextReplace;
-
 
     /**
      *   
@@ -84,7 +82,7 @@ class WordInput extends Input
 
     /**
      * 
-     *  Gets or sets the <see cref="TextReplace"/> object List.
+     *  Gets or sets the TextReplace object List.
      */
     public $TextReplaceArray = [];
 
@@ -93,20 +91,19 @@ class WordInput extends Input
      * 
      * Gets or sets the page size.
      */
-    public function SetPageSize(PageSize $value)
+    public function SetPageSize($value)
     {
         $this->_pageSize = $value;
-
-        $outputSize = UnitConverter::getPaperSize($value);
+        list($smaller, $larger) = UnitConverter::getPaperSize($value);
         if ($this->GetPageOrientation() == PageOrientation::Portrait) {
-            $this->PageHeight = $outputSize->Larger;
-            $this->PageWidth = $outputSize->Smaller;
+            $this->PageHeight = $larger;
+            $this->PageWidth = $smaller;
         } else {
-            $this->PageHeight = $outputSize->Smaller;
-            $this->PageWidth = $outputSize->Larger;
+            $this->PageHeight = $smaller;
+            $this->PageWidth = $larger;
         }
     }
-    public function GetPageSize(): PageSize
+    public function GetPageSize(): string
     {
         return $this->_pageSize;
     }
@@ -114,9 +111,8 @@ class WordInput extends Input
      * 
      * Gets or sets page orientation.
      */
-    public function SetPageOrientation(PageOrientation $value)
+    public function SetPageOrientation($value)
     {
-
         $this->_pageOrientation = $value;
 
         if ($this->PageWidth > $this->PageHeight) {
@@ -135,10 +131,69 @@ class WordInput extends Input
         }
 
     }
-    public function GetPageOrientation(): PageOrientation
+    public function GetPageOrientation(): string
     {
         return $this->_pageOrientation;
     }
     private $_pageSize;
     private $_pageOrientation;
+
+
+    public function GetJsonSerializeString()
+    {
+        $jsonArray = array();
+
+        $jsonArray["type"] = "word";
+
+
+        if ($this->TopMargin != null) {
+            $jsonArray['topMargin'] = $this->TopMargin;
+        }
+
+        if ($this->LeftMargin != null) {
+            $jsonArray['leftMargin'] = $this->LeftMargin;
+        }
+
+        if ($this->BottomMargin != null) {
+            $jsonArray['bottomMargin'] = $this->BottomMargin;
+        }
+
+        if ($this->RightMargin != null) {
+            $jsonArray['rightMargin'] = $this->RightMargin;
+        }
+
+        if ($this->PageWidth != null) {
+            $jsonArray['pageWidth'] = $this->PageWidth;
+        }
+
+        if ($this->PageHeight != null) {
+            $jsonArray['pageHeight'] = $this->PageHeight;
+        }
+        $TextReplaceJson = array();
+        if (($this->TextReplaceArray != null) && (count($this->TextReplaceArray) > 0)) {
+            foreach ($this->TextReplaceArray as $textreplace) {
+                if ($textreplace != null) {
+                    array_push($TextReplaceJson, $textreplace->GetJsonSerializeString());
+                }
+            }
+        }
+
+        if (($TextReplaceJson != null) && (count($TextReplaceJson) > 0)) {
+            $jsonArray['textReplace'] = $TextReplaceJson;
+        }
+        //---------------------------------------------------
+        if ($this->_TemplateId != null) {
+            $jsonArray['templateId'] = $this->_TemplateId;
+        }
+
+        if ($this->ResourceName != null) {
+            $jsonArray['resourceName'] = $this->ResourceName;
+        }
+
+        if ($this->Id != null) {
+            $jsonArray['id'] = $this->Id;
+        }
+
+        return $jsonArray;
+    }
 }
