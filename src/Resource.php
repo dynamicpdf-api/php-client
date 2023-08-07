@@ -85,8 +85,8 @@ abstract class Resource
     {
         $length = filesize($filePath);
         $file = fopen($filePath, "r");
-        $array = fread($file, $length);
+        $data = fread($file, $length);
         fclose($file);
-        return $array;
+        return $data;
     }
 }
