@@ -293,9 +293,9 @@ class Font
     private static function GetGoogleFontText(string $name, int $weight, bool $italic) :string
     {
         if($italic)
-        return $name + ":" + $weight  + "italic" ;
+        return $name . ":" . $weight  . "italic" ;
         else
-        return  $name + ":" + $weight  ;
+        return  $name . ":" . $weight  ;
     }
 
         /**  
