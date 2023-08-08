@@ -23,7 +23,7 @@ class ImageElement extends Element
      * @param  float $xOffset X coordinate of the image.
      * @param  float $yOffset Y coordinate of the image.
      */
-    public function __construct($resource, ?string $placement, float $xOffset = 0, float $yOffset = 0)
+    public function __construct($resource, ?string $placement = ElementPlacement::TopLeft, float $xOffset = 0, float $yOffset = 0)
     {
         if (gettype($resource) == "object") {
             //parent::__construct() ;
@@ -49,7 +49,7 @@ class ImageElement extends Element
      *
      * @return ImageElement returns ImageElement object.
      */
-    public static function CreateImageElement(string $resourceName, string $placement, float $xOffset = 0, float $yOffset = 0)
+    public static function CreateImageElement(string $resourceName, string $placement = ElementPlacement::TopLeft, float $xOffset = 0, float $yOffset = 0)
     {
         $imageElement = new ImageElement(null, null);
         $imageElement->_ResourceName = $resourceName;

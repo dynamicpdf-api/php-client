@@ -10,7 +10,7 @@ namespace DynamicPDF\Api;
  */
 abstract class Endpoint
 {
-    protected $enableLogging = false;
+    private $_endPointVersion = "v1.0";
 
     public function __construct()
     {

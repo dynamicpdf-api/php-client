@@ -22,7 +22,7 @@ class MsiBarcodeElement extends TextBarcodeElement
      * @param  float $xOffset The X coordinate of the barcode.
      * @param  float $yOffset The Y coordinate of the barcode.
      */
-    public function __construct(string $value, string $placement, float $height, float $xOffset = 0, float $yOffset = 0)
+    public function __construct(string $value, string $placement = ElementPlacement::TopLeft, float $height, float $xOffset = 0, float $yOffset = 0)
     {
         $this->Height = $height;
         parent::__construct($value, $placement, $xOffset, $yOffset);

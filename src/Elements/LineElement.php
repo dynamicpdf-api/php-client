@@ -23,7 +23,7 @@ class LineElement extends Element
      * @param  float $x2Offset X2 coordinate of the line.
      * @param  float $y2Offset Y2 coordinate of the line.
      */
-    public function __construct(string $placement, float $x2Offset, float $y2Offset)
+    public function __construct(string $placement = ElementPlacement::TopLeft, float $x2Offset, float $y2Offset)
     {
         $this->Placement = $placement;
         $this->X2Offset = $x2Offset;
@@ -38,8 +38,6 @@ class LineElement extends Element
      *
      */
     public $Color = null;
-    public $X1Offset = 0;
-    public $Y1Offset = 0;
 
     /**
      *
@@ -76,14 +74,6 @@ class LineElement extends Element
 
         if (($this->Color != null) && ($this->Color->_ColorString != null)) {
             $jsonArray['color'] = $this->Color->_ColorString;
-        }
-
-        if ($this->X1Offset != null) {
-            $jsonArray['x1Offset'] = $this->X1Offset;
-        }
-
-        if ($this->Y1Offset != null) {
-            $jsonArray['y1Offset'] = $this->Y1Offset;
         }
 
         if ($this->X2Offset != null) {

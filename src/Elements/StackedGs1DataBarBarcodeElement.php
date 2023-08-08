@@ -25,7 +25,7 @@ class StackedGs1DataBarBarcodeElement extends TextBarcodeElement
      * @param  float $xOffset The X coordinate of the barcode.
      * @param  float $yOffset The Y coordinate of the barcode.
      */
-    public function __construct(string $value, string $placement, string $stackedGs1DataBarType, float $rowHeight, float $xOffset = 0, float $yOffset = 0)
+    public function __construct(string $value, string $placement = ElementPlacement::TopLeft, string $stackedGs1DataBarType, float $rowHeight, float $xOffset = 0, float $yOffset = 0)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);
         $this->_StackedGs1DataBarType = $stackedGs1DataBarType;

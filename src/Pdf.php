@@ -1,5 +1,4 @@
 <?php
-
 namespace DynamicPDF\Api;
 
 
@@ -39,6 +38,42 @@ class Pdf extends Endpoint
     public $_EndpointName = "pdf";
 
     /**
+     * 
+     * Adds additional resource to the endpoint.
+     *  
+     * @param string $resource The resource file path.
+     * @param AdditionalResourceType $additionalResourceType The name of the resource.
+     * @param string The name of the resource.
+     */
+    public function AddAdditionalResource(string $resource, AdditionalResourceType $additionalResourceType, string $resourceName = null)
+    {
+        if (gettype($resource) == "string") {
+            if ($resourceName == null)
+                $resourceName = basename($resource);
+            $additionalResource = new AdditionalResource($resource, $resourceName);
+            array_push($this->Resources, $additionalResource);
+        } else {
+            $type = ResourceType::Pdf;
+            switch ($additionalResourceType) {
+                case AdditionalResourceType::Font:
+                    $type = ResourceType::Font;
+                    break;
+                case AdditionalResourceType::Image:
+                    $type = ResourceType::Image;
+                    break;
+                case AdditionalResourceType::Pdf:
+                    $type = ResourceType::Pdf;
+                    break;
+                case AdditionalResourceType::Html:
+                    $type = ResourceType::Html;
+                    break;
+            }
+            $additionalResource = new AdditionalResource($resource, $resourceName, $type);
+            array_push($this->Resources, $additionalResource);
+        }
+    }
+
+    /**
      *
      * Gets or sets the collection of resource.
      *
@@ -71,7 +106,7 @@ class Pdf extends Endpoint
      * Gets or sets the creator.
      *
      */
-    public $Creator = "DynmaicPDF Cloud Api";
+    public $Creator;
 
     /**
      *
@@ -113,7 +148,7 @@ class Pdf extends Endpoint
     public function AddPdf($resource, MergeOptions $options = null)
     {
         if (gettype($resource) == "object") {
-            $input = new PdfInput($resource, $options);
+            $input = new PdfInput($resource);
             array_push($this->Inputs, $input);
             return $input;
         } else {
@@ -142,6 +177,27 @@ class Pdf extends Endpoint
             array_push($this->Inputs, $input);
             return $input;
         }
+    }
+
+    /**
+     *
+     * Returns an HtmlInput object containing the input pdf.
+     *
+     * @param string|HtmlResource $resource The HTML input string or the resource of type HtmlResource.
+     * @param  string $basePath The basepath option for the url.
+     * @param  string $pageSize The Page Size for PDF page
+     * @param  string $orientation The Page orientation of the PDF page
+     * @return HtmlInput HtmlInput object.
+     */
+    public function AddHtml($html, string $basepath = null, $size = PageSize::A4, $orientation = PageOrientation::Portrait, ?float $margins = null)
+    {
+        $resource = $html;
+        if (gettype($resource) == "string") {
+            $resource = new HtmlResource($html);
+        }
+        $input = new HtmlInput($resource, $basepath, $size, $orientation, $margins);
+        array_push($this->Inputs, $input);
+        return $input;
     }
 
     /**
@@ -192,23 +248,6 @@ class Pdf extends Endpoint
 
     /**
      *
-     *  Returns a HtmlInput object containing the html string or HtmlResource.
-     *
-     * @param  string|HtmlResource $resource The Html string or the HtmlResource object to create HtmlInput.
-     * @param  string $basePath The basepath option for the url.
-     * @param  PageSize $pageSize The Page Size for PDF page
-     * @param  PageOrientation $orientation The Page orientation of the PDF page
-     * @return HtmlInput HtmlInput object.
-     */
-    public function AddHtml($resource, string $basePath = null, $pageSize = PageSize::Letter, $orientation = PageOrientation::Portrait, ?float $margin = null)
-    {
-        $input = new HtmlInput($resource, $basePath, $pageSize, $orientation, $margin);
-        array_push($this->Inputs, $input);
-        return $input;
-    }
-
-    /**
-     *
      * Gets the inputs.
      *
      */
@@ -242,40 +281,74 @@ class Pdf extends Endpoint
      */
     public $Outlines;
 
-    public function GetInstructionsJson()
+    public function GetInstructionsJson(bool $indented = false)
     {
 
+        $tembInstructions = new PdfInstructions();
+        $tembInstructions->_Author = $this->Author;
+        $tembInstructions->_Title = $this->Title;
+        $tembInstructions->_Subject = $this->Subject;
+        $tembInstructions->_Creator = $this->Creator;
+        $tembInstructions->_Keywords = $this->Keywords;
+        $tembInstructions->_Security = $this->Security;
+        $tembInstructions->_FlattenAllFormFields = $this->FlattenAllFormFields;
+        $tembInstructions->_RetainSignatureFormFields = $this->RetainSignatureFormFields;
+        $tembInstructions->_Inputs = $this->Inputs;
+        $tembInstructions->_Templates = $this->Templates;
+        $tembInstructions->_Fonts = $this->Fonts;
+        $tembInstructions->_FormFields = $this->FormFields;
+        $tembInstructions->_Outlines = $this->Outlines;
+        //$this->Instructions->FormFields = $this->FormFields;
 
 
-        foreach ($this->instructions->_Inputs as $input) {
+        foreach ($tembInstructions->_Inputs as $input) {
             if ($input->_Type == InputType::Page) {
                 $pageInput = $input;
                 foreach ($pageInput->Elements as $element) {
-                    if ($element->_TextFont != null) {
+                    if ($element->_Resource != null) {
+
+                        $this->Resources[$element->_Resource->ResourceName] = $element->_Resource;
+                    }
+                    if ($element->_TextFont != null && $element->_TextFont->ResourceName != null) {
                         $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
-                        $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
+
+                        $tembInstructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                     }
                 }
             }
 
+            foreach ($input->_Resources as $resource) {
+                if ($resource != null) {
+                    $this->Resources[$resource->ResourceName] = $resource;
+                }
+            }
             if ($input->GetTemplate() != null) {
                 $template = $input->GetTemplate();
-                $this->instructions->_Templates[$template->Id] = $template;
+                $tembInstructions->_Templates[$template->Id] = $template;
                 if ($input->GetTemplate()->Elements != null && count($input->GetTemplate()->Elements) > 0) {
                     foreach ($input->GetTemplate()->Elements as $element) {
-                        if ($element->_TextFont != null) {
+
+                        if ($element->_Resource != null) {
+                            $this->Resources[$element->_Resource->ResourceName] = $element->_Resource;
+                        }
+                        if ($element->_TextFont != null && $element->_TextFont->ResourceName != null) {
+
                             $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
 
                             if (count($fontSerializedArray) > 0) {
-                                $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
+                                $tembInstructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
                             }
                         }
                     }
                 }
             }
         }
+        $jsonText = "";
+        if ($indented == true)
+            $jsonText = json_encode($tembInstructions, JSON_PRETTY_PRINT);
+        else
+            $jsonText = json_encode($tembInstructions);
 
-        $jsonText = json_encode($this->instructions, JSON_PRETTY_PRINT);
         return $jsonText;
     }
     /**
@@ -313,7 +386,7 @@ class Pdf extends Endpoint
 
                         $this->Resources[$element->_Resource->ResourceName] = $element->_Resource;
                     }
-                    if ($element->_TextFont != null) {
+                    if ($element->_TextFont != null && $element->_TextFont->ResourceName != null) {
                         $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
 
                         $this->instructions->_Fonts[$element->_TextFont->_Name] = $fontSerializedArray;
@@ -335,7 +408,7 @@ class Pdf extends Endpoint
                         if ($element->_Resource != null) {
                             $this->Resources[$element->_Resource->ResourceName] = $element->_Resource;
                         }
-                        if ($element->_TextFont != null) {
+                        if ($element->_TextFont != null && $element->_TextFont->ResourceName != null) {
 
                             $fontSerializedArray = $element->_TextFont->GetJsonSerializeString();
 
@@ -348,7 +421,7 @@ class Pdf extends Endpoint
             }
         }
 
-        $data_string = json_encode($this->instructions, JSON_PRETTY_PRINT);
+        $data_string = json_encode($this->instructions);
 
         $errCode = json_last_error();
 

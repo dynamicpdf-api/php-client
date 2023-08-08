@@ -30,7 +30,7 @@ class PageNumberingElement extends Element
      * @param  float $xOffset X coordinate of the label.
      * @param  float $yOffset Y coordinate of the label.
      */
-    public function __construct(string $text, string $placement, float $xOffset = 0, float $yOffset = 0)
+    public function __construct(string $text, string $placement = ElementPlacement::TopLeft, float $xOffset = 0, float $yOffset = 0)
     {
         parent::__construct($text, $placement, $xOffset, $yOffset);
         $this->Text = $text;

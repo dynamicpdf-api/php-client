@@ -18,16 +18,21 @@ class LayoutDataResource extends Resource
      * Initializes a new instance of the LayoutDataResource class using the layout data object and a resource
      * name.
      *
-     * @param  object|string $layout Serializable object data to create PDF report or the layout data JSON file path.
+     * @param  array|string $layout Data to create PDF report as an array of JSON content or as a string of JSON file path.
      * @param  string $layoutDataResourceName The name for layout data resource.
      */
     public function __construct($layout = null, string $layoutDataResourceName = null)
     {
-        if (gettype($layout) == "object") {
-            $this->Data = json_encode($layout);
-        } else {
-            $this->Data = Resource::_GetFileData($layout);
+        if (gettype($layout) == "array") {
+            $this->Data = implode($layout);
+        } else if (gettype($layout) == "string") {
+            if (pathinfo($layout, PATHINFO_EXTENSION) == "json") {
+                $this->Data = Resource::_GetFileData($layout);
+            } else {
+                $this->Data = mb_convert_encoding($layout, 'UTF-8');
+            }
         }
+
         if ($layoutDataResourceName == null) {
             $this->LayoutDataResourceName = md5(uniqid(rand(), true)) . ".json";
         } else {
@@ -47,7 +52,7 @@ class LayoutDataResource extends Resource
         return ".json";
     }
 
-    
+
 
     public $_MimeType = "application/json";
 

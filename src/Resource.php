@@ -13,16 +13,16 @@ abstract class Resource
     {
         if ($file != null) {
             if (gettype($file) == "array") {
-                $this->Data = implode(array_map("chr", $file));
+                $this->_Data = implode(array_map("chr", $file));
             } else if (gettype($file) == "string") {
                 if (file_exists($file)) {
-                    $this->FilePath = $file;
-                    $this->Data = Resource::_GetFileData($file);
+                    $this->_FilePath = $file;
+                    $this->_Data = Resource::_GetFileData($file);
                 } else {
                     throw new EndpointException($file . " : File does not exist.");
                 }
             } else {
-                $this->Data = stream_get_contents($file, -1);
+                $this->_Data = stream_get_contents($file, -1);
             }
 
             if ($resourceName == null) {
@@ -85,8 +85,8 @@ abstract class Resource
     {
         $length = filesize($filePath);
         $file = fopen($filePath, "r");
-        $array = fread($file, $length);
+        $data = fread($file, $length);
         fclose($file);
-        return $array;
+        return $data;
     }
 }

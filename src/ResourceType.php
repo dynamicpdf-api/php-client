@@ -51,4 +51,11 @@ class ResourceType
      *
      */
     public const Html = "Html";
+
+     /**
+     *
+     * Word resource.
+     *
+     */
+    public const Word = "Word";
 }

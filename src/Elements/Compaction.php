@@ -35,5 +35,5 @@ class Compaction
      * All Compactions.
      *
      */
-    public const Automatic = "automatic";
+    public const Auto = "auto";
 }

@@ -33,7 +33,7 @@ class ImageResource extends Resource
 
     public function _FileExtension()
     {
-        $fileHeader = substr($this->Data, 0, 16);
+        $fileHeader = substr($this->_Data, 0, 16);
         $byteArray = array();
         for ($i = 0; $i < strlen($fileHeader); $i++) {
             $byteArray[$i] = ord($fileHeader[$i]);

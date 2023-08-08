@@ -45,4 +45,11 @@ class InputType
      *
      */
     public const Html = "Html";
+    
+     /**
+     *
+     * Word input.
+     *
+     */
+    public const Word = "Word";
 }

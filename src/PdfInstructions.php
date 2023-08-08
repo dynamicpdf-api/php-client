@@ -16,10 +16,10 @@ class PdfInstructions implements JsonSerializable
     public $_Outlines;
     public $_Inputs = array();
 
-    public $_Author = "CeteSoftware";
+    public $_Author;
     public $_Title = "";
     public $_Subject = "";
-    public $_Creator = "DynamicPDF Cloud Api";
+    public $_Creator;
     public $_Keywords = "";
     public $_Security = null;
     public $_FlattenAllFormFields;
@@ -27,10 +27,9 @@ class PdfInstructions implements JsonSerializable
 
     public function __construct()
     {
-        $this->_Author = "CeteSoftware";
+         
         $this->_Title = "";
         $this->_Subject = "";
-        $this->_Creator = "DynamicPDF Cloud Api";
         $this->_Keywords = "";
     }
     public function jsonSerialize(): mixed
@@ -57,10 +56,21 @@ class PdfInstructions implements JsonSerializable
 
         $jsonArray = array();
 
-        $jsonArray['templates'] = $templatesJson;
+        if(count($templatesJson) > 0)
+        {
+            $jsonArray['templates'] = $templatesJson;
+        }
+        if(count($fontsJson) > 0)
+        {
         $jsonArray['fonts'] = $fontsJson;
-        $jsonArray['author'] = $this->_Author;
+        }
+
+        if ($this->_Author != null) {
+            $jsonArray['author'] = $this->_Author;
+        }
+        if ($this->_Title != null) {
         $jsonArray['title'] = $this->_Title;
+        }
 
         if ($this->_Subject != null) {
             $jsonArray['subject'] = $this->_Subject;
@@ -87,9 +97,12 @@ class PdfInstructions implements JsonSerializable
         }
 
         $jsonArray['inputs'] = $inputJsonArray;
-        $jsonArray['formFields'] = $this->_FormFields;
+        if(count($this->_FormFields) > 0)
+        {
+            $jsonArray['formFields'] = $this->_FormFields;
+        }
 
-        if ($this->_Outlines != null)
+        if ($this->_Outlines != null && $this->_Outlines->_Outlines != null && (count($this->_Outlines->_Outlines) > 0))
             $jsonArray['outlines'] = $this->_Outlines->GetJsonSerializeString();
 
         return $jsonArray;
