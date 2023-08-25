@@ -31,9 +31,10 @@ The preferred method is via [Composer](https://getcomposer.org/). Install Compos
 * Install Composer if not already installed ([installation instructions](https://getcomposer.org/doc/00-intro.md)).
 
 * Ensure the `ext_curl` extension is enabled in your `php.ini` file ([installation instructions](https://www.php.net/manual/en/install.pecl.php)).
-* Execute the following command in your project root folder.
+* Execute the following commands in your project root folder.
 
 ```
+composer require dynamicpdf/api
 composer update
 ```
 
