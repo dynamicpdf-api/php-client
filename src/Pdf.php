@@ -110,6 +110,13 @@ class Pdf extends Endpoint
 
     /**
      *
+     * Gets or sets the producer.
+     *
+     */
+    public $Producer;
+
+    /**
+     *
      * Gets or sets the keywords.
      *
      */
@@ -289,6 +296,7 @@ class Pdf extends Endpoint
         $tembInstructions->_Title = $this->Title;
         $tembInstructions->_Subject = $this->Subject;
         $tembInstructions->_Creator = $this->Creator;
+        $tembInstructions->_Producer = $this->Producer;
         $tembInstructions->_Keywords = $this->Keywords;
         $tembInstructions->_Security = $this->Security;
         $tembInstructions->_FlattenAllFormFields = $this->FlattenAllFormFields;
@@ -364,6 +372,7 @@ class Pdf extends Endpoint
         $this->instructions->_Title = $this->Title;
         $this->instructions->_Subject = $this->Subject;
         $this->instructions->_Creator = $this->Creator;
+        $this->instructions->_Producer = $this->Producer;
         $this->instructions->_Keywords = $this->Keywords;
         $this->instructions->_Security = $this->Security;
         $this->instructions->_FlattenAllFormFields = $this->FlattenAllFormFields;
