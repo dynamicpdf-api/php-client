@@ -21,6 +21,7 @@ class PdfInstructions implements JsonSerializable
     public $_Subject = "";
     public $_Creator;
     public $_Producer;
+    public $_Tag;
     public $_Keywords = "";
     public $_Security = null;
     public $_FlattenAllFormFields;
@@ -83,6 +84,10 @@ class PdfInstructions implements JsonSerializable
 
         if ($this->_Producer != null) {
             $jsonArray['producer'] = $this->_Producer;
+        }
+
+        if ($this->_Tag != null) {
+            $jsonArray['tag'] = $this->_Tag;
         }
 
         if ($this->_Keywords != null) {
