@@ -3,10 +3,23 @@ namespace DynamicPDF\Api;
 
 class AdditionalResource extends Resource
 {
-    public function __construct($resource, string $resourceName)
-    {
+     /**
+     *
+     * Adds additional resource to the endpoint.
+     * 
+     * @param  string|array $resource The resource data..
+     * @param  string $resourceName The name of the resource.
+     * @param  null|string|ResourceType $resourceType The type of the additional resource.
+     */
+    public function __construct($resource, string $resourceName, $resourceType = null)
+    {       
         parent::__construct($resource, $resourceName);
-        $this->_Type = $this->GetResourceType($resource);
+        if ((gettype($resource) == "string") && (gettype($resourceName) == "string"))
+        {
+            $this->_Type = $this->GetResourceType($resource);
+        } 
+        else     
+            $this->_Type = $resourceType;
     }
 
     private function GetResourceType(string $resourcePath)
@@ -45,7 +58,7 @@ class AdditionalResource extends Resource
 
     public $_Type = ResourceType::LayoutData;
 
-    private function _FileExtension()
+    public function _FileExtension()
     {
         $fileHeader = substr($this->Data, 0, 16);
         $byteArray = array();
@@ -104,5 +117,5 @@ class AdditionalResource extends Resource
 
     }
 
-    private $_MimeType = "";
+    public $_MimeType = "";
 }
