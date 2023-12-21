@@ -8,30 +8,73 @@ include_once __DIR__ . '/Endpoint.php';
 class DlexLayout extends Endpoint
 {
     private $resource;
-
+    public $resources = array();
     /**
      *
      * Initializes a new instance of the DlexLayout class using the DLEX file path present in the cloud environment
      * and the JSON data for the PDF report.
      *
-     * @param  string $cloudDlexPath The DLEX file path present in the resource manager.
+     * @param  string|DlexResource $dlex The DLEX file created as per the desired PDF report layout design.
      * @param  LayoutDataResource $layoutData The LayoutDataResource, json data file used to create the PDF report.
      */
-    public function __construct(string $cloudDlexPath, LayoutDataResource $layoutData)
+    public function __construct($dlex, LayoutDataResource $layoutData)
     {
         parent::__construct();
-        $this->DlexPath = $cloudDlexPath;
-        $this->resource = $layoutData;
+        if ((gettype($dlex) == "string") && (gettype($layoutData) == "object"))
+        {
+            $this->DlexPath = $dlex;
+            $this->resource = $layoutData;
+        } elseif ((gettype($dlex) == "object") && (gettype($layoutData) == "object")){
+            array_push( $this->resources, $dlex);          
+            $this->resource = $layoutData;
+        }
     }
 
     public $_EndpointName = "dlex-layout";
 
+        
     /**
      *
      * Gets or sets the DLEX file path present in the resource manager.
      *
      */
     public $DlexPath;
+    
+    /**
+     * 
+     * Adds additional resource to the endpoint.
+     *  
+     * @param string|array $resource The resource data.
+     * @param null|string|AdditionalResourceType $additionalResourceType The type of the additional resource..
+     * @param null|string The name of the resource.
+     */
+    public function AddAdditionalResource($resource, $additionalResourceType = null, $resourceName = null)
+    {
+        if (gettype($resource) == "string") {
+            if ($resourceName == null)
+                $resourceName = basename($resource);
+            $additionalResource = new AdditionalResource($resource, $resourceName);
+            array_push($this->resources, $additionalResource);
+        } else {
+            $type = ResourceType::Pdf;
+            switch ($additionalResourceType) {
+                case AdditionalResourceType::Font:
+                    $type = ResourceType::Font;
+                    break;
+                case AdditionalResourceType::Image:
+                    $type = ResourceType::Image;
+                    break;
+                case AdditionalResourceType::Pdf:
+                    $type = ResourceType::Pdf;
+                    break;
+                case AdditionalResourceType::Html:
+                    $type = ResourceType::Html;
+                    break;
+            }
+            $additionalResource = new AdditionalResource($resource, $resourceName, $type);
+            array_push($this->resources, $additionalResource);
+        }
+    }
 
     /**
      *
@@ -81,6 +124,18 @@ class DlexLayout extends Endpoint
             $body[] = 'Content-Type: application/octet-stream';
             $body[] = '';
             $body[] = $this->DlexPath;
+
+            foreach ($this->resources as $field) {
+                $body[] = '--' . $boundary;
+                $body[] = 'Content-Disposition: form-data; name="' . "Resource" . '"; filename="' . $field->ResourceName . '"';
+                $body[] = 'Content-Type: application/octet-stream';
+                $body[] = '';
+                if ($field->_FilePath != null) {
+                    $body[] = file_get_contents($field->_FilePath);
+                } else {
+                    $body[] = $field->Data;
+                }
+            }
         }
         $body[] = '--' . $boundary . '--';
         $body[] = '';
