@@ -16,7 +16,7 @@ class WordResource extends Resource
      *
      *  Initializes a new instance of the HtmlResource class.
      *
-     * @param  string $filePath The image file path or the byte array of the image file or the stream of the image file.
+     * @param  string|array|stream $file The word file path or the byte array of the word file or the stream of the word file.
      */
     public function __construct($file, string $resourceName = null)
     {

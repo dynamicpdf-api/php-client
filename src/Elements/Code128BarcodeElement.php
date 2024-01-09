@@ -25,12 +25,12 @@ class Code128BarcodeElement extends TextBarcodeElement
      * code set.
      *
      * @param  string $value The value of the barcode.
-     * @param  string $placement The placement of the barcode on the page.
      * @param  float $height The height of the barcode.
+     * @param  string $placement The placement of the barcode on the page.
      * @param  float $xOffset The X coordinate of the barcode.
      * @param  float $yOffset The Y coordinate of the barcode.
      */
-    public function __construct(string $value, string $placement = ElementPlacement::TopLeft, float $height, float $xOffset = 0, float $yOffset = 0)
+    public function __construct(string $value, float $height, string $placement = ElementPlacement::TopLeft, float $xOffset = 0, float $yOffset = 0)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);
         $this->Height = $height;

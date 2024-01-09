@@ -51,7 +51,7 @@ class PdfInformation
      */
     public $Title;
 
-    public function PdfInformation()
+    public function __construct()
     {}
 
     /**

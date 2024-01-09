@@ -19,12 +19,12 @@ class LineElement extends Element
      *
      *  Initializes a new instance of the LineElement class.
      *
-     * @param  string $placement The placement of the line on the page.
      * @param  float $x2Offset X2 coordinate of the line.
      * @param  float $y2Offset Y2 coordinate of the line.
+     * @param  string $placement The placement of the line on the page.
      */
-    public function __construct(string $placement = ElementPlacement::TopLeft, float $x2Offset, float $y2Offset)
-    {
+    public function __construct(float $x2Offset, float $y2Offset, string $placement = ElementPlacement::TopLeft)
+    { 
         $this->Placement = $placement;
         $this->X2Offset = $x2Offset;
         $this->Y2Offset = $y2Offset;
