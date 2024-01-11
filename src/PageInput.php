@@ -15,17 +15,12 @@ class PageInput extends Input
      *
      *  Initializes a new instance of the PageInput class.
      *
-     * @param  string $pageSize The size of the page.
-     * @param  string $pageOrientation The orientation of the page..
      * @param  float $pageWidth The width of the page.
      * @param  float $pageHeight The height of the page.
      * @param  float $margin The margins of the page.
      */
-    public function __construct(string $pageSize = PageSize::Letter, string $pageOrientation = PageOrientation::Portrait, ?float $pageWidth = null, ?float $pageHeight = null, ?float $margin = null)
+    public function __construct(?float $pageWidth = null, ?float $pageHeight = null, ?float $margin = null)
     {
-        $this->SetPageOrientation($pageSize);
-        $this->SetPageSize($pageOrientation);
-
             $this->PageWidth = $pageWidth;
             $this->PageHeight = $pageHeight;
         
