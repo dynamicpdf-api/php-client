@@ -298,20 +298,31 @@ class Font
         return  $name . ":" . $weight  ;
     }
 
-        /**  
-        * Gets the font from the google.
-        *  
-        * @param string $fontName The name of the google font. 
-        * @param int $weight The weight of the font. 
-        * @param bool $italic The italic property of the font. 
-        * @return Font The font object. 
-        */
-        public static function Google(string $fontName, int $weight = 400, bool $italic = false)
-        {            
-            $font = new Font();
-            $font->_Name = Font::GetGoogleFontText($fontName, $weight, $italic);
-            return $font;
-        }
+    /**  
+    * Gets the font from the google.
+    *  
+    * @param string $fontName The name of the font from the global storage.
+    * @return Font The font object. 
+    */
+    public static function Global(string $fontName)
+    {            
+        $font = new Font();
+        $font->_Name = $fontName;
+        return $font;
+    }
+
+    /**  
+    * Gets the font from the google.
+    *  
+    * @param string $fontName The name of the google font. 
+    * @return Font The font object. 
+    */
+    public static function Google(string $fontName)
+    {            
+        $font = new Font();
+        $font->_Name = $fontName;
+        return $font;
+    }
        
     /**
     * Gets the font from the google.
