@@ -299,7 +299,7 @@ class Font
     }
 
     /**  
-    * Gets the font from the google.
+    * Gets the font from the global storage.
     *  
     * @param string $fontName The name of the font from the global storage.
     * @return Font The font object. 
@@ -316,7 +316,7 @@ class Font
     * Gets the font from the google.
     *  
     *  @param $fontName The name of the google font.
-    *  @param bool|integer $bold If true font weight will be taken as 700 otherwise 400.
+    *  @param bool|integer $bold The value can either be boolen or Font Weight ( int).
     *  @param $italic The italic property of the font.
     *  @return Font The font object. 
     */
