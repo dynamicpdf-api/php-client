@@ -19,13 +19,13 @@ class Gs1DataBarBarcodeElement extends TextBarcodeElement
      *  Initializes a new instance of the Gs1DataBarBarcodeElement class.
      *
      * @param  string $value The value of the barcode.
-     * @param  string $placement The placement of the barcode on the page.
      * @param  float $height The height of the barcode.
      * @param  string $type The GS1DataBarType of the barcode.
+     * @param  string $placement The placement of the barcode on the page.
      * @param  float $xOffset The X coordinate of the barcode.
      * @param  float $yOffset The Y coordinate of the barcode.
      */
-    public function __construct(string $value, string $placement = ElementPlacement::TopLeft, float $height, string $type, float $xOffset = 0, float $yOffset = 0)
+    public function __construct(string $value, float $height, string $type, string $placement = ElementPlacement::TopLeft, float $xOffset = 0, float $yOffset = 0)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);
         $this->_Gs1DataBarType = $type;

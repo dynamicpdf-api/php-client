@@ -21,10 +21,10 @@ class WordInput extends Input
      * 
      * Initializes a new instance of the WordInput class.
      * 
-     * param name="resource" The resource of type WordResource
-     * param name="size"The page size of the output PDF.
-     * param name="orientation"The page orientation of the output PDF.
-     * param name="margins"The page margins of the output PDF.
+     * @param  WordResource $resource The resource of type WordResource.
+     * @param  string $size The page size of the output PDF.
+     * @param  string $orientation The page orientation of the output PDF.
+     * @param  float $margins The page margins of the output PDF.
      */
     public function __construct(WordResource $resource, $size = PageSize::Letter, $orientation = PageOrientation::Portrait, float $margins = null)
     {

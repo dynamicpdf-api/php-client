@@ -21,12 +21,12 @@ class Pdf417BarcodeElement extends Dim2BarcodeElement
      *  Initializes a new instance of the Pdf417BarcodeElement class.
      *
      * @param  string|array $value String to be encoded either as string or byte array.
-     * @param  string $placement The placement of the barcode on the page.
      * @param  int $columns Columns of the PDF417 barcode.
+     * @param  string $placement The placement of the barcode on the page.
      * @param  float $xOffset The X coordinate of the PDF417 barcode.
      * @param  float $yOffset The Y coordinate of the PDF417 barcode.
      */
-    public function __construct($value, string $placement = ElementPlacement::TopLeft, int $columns, float $xOffset = 0, float $yOffset = 0)
+    public function __construct($value, int $columns, string $placement = ElementPlacement::TopLeft, float $xOffset = 0, float $yOffset = 0)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);
         $this->Columns = $columns;

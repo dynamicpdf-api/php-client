@@ -18,7 +18,7 @@ class ImageResource extends Resource
      *
      *  Initializes a new instance of the ImageResource class.
      *
-     * @param  string|array|stream $filePath The image file path or the byte array of the image file or the stream of the image file.
+     * @param  string|array|stream $file The image file path or the byte array of the image file or the stream of the image file.
      * @param  string $resourceName The name of the resource.
      */
     public function __construct($file, string $resourceName = null)

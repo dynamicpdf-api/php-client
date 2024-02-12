@@ -17,10 +17,10 @@ class HtmlResource extends Resource
      *
      * Initializes a new instance of the HtmlResource class.
      *
-     * @param  string $filePath The image file path or the byte array of the image file or the stream of the image file.
+     * @param  string $file The input html string.
      * @param string $resourceName The name of the resource.
      */
-    public function __construct($file, string $resourceName = null)
+    public function __construct(string $file, string $resourceName = null)
     {
         parent::__construct();
         $this->_Data = mb_convert_encoding($file, "UTF-8");

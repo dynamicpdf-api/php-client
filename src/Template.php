@@ -13,9 +13,9 @@ class Template
      *
      *  Initializes a new instance of the Template class.
      *
-     * @param  string $id The id string representing id for the template.
+     * @param  string|null $id The id string representing id for the template.
      */
-    public function __construct(string $id)
+    public function __construct(?string $id = null)
     {
         if ($id == null) {
             $this->Id = md5(uniqid(rand(), true));

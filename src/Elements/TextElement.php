@@ -25,7 +25,7 @@ class TextElement extends Element
      * @param  float $xOffset X coordinate of the text element.
      * @param  float $yOffset Y coordinate of the text element.
      */
-    public function __construct(string $value, string $placement, float $xOffset = 0, float $yOffset = 0)
+    public function __construct(string $value, string $placement = ElementPlacement::TopLeft, float $xOffset = 0, float $yOffset = 0)
     {
         parent::__construct($value, $placement, $xOffset, $yOffset);
         $this->Text = $value;

@@ -18,12 +18,12 @@ class RectangleElement extends Element
     /**
      *
      *  Initializes a new instance of the RectangleElement class.
-     *
-     * @param  string $placement The placement of the rectangle on the page.
+     * 
      * @param  float $width Width of the rectangle.
      * @param  float $height Height of the rectangle.
+     * @param  string $placement The placement of the rectangle on the page.
      */
-    public function __construct(string $placement = ElementPlacement::TopLeft, float $width, float $height)
+    public function __construct(float $width, float $height, string $placement = ElementPlacement::TopLeft)
     {
         $this->Placement = $placement;
         $this->Width = $width;
