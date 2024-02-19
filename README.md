@@ -3,7 +3,7 @@
 PHP Client (`php-client`)
 =================================
 
-The PHP Client (`php-client`) project uses the DynamicPDF Cloud API's PHP client library to create, merge, split, form fill, stamp, obtain metadata, convert, and secure/encrypt PDF documents. 
+The PHP Client (`php-client`) project uses the DynamicPDF API's PHP client library to create, merge, split, form fill, stamp, obtain metadata, convert, and secure/encrypt PDF documents. 
 
 The DynamicPDF Cloud API consists of the following endpoints.
 
@@ -14,7 +14,7 @@ The DynamicPDF Cloud API consists of the following endpoints.
 * `pdf-text`
 * `pdf-xmp`
 
-For more information, please visit [DynamicPDF Cloud API](https://cloud.dynamicpdf.com/ "DynamicPDF Cloud API Homepage"). Support for other languages/platforms (PHP, C#, Node.js) is available on GitHub ([DynamicPDF Cloud API at GitHub](https://github.com/dynamicpdf-api "DynamicPDF Cloud API at GitHub")).
+For more information, please visit [DynamicPDF API](https://cloud.dynamicpdf.com/ "DynamicPDF Cloud API Homepage"). Support for other languages/platforms (PHP, C#, Node.js) is available on GitHub ([DynamicPDF Cloud API at GitHub](https://github.com/dynamicpdf-api "DynamicPDF Cloud API at GitHub")).
 
 ## Requirements
 
