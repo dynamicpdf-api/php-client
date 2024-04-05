@@ -52,10 +52,17 @@ class ResourceType
      */
     public const Html = "Html";
 
-     /**
+    /**
      *
      * Word resource.
      *
      */
     public const Word = "Word";
+
+    /**
+     *
+     * Excel resource.
+     *
+     */
+    public const Excel = "Excel";
 }
