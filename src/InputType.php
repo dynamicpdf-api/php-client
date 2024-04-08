@@ -46,10 +46,17 @@ class InputType
      */
     public const Html = "Html";
     
-     /**
+    /**
      *
      * Word input.
      *
      */
     public const Word = "Word";
+
+    /**
+     *
+     * Excel input.
+     *
+     */
+    public const Excel = "Excel";
 }

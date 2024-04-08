@@ -1,6 +1,6 @@
 {
     "name": "dynamicpdf/api",
-    "description": "PHP client library for the DynamicPDF Cloud API.",
+    "description": "PHP client library for the DynamicPDF API.",
     "type": "library",
     "keywords": [
         "pdf",
@@ -11,7 +11,7 @@
         "form fill",
         "encrypt"
     ],
-    "homepage": "https://cloud.dynamicpdf.com/",
+    "homepage": "https://dpdf.io/",
     "require": {
         "php": ">=7.3",
         "ext-curl": "*",

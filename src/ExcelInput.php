@@ -2,7 +2,7 @@
 namespace DynamicPDF\Api;
 
 include_once __DIR__ . '/PageOrientation.php';
-include_once __DIR__ . '/WordResource.php';
+include_once __DIR__ . '/ExcelResource.php';
 include_once __DIR__ . '/InputType.php';
 include_once __DIR__ . '/UnitConverter.php';
 include_once __DIR__ . '/PageSize.php';
@@ -10,38 +10,32 @@ include_once __DIR__ . '/Input.php';
 
 /**
  *
- * Represents a Word input.
+ * Represents a Excel input.
  *
  */
-class WordInput extends ConverterInput
+class ExcelInput extends ConverterInput
 {
     /** 
      * 
-     * Initializes a new instance of the WordInput class.
+     * Initializes a new instance of the ExcelInput class.
      * 
-     * @param  WordResource $resource The resource of type WordResource.
+     * @param  ExcelResource $resource The resource of type ExcelResource.
      * @param  string $size The page size of the output PDF.
      * @param  string $orientation The page orientation of the output PDF.
      * @param  float $margins The page margins of the output PDF.
      */
-    public function __construct(WordResource $resource, $size = PageSize::Letter, $orientation = PageOrientation::Portrait, float $margins = null)
+    public function __construct(ExcelResource $resource, $size = PageSize::Letter, $orientation = PageOrientation::Portrait, float $margins = null)
     {
         parent::__construct($resource, $size, $orientation, $margins);
     }
 
-    public $_Type = InputType::Word;
-
-    /**
-     * 
-     *  Gets or sets the TextReplace object List.
-     */
-    public $TextReplaceArray = [];
+    public $_Type = InputType::Excel;
 
     public function GetJsonSerializeString()
     {
         $jsonArray = array();
 
-        $jsonArray["type"] = "word";
+        $jsonArray["type"] = "excel";
 
 
         if ($this->TopMargin != null) {
@@ -67,19 +61,7 @@ class WordInput extends ConverterInput
         if ($this->PageHeight != null) {
             $jsonArray['pageHeight'] = $this->PageHeight;
         }
-        $TextReplaceJson = array();
-        if (($this->TextReplaceArray != null) && (count($this->TextReplaceArray) > 0)) {
-            foreach ($this->TextReplaceArray as $textreplace) {
-                if ($textreplace != null) {
-                    array_push($TextReplaceJson, $textreplace->GetJsonSerializeString());
-                }
-            }
-        }
-
-        if (($TextReplaceJson != null) && (count($TextReplaceJson) > 0)) {
-            $jsonArray['textReplace'] = $TextReplaceJson;
-        }
-        //---------------------------------------------------
+         
         if ($this->_TemplateId != null) {
             $jsonArray['templateId'] = $this->_TemplateId;
         }
