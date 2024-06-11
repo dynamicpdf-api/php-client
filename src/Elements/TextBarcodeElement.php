@@ -14,7 +14,7 @@ abstract class TextBarcodeElement extends BarcodeElement
 {
     public function __construct(string $value, string $placement = ElementPlacement::TopLeft, float $xOffset, float $yOffset)
     {
-        parent::__construct($value, $placement, $xOffset, $yOffset);
+        parent::__construct($value, $placement , $xOffset, $yOffset);
     }
 
     /**
