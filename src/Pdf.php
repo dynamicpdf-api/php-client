@@ -199,11 +199,11 @@ class Pdf extends Endpoint
      *
      * @param string|HtmlResource $resource The HTML input string or the resource of type HtmlResource.
      * @param  string $basePath The basepath option for the url.
-     * @param  string $pageSize The Page Size for PDF page
+     * @param  string $size The Page Size for PDF page
      * @param  string $orientation The Page orientation of the PDF page
      * @return HtmlInput HtmlInput object.
      */
-    public function AddHtml($html, string $basepath = null, $size = PageSize::A4, $orientation = PageOrientation::Portrait, ?float $margins = null)
+    public function AddHtml($html, string $basepath = null, ?string $size = null, ?string $orientation = null, ?float $margins = null)
     {
         $resource = $html;
         if (gettype($resource) == "string") {
@@ -219,11 +219,11 @@ class Pdf extends Endpoint
      * Returns an WordInput object containing the input pdf.
      *
      * @param WordResource $resource The resource of type WordResource
-     * @param  string $pageSize The Page Size for PDF page
+     * @param  string $size The Page Size for PDF page
      * @param  string $orientation The Page orientation of the PDF page
      * @return WordInput WordInput object.
      */
-    public function AddWord(WordResource $resource, $size = PageSize::A4, $orientation = PageOrientation::Portrait, ?float $margins = null)
+    public function AddWord(WordResource $resource, ?string $size = null, ?string $orientation = null, ?float $margins = null)
     {
         $input = new WordInput($resource, $size, $orientation, $margins);
         array_push($this->Inputs, $input);
@@ -235,11 +235,11 @@ class Pdf extends Endpoint
      * Returns an ExcelInput object containing the input pdf.
      *
      * @param ExcelResource $resource The resource of type ExcelResource
-     * @param  string $pageSize The Page Size for PDF page
+     * @param  string $size The Page Size for PDF page
      * @param  string $orientation The Page orientation of the PDF page
      * @return ExcelInput ExcelInput object.
      */
-    public function AddExcel(ExcelResource $resource, $size = PageSize::A4, $orientation = PageOrientation::Portrait, ?float $margins = null)
+    public function AddExcel(ExcelResource $resource, ?string $size = null, ?string $orientation = null, ?float $margins = null)
     {
         $input = new ExcelInput($resource, $size, $orientation, $margins);
         array_push($this->Inputs, $input);

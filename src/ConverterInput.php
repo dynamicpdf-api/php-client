@@ -15,12 +15,14 @@ abstract class ConverterInput extends Input
     private $_pageSize;
     private $_pageOrientation;
 
-    public function __construct(Resource $resource, string $size, string $orientation, ?float $margins)
+    public function __construct(Resource $resource, ?string $size, ?string $orientation, ?float $margins)
     {
         parent::__construct($resource);
 
-        $this->SetPageOrientation($orientation);
-        $this->SetPageSize($size);
+        if($size != null) 
+            $this->SetPageSize($size);       
+        if($orientation != null) 
+            $this->SetPageOrientation($orientation); 
 
         if ($margins != null) {
             $this->TopMargin = $margins;
@@ -83,12 +85,12 @@ abstract class ConverterInput extends Input
         $unitConverter = new UnitConverter();
         list($_smaller, $_larger) = $unitConverter->getPaperSize($value);
 
-        if ($this->_pageOrientation == PageOrientation::Portrait) {
-            $this->PageWidth = $_smaller;
-            $this->PageHeight = $_larger;
-        } else {
+        if ($this->_pageOrientation == PageOrientation::Landscape) {
             $this->PageWidth = $_larger;
             $this->PageHeight = $_smaller;
+        } else {
+            $this->PageWidth = $_smaller;
+            $this->PageHeight = $_larger;
         }
     }
 
@@ -108,24 +110,24 @@ abstract class ConverterInput extends Input
      */
     public function SetPageOrientation($value)
     {
-
         $this->_pageOrientation = $value;
 
-        if ($this->PageWidth > $this->PageHeight) {
-            $_smaller = $this->PageHeight;
-            $_larger = $this->PageWidth;
-        } else {
-            $_smaller = $this->PageWidth;
-            $_larger = $this->PageHeight;
+        if ($this->PageWidth != null && $this->PageHeight != null) {
+            if ($this->PageWidth > $this->PageHeight) {
+                $_smaller = $this->PageHeight;
+                $_larger = $this->PageWidth;
+            } else {
+                $_smaller = $this->PageWidth;
+                $_larger = $this->PageHeight;
+            }
+            if ($this->_pageOrientation == PageOrientation::Landscape) {
+                $this->PageHeight = $_smaller;
+                $this->PageWidth = $_larger;
+            } else {
+                $this->PageHeight = $_larger;
+                $this->PageWidth = $_smaller;
+            }
         }
-        if ($this->_pageOrientation == PageOrientation::Portrait) {
-            $this->PageHeight = $_larger;
-            $this->PageWidth = $_smaller;
-        } else {
-            $this->PageHeight = $_smaller;
-            $this->PageWidth = $_larger;
-        }
-
     }
 
     /**

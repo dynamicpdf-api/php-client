@@ -24,7 +24,7 @@ class WordInput extends ConverterInput
      * @param  string $orientation The page orientation of the output PDF.
      * @param  float $margins The page margins of the output PDF.
      */
-    public function __construct(WordResource $resource, $size = PageSize::Letter, $orientation = PageOrientation::Portrait, float $margins = null)
+    public function __construct(WordResource $resource, ?string $size = null, ?string $orientation = null, ?float $margins = null)
     {
         parent::__construct($resource, $size, $orientation, $margins);
     }
