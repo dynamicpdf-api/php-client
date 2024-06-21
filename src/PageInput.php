@@ -10,25 +10,32 @@ include_once __DIR__ . '/InputType.php';
  */
 class PageInput extends Input
 {
-
     /**
      *
      *  Initializes a new instance of the PageInput class.
      *
-     * @param  float $pageWidth The width of the page.
-     * @param  float $pageHeight The height of the page.
-     * @param  float $margin The margins of the page.
+     * @param  ?string|?float $size The size of the page or The width of the page.
+     * @param  ?string|?float $orientation The orientation of the page or The height of the page.
+     * @param  ?float $margins The margins of the page.
      */
-    public function __construct(?float $pageWidth = null, ?float $pageHeight = null, ?float $margin = null)
+    public function __construct($size = null, $orientation = null, $margins = null)
     {
-            $this->PageWidth = $pageWidth;
-            $this->PageHeight = $pageHeight;
-        
-        if($margin != null){
-            $this->TopMargin = $margin;
-            $this->BottomMargin = $margin;
-            $this->RightMargin = $margin;
-            $this->LeftMargin = $margin;
+        if ((gettype($size) == "string") && (gettype($orientation) == "string")) {
+            if($size != null) 
+                $this->SetPageSize($size);       
+            if($orientation != null) 
+                $this->SetPageOrientation($orientation); 
+
+            if ($margins != null) {
+                $this->TopMargin = $margins;
+                $this->BottomMargin = $margins;
+                $this->RightMargin = $margins;
+                $this->LeftMargin = $margins;
+            }
+        }
+        else if ((gettype($size) == "double" || gettype($size) == "integer")) {
+            $this->PageWidth = $size;
+            $this->PageHeight = $orientation;
         }
 
         $this->Id = md5(uniqid(rand(), true));
@@ -80,10 +87,6 @@ class PageInput extends Input
 
     public $Elements = array();
 
-    private static $DefaultPageHeight = 792.0;
-    private static $DefaultPagewidth = 612.0;
-
-
     /**
      *
      * Sets the page size.
@@ -94,15 +97,14 @@ class PageInput extends Input
         $this->_pageSize = $value;
         list($_smaller, $_larger) = UnitConverter::getPaperSize($value);
 
-        if ($this->_pageOrientation == PageOrientation::Portrait) {
-            $this->PageWidth = $_smaller;
-            $this->PageHeight = $_larger;
-        } else {
-            $this->PageWidth = $_larger;
+        if ($this->_pageOrientation == PageOrientation::Landscape) {
             $this->PageHeight = $_smaller;
+            $this->PageWidth = $_larger;
+        } else {
+            $this->PageHeight = $_larger;
+            $this->PageWidth = $_smaller;
         }
     }
-
 
     public function GetPageSize()
     {
@@ -119,21 +121,22 @@ class PageInput extends Input
 
         $this->_pageOrientation = $value;
 
-        if ($this->PageWidth > $this->PageHeight) {
-            $_smaller = $this->PageHeight;
-            $_larger = $this->PageWidth;
-        } else {
-            $_smaller = $this->PageWidth;
-            $_larger = $this->PageHeight;
+        if ($this->PageWidth != null && $this->PageHeight != null) {
+            if ($this->PageWidth > $this->PageHeight) {
+                $_smaller = $this->PageHeight;
+                $_larger = $this->PageWidth;
+            } else {
+                $_smaller = $this->PageWidth;
+                $_larger = $this->PageHeight;
+            }
+            if ($this->_pageOrientation == PageOrientation::Landscape) {
+                $this->PageHeight = $_smaller;
+                $this->PageWidth = $_larger;
+            } else {
+                $this->PageHeight = $_larger;
+                $this->PageWidth = $_smaller;
+            }
         }
-        if ($this->_pageOrientation == PageOrientation::Portrait) {
-            $this->PageHeight = $_larger;
-            $this->PageWidth = $_smaller;
-        } else {
-            $this->PageHeight = $_smaller;
-            $this->PageWidth = $_larger;
-        }
-
     }
 
     public function GetPageOrientation()
@@ -143,7 +146,6 @@ class PageInput extends Input
 
     private $_pageSize;
     private $_pageOrientation;
-
 
     /**
      *
@@ -171,15 +173,9 @@ class PageInput extends Input
         if ($this->PageWidth != null) {
             $jsonArray['pageWidth'] = $this->PageWidth;
         }
-        else{
-            $jsonArray['pageWidth'] = PageInput::$DefaultPagewidth;
-        }
-
+       
         if ($this->PageHeight != null) {
             $jsonArray['pageHeight'] = $this->PageHeight;
-        }
-        else{
-            $jsonArray['pageHeight'] = PageInput::$DefaultPageHeight;
         }
         
         if ($this->TopMargin != null) {
