@@ -45,7 +45,7 @@ class Pdf extends Endpoint
      * @param AdditionalResourceType $additionalResourceType The name of the resource.
      * @param string The name of the resource.
      */
-    public function AddAdditionalResource(string $resource, AdditionalResourceType $additionalResourceType, string $resourceName = null)
+    public function AddAdditionalResource(string $resource, AdditionalResourceType $additionalResourceType = null, string $resourceName = null)
     {
         if (gettype($resource) == "string") {
             if ($resourceName == null)

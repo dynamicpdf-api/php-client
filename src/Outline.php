@@ -25,12 +25,6 @@ class Outline
         $this->Children = new OutlineList();
         if (gettype($input) == "object") {
             $this->_FromInputID = $input->Id;
-            if ($input->MergeOptions == null) {
-                $input->MergeOptions = new MergeOptions();
-                $input->MergeOptions->Outlines = false;
-            } else {
-                $input->MergeOptions->Outlines = false;
-            }
         } else {
             $this->Text = $input;
             $this->Action = $action;
