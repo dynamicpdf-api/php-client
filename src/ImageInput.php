@@ -89,14 +89,14 @@ class ImageInput extends Input
      * Gets or sets a boolean indicating whether to expand the image.
      *
      */
-    public $ExpandToFit;
+    public ?bool $ExpandToFit = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to shrink the image.
      *
      */
-    public $ShrinkToFit;
+    public ?bool $ShrinkToFit = null;
 
     /**
      *
@@ -164,11 +164,11 @@ class ImageInput extends Input
             $jsonArray['pageHeight'] = $this->PageHeight;
         }
 
-        if ($this->ExpandToFit != null) {
+        if ($this->ExpandToFit !== null) {
             $jsonArray['expandToFit'] = $this->ExpandToFit;
         }
 
-        if ($this->ShrinkToFit != null) {
+        if ($this->ShrinkToFit !== null) {
             $jsonArray['shrinkToFit'] = $this->ShrinkToFit;
         }
 

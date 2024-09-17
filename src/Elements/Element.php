@@ -51,13 +51,13 @@ abstract class Element
      * Gets or sets the boolean value specifying whether the element should be added to even pages or not.
      *
      */
-    public $EvenPages = false;
+    public ?bool $EvenPages = null;
 
     /**
      *
      * Gets or sets the boolean value specifying whether the element should be added to odd pages or not.
      *
      */
-    public $OddPages = false;
+    public ?bool $OddPages = null;
 
 }

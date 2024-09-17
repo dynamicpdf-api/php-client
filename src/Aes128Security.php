@@ -51,19 +51,19 @@ class Aes128Security extends Security
         }
 
         //-------------------------------------------
-        if ($this->AllowCopy != null) {
+        if ($this->AllowCopy !== null) {
             $jsonArray['allowCopy'] = $this->AllowCopy;
         }
 
-        if ($this->AllowEdit != null) {
+        if ($this->AllowEdit !== null) {
             $jsonArray['allowEdit'] = $this->AllowEdit;
         }
 
-        if ($this->AllowPrint != null) {
+        if ($this->AllowPrint !== null) {
             $jsonArray['allowPrint'] = $this->AllowPrint;
         }
 
-        if ($this->AllowUpdateAnnotsAndFields != null) {
+        if ($this->AllowUpdateAnnotsAndFields !== null) {
             $jsonArray['allowUpdateAnnotsAndFields'] = $this->AllowUpdateAnnotsAndFields;
         }
 
@@ -75,19 +75,19 @@ class Aes128Security extends Security
             $jsonArray['userPassword'] = $this->UserPassword;
         }
 
-        if ($this->AllowAccessibility != null) {
+        if ($this->AllowAccessibility !== null) {
             $jsonArray['allowAccessibility'] = $this->AllowAccessibility;
         }
 
-        if ($this->AllowFormFilling != null) {
+        if ($this->AllowFormFilling !== null) {
             $jsonArray['allowFormFilling'] = $this->AllowFormFilling;
         }
 
-        if ($this->AllowHighResolutionPrinting != null) {
+        if ($this->AllowHighResolutionPrinting !== null) {
             $jsonArray['allowHighResolutionPrinting'] = $this->AllowHighResolutionPrinting;
         }
 
-        if ($this->AllowDocumentAssembly != null) {
+        if ($this->AllowDocumentAssembly !== null) {
             $jsonArray['allowDocumentAssembly'] = $this->AllowDocumentAssembly;
         }
 

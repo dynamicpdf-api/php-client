@@ -52,7 +52,7 @@ class Code128BarcodeElement extends TextBarcodeElement
      * If true an FNC1 code will be the first character in the barcode.
      *
      */
-    public $UccEan128 = false;
+    public ?bool $UccEan128 = null;
 
     /**
      *
@@ -64,7 +64,7 @@ class Code128BarcodeElement extends TextBarcodeElement
      * to an appropriate code set. "\" is used as an escape character to add ~.
      *
      */
-    public $ProcessTilde = false;
+    public ?bool $ProcessTilde = null;
 
     public function GetJsonSerializeString()
     {
@@ -76,11 +76,11 @@ class Code128BarcodeElement extends TextBarcodeElement
             $jsonArray['height'] = $this->Height;
         }
 
-        //if($this->UccEan128 != null)
-        $jsonArray['uccEan128'] = $this->UccEan128;
+        if($this->UccEan128 !== null)
+            $jsonArray['uccEan128'] = $this->UccEan128;
 
-        //if($this->ProcessTilde != null)
-        $jsonArray['processTilde'] = $this->ProcessTilde;
+        if($this->ProcessTilde !== null)
+            $jsonArray['processTilde'] = $this->ProcessTilde;
 
         //----------------TextBarcodeElement---------------------------------
         if ($this->_FontName != null) {
@@ -95,7 +95,7 @@ class Code128BarcodeElement extends TextBarcodeElement
             $jsonArray['fontSize'] = $this->FontSize;
         }
 
-        if ($this->ShowText != "null") {
+        if ($this->ShowText !== null) {
             $jsonArray['showText'] = $this->ShowText;
         }
 
@@ -127,11 +127,11 @@ class Code128BarcodeElement extends TextBarcodeElement
             $jsonArray['yOffset'] = $this->YOffset;
         }
 
-        //if($this->EvenPages != null)
-        $jsonArray['evenPages'] = $this->EvenPages;
+        if($this->EvenPages !== null)
+            $jsonArray['evenPages'] = $this->EvenPages;
 
-        // if($this->OddPages != null)
-        $jsonArray['oddPages'] = $this->OddPages;
+        if($this->OddPages !== null)
+            $jsonArray['oddPages'] = $this->OddPages;
 
         return $jsonArray;
     }

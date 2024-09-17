@@ -49,7 +49,7 @@ class DataMatrixBarcodeElement extends Dim2BarcodeElement
      * documentation for the Encoding.RegisterProvider method.".
      *
      */
-    public $ProcessTilde = false;
+    public ?bool $ProcessTilde = null;
     public $_DataMatrixSymbolSize;
     public $_DataMatrixEncodingType;
     public $_DataMatrixFunctionCharacter;
@@ -61,8 +61,8 @@ class DataMatrixBarcodeElement extends Dim2BarcodeElement
 
         $jsonArray["type"] = "dataMatrixBarcode";
 
-        //if($this->ProcessTilde != null)
-        $jsonArray['processTilde'] = $this->ProcessTilde;
+        if($this->ProcessTilde !== null)
+            $jsonArray['processTilde'] = $this->ProcessTilde;
 
         if ($this->_DataMatrixSymbolSize != null) {
             $jsonArray['dataMatrixSymbolSize'] = $this->_DataMatrixSymbolSize;
@@ -110,11 +110,11 @@ class DataMatrixBarcodeElement extends Dim2BarcodeElement
             $jsonArray['yOffset'] = $this->YOffset;
         }
 
-        //if($this->EvenPages != null)
-        $jsonArray['evenPages'] = $this->EvenPages;
+        if($this->EvenPages !== null)
+            $jsonArray['evenPages'] = $this->EvenPages;
 
-        //if($this->OddPages != null)
-        $jsonArray['oddPages'] = $this->OddPages;
+        if($this->OddPages !== null)
+            $jsonArray['oddPages'] = $this->OddPages;
 
         return $jsonArray;
 

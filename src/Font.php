@@ -44,14 +44,14 @@ class Font
      * Gets or sets a boolean indicating whether to embed the font.
      *
      */
-    public $Embed;
+    public ?bool $Embed = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to subset embed the font.
      *
      */
-    public $Subset;
+    public ?bool $Subset = null;
 
     /**
      *
@@ -357,7 +357,7 @@ class Font
             $jsonArray["name"] = $this->_Name;
         }
 
-        if ($this->Embed != null) {
+        if ($this->Embed !== null) {
             $jsonArray["embed"] = $this->Embed;
         }
 

@@ -18,168 +18,168 @@ class MergeOptions
      * Gets or sets a boolean indicating whether to import document information when merging.
      *
      */
-    public $DocumentInfo = "null";
+    public ?bool $DocumentInfo = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import document level JavaScript when merging.
      *
      */
-    public $DocumentJavaScript = "null";
+    public ?bool $DocumentJavaScript = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import document properties when merging.
      *
      */
-    public $DocumentProperties = "null";
+    public ?bool $DocumentProperties = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import embedded files when merging.
      *
      */
-    public $EmbeddedFiles = "null";
+    public ?bool $EmbeddedFiles = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import form fields when merging.
      *
      */
-    public $FormFields = "null";
+    public ?bool $FormFields = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import XFA form data when merging.
      *
      */
-    public $FormsXfaData = "null";
+    public ?bool $FormsXfaData = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import logical structure (tagging information) when merging.
      *
      */
-    public $LogicalStructure = "null";
+    public ?bool $LogicalStructure = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import document's opening action (initial page and zoom settings) when merging.
      *
      */
-    public $OpenAction = "null";
+    public ?bool $OpenAction = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import optional content when merging.
      *
      */
-    public $OptionalContentInfo = "null";
+    public ?bool $OptionalContentInfo = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import outlines and bookmarks when merging.
      *
      */
-    public $Outlines = "null";
+    public ?bool $Outlines = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import OutputIntent when merging.
      *
      */
-    public $OutputIntent = "null";
+    public ?bool $OutputIntent = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import PageAnnotations when merging.
      *
      */
-    public $PageAnnotations = "null";
+    public ?bool $PageAnnotations = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import PageLabelsAndSections when merging.
      *
      */
-    public $PageLabelsAndSections = "null";
+    public ?bool $PageLabelsAndSections = null;
 
     /**
      *
      * Gets or sets the root form field for imported form fields. Useful when merging a PDF repeatedly to have a better contorl on the form field names.
      *
      */
-    public $RootFormField = "null";
+    public ?string $RootFormField = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to import XmpMetadata when merging.
      *
      */
-    public $XmpMetadata = "null";
+    public ?bool $XmpMetadata = null;
 
     public function GetJsonSerializeString()
     {
 
         $jsonArray = array();
 
-        if ($this->DocumentInfo != "null") {
+        if ($this->DocumentInfo !== null) {
             $jsonArray['documentInfo'] = $this->DocumentInfo;
         }
 
-        if ($this->DocumentJavaScript != "null") {
+        if ($this->DocumentJavaScript !== null) {
             $jsonArray['documentJavaScript'] = $this->DocumentJavaScript;
         }
 
-        if ($this->DocumentProperties != "null") {
+        if ($this->DocumentProperties !== null) {
             $jsonArray['documentProperties'] = $this->DocumentProperties;
         }
 
-        if ($this->EmbeddedFiles != "null") {
+        if ($this->EmbeddedFiles !== null) {
             $jsonArray['embeddedFiles'] = $this->EmbeddedFiles;
         }
 
-        if ($this->FormFields != "null") {
+        if ($this->FormFields !== null) {
             $jsonArray['formFields'] = $this->FormFields;
         }
 
-        if ($this->FormsXfaData != "null") {
+        if ($this->FormsXfaData !== null) {
             $jsonArray['formsXfaData'] = $this->FormsXfaData;
         }
 
-        if ($this->LogicalStructure != "null") {
+        if ($this->LogicalStructure !== null) {
             $jsonArray['logicalStructure'] = $this->LogicalStructure;
         }
 
-        if ($this->OpenAction != "null") {
+        if ($this->OpenAction !== null) {
             $jsonArray['openAction'] = $this->OpenAction;
         }
 
-        if ($this->OptionalContentInfo != "null") {
+        if ($this->OptionalContentInfo !== null) {
             $jsonArray['optionalContentInfo'] = $this->OptionalContentInfo;
         }
 
-        if ($this->Outlines != "null") {
+        if ($this->Outlines !== null) {
             $jsonArray['outlines'] = $this->Outlines;
         }
 
-        if ($this->OutputIntent != "null") {
+        if ($this->OutputIntent !== null) {
             $jsonArray['outputIntent'] = $this->OutputIntent;
         }
 
-        if ($this->PageAnnotations != "null") {
+        if ($this->PageAnnotations !== null) {
             $jsonArray['pageAnnotations'] = $this->PageAnnotations;
         }
 
-        if ($this->PageLabelsAndSections != "null") {
+        if ($this->PageLabelsAndSections !== null) {
             $jsonArray['pageLabelsAndSections'] = $this->PageLabelsAndSections;
         }
 
-        if ($this->RootFormField != "null") {
+        if ($this->RootFormField !== null) {
             $jsonArray['rootFormField'] = $this->RootFormField;
         }
 
-        if ($this->XmpMetadata != "null") {
+        if ($this->XmpMetadata !== null) {
             $jsonArray['xmpMetadata'] = $this->XmpMetadata;
         }
 

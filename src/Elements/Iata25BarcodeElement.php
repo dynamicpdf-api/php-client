@@ -37,7 +37,7 @@ class Iata25BarcodeElement extends TextBarcodeElement
      * Gets or sets a value indicating if the check digit should be added to the value.
      *
      */
-    public $IncludeCheckDigit = false;
+    public ?bool $IncludeCheckDigit = null;
 
     /**
      *
@@ -52,8 +52,8 @@ class Iata25BarcodeElement extends TextBarcodeElement
 
         $jsonArray["type"] = "iata25Barcode";
 
-        //if($this->IncludeCheckDigit != null)
-        $jsonArray['includeCheckDigit'] = $this->IncludeCheckDigit;
+        if($this->IncludeCheckDigit !== null)
+            $jsonArray['includeCheckDigit'] = $this->IncludeCheckDigit;
 
         if ($this->Height != null) {
             $jsonArray['height'] = $this->Height;
@@ -72,7 +72,7 @@ class Iata25BarcodeElement extends TextBarcodeElement
             $jsonArray['fontSize'] = $this->FontSize;
         }
 
-        if ($this->ShowText != "null") {
+        if ($this->ShowText !== null) {
             $jsonArray['showText'] = $this->ShowText;
         }
 
@@ -104,11 +104,11 @@ class Iata25BarcodeElement extends TextBarcodeElement
             $jsonArray['yOffset'] = $this->YOffset;
         }
 
-        //if($this->EvenPages != null)
-        $jsonArray['evenPages'] = $this->EvenPages;
+        if($this->EvenPages !== null)
+            $jsonArray['evenPages'] = $this->EvenPages;
 
-        //if($this->OddPages != null)
-        $jsonArray['oddPages'] = $this->OddPages;
+        if($this->OddPages !== null)
+            $jsonArray['oddPages'] = $this->OddPages;
 
         return $jsonArray;
     }

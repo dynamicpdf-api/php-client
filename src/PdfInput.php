@@ -77,7 +77,9 @@ class PdfInput extends Input
 
         //---------------------------------------------------
 
-        $jsonArray['templateId'] = $this->_TemplateId;
+        if ($this->_TemplateId != null) {
+            $jsonArray['templateId'] = $this->_TemplateId;
+        }
 
         $jsonArray['resourceName'] = $this->ResourceName;
 

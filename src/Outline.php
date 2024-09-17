@@ -52,7 +52,7 @@ class Outline
      * Gets or sets a value specifying if the outline is expanded.
      *
      */
-    public $Expanded;
+    public ?bool $Expanded = null;
 
     /**
      *
@@ -125,7 +125,7 @@ class Outline
             $jsonArray['style'] = $this->Style;
         }
 
-        if ($this->Expanded != null) {
+        if ($this->Expanded !== null) {
             $jsonArray['expanded'] = $this->Expanded;
         }
 

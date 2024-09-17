@@ -24,7 +24,7 @@ class PdfInstructions implements JsonSerializable
     public $_Tag;
     public $_Keywords = "";
     public $_Security = null;
-    public $_FlattenAllFormFields;
+    public $_FlattenAllFormFields = null;
     public $_RetainSignatureFormFields;
 
     public function __construct()
@@ -98,7 +98,7 @@ class PdfInstructions implements JsonSerializable
             $jsonArray['security'] = $this->_Security->GetJsonSerializeString();
         }
 
-        if ($this->_FlattenAllFormFields != null) {
+        if ($this->_FlattenAllFormFields !== null) {
             $jsonArray['flattenAllFormFields'] = $this->_FlattenAllFormFields;
         }
 

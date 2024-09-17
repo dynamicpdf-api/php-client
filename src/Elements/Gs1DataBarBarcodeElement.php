@@ -69,7 +69,7 @@ class Gs1DataBarBarcodeElement extends TextBarcodeElement
             $jsonArray['fontSize'] = $this->FontSize;
         }
 
-        if ($this->ShowText != "null") {
+        if ($this->ShowText !== null) {
             $jsonArray['showText'] = $this->ShowText;
         }
 
@@ -101,11 +101,11 @@ class Gs1DataBarBarcodeElement extends TextBarcodeElement
             $jsonArray['yOffset'] = $this->YOffset;
         }
 
-        //if($this->EvenPages != null)
-        $jsonArray['evenPages'] = $this->EvenPages;
+        if($this->EvenPages !== null)
+            $jsonArray['evenPages'] = $this->EvenPages;
 
-        //if($this->OddPages != null)
-        $jsonArray['oddPages'] = $this->OddPages;
+        if($this->OddPages !== null)
+            $jsonArray['oddPages'] = $this->OddPages;
 
         return $jsonArray;
     }

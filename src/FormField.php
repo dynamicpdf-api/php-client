@@ -44,14 +44,14 @@ class FormField implements JsonSerializable
      * Gets or sets a boolean indicating whether to flatten the form field.
      *
      */
-    public $Flatten = null;
+    public ?bool $Flatten = null;
 
     /**
      *
      * Gets or sets a boolean indicating whether to remove the form field.
      *
      */
-    public $Remove = null;
+    public ?bool $Remove = null;
 
     public function jsonSerialize(): mixed
     {
@@ -59,13 +59,13 @@ class FormField implements JsonSerializable
         $output['name'] = $this->Name;
         $output['value'] = $this->Value;
 
-        if ($this->Flatten != null) {
+        if ($this->Flatten !== null) {
             $output['flatten'] = $this->Flatten;
         } else {
             $output['flatten'] = false;
         }
 
-        if ($this->Remove != null) {
+        if ($this->Remove !== null) {
             $output['remove'] = $this->Remove;
         } else {
             $output['remove'] = false;

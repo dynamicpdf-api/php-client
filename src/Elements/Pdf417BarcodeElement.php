@@ -53,14 +53,14 @@ class Pdf417BarcodeElement extends Dim2BarcodeElement
      * Gets or Sets a boolean indicating whether to process the tilde character.
      *
      */
-    public $ProcessTilde = false;
+    public ?bool $ProcessTilde = null;
 
     /**
      *
      * Gets or sets the Compact Pdf417.
      *
      */
-    public $CompactPdf417 = false;
+    public ?bool $CompactPdf417 = null;
 
     /**
      *
@@ -95,11 +95,11 @@ class Pdf417BarcodeElement extends Dim2BarcodeElement
             $jsonArray['yDimension'] = $this->YDimension;
         }
 
-        //if($this->ProcessTilde != null)
-        $jsonArray['processTilde'] = $this->ProcessTilde;
+        if($this->ProcessTilde !== null)
+            $jsonArray['processTilde'] = $this->ProcessTilde;
 
-        //if($this->CompactPdf417 != null)
-        $jsonArray['compactPdf417'] = $this->CompactPdf417;
+        if($this->CompactPdf417 !== null)
+            $jsonArray['compactPdf417'] = $this->CompactPdf417;
 
         if ($this->ErrorCorrection != null) {
             $jsonArray['errorCorrection'] = $this->ErrorCorrection;
@@ -143,11 +143,11 @@ class Pdf417BarcodeElement extends Dim2BarcodeElement
             $jsonArray['yOffset'] = $this->YOffset;
         }
 
-        //if($this->EvenPages != null)
-        $jsonArray['evenPages'] = $this->EvenPages;
+        if($this->EvenPages !== null)
+            $jsonArray['evenPages'] = $this->EvenPages;
 
-        //if($this->OddPages != null)
-        $jsonArray['oddPages'] = $this->OddPages;
+        if($this->OddPages !== null)
+            $jsonArray['oddPages'] = $this->OddPages;
 
         return $jsonArray;
 

@@ -36,7 +36,7 @@ abstract class TextBarcodeElement extends BarcodeElement
      * Gets or sets a value indicating if the value should be placed as text below the barcode.
      *
      */
-    public $ShowText = "null";
+    public ?bool $ShowText = null;
     public $_Resource;
     public $_TextFont;
     public $_FontName;

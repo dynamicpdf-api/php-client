@@ -45,7 +45,7 @@ class AztecBarcodeElement extends Dim2BarcodeElement
      * documentation for the Encoding.RegisterProvider method.".
      *
      */
-    public $ProcessTilde = false;
+    public ?bool $ProcessTilde = null;
 
     /**
      *
@@ -73,7 +73,7 @@ class AztecBarcodeElement extends Dim2BarcodeElement
      * R101xC101, R105xC105, R109xC109, however it is recommended to set Auto.
      *
      */
-    public $ReaderInitializationSymbol = false;
+    public ?bool $ReaderInitializationSymbol = null;
 
     public function GetJsonSerializeString()
     {
@@ -82,8 +82,8 @@ class AztecBarcodeElement extends Dim2BarcodeElement
 
         $jsonArray["type"] = "aztecBarcode";
 
-        //if($this->ProcessTilde != null)
-        $jsonArray['processTilde'] = $this->ProcessTilde;
+        if($this->ProcessTilde !== null)
+            $jsonArray['processTilde'] = $this->ProcessTilde;
 
         if ($this->SymbolSize != null) {
             $jsonArray['symbolSize'] = $this->SymbolSize;
@@ -93,8 +93,8 @@ class AztecBarcodeElement extends Dim2BarcodeElement
             $jsonArray['aztecErrorCorrection'] = $this->AztecErrorCorrection;
         }
 
-        //if($this->ReaderInitializationSymbol != null)
-        $jsonArray['readerInitializationSymbol'] = $this->ReaderInitializationSymbol;
+        if($this->ReaderInitializationSymbol !== null)
+            $jsonArray['readerInitializationSymbol'] = $this->ReaderInitializationSymbol;
 
         //--------------Dim2BarcodeElement------------------------------
 
@@ -130,11 +130,11 @@ class AztecBarcodeElement extends Dim2BarcodeElement
             $jsonArray['yOffset'] = $this->YOffset;
         }
 
-        //if($this->EvenPages != null)
-        $jsonArray['evenPages'] = $this->EvenPages;
+        if($this->EvenPages !== null)
+        	$jsonArray['evenPages'] = $this->EvenPages;
 
-        //if($this->OddPages != null)
-        $jsonArray['oddPages'] = $this->OddPages;
+        if($this->OddPages !== null)
+        	$jsonArray['oddPages'] = $this->OddPages;
 
         return $jsonArray;
 

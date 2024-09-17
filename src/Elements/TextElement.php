@@ -104,11 +104,11 @@ class TextElement extends Element
             $jsonArray['yOffset'] = $this->YOffset;
         }
 
-        if ($this->EvenPages != null) {
+        if ($this->EvenPages !== null) {
             $jsonArray['evenPages'] = $this->EvenPages;
         }
 
-        if ($this->OddPages != null) {
+        if ($this->OddPages !== null) {
             $jsonArray['oddPages'] = $this->OddPages;
         }
 
