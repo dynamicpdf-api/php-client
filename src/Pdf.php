@@ -11,7 +11,7 @@ require_once __DIR__ . '/PdfResource.php';
 require_once __DIR__ . '/PdfResponse.php';
 require_once __DIR__ . '/PageInput.php';
 require_once __DIR__ . '/OutlineList.php';
-
+require_once __DIR__ . '/AdditionalResourceType.php';
 
 /**
  *
@@ -41,11 +41,11 @@ class Pdf extends Endpoint
      * 
      * Adds additional resource to the endpoint.
      *  
-     * @param string $resource The resource file path.
-     * @param AdditionalResourceType $additionalResourceType The name of the resource.
-     * @param string The name of the resource.
+     * @param string|array $resource The resource file path or resource data.
+     * @param null|string $additionalResourceType The type of the additional resource.
+     * @param null|string The name of the resource.
      */
-    public function AddAdditionalResource(string $resource, AdditionalResourceType $additionalResourceType = null, string $resourceName = null)
+    public function AddAdditionalResource($resource, $additionalResourceType = null, $resourceName = null)
     {
         if (gettype($resource) == "string") {
             if ($resourceName == null)

@@ -4,6 +4,8 @@ namespace DynamicPDF\Api;
 
 
 include_once __DIR__ . '/Endpoint.php';
+include_once __DIR__ . '/AdditionalResourceType.php';
+include_once __DIR__ . '/ResourceType.php';
 
 class DlexLayout extends Endpoint
 {
@@ -45,7 +47,7 @@ class DlexLayout extends Endpoint
      * Adds additional resource to the endpoint.
      *  
      * @param string|array $resource The resource data.
-     * @param null|string|AdditionalResourceType $additionalResourceType The type of the additional resource..
+     * @param null|string $additionalResourceType The type of the additional resource..
      * @param null|string The name of the resource.
      */
     public function AddAdditionalResource($resource, $additionalResourceType = null, $resourceName = null)

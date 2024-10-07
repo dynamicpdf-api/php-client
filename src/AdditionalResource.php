@@ -1,6 +1,8 @@
 <?php
 namespace DynamicPDF\Api;
 
+include_once __DIR__ . '/ResourceType.php';
+
 class AdditionalResource extends Resource
 {
      /**
@@ -9,7 +11,7 @@ class AdditionalResource extends Resource
      * 
      * @param  string|array $resource The resource data..
      * @param  string $resourceName The name of the resource.
-     * @param  null|string|ResourceType $resourceType The type of the additional resource.
+     * @param  null|string $resourceType The type of the additional resource.
      */
     public function __construct($resource, string $resourceName, $resourceType = null)
     {       
