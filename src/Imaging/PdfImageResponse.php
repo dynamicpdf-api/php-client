@@ -34,14 +34,14 @@ class PdfImageResponse extends Response
      *
      * @var int
      */
-    public $HorizontalDpi;
+    public $HorizontalDpi = 0;
 
     /**
      * Vertical DPI.
      *
      * @var int
      */
-    public $VerticalDpi;
+    public $VerticalDpi = 0;
 
     /**
      * Initializes a new instance of the PdfImageResponse class.

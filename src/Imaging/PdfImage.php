@@ -118,7 +118,7 @@ class PdfImage extends Endpoint
         $url = $endPointUrl . '?' . http_build_query($params);
         curl_setopt($client, CURLOPT_URL, $url);
 
-        $retObject = new PdfImageResponse();
+        
         if ($this->resource === null) {
             throw new EndPointException("Required a pdf Resource.");
         }
@@ -171,46 +171,43 @@ class PdfImage extends Endpoint
         $outData = ob_get_contents();
         ob_end_clean();
 
-        if ($result === false) {
+        $retObject = new PdfImageResponse();
+        $retObject->IsSuccessful = false;
+        $retObject->StatusCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
+
+       
+        if ($result == true && $retObject->StatusCode == 200) {
+            $rasterizerResponse = json_decode($outData, true);
+
+            $imageType = $rasterizerResponse['contentType'];
+            $retObject->ContentType = $imageType;
+            $retObject->HorizontalDpi = $rasterizerResponse['horizontalDpi'];
+            $retObject->VerticalDpi = $rasterizerResponse['verticalDpi'];
+            $retObject->ImageFormat = substr($imageType, strpos($imageType, '/') + 1);
+
+            foreach ($rasterizerResponse['images'] as $img) {
+                $image = new Image();
+                $image->PageNumber = $img['pageNumber'] ?? 0; // Default to 0 if not present
+                $image->Data = $img['data'] ?? '';
+                $image->BilledPages = $img['billedPages'] ?? 0;
+                $image->Width = $img['width'] ?? 0;
+                $image->Height = $img['height'] ?? 0;
+                $retObject->Images[] = $image;
+            }
+
+            $retObject->IsSuccessful = true;
+            $retObject->StatusCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
+        } 
+        else {
             $retObject->ErrorJson = $outData;
             $errObj = json_decode($outData);
             $retObject->ErrorMessage = $errObj->message ?? $errObj->title ?? null;
-            $retObject->IsSuccessful = false;
             $retObject->ErrorId = $errObj->id ?? $errObj->traceId ?? null;
-        } else {
-            $jsonString = $outData;
-            $rasterizerResponse = json_decode($jsonString, true);
-
-            if (json_last_error() === JSON_ERROR_NONE) {
-
-                $imageType = $rasterizerResponse['contentType'];
-                $retObject->ContentType = $imageType;
-                $retObject->HorizontalDpi = $rasterizerResponse['horizontalDpi'];
-                $retObject->VerticalDpi = $rasterizerResponse['verticalDpi'];
-                $retObject->ImageFormat = substr($imageType, strpos($imageType, '/') + 1);
-
-                foreach ($rasterizerResponse['images'] as $img) {
-                    $image = new Image();
-                    $image->PageNumber = $img['pageNumber'] ?? 0; // Default to 0 if not present
-                    $image->Data = $img['data'] ?? '';
-                    $image->BilledPages = $img['billedPages'] ?? 0;
-                    $image->Width = $img['width'] ?? 0;
-                    $image->Height = $img['height'] ?? 0;
-                    $retObject->Images[] = $image;
-                }
-
-                $retObject->IsSuccessful = true;
-                $retObject->StatusCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
-            } else {
-                // Handle JSON decode error
-                $retObject->IsSuccessful = false;
-                $retObject->ErrorMessage = ('JSON decode error: ' . json_last_error_msg());
-                $retObject->StatusCode = (curl_getinfo($client, CURLINFO_HTTP_CODE));
-            }
         }
 
         curl_close($client);
 
         return $retObject;
     }
+
 }
