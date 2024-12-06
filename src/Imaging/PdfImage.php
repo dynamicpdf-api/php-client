@@ -199,6 +199,8 @@ class PdfImage extends Endpoint
             $retObject->StatusCode = curl_getinfo($client, CURLINFO_RESPONSE_CODE);
         } 
         else {
+            if ($retObject->StatusCode == 401)
+                throw new EndpointException("Invalid Api Key specified"); 
             $retObject->ErrorJson = $outData;
             $errObj = json_decode($outData);
             $retObject->ErrorMessage = $errObj->message ?? $errObj->title ?? null;

@@ -170,7 +170,10 @@ class DlexLayout extends Endpoint
         if ($result && strncmp($outData, '%PDF', 4) == 0) {
             $retObject->IsSuccessful = true;
             $retObject->Content = $outData;
-        } elseif (trim($outData)[0] == '{') {
+        }
+        else {
+            if($retObject->StatusCode == 401)
+                throw new EndpointException("Invalid api key specified.");     
             $retObject->ErrorJson = $outData;
             $errObj = json_decode($outData);
             $retObject->ErrorMessage = $errObj->message ?? $errObj->title ?? null;

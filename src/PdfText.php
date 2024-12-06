@@ -85,7 +85,9 @@ class PdfText extends Endpoint
         if ($result == true && $retObject->StatusCode == 200) {
             $retObject->IsSuccessful = true;
             $retObject->JsonContent = $retObject->Content = $outData;
-        } else {
+        } else{
+            if ($retObject->StatusCode == 401)
+                throw new EndpointException("Invalid Api Key specified");           
             $retObject->ErrorJson = $outData;
             $errObj = json_decode($outData);
             $retObject->ErrorMessage = $errObj->message ?? $errObj->title ?? null;
