@@ -22,7 +22,7 @@ For more information, please visit [DynamicPDF API](https://dpdf.io/ "DynamicPDF
 
 ## Installation
 
-Use Composer to install the client library.
+Use Composer to install the client library. You can also download a zip file that you can use to install the client library manually.
 
 ### Composer
 
@@ -36,6 +36,16 @@ The preferred method is via [Composer](https://getcomposer.org/). Install Compos
 ```
 composer update
 ```
+
+### Manual Installation
+
+To manually install the client library, download the zip file from [Github](https://codeload.github.com/dynamicpdf-api/php-client/zip/refs/heads/main). Unzip the php-client-library on your local machine and then use the library in you local code by requiring the following file.
+
+```php
+require_once '<path-to-client-library>/src/DpdfAPI.php'
+```
+
+A sample file, `PdfExample.php` is included in the zip file demonstrating its use.
 
 ## Documentation
 
