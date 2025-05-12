@@ -76,6 +76,7 @@ require_once 'SecurityType.php';
 require_once 'SignatureFieldInformation.php';
 require_once 'Template.php';
 require_once 'TextFieldInformation.php';
+require_once 'TextOrder.php';
 require_once 'TextReplace.php';
 require_once 'UnitConverter.php';
 require_once 'UrlAction.php';

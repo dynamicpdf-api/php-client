@@ -22,7 +22,7 @@ class PdfTextResponse extends JsonResponse
     public function __construct(string $jsonContent = "")
     {
         parent::__construct($jsonContent);
-        $this->Content = json_decode($jsonContent);
+        $this->Content = json_decode($jsonContent, true);
     }
 
     /**
