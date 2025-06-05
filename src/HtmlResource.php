@@ -20,7 +20,7 @@ class HtmlResource extends Resource
      * @param  string $file The input html string.
      * @param string $resourceName The name of the resource.
      */
-    public function __construct(string $file, string $resourceName = null)
+    public function __construct(string $file, ?string $resourceName = null)
     {
         parent::__construct();
         $this->_Data = mb_convert_encoding($file, "UTF-8");

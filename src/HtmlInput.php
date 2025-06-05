@@ -23,7 +23,7 @@ class HtmlInput extends ConverterInput
      * @param  string $orientation The page orientation of the output PDF.
      * @param  float $margin The page margins of the output PDF.
      */
-    public function __construct($resource, string $basePath = null, ?string $pageSize = null, ?string $orientation = null, ?float $margin = null)
+    public function __construct($resource, ?string $basePath = null, ?string $pageSize = null, ?string $orientation = null, ?float $margin = null)
     {
         parent::__construct($resource, $pageSize, $orientation, $margin);
 

@@ -21,7 +21,7 @@ class ImageResource extends Resource
      * @param  string|array|stream $file The image file path or the byte array of the image file or the stream of the image file.
      * @param  string $resourceName The name of the resource.
      */
-    public function __construct($file, string $resourceName = null)
+    public function __construct($file, ?string $resourceName = null)
     {
         parent::__construct($file, $resourceName);
         $this->Type = ResourceType::Image;

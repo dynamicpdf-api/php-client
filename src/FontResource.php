@@ -7,7 +7,7 @@ include_once __DIR__ . '/ResourceType.php';
 
 class FontResource extends Resource
 {
-    public function __construct($file, string $resourceName = null)
+    public function __construct($file, ?string $resourceName = null)
     {
         parent::__construct($file, $resourceName);
     }

@@ -55,7 +55,7 @@ class ImageInfo extends Endpoint
 
 
 
-        curl_setopt($client, CURLOPT_BINARYTRANSFER, 1);
+        curl_setopt($client, CURLOPT_RETURNTRANSFER, 0);
 
         ob_start();
         $result = curl_exec($client);

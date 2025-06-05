@@ -159,7 +159,7 @@ class Pdf extends Endpoint
      *
      * @return PdfInput PdfInput object.
      */
-    public function AddPdf($resource, MergeOptions $options = null)
+    public function AddPdf($resource, ?MergeOptions $options = null)
     {
         if (gettype($resource) == "object") {
             $input = new PdfInput($resource);
@@ -203,7 +203,7 @@ class Pdf extends Endpoint
      * @param  string $orientation The Page orientation of the PDF page
      * @return HtmlInput HtmlInput object.
      */
-    public function AddHtml($html, string $basepath = null, ?string $size = null, ?string $orientation = null, ?float $margins = null)
+    public function AddHtml($html, ?string $basepath = null, ?string $size = null, ?string $orientation = null, ?float $margins = null)
     {
         $resource = $html;
         if (gettype($resource) == "string") {

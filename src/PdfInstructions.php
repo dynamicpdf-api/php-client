@@ -34,7 +34,8 @@ class PdfInstructions implements JsonSerializable
         $this->_Subject = "";
         $this->_Keywords = "";
     }
-    public function jsonSerialize(): mixed
+
+    public function jsonSerialize() : array
     {
         $inputJsonArray = array();
 

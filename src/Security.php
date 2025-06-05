@@ -11,7 +11,7 @@ include_once __DIR__ . '/SecurityType.php';
 class Security
 {
 
-    public function __construct(string $userPwd = null, string $ownerPwd = null)
+    public function __construct(?string $userPwd = null, ?string $ownerPwd = null)
     {
         $this->UserPassword = $userPwd;
         $this->OwnerPassword = $ownerPwd;

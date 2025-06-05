@@ -18,7 +18,7 @@ class ExcelResource extends Resource
      *
      * @param  string|array|stream $file The excel file path or the byte array of the excel file or the stream of the excel file.
      */
-    public function __construct($file, string $resourceName = null)
+    public function __construct($file, ?string $resourceName = null)
     {
         parent::__construct($file, $resourceName);
         if ($this->isNullOrWhiteSpace($resourceName) == false) {

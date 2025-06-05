@@ -19,7 +19,7 @@ class FormField implements JsonSerializable
      * @param  string $name The name of the form field.
      * @param  string $value The value of the form field.
      */
-    public function __construct(string $name, string $value = null)
+    public function __construct(string $name, ?string $value = null)
     {
         $this->Name = $name;
         $this->Value = $value;
@@ -53,7 +53,7 @@ class FormField implements JsonSerializable
      */
     public ?bool $Remove = null;
 
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): array
     {
         $output = array();
         $output['name'] = $this->Name;

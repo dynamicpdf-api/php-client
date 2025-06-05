@@ -18,7 +18,7 @@ class WordResource extends Resource
      *
      * @param  string|array|stream $file The word file path or the byte array of the word file or the stream of the word file.
      */
-    public function __construct($file, string $resourceName = null)
+    public function __construct($file, ?string $resourceName = null)
     {
         parent::__construct($file, $resourceName);
         if ($this->isNullOrWhiteSpace($resourceName) == false) {

@@ -26,7 +26,7 @@ class Font
         $this->_Name = md5(uniqid(rand(), true));
     }
 
-    public static function CreateFont(FontResource $fontResource = null, string $resourceName = null)
+    public static function CreateFont(?FontResource $fontResource = null, ?string $resourceName = null)
     {
         $font = new Font();
         $font->_Resource = $fontResource;
@@ -277,14 +277,14 @@ class Font
      * @param  string $filePath The file path of the font file.
      * @param  string $resourceName The resource name for the font.
      */
-    public static function FromFile(string $filePath, string $resourceName = null)
+    public static function FromFile(string $filePath, ?string $resourceName = null)
     {
         $resource = new FontResource($filePath, $resourceName);
         $font = Font::CreateFont($resource, $resource->ResourceName);
         return $font;
     }
 
-    public static function FromStream($stream, string $resourceName = null)
+    public static function FromStream($stream, ?string $resourceName = null)
     {
         $resource = new FontResource($stream, $resourceName);
         return Font::CreateFont($resource, $resource->ResourceName);

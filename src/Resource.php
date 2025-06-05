@@ -37,7 +37,13 @@ abstract class Resource
         }
     }
 
-    public function __set(string $name, mixed $value): void
+    /**
+     * Sets the resource.
+     *
+     * @param string $name 
+     * @param mixed $value
+     */
+    public function __set(string $name, $value): void
     {
         switch ($name) {
             case "Data":
@@ -49,7 +55,12 @@ abstract class Resource
         }
     }
 
-    public function __get(string $name): mixed
+    /**
+     * Gets the resource.
+     *
+     * @param string $name
+     */
+    public function __get(string $name)
     {
         switch ($name) {
             case "Data":

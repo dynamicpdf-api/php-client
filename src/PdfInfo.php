@@ -56,7 +56,7 @@ class PdfInfo extends Endpoint
         //$url = Endpoint::$DefaultBaseUrl."/".$this->EndpointName . '?' . http_build_query($params);
         //curl_setopt($client, CURLOPT_URL, $url);
 
-        curl_setopt($client, CURLOPT_BINARYTRANSFER, 1);
+        curl_setopt($client, CURLOPT_RETURNTRANSFER, 0);
 
         ob_start();
         $result = curl_exec($client);

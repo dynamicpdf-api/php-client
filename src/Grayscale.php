@@ -28,7 +28,7 @@ class Grayscale extends Color
 
     }
 
-    public static function CreateGrayscale(string $colorString = null)
+    public static function CreateGrayscale(?string $colorString = null)
     {
         $grayscale = new Grayscale();
         $grayscale->_ColorString = $colorString;

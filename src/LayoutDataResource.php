@@ -21,7 +21,7 @@ class LayoutDataResource extends Resource
      * @param  array|string $layout Data to create PDF report as an array of JSON content or as a string of JSON file path.
      * @param  string $layoutDataResourceName The name for layout data resource.
      */
-    public function __construct($layout = null, string $layoutDataResourceName = null)
+    public function __construct($layout = null, ?string $layoutDataResourceName = null)
     {
         if (gettype($layout) == "array") {
             $this->Data = implode($layout);

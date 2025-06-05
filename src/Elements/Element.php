@@ -12,7 +12,7 @@ include_once __DIR__ . '/ElementPlacement.php';
 abstract class Element
 {
 
-    public function __construct(string $value = null, string $placement = null, float $xOffset = 0, float $yOffset = 0)
+    public function __construct(?string $value = null, ?string $placement = null, float $xOffset = 0, float $yOffset = 0)
     {
         $this->_InputValue = $value;
         $this->Placement = $placement;

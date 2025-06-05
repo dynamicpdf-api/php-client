@@ -19,7 +19,7 @@ class DlexResource extends Resource
      * @param  string|array|stream $dlex The dlex file path or the byte array of the dlex file or the stream of the dlex file.
      * @param  string $resourceName The name of the resource.
      */
-    public function __construct($dlex, string $resourceName = null)
+    public function __construct($dlex, ?string $resourceName = null)
     {
         parent::__construct($dlex, $resourceName);
     }
