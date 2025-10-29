@@ -18,7 +18,7 @@ For more information, please visit [DynamicPDF API](https://dpdf.io/ "DynamicPDF
 
 ## Requirements
 
-- [PHP 7.3.0 or higher](https://www.php.net/)
+- [PHP 7.4.0 or higher](https://www.php.net/)
 
 ## Installation
 

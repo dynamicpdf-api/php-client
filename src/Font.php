@@ -1,9 +1,12 @@
 <?php
 namespace DynamicPDF\Api;
 
+use Exception;
+
 
 include_once __DIR__ . '/FontResource.php';
 include_once __DIR__ . '/Font.php';
+include_once __DIR__ . '/FullNameTable.php';
 
 /**
  *
@@ -333,6 +336,91 @@ class Font
         return $font;
     }
 
+    /**
+    * Gets the font from the System.
+    *  using the system font name and resource name.
+    *  @param $fontName The name of the system font.
+    *  @param $resourceName The resource name of the system font.
+    *  @return Font|null The font object. 
+    */
+    public static function FromSystem($fontName, $resourceName = "")
+    {
+        if ($fontName === null) return null;
+        if ($fontName === '' || strlen($fontName) < 1) return null;
+
+        $fontName = str_replace(["-", " "], "", $fontName);
+
+        if (FONT::$loadRequired) {
+            FONT::loadFonts();
+        }
+
+        foreach (FONT::$fontDetails as $fontdetails) {
+            if (strcasecmp($fontdetails->_FontName, $fontName) === 0) {
+                $resource = new FontResource($fontdetails->_FilePath, $resourceName);
+                return Font::CreateFont($resource,$resource->ResourceName);
+            }
+        }
+        return null;
+    }
+
+    private static function loadFonts(): void
+    {
+        FONT::init(); // make sure Fonts dir is set
+
+        if (FONT::$loadRequired) {
+            if (FONT::$pathToFontsResourceDirectory !== null && FONT::$pathToFontsResourceDirectory !== "") {
+
+                // Get all files from the directory
+                $allFiles = scandir(FONT::$pathToFontsResourceDirectory);
+
+                foreach ($allFiles as $file) {
+                    $fullPath = FONT::$pathToFontsResourceDirectory . DIRECTORY_SEPARATOR . $file;
+
+                    if (is_dir($fullPath)) {
+                        continue; // skip directories
+                    }
+
+                    $buffer = file_get_contents($fullPath);
+
+                    $nameTable = FONT::readFontNameTable($buffer);
+
+                    if ($nameTable !== null && $nameTable->fontName !== "") {
+                        array_push(FONT::$fontDetails, new FontInformation($nameTable->fontName, $fullPath));
+                    }
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Read the 'name' table from a font file buffer.
+     */
+    private static function readFontNameTable($buffer)
+    {
+        try {
+            $intTableCount = (ord($buffer[4]) << 8) | ord($buffer[5]);
+
+            if ($intTableCount > 0) {
+                $tableDirOffset = 12;
+                $bytTableDirectory = substr($buffer, $tableDirOffset, $intTableCount * 16);
+
+                for ($i = 0; $i < strlen($bytTableDirectory); $i += 16) {
+                    $tag = (ord($bytTableDirectory[$i]) << 24) |
+                           (ord($bytTableDirectory[$i+1]) << 16) |
+                           (ord($bytTableDirectory[$i+2]) << 8) |
+                           ord($bytTableDirectory[$i+3]);
+
+                    if ($tag === 0x6E616D65) { // "name"
+                        return FullNameTable::fromBuffer($buffer, $bytTableDirectory, $i);
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            return null;
+        }
+        return null;
+    }
         
     private static $timesRoman = null;
     private static $timesBold = null;
@@ -349,11 +437,22 @@ class Font
     private static $symbol = null;
     private static $zapfDingbats = null;
     private $data = array();
+    private static $fontDetails = array();
+    private static bool $loadRequired = true;
+    private static string $pathToFontsResourceDirectory = "";
+
+    private static function init(): void
+    {
+        $windir = getenv("WINDIR");
+        if ($windir !== false && $windir !== "") {
+            FONT::$pathToFontsResourceDirectory = $windir . DIRECTORY_SEPARATOR . "Fonts";
+        }
+    }
 
     public function GetJsonSerializeString()
     {
         $jsonArray = array();
-        if ($this->_Name != null) {
+        if ($this->_Name !== null) {
             $jsonArray["name"] = $this->_Name;
         }
 
@@ -361,11 +460,11 @@ class Font
             $jsonArray["embed"] = $this->Embed;
         }
 
-        if ($this->Subset != null) {
+        if ($this->Subset !== null) {
             $jsonArray["subset"] = $this->Subset;
         }
 
-        if ($this->ResourceName != null) {
+        if ($this->ResourceName !== null) {
             $jsonArray["resourceName"] = $this->ResourceName;
         }
 

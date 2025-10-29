@@ -29,5 +29,5 @@ class SecurityType
      * RC4 128 bit security.
      *
      */
-    public const RC4128 = "aC4128";
+    public const RC4128 = "rc4128";
 }
