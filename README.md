@@ -11,6 +11,7 @@ The DynamicPDF API consists of the following endpoints.
 * `image-info`
 * `pdf`
 * `pdf-info`
+* `pdf-security-info`
 * `pdf-text`
 * `pdf-xmp`
 
@@ -57,6 +58,7 @@ A sample file, `PdfExample.php` is included in the zip file demonstrating its us
 | `dlex-layout` | [API Users Guide - `dlex-layout`](https://dpdf.io/docs/usersguide/cloud-api/cloud-api-dlex-layout) | [`dlex-layout`](https://dpdf.io/docs/usersguide/cloud-api/client-libraries/client-api-dlex-layout) | Returns a PDF after processing a DLEX file with it's associated JSON data. |
 | `image-info`  | [API Users Guide - `image-info`](https://dpdf.io/docs/usersguide/cloud-api/cloud-api-image-info) | [`image-info`](https://dpdf.io/docs/usersguide/cloud-api/client-libraries/client-api-image-info) | Returns image metadata as a JSON document.                   |
 | `pdf`         | [API Users Guide - `pdf`](https://dpdf.io/docs/usersguide/cloud-api/cloud-api-pdf) | [`pdf`](https://dpdf.io/docs/usersguide/cloud-api/client-libraries/client-api-pdf) | Returns a PDF after performing one of the pdf endpoint's tasks (`page`, `dlex`, `image`) or merging. |
+| `pdf-security-info` | [API Users Guide - `pdf-security-info`](https://dpdf.io/docs/usersguide/cloud-api/cloud-api-pdf-security-info) | [`pdf-security-info`](https://dpdf.io/docs/usersguide/cloud-api/client-libraries/cloud-api-pdf-security-info) | Returns PDFs Security metadata as a JSON document. |
 | `pdf-info`    | [API Users Guide - `pdf-Info`](https://dpdf.io/docs/usersguide/cloud-api/cloud-api-pdf-info) | [`pdf-info`](https://dpdf.io/docs/usersguide/cloud-api/client-libraries/client-api-pdf-info) | Returns PDF metadata as a JSON document.                     |
 | `pdf-text`    | [API Users Guide - `pdf-text`](https://dpdf.io/docs/usersguide/cloud-api/cloud-api-pdf-text) | [`pdf-text`](https://dpdf.io/docs/usersguide/cloud-api/client-libraries/client-api-pdf-text) | Returns the text from a PDF as a JSON document.              |
 | `pdf-xmp`     | [API Users Guide - `pdf-xmp`](https://dpdf.io/docs/usersguide/cloud-api/cloud-api-pdf-xmp) | [`pdf-xmp`](https://dpdf.io/docs/usersguide/cloud-api/client-libraries/client-api-pdf-xmp) | Returns XMP metadata from a PDF.                             |

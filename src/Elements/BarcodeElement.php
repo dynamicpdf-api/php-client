@@ -39,5 +39,5 @@ abstract class BarcodeElement extends Element
      * Gets or sets the value of the barcode.
      *
      */
-    public $Value;
+    protected $Value;
 }

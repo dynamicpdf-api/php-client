@@ -3,6 +3,7 @@ namespace DynamicPDF\Api;
 
 
 include_once __DIR__ . '/JsonResponse.php';
+include_once __DIR__ . '/PdfSecurityInfo.php';
 
 /**
  *
@@ -17,10 +18,13 @@ class PdfSecurityInfoResponse extends JsonResponse
      *
      * @param  string $jsonContent The PdfSecurityInfo content of the response.
      */
-    public function __construct(string $jsonContent = "")
+    public function __construct(string $jsonContent)
     {
         parent::__construct($jsonContent);
-        $this->Content = json_decode($jsonContent,true);
+
+        if ($jsonContent !== null) {
+            $this->Content = new PdfSecurityInfo($this->JsonContent);
+        }
     }
 
     /**

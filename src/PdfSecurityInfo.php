@@ -11,11 +11,35 @@ include_once __DIR__ . '/EncryptionType.php';
 class PdfSecurityInfo
 {
 
-    public ?string $encryptionTypeString = null;
+    public function __construct(string $json)
+    {
+        $data = json_decode($json, true);
+
+        if (!is_array($data)) {
+            return;
+        }
+
+        $this->EncryptionTypeString = $data['encryptionType'] ?? null;
+        $this->EncryptionType = $this->GetEncryptionType();
+        $this->AllowEdit = $data['allowEdit'] ?? null;
+        $this->AllowPrint = $data['allowPrint'] ?? null;
+        $this->AllowUpdateAnnotsAndFields = $data['allowUpdateAnnotsAndFields'] ?? null;
+        $this->AllowCopy = $data['allowCopy'] ?? null;
+        $this->AllowHighResolutionPrinting = $data['allowHighResolutionPrinting'] ?? null;
+        $this->AllowDocumentAssembly = $data['allowDocumentAssembly'] ?? null;
+        $this->AllowFormFilling = $data['allowFormFilling'] ?? null;
+        $this->AllowAccessibility = $data['allowAccessibility'] ?? null;
+        $this->EncryptAllExceptMetadata = $data['encryptAllExceptMetadata'] ?? null;
+        $this->EncryptOnlyFileAttachments = $data['encryptOnlyFileAttachments'] ?? null;
+        $this->HasOwnerPassword = $data['hasOwnerPassword'] ?? false;
+        $this->HasUserPassword = $data['hasUserPassword'] ?? false;
+    }
+
+    public ?string $EncryptionTypeString = null;
     
     public function GetEncryptionType()
     {
-        switch ($this->encryptionTypeString) {
+        switch ($this->EncryptionTypeString) {
             case "rc4-40":
                 return EncryptionType::RC440;
             case "rc4-128":
@@ -28,6 +52,13 @@ class PdfSecurityInfo
                 return EncryptionType::None;
         }
     }
+
+    /**
+     *
+     * Gets or sets the encryption type.
+     *
+     */
+    public $EncryptionType = null;
 
     /**
      *

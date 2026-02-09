@@ -443,11 +443,54 @@ class Font
 
     private static function init(): void
     {
-        $windir = getenv("WINDIR");
-        if ($windir !== false && $windir !== "") {
-            FONT::$pathToFontsResourceDirectory = $windir . DIRECTORY_SEPARATOR . "Fonts";
+        try {
+            if (PHP_OS_FAMILY === 'Windows') {
+
+                $windir = getenv('WINDIR') ?: 'C:\\Windows';
+                $path = $windir . DIRECTORY_SEPARATOR . 'Fonts';
+
+                if (is_dir($path)) {
+                    self::$pathToFontsResourceDirectory = $path;
+                }
+            }
+
+            // -------- macOS --------
+            else if (PHP_OS_FAMILY === 'Darwin') {
+
+                $home = getenv('HOME');
+                $paths = [
+                    '/System/Library/Fonts', '/Library/Fonts', $home ? $home . '/Library/Fonts' : null
+                ];
+
+                foreach ($paths as $path) {
+                    if ($path && is_dir($path)) {
+                        self::$pathToFontsResourceDirectory = $path;
+                        break;
+                    }
+                }
+            }
+
+            // -------- Linux --------
+            else if (PHP_OS_FAMILY === 'Linux') {
+
+                $home = getenv('HOME');
+                $paths = [
+                    '/usr/share/fonts', '/usr/local/share/fonts', $home ? $home . '/.fonts' : null, $home ? $home . '/.local/share/fonts' : null
+                ];
+
+                foreach ($paths as $path) {
+                    if ($path && is_dir($path)) {
+                        self::$pathToFontsResourceDirectory = $path;
+                        break;
+                    }
+                }
+            }
+        }
+        catch (Exception $e) {
+           
         }
     }
+
 
     public function GetJsonSerializeString()
     {

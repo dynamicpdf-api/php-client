@@ -272,20 +272,26 @@ class Pdf extends Endpoint
     }
 
     /**
+     * Returns a PageInput object containing the input pdf.
      *
-     *  Returns a PageInput object containing the input pdf.
-     *
-     * @param  ?float $pageWidth The width of the page.
-     * @param  ?float $pageHeight The height of the page.
+     * @param  ?string|?float $size The size of the page or The width of the page.
+     * @param  ?string|?float $orientation The orientation of the page or The height of the page.
+     * @param  ?float $margins The margins of the page.
      * @return PageInput PageInput object.
      */
-    public function AddPage(?float $pageWidth = null, ?float $pageHeight = null)
+    public function AddPage($size = null, $orientation = null, $margins = null)
     {
-        if (($pageWidth != null) && ($pageHeight != null)) {
-            $input = new PageInput($pageWidth, $pageHeight);
+        if ((gettype($size) == "string" || $size == null) && (gettype($orientation) == "string" || $orientation == null)) {
+            $input = new PageInput($size, $orientation, $margins);
             array_push($this->Inputs, $input);
             return $input;
-        } else {
+        }
+        else if ((gettype($size) == "double" || gettype($size) == "integer") && (gettype($orientation) == "double" || gettype($orientation) == "integer")) {
+            $input = new PageInput($size, $orientation);
+            array_push($this->Inputs, $input);
+            return $input;
+        }
+        else {
             $input = new PageInput();
             array_push($this->Inputs, $input);
             return $input;

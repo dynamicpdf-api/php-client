@@ -20,7 +20,7 @@ class PageInput extends Input
      */
     public function __construct($size = null, $orientation = null, $margins = null)
     {
-        if ((gettype($size) == "string") && (gettype($orientation) == "string")) {
+        if ((gettype($size) == "string" || $size == null) && (gettype($orientation) == "string" || $orientation == null)) {
             if($size != null) 
                 $this->SetPageSize($size);       
             if($orientation != null) 
